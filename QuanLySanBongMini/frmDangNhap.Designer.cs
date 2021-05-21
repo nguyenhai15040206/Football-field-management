@@ -54,6 +54,7 @@ namespace QuanLySanBongMini
             this.btnLogin.Size = new System.Drawing.Size(117, 38);
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // labelControl2
             // 
@@ -61,9 +62,9 @@ namespace QuanLySanBongMini
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(236, 68);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(107, 20);
+            this.labelControl2.Size = new System.Drawing.Size(64, 20);
             this.labelControl2.TabIndex = 12;
-            this.labelControl2.Text = "Tên người dùng:";
+            this.labelControl2.Text = "Mật khẩu:";
             // 
             // labelControl1
             // 
@@ -77,6 +78,7 @@ namespace QuanLySanBongMini
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.EditValue = "123";
             this.txtMatKhau.Location = new System.Drawing.Point(236, 94);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,6 +90,7 @@ namespace QuanLySanBongMini
             // 
             // txtTenDN
             // 
+            this.txtTenDN.EditValue = "hainguyen";
             this.txtTenDN.Location = new System.Drawing.Point(236, 38);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,7 +128,7 @@ namespace QuanLySanBongMini
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(507, 176);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLogin);

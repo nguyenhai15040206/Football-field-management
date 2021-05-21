@@ -56,6 +56,7 @@ namespace QuanLySanBongMini
             this.btnHuyBo.Size = new System.Drawing.Size(119, 34);
             this.btnHuyBo.TabIndex = 15;
             this.btnHuyBo.Text = "Hủy bỏ";
+            this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
             // btnCapNhat
             // 
@@ -68,6 +69,7 @@ namespace QuanLySanBongMini
             this.btnCapNhat.Size = new System.Drawing.Size(119, 34);
             this.btnCapNhat.TabIndex = 14;
             this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // cboDatabase
             // 
@@ -76,6 +78,7 @@ namespace QuanLySanBongMini
             this.cboDatabase.Name = "cboDatabase";
             this.cboDatabase.Size = new System.Drawing.Size(270, 28);
             this.cboDatabase.TabIndex = 13;
+            this.cboDatabase.DropDown += new System.EventHandler(this.cboDatabase_DropDown);
             // 
             // label4
             // 
@@ -125,6 +128,7 @@ namespace QuanLySanBongMini
             this.cboServername.Name = "cboServername";
             this.cboServername.Size = new System.Drawing.Size(270, 28);
             this.cboServername.TabIndex = 10;
+            this.cboServername.DropDown += new System.EventHandler(this.cboServername_DropDown);
             // 
             // label1
             // 
@@ -139,6 +143,7 @@ namespace QuanLySanBongMini
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(462, 226);
             this.Controls.Add(this.btnHuyBo);
             this.Controls.Add(this.btnCapNhat);
