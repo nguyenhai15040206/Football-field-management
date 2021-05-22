@@ -44,7 +44,7 @@
   <Table Name="dbo.DatSan" Member="DatSans">
     <Type Name="DatSan">
       <Column Name="maSan" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="maKhachHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maKhachHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="maNguoiDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayDat" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="GioVao" Type="System.TimeSpan" DbType="Time NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -178,8 +178,8 @@
     <Type Name="sanBong">
       <Column Name="maSan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tenSan" Type="System.String" DbType="NVarChar(51)" CanBeNull="true" />
-      <Column Name="tienSan" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="maLoaiSan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="sanBong_DatSan" Member="DatSans" ThisKey="maSan" OtherKey="maSan" Type="DatSan" />
       <Association Name="LoaiSan_sanBong" Member="LoaiSan" ThisKey="maLoaiSan" OtherKey="maLoaiSan" Type="LoaiSan" IsForeignKey="true" />
     </Type>

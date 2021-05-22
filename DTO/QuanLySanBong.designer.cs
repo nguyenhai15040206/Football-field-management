@@ -1090,7 +1090,7 @@ namespace DTO
 		
 		private int _maSan;
 		
-		private int _maKhachHang;
+		private System.Nullable<int> _maKhachHang;
 		
 		private System.Nullable<int> _maNguoiDung;
 		
@@ -1120,7 +1120,7 @@ namespace DTO
     partial void OnCreated();
     partial void OnmaSanChanging(int value);
     partial void OnmaSanChanged();
-    partial void OnmaKhachHangChanging(int value);
+    partial void OnmaKhachHangChanging(System.Nullable<int> value);
     partial void OnmaKhachHangChanged();
     partial void OnmaNguoiDungChanging(System.Nullable<int> value);
     partial void OnmaNguoiDungChanged();
@@ -1172,8 +1172,8 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKhachHang", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int maKhachHang
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKhachHang", DbType="Int")]
+		public System.Nullable<int> maKhachHang
 		{
 			get
 			{
@@ -1387,7 +1387,7 @@ namespace DTO
 					}
 					else
 					{
-						this._maKhachHang = default(int);
+						this._maKhachHang = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("KhachHang");
 				}
@@ -3865,9 +3865,9 @@ namespace DTO
 		
 		private string _tenSan;
 		
-		private System.Nullable<decimal> _tienSan;
-		
 		private System.Nullable<int> _maLoaiSan;
+		
+		private System.Nullable<bool> _tinhTrang;
 		
 		private EntitySet<DatSan> _DatSans;
 		
@@ -3881,10 +3881,10 @@ namespace DTO
     partial void OnmaSanChanged();
     partial void OntenSanChanging(string value);
     partial void OntenSanChanged();
-    partial void OntienSanChanging(System.Nullable<decimal> value);
-    partial void OntienSanChanged();
     partial void OnmaLoaiSanChanging(System.Nullable<int> value);
     partial void OnmaLoaiSanChanged();
+    partial void OntinhTrangChanging(System.Nullable<bool> value);
+    partial void OntinhTrangChanged();
     #endregion
 		
 		public sanBong()
@@ -3934,26 +3934,6 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tienSan", DbType="Money")]
-		public System.Nullable<decimal> tienSan
-		{
-			get
-			{
-				return this._tienSan;
-			}
-			set
-			{
-				if ((this._tienSan != value))
-				{
-					this.OntienSanChanging(value);
-					this.SendPropertyChanging();
-					this._tienSan = value;
-					this.SendPropertyChanged("tienSan");
-					this.OntienSanChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLoaiSan", DbType="Int")]
 		public System.Nullable<int> maLoaiSan
 		{
@@ -3974,6 +3954,26 @@ namespace DTO
 					this._maLoaiSan = value;
 					this.SendPropertyChanged("maLoaiSan");
 					this.OnmaLoaiSanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tinhTrang", DbType="Bit")]
+		public System.Nullable<bool> tinhTrang
+		{
+			get
+			{
+				return this._tinhTrang;
+			}
+			set
+			{
+				if ((this._tinhTrang != value))
+				{
+					this.OntinhTrangChanging(value);
+					this.SendPropertyChanging();
+					this._tinhTrang = value;
+					this.SendPropertyChanged("tinhTrang");
+					this.OntinhTrangChanged();
 				}
 			}
 		}
