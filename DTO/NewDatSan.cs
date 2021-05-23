@@ -16,9 +16,9 @@ namespace DTO
 
 		private System.DateTime _NgayDat;
 
-		private System.TimeSpan _GioVao;
+		private System.String _GioVao;
 
-		private System.TimeSpan _GioRa;
+		private System.String _GioRa;
 
 		private System.Nullable<decimal> _tienSan;
 
@@ -36,7 +36,7 @@ namespace DTO
         public string TenKhachhang { get => _tenKhachhang; set => _tenKhachhang = value; }
         public string TenNguoiDung { get => _tenNguoiDung; set => _tenNguoiDung = value; }
         public string GhiChu { get => _ghiChu; set => _ghiChu = value; }
-        public TimeSpan GioVao { get => _GioVao; set => _GioVao = value; }
-        public TimeSpan GioRa { get => _GioRa; set => _GioRa = value; }
+        public String GioVao { get => _GioVao; set => _GioVao = value; }
+        public String GioRa { get => _GioRa; set => _GioRa = value; }
     }
 }

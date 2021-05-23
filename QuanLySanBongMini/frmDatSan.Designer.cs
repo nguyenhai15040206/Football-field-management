@@ -52,7 +52,7 @@ namespace QuanLySanBongMini
             this.toolStripButtonLamMoi = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLuuDatSan = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBatDau = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -60,7 +60,7 @@ namespace QuanLySanBongMini
             this.panel6 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblChonSanBong = new System.Windows.Forms.Label();
             this.numericUpDownGioThue = new System.Windows.Forms.NumericUpDown();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -79,7 +79,16 @@ namespace QuanLySanBongMini
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
+            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panelLoaiSan = new System.Windows.Forms.Panel();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTimSan = new DevExpress.XtraEditors.SimpleButton();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckb5Nguoi = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -92,7 +101,11 @@ namespace QuanLySanBongMini
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGioThue)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
+            this.tabPane1.SuspendLayout();
+            this.tabNavigationPage1.SuspendLayout();
+            this.panelLoaiSan.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -133,7 +146,7 @@ namespace QuanLySanBongMini
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1024, 717);
+            this.panel4.Size = new System.Drawing.Size(1002, 717);
             this.panel4.TabIndex = 1;
             // 
             // panel5
@@ -142,7 +155,7 @@ namespace QuanLySanBongMini
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 288);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1024, 429);
+            this.panel5.Size = new System.Drawing.Size(1002, 429);
             this.panel5.TabIndex = 2;
             // 
             // gridContrrolDatSan
@@ -154,7 +167,7 @@ namespace QuanLySanBongMini
             this.gridContrrolDatSan.Name = "gridContrrolDatSan";
             this.gridContrrolDatSan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gridContrrolDatSan.Size = new System.Drawing.Size(1024, 429);
+            this.gridContrrolDatSan.Size = new System.Drawing.Size(1002, 429);
             this.gridContrrolDatSan.TabIndex = 5;
             this.gridContrrolDatSan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -246,7 +259,7 @@ namespace QuanLySanBongMini
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 126;
+            this.gridColumn5.Width = 74;
             // 
             // gridColumn6
             // 
@@ -255,7 +268,7 @@ namespace QuanLySanBongMini
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 125;
+            this.gridColumn6.Width = 70;
             // 
             // gridColumn7
             // 
@@ -294,7 +307,7 @@ namespace QuanLySanBongMini
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.toolStrip1);
-            this.groupBox1.Controls.Add(this.simpleButton3);
+            this.groupBox1.Controls.Add(this.btnBatDau);
             this.groupBox1.Controls.Add(this.txtTenKH);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.simpleButton1);
@@ -320,7 +333,7 @@ namespace QuanLySanBongMini
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1024, 288);
+            this.groupBox1.Size = new System.Drawing.Size(1002, 288);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đặt sân";
@@ -336,7 +349,7 @@ namespace QuanLySanBongMini
             this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(3, 248);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1018, 37);
+            this.toolStrip1.Size = new System.Drawing.Size(996, 37);
             this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -366,23 +379,24 @@ namespace QuanLySanBongMini
             this.toolStripButton3.Size = new System.Drawing.Size(96, 34);
             this.toolStripButton3.Text = "Hủy lịch";
             // 
-            // simpleButton3
+            // btnBatDau
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.Navy;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.AppearanceHovered.Options.UseFont = true;
-            this.simpleButton3.BackgroundImage = global::QuanLySanBongMini.Properties.Resources.butbut;
-            this.simpleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(776, 70);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(99, 63);
-            this.simpleButton3.TabIndex = 18;
-            this.simpleButton3.Text = "Bắt dầu";
+            this.btnBatDau.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBatDau.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.btnBatDau.Appearance.Options.UseFont = true;
+            this.btnBatDau.Appearance.Options.UseForeColor = true;
+            this.btnBatDau.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBatDau.AppearanceHovered.Options.UseFont = true;
+            this.btnBatDau.BackgroundImage = global::QuanLySanBongMini.Properties.Resources.butbut;
+            this.btnBatDau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBatDau.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBatDau.ImageOptions.Image")));
+            this.btnBatDau.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnBatDau.Location = new System.Drawing.Point(776, 70);
+            this.btnBatDau.Name = "btnBatDau";
+            this.btnBatDau.Size = new System.Drawing.Size(99, 63);
+            this.btnBatDau.TabIndex = 18;
+            this.btnBatDau.Text = "Bắt dầu";
+            this.btnBatDau.Click += new System.EventHandler(this.btnBatDau_Click);
             // 
             // txtTenKH
             // 
@@ -423,11 +437,11 @@ namespace QuanLySanBongMini
             // 
             this.panel6.Controls.Add(this.label14);
             this.panel6.Controls.Add(this.label13);
-            this.panel6.Controls.Add(this.label9);
+            this.panel6.Controls.Add(this.lblChonSanBong);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(3, 23);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1018, 40);
+            this.panel6.Size = new System.Drawing.Size(996, 40);
             this.panel6.TabIndex = 13;
             // 
             // label14
@@ -438,7 +452,7 @@ namespace QuanLySanBongMini
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(0, 32);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(1018, 4);
+            this.label14.Size = new System.Drawing.Size(996, 4);
             this.label14.TabIndex = 16;
             this.label14.Text = "label14";
             // 
@@ -450,20 +464,20 @@ namespace QuanLySanBongMini
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(0, 30);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(1018, 2);
+            this.label13.Size = new System.Drawing.Size(996, 2);
             this.label13.TabIndex = 15;
             this.label13.Text = "label13";
             // 
-            // label9
+            // lblChonSanBong
             // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(1018, 30);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "CHƯA CHỌN SÂN BÓNG";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblChonSanBong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblChonSanBong.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChonSanBong.Location = new System.Drawing.Point(0, 0);
+            this.lblChonSanBong.Name = "lblChonSanBong";
+            this.lblChonSanBong.Size = new System.Drawing.Size(996, 30);
+            this.lblChonSanBong.TabIndex = 0;
+            this.lblChonSanBong.Text = "CHƯA CHỌN SÂN BÓNG";
+            this.lblChonSanBong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // numericUpDownGioThue
             // 
@@ -549,7 +563,6 @@ namespace QuanLySanBongMini
             // dateTimePickerGioRa
             // 
             this.dateTimePickerGioRa.CustomFormat = "HH:mm";
-            this.dateTimePickerGioRa.Enabled = false;
             this.dateTimePickerGioRa.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerGioRa.Location = new System.Drawing.Point(603, 106);
             this.dateTimePickerGioRa.Name = "dateTimePickerGioRa";
@@ -639,20 +652,149 @@ namespace QuanLySanBongMini
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.groupControl1);
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.panelLoaiSan);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1024, 0);
+            this.panel3.Location = new System.Drawing.Point(1002, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(370, 717);
+            this.panel3.Size = new System.Drawing.Size(392, 717);
             this.panel3.TabIndex = 0;
             // 
-            // groupControl1
+            // panel7
             // 
-            this.groupControl1.Location = new System.Drawing.Point(57, 55);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(200, 100);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "groupControl1";
+            this.panel7.Controls.Add(this.tabPane1);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 102);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(392, 615);
+            this.panel7.TabIndex = 3;
+            // 
+            // tabPane1
+            // 
+            this.tabPane1.AppearanceButton.Hovered.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPane1.AppearanceButton.Hovered.Options.UseFont = true;
+            this.tabPane1.AppearanceButton.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPane1.AppearanceButton.Normal.Options.UseFont = true;
+            this.tabPane1.AppearanceButton.Pressed.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPane1.AppearanceButton.Pressed.Options.UseFont = true;
+            this.tabPane1.Controls.Add(this.tabNavigationPage1);
+            this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPane1.Location = new System.Drawing.Point(0, 0);
+            this.tabPane1.Name = "tabPane1";
+            this.tabPane1.PageProperties.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPane1.PageProperties.AppearanceCaption.Options.UseFont = true;
+            this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.tabNavigationPage1});
+            this.tabPane1.RegularSize = new System.Drawing.Size(392, 615);
+            this.tabPane1.SelectedPage = this.tabNavigationPage1;
+            this.tabPane1.Size = new System.Drawing.Size(392, 615);
+            this.tabPane1.TabIndex = 0;
+            this.tabPane1.Text = "tabPane1";
+            // 
+            // tabNavigationPage1
+            // 
+            this.tabNavigationPage1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabNavigationPage1.Appearance.Options.UseFont = true;
+            this.tabNavigationPage1.Caption = "Danh sách sân bóng";
+            this.tabNavigationPage1.Controls.Add(this.flowLayoutPanel1);
+            this.tabNavigationPage1.Name = "tabNavigationPage1";
+            this.tabNavigationPage1.Properties.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabNavigationPage1.Properties.AppearanceCaption.Options.UseFont = true;
+            this.tabNavigationPage1.Size = new System.Drawing.Size(392, 586);
+            // 
+            // panelLoaiSan
+            // 
+            this.panelLoaiSan.Controls.Add(this.simpleButton3);
+            this.panelLoaiSan.Controls.Add(this.btnTimSan);
+            this.panelLoaiSan.Controls.Add(this.checkBox2);
+            this.panelLoaiSan.Controls.Add(this.checkBox1);
+            this.panelLoaiSan.Controls.Add(this.ckb5Nguoi);
+            this.panelLoaiSan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLoaiSan.Location = new System.Drawing.Point(0, 0);
+            this.panelLoaiSan.Name = "panelLoaiSan";
+            this.panelLoaiSan.Size = new System.Drawing.Size(392, 102);
+            this.panelLoaiSan.TabIndex = 2;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.Appearance.Options.UseForeColor = true;
+            this.simpleButton3.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.AppearanceHovered.Options.UseFont = true;
+            this.simpleButton3.BackgroundImage = global::QuanLySanBongMini.Properties.Resources.btuufon112;
+            this.simpleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.simpleButton3.ImageOptions.Image = global::QuanLySanBongMini.Properties.Resources.rsz_kissclipart_search_magnifiers_icon_magnifier_icon_icon_ada5d4bb918dc257_removebg_preview_1;
+            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.simpleButton3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.simpleButton3.Location = new System.Drawing.Point(152, 53);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton3.Size = new System.Drawing.Size(136, 41);
+            this.simpleButton3.TabIndex = 3;
+            this.simpleButton3.Text = "Làm mới";
+            // 
+            // btnTimSan
+            // 
+            this.btnTimSan.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimSan.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnTimSan.Appearance.Options.UseFont = true;
+            this.btnTimSan.Appearance.Options.UseForeColor = true;
+            this.btnTimSan.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimSan.AppearanceHovered.Options.UseFont = true;
+            this.btnTimSan.BackgroundImage = global::QuanLySanBongMini.Properties.Resources.btuufon112;
+            this.btnTimSan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTimSan.ImageOptions.Image = global::QuanLySanBongMini.Properties.Resources.rsz_kissclipart_search_magnifiers_icon_magnifier_icon_icon_ada5d4bb918dc257_removebg_preview_1;
+            this.btnTimSan.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnTimSan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnTimSan.Location = new System.Drawing.Point(7, 53);
+            this.btnTimSan.Name = "btnTimSan";
+            this.btnTimSan.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnTimSan.Size = new System.Drawing.Size(136, 41);
+            this.btnTimSan.TabIndex = 3;
+            this.btnTimSan.Text = "Tìm Sân";
+            this.btnTimSan.Click += new System.EventHandler(this.btnTimSan_Click);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(233, 23);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(115, 24);
+            this.checkBox2.TabIndex = 2;
+            this.checkBox2.Text = "Sân 11 người";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(120, 23);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(107, 24);
+            this.checkBox1.TabIndex = 1;
+            this.checkBox1.Text = "Sân 7 người";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // ckb5Nguoi
+            // 
+            this.ckb5Nguoi.AutoSize = true;
+            this.ckb5Nguoi.Location = new System.Drawing.Point(6, 23);
+            this.ckb5Nguoi.Name = "ckb5Nguoi";
+            this.ckb5Nguoi.Size = new System.Drawing.Size(107, 24);
+            this.ckb5Nguoi.TabIndex = 0;
+            this.ckb5Nguoi.Text = "Sân 5 người";
+            this.ckb5Nguoi.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(392, 586);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // frmDatSan
             // 
@@ -683,7 +825,12 @@ namespace QuanLySanBongMini
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGioThue)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
+            this.tabPane1.ResumeLayout(false);
+            this.tabNavigationPage1.ResumeLayout(false);
+            this.panelLoaiSan.ResumeLayout(false);
+            this.panelLoaiSan.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -693,7 +840,6 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtGhiChu;
@@ -720,10 +866,10 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblChonSanBong;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.ComboBox cboKhachHang;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnBatDau;
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -739,6 +885,16 @@ namespace QuanLySanBongMini
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelLoaiSan;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnTimSan;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckb5Nguoi;
+        private DevExpress.XtraBars.Navigation.TabPane tabPane1;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

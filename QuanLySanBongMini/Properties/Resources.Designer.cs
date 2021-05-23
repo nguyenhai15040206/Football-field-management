@@ -163,9 +163,30 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_kissclipart_search_magnifiers_icon_magnifier_icon_icon_ada5d4bb918dc257_removebg_preview_1 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-remov" +
+                        "ebg-preview_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap savepink_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("savepink-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2508984184183_1c07aa7b3ef59c19a5100f68077ebc98_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("z2508984184183_1c07aa7b3ef59c19a5100f68077ebc98-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

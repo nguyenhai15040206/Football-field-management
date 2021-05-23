@@ -8,20 +8,54 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using CustomUserControl;
+using DAO;
+using DTO;
 
 namespace QuanLySanBongMini
 {
     public partial class frmDatSan : Form
     {
+        public UserControlSanBong []sanBong;
+        public int []vt;
         public frmDatSan()
         {
             InitializeComponent();
-            dateTimePickerNgayDat.MinDate = DateTime.Now;
+            //dateTimePickerNgayDat.MinDate = DateTime.Now;
+        }
+
+        public void loadSanBongConTrong(TimeSpan gioVao, TimeSpan gioRa, DateTime ngayDat, FlowLayoutPanel panel)
+        {
+            panel.Controls.Clear();
+            List<sanBong> listSanBong = SanBongDAO.Instance.loadTatCaSanBongConTrong(gioVao, gioRa, ngayDat);
+            if (listSanBong.Count == 0)
+            {
+                return;
+            }
+            int left = 10;
+            sanBong = new UserControlSanBong[listSanBong.Count];
+            for (int i = 0; i < listSanBong.Count; i++)
+            {
+                sanBong[i] = new UserControlSanBong();
+                sanBong[i].Left = left;
+                left += 10;
+                sanBong[i].lblTenSan.Text = listSanBong[i].tenSan;
+                sanBong[i].Tag = listSanBong[i].maSan;
+                sanBong[i].panel1.Click += Panel1_Click;
+                panel.Controls.Add(sanBong[i]);
+            }
+        }
+
+        private void Panel1_Click(object sender, EventArgs e)
+        {
+            UserControlSanBong ctr = sender as UserControlSanBong;
+
         }
 
         private void frmDatSan_Load(object sender, EventArgs e)
         {
             KhachHangBUS.Instance.loadKhachhang_Cbo(cboKhachHang);
+            //this.userControlSanBong1.lblTenSan.Text = "Sân C1";
 
             //
             DatSanBUS.Instance.loadDatSan(gridContrrolDatSan);
@@ -52,6 +86,26 @@ namespace QuanLySanBongMini
             {
                 MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin");
             }    
+        }
+
+        private void btnBatDau_Click(object sender, EventArgs e)
+        {
+           // SanBongBUS.Instance.load(dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay, dateTimePickerNgayDat.Value.Date, gridControl1);
+        }
+
+        private void dockPanel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimSan_Click(object sender, EventArgs e)
+        {
+            loadSanBongConTrong(dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay, dateTimePickerNgayDat.Value.Date, flowLayoutPanel1);
         }
     }
 }

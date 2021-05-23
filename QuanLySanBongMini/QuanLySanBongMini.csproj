@@ -182,6 +182,30 @@
       <Project>{fcf1a496-7fec-4412-b3a6-c4cdcf38917c}</Project>
       <Name>BUS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CustomUserControl\CustomUserControl.csproj">
+      <Project>{06617cbe-2211-47a1-be8f-a5d51cd76657}</Project>
+      <Name>CustomUserControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{3A7DABCB-5F16-4DBA-A483-6614BB598693}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{B1089BCF-5FD4-43C4-AB07-945694458370}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z2508984184183_1c07aa7b3ef59c19a5100f68077ebc98-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-removebg-preview-_1_.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-removebg-preview_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

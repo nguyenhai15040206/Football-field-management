@@ -30,6 +30,10 @@ namespace DAO
         public List<KhachHang> loadTatCaKhachHang()
         {
             var listKH = db.KhachHangs.ToList();
+            if(listKH.Count ==0)
+            {
+                return null;
+            }    
             return listKH;
         }
     }
