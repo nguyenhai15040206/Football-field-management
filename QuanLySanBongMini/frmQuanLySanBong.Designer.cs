@@ -32,10 +32,10 @@ namespace QuanLySanBongMini
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.panelShow = new System.Windows.Forms.Panel();
+            this.btnQLKhoHang = new DevExpress.XtraEditors.SimpleButton();
             this.btnQLGiaCa = new DevExpress.XtraEditors.SimpleButton();
             this.btnQLSanBong = new DevExpress.XtraEditors.SimpleButton();
-            this.panelShow = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +64,7 @@ namespace QuanLySanBongMini
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.simpleButton3);
+            this.panel2.Controls.Add(this.btnQLKhoHang);
             this.panel2.Controls.Add(this.btnQLGiaCa);
             this.panel2.Controls.Add(this.btnQLSanBong);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -74,22 +74,31 @@ namespace QuanLySanBongMini
             this.panel2.Size = new System.Drawing.Size(289, 707);
             this.panel2.TabIndex = 3;
             // 
-            // simpleButton3
+            // panelShow
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.simpleButton3.AppearanceHovered.Options.UseFont = true;
-            this.simpleButton3.BackgroundImage = global::QuanLySanBongMini.Properties.Resources.btuufon112;
-            this.simpleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.simpleButton3.ImageOptions.Image = global::QuanLySanBongMini.Properties.Resources.rsz_depositphotos_96581954_stock_illustration_home_circled_icon_removebg_preview;
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(3, 213);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton3.Size = new System.Drawing.Size(283, 62);
-            this.simpleButton3.TabIndex = 0;
-            this.simpleButton3.Text = "Quản lý kho hàng";
+            this.panelShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelShow.Location = new System.Drawing.Point(289, 54);
+            this.panelShow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelShow.Name = "panelShow";
+            this.panelShow.Size = new System.Drawing.Size(1105, 707);
+            this.panelShow.TabIndex = 4;
+            // 
+            // btnQLKhoHang
+            // 
+            this.btnQLKhoHang.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLKhoHang.Appearance.Options.UseFont = true;
+            this.btnQLKhoHang.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnQLKhoHang.AppearanceHovered.Options.UseFont = true;
+            this.btnQLKhoHang.BackgroundImage = global::QuanLySanBongMini.Properties.Resources.btuufon112;
+            this.btnQLKhoHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnQLKhoHang.ImageOptions.Image = global::QuanLySanBongMini.Properties.Resources.rsz_depositphotos_96581954_stock_illustration_home_circled_icon_removebg_preview;
+            this.btnQLKhoHang.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnQLKhoHang.Location = new System.Drawing.Point(3, 213);
+            this.btnQLKhoHang.Name = "btnQLKhoHang";
+            this.btnQLKhoHang.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnQLKhoHang.Size = new System.Drawing.Size(283, 62);
+            this.btnQLKhoHang.TabIndex = 0;
+            this.btnQLKhoHang.Text = "Quản lý kho hàng";
             // 
             // btnQLGiaCa
             // 
@@ -125,15 +134,6 @@ namespace QuanLySanBongMini
             this.btnQLSanBong.TabIndex = 0;
             this.btnQLSanBong.Text = "Quản lý sân bóng";
             // 
-            // panelShow
-            // 
-            this.panelShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelShow.Location = new System.Drawing.Point(289, 54);
-            this.panelShow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelShow.Name = "panelShow";
-            this.panelShow.Size = new System.Drawing.Size(1105, 707);
-            this.panelShow.TabIndex = 4;
-            // 
             // frmQuanLySanBong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -162,7 +162,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelShow;
         private DevExpress.XtraEditors.SimpleButton btnQLSanBong;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnQLKhoHang;
         private DevExpress.XtraEditors.SimpleButton btnQLGiaCa;
     }
 }

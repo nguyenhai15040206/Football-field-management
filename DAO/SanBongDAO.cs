@@ -24,13 +24,25 @@ namespace DAO
                 return instance;
             }
         }
+
+
+        // load tất cả sân bóng
+        public List<sanBong> loadTatCaSanBong()
+        {
+            var listSanBong = db.sanBongs.ToList();
+            if (listSanBong.Count == 0)
+                return null;
+            return listSanBong;
+        }
+
+
         // load ra tất cả các sân còn trống trong khung giờ vào và khung giờ ra
-        public List<sanBong> loadTatCaSanBongConTrong(TimeSpan gioVao , TimeSpan gioRa, DateTime ngayDat)
+        public List<sanBong> loadTatCaSanBongConTrong(TimeSpan gioVao , TimeSpan gioRa, DateTime ngayDat, int maLoaiSan)
         {
             var listSanBong = new  List<sanBong>();
             listSanBong = (from SanBong in db.sanBongs
                            where
-                             SanBong.LoaiSan.maLoaiSan == 1 && !
+                             SanBong.LoaiSan.maLoaiSan == maLoaiSan && SanBong.tinhTrang== true && !
                                (from ds in db.DatSans
                                 where
                                   ((ds.GioVao <= gioVao && ds.GioRa >= gioVao) || (ds.GioVao <=gioRa && ds.GioRa>= gioRa && ds.GioVao > gioVao) ||

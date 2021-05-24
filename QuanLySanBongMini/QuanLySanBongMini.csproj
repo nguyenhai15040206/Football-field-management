@@ -46,7 +46,9 @@
     <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -94,6 +96,18 @@
     <Compile Include="frmQLNhanVienVaPhanQuyen.Designer.cs">
       <DependentUpon>frmQLNhanVienVaPhanQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLSanBong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLSanBong.Designer.cs">
+      <DependentUpon>frmQLSanBong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLSanPhanVaKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLSanPhanVaKhoHang.Designer.cs">
+      <DependentUpon>frmQLSanPhanVaKhoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanLySanBong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLNhanVienVaPhanQuyen.resx">
       <DependentUpon>frmQLNhanVienVaPhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLSanBong.resx">
+      <DependentUpon>frmQLSanBong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLSanPhanVaKhoHang.resx">
+      <DependentUpon>frmQLSanPhanVaKhoHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLySanBong.resx">
       <DependentUpon>frmQuanLySanBong.cs</DependentUpon>
@@ -229,6 +249,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\savepink-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repair-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_repair-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-two-settings-cogwheels-icon-cog-icon-png-favpng-updnr1Z5wMVYm37mfx2EGxAdE-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icloud-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_depositphotos_80362150-stock-illustration-money-exchange-icon-from-business-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_transparent-supplier-icon-business-management-icon-inventory-i-5ed798c7e7fca92773728015911876559502-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icloud-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_addpink-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -30,7 +30,7 @@ namespace QuanLySanBongMini
         public void loadSanBongConTrong(TimeSpan gioVao, TimeSpan gioRa, DateTime ngayDat, FlowLayoutPanel panel)
         {
             panel.Controls.Clear();
-            List<sanBong> listSanBong = SanBongDAO.Instance.loadTatCaSanBongConTrong(gioVao, gioRa, ngayDat);
+            List<sanBong> listSanBong = SanBongDAO.Instance.loadTatCaSanBongConTrong(gioVao, gioRa, ngayDat,1);
             if (listSanBong.Count == 0)
             {
                 return;
@@ -76,6 +76,7 @@ namespace QuanLySanBongMini
             cboKhachHang.SelectedIndex = 0;
             dateTimePickerGioVao.Value = DateTime.Now;
             dateTimePickerGioRa.Value = DateTime.Now;
+            lblChonSanBong.Text = "CHƯA CHỌN SÂN BÓNG";
             foreach (Control item in groupBox1.Controls)
             {
                 if(item.GetType() == typeof(TextBox))
@@ -87,13 +88,20 @@ namespace QuanLySanBongMini
 
         private void toolStripButtonLuuDatSan_Click(object sender, EventArgs e)
         {
-            if(DatSanBUS.Instance.datSan(1,1,1,dateTimePickerNgayDat.Value.Date,dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay,100000,50000,true,""))
+            if (txtTenKH.Text.Trim().Length > 0 && txtSoDT.Text.Trim().Length > 0 && txtTienSan.Text.Trim().Length > 0)
             {
-                MessageBox.Show("Thêm thành công!");
-            }    
+                if (DatSanBUS.Instance.datSan(1, 1, 1, dateTimePickerNgayDat.Value.Date, dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay, 100000, 50000, true, ""))
+                {
+                    MessageBox.Show("Thêm thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin");
+                }
+            }
             else
             {
-                MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin");
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin!");
             }    
         }
 
