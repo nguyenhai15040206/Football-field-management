@@ -34,7 +34,7 @@ namespace BUS
         //    {
         //        return;
         //    }
-            
+
         //    int top = 10;
         //    int left = 10;
         //    for (int i=0; i < listLoaiSan.Count; i++)
@@ -51,6 +51,17 @@ namespace BUS
         //    int a= panel.Controls.Count;
 
         //} 
-       
+
+
+
+        //Load tất cả loại sân
+        public void loadLoaiSan_com(ComboBox cbb)
+        {
+            var loaiSan = LoaiSanDAO.Instance.loadTaCaLoaiSan();
+            cbb.DataSource = loaiSan;
+            cbb.DisplayMember = "TenLoai";
+            cbb.ValueMember = "MaLoaiSan";
+        }
+
     }
 }

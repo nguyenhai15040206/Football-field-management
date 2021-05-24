@@ -44,6 +44,20 @@ namespace BUS
         }
 
 
+        // lấy thông tin khách hàng với mã
+            //+ lấy họ tên 
+        public string hotenKhachHang(int maKhachHang)
+        {
+            return KhachHangDAO.Instance.thongTinKhachHang_maKH(maKhachHang).tenKhachHang;
+        }
+
+        //+ lấy thông tin số điện thoại
+        public string soDienThoai(int maKhachhang)
+        {
+            return KhachHangDAO.Instance.thongTinKhachHang_maKH(maKhachhang).soDienThoai;
+        }
+
+
         //kiêm tra trùng số điện thoại
         public bool KtraTrungSDTKhachHang(string input)
         {

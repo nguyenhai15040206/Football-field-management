@@ -52,7 +52,7 @@ namespace DAO
 
         // thêm đặt sân
         public bool datSan(int maSan, int maKhachHang, int maNguoiDung, DateTime ngayDat, TimeSpan gioVao, TimeSpan gioRa, double tienSan, 
-            double tienCoc, bool tinhTrang, string ghiChu)
+            double tienCoc, string ghiChu)
         {
             try
             {
@@ -65,14 +65,14 @@ namespace DAO
                 ds.GioRa = gioRa;
                 ds.tienSan = (decimal)tienSan;
                 ds.tienCoc = (decimal)tienCoc;
-                ds.tinhTrang = tinhTrang;
                 ds.ghiChu = ghiChu;
                 db.DatSans.InsertOnSubmit(ds);
                 db.SubmitChanges();
                 return true;
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine("" + e);
                 return false;
             }
         }

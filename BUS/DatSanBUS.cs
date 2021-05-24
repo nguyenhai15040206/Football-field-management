@@ -33,9 +33,9 @@ namespace BUS
         }
         // đặt sân
         public bool datSan(int maSan, int maKhachHang, int maNguoiDung, DateTime ngayDat, TimeSpan gioVao, TimeSpan gioRa, double tienSan,
-            double tienCoc, bool tinhTrang, string ghiChu)
+            double tienCoc,  string ghiChu)
         {
-            return DatSanDAO.Instance.datSan(maSan, maKhachHang, maNguoiDung, ngayDat, gioVao, gioRa, tienSan, tienCoc, tinhTrang, ghiChu);
+            return DatSanDAO.Instance.datSan(maSan, maKhachHang, maNguoiDung, ngayDat, gioVao, gioRa, tienSan, tienCoc, ghiChu);
         }
     }
 }

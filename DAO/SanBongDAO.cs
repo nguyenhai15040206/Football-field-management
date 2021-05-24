@@ -59,5 +59,82 @@ namespace DAO
 
 
 
+        // load sân bóng còn sử dụng được
+        public List<NewSanBongLoaiSan> loadTatCaSanBongDaBaoTri()
+        {
+            var listSanBong = (from sb in db.sanBongs
+                               join lsb in db.LoaiSans on sb.maLoaiSan equals lsb.maLoaiSan
+                               where sb.tinhTrang == false
+                               select new NewSanBongLoaiSan
+                               {
+                                   MaSan = sb.maSan,
+                                   TenSan = sb.tenSan,
+                                   TenLoai = lsb.tenLoai
+                               }).ToList();
+            if (listSanBong.Count == 0)
+            {
+                return null;
+            }
+            return listSanBong;
+        }
+
+
+        // load sân bóng còn bảo trì
+        public List<NewSanBongLoaiSan> loadTatCaSanBongBaoTri()
+        {
+            var listSanBong = (from sb in db.sanBongs
+                               join lsb in db.LoaiSans on sb.maLoaiSan equals lsb.maLoaiSan
+                               where sb.tinhTrang == true
+                               select new NewSanBongLoaiSan
+                               {
+                                   MaSan = sb.maSan,
+                                   TenSan = sb.tenSan,
+                                   TenLoai = lsb.tenLoai
+                               }).ToList();
+            if (listSanBong.Count == 0)
+            {
+                return null;
+            }
+            return listSanBong;
+        }
+
+        //thêm sân bóng
+        public bool ThemSanBong(string tenSan, bool tinhTrang, int loai)
+        {
+            try
+            {
+                sanBong sb = new sanBong();
+                sb.tenSan = tenSan;
+                sb.tinhTrang = tinhTrang;
+                sb.maLoaiSan = loai;
+                db.sanBongs.InsertOnSubmit(sb);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //kiểm tra trùng tên sân
+        public bool TrungTenSan(string input)
+        {
+            try
+            {
+                var txt = db.sanBongs.Where(s => s.tenSan == input).ToList();
+                if (txt.Count > 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
     }
 }

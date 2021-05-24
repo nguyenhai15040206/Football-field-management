@@ -47,6 +47,18 @@ namespace DAO
             return listKH;
         }
 
+        // lấy tt khách hàng với mã khách hàng
+        public KhachHang thongTinKhachHang_maKH(int maKH)
+        {
+            var kh = db.KhachHangs.SingleOrDefault(m => m.maKhachHang == maKH);
+            if(kh==null)
+            {
+                return null;
+            }
+            return kh;
+
+        }
+
 
 
         ///Thêm khách hàng

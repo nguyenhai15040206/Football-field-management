@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatSanBUS.cs" />
+    <Compile Include="DonGiaGioBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="KiemTraDuLieu.cs" />
     <Compile Include="LoaiKhachHangBUS.cs" />

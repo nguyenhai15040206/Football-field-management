@@ -29,16 +29,16 @@ namespace QuanLySanBongMini
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions19 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject73 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject74 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject75 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject76 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions20 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject77 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject78 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject79 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject80 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panelShow = new System.Windows.Forms.Panel();
@@ -47,9 +47,7 @@ namespace QuanLySanBongMini
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePickerGioVao = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonDSSanDabaoTri = new System.Windows.Forms.ToolStripButton();
@@ -75,6 +73,8 @@ namespace QuanLySanBongMini
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.numericUpDownGioThue = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.panelShow.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -84,6 +84,8 @@ namespace QuanLySanBongMini
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGioThue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -120,18 +122,18 @@ namespace QuanLySanBongMini
             // 
             // panelShow
             // 
+            this.panelShow.Controls.Add(this.numericUpDown1);
+            this.panelShow.Controls.Add(this.numericUpDownGioThue);
             this.panelShow.Controls.Add(this.simpleButton1);
             this.panelShow.Controls.Add(this.label8);
             this.panelShow.Controls.Add(this.textBox1);
             this.panelShow.Controls.Add(this.label7);
             this.panelShow.Controls.Add(this.label4);
-            this.panelShow.Controls.Add(this.dateTimePicker1);
             this.panelShow.Controls.Add(this.label6);
-            this.panelShow.Controls.Add(this.dateTimePickerGioVao);
             this.panelShow.Controls.Add(this.label5);
             this.panelShow.Location = new System.Drawing.Point(3, 269);
             this.panelShow.Name = "panelShow";
-            this.panelShow.Size = new System.Drawing.Size(370, 199);
+            this.panelShow.Size = new System.Drawing.Size(370, 201);
             this.panelShow.TabIndex = 22;
             // 
             // simpleButton1
@@ -144,7 +146,7 @@ namespace QuanLySanBongMini
             this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.simpleButton1.ImageOptions.Image = global::QuanLySanBongMini.Properties.Resources.rsz_addpink_removebg_preview;
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(136, 148);
+            this.simpleButton1.Location = new System.Drawing.Point(136, 149);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.simpleButton1.Size = new System.Drawing.Size(128, 42);
@@ -154,7 +156,7 @@ namespace QuanLySanBongMini
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 119);
+            this.label8.Location = new System.Drawing.Point(25, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 20);
             this.label8.TabIndex = 26;
@@ -162,7 +164,7 @@ namespace QuanLySanBongMini
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(136, 112);
+            this.textBox1.Location = new System.Drawing.Point(136, 114);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(203, 27);
             this.textBox1.TabIndex = 25;
@@ -189,15 +191,6 @@ namespace QuanLySanBongMini
             this.label4.Text = "LOẠI SÂN:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "HH:mm";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(136, 78);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(203, 27);
-            this.dateTimePicker1.TabIndex = 7;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -207,23 +200,14 @@ namespace QuanLySanBongMini
             this.label6.TabIndex = 4;
             this.label6.Text = "Đến khung giờ:";
             // 
-            // dateTimePickerGioVao
-            // 
-            this.dateTimePickerGioVao.CustomFormat = "HH:mm";
-            this.dateTimePickerGioVao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerGioVao.Location = new System.Drawing.Point(136, 42);
-            this.dateTimePickerGioVao.Name = "dateTimePickerGioVao";
-            this.dateTimePickerGioVao.Size = new System.Drawing.Size(203, 27);
-            this.dateTimePickerGioVao.TabIndex = 7;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(25, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 20);
+            this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Từ kkhung giờ:";
+            this.label5.Text = "Từ khung giờ:";
             // 
             // toolStrip2
             // 
@@ -247,6 +231,7 @@ namespace QuanLySanBongMini
             this.toolStripButtonDSSanDabaoTri.Name = "toolStripButtonDSSanDabaoTri";
             this.toolStripButtonDSSanDabaoTri.Size = new System.Drawing.Size(176, 34);
             this.toolStripButtonDSSanDabaoTri.Text = "Danh sách sân bóng";
+            this.toolStripButtonDSSanDabaoTri.Click += new System.EventHandler(this.toolStripButtonDSSanDabaoTri_Click);
             // 
             // toolStripButtonDSSanBaoTri
             // 
@@ -255,6 +240,7 @@ namespace QuanLySanBongMini
             this.toolStripButtonDSSanBaoTri.Name = "toolStripButtonDSSanBaoTri";
             this.toolStripButtonDSSanBaoTri.Size = new System.Drawing.Size(115, 34);
             this.toolStripButtonDSSanBaoTri.Text = "Sân bảo trì";
+            this.toolStripButtonDSSanBaoTri.Click += new System.EventHandler(this.toolStripButtonDSSanBaoTri_Click);
             // 
             // toolStrip1
             // 
@@ -279,6 +265,7 @@ namespace QuanLySanBongMini
             this.toolStripButtonLamMoi.Name = "toolStripButtonLamMoi";
             this.toolStripButtonLamMoi.Size = new System.Drawing.Size(101, 34);
             this.toolStripButtonLamMoi.Text = "Làm mới";
+            this.toolStripButtonLamMoi.Click += new System.EventHandler(this.toolStripButtonLamMoi_Click);
             // 
             // toolStripButtonThemSan
             // 
@@ -287,6 +274,7 @@ namespace QuanLySanBongMini
             this.toolStripButtonThemSan.Name = "toolStripButtonThemSan";
             this.toolStripButtonThemSan.Size = new System.Drawing.Size(106, 34);
             this.toolStripButtonThemSan.Text = "Thêm sân";
+            this.toolStripButtonThemSan.Click += new System.EventHandler(this.toolStripButtonThemSan_Click);
             // 
             // toolStripButton1
             // 
@@ -305,6 +293,7 @@ namespace QuanLySanBongMini
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Tình trạng (*)";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // txtTenSan
             // 
@@ -442,7 +431,7 @@ namespace QuanLySanBongMini
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Xóa sân", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, editorButtonImageOptions19, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject73, serializableAppearanceObject74, serializableAppearanceObject75, serializableAppearanceObject76, "Xóa sân", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -459,16 +448,16 @@ namespace QuanLySanBongMini
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
             this.repositoryItemButtonEdit2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            editorButtonImageOptions2.Image = global::QuanLySanBongMini.Properties.Resources.rsz_repair_removebg_preview;
+            editorButtonImageOptions20.Image = global::QuanLySanBongMini.Properties.Resources.rsz_repair_removebg_preview;
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions20, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject77, serializableAppearanceObject78, serializableAppearanceObject79, serializableAppearanceObject80, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Mã sân";
-            this.gridColumn3.FieldName = "maSan";
+            this.gridColumn3.FieldName = "MaSan";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
@@ -477,6 +466,7 @@ namespace QuanLySanBongMini
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Loại sân";
+            this.gridColumn4.FieldName = "TenLoai";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
@@ -485,11 +475,69 @@ namespace QuanLySanBongMini
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Tên sân bóng";
-            this.gridColumn5.FieldName = "tenSan";
+            this.gridColumn5.FieldName = "TenSan";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             this.gridColumn5.Width = 215;
+            // 
+            // numericUpDownGioThue
+            // 
+            this.numericUpDownGioThue.DecimalPlaces = 2;
+            this.numericUpDownGioThue.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numericUpDownGioThue.Location = new System.Drawing.Point(136, 42);
+            this.numericUpDownGioThue.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numericUpDownGioThue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownGioThue.Name = "numericUpDownGioThue";
+            this.numericUpDownGioThue.Size = new System.Drawing.Size(203, 27);
+            this.numericUpDownGioThue.TabIndex = 28;
+            this.numericUpDownGioThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownGioThue.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DecimalPlaces = 2;
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.numericUpDown1.Location = new System.Drawing.Point(136, 78);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(203, 27);
+            this.numericUpDown1.TabIndex = 28;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmQLSanBong
             // 
@@ -504,6 +552,7 @@ namespace QuanLySanBongMini
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmQLSanBong";
             this.Text = "frmQLSanBong";
+            this.Load += new System.EventHandler(this.frmQLSanBong_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelShow.ResumeLayout(false);
@@ -517,6 +566,8 @@ namespace QuanLySanBongMini
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGioThue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -555,9 +606,9 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePickerGioVao;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownGioThue;
     }
 }

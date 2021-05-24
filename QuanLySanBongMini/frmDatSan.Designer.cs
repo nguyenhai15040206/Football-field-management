@@ -29,6 +29,7 @@ namespace QuanLySanBongMini
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatSan));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,9 +86,10 @@ namespace QuanLySanBongMini
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelLoaiSan = new System.Windows.Forms.Panel();
             this.btnTimSan = new DevExpress.XtraEditors.SimpleButton();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckb11Nguoi = new System.Windows.Forms.CheckBox();
+            this.ckb7Nguoi = new System.Windows.Forms.CheckBox();
             this.ckb5Nguoi = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -389,7 +391,7 @@ namespace QuanLySanBongMini
             this.btnBatDau.AppearanceHovered.Options.UseFont = true;
             this.btnBatDau.BackgroundImage = global::QuanLySanBongMini.Properties.Resources.butbut;
             this.btnBatDau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBatDau.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBatDau.ImageOptions.Image")));
+            this.btnBatDau.ImageOptions.Image = global::QuanLySanBongMini.Properties.Resources.boscheduler_32x32;
             this.btnBatDau.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnBatDau.Location = new System.Drawing.Point(776, 70);
             this.btnBatDau.Name = "btnBatDau";
@@ -406,7 +408,6 @@ namespace QuanLySanBongMini
             this.txtTenKH.ReadOnly = true;
             this.txtTenKH.Size = new System.Drawing.Size(272, 27);
             this.txtTenKH.TabIndex = 17;
-            this.txtTenKH.Text = "a";
             // 
             // label2
             // 
@@ -433,6 +434,7 @@ namespace QuanLySanBongMini
             this.cboKhachHang.Name = "cboKhachHang";
             this.cboKhachHang.Size = new System.Drawing.Size(229, 28);
             this.cboKhachHang.TabIndex = 14;
+            this.cboKhachHang.SelectedIndexChanged += new System.EventHandler(this.cboKhachHang_SelectedIndexChanged);
             // 
             // panel6
             // 
@@ -532,6 +534,10 @@ namespace QuanLySanBongMini
             this.txtDatCoc.Size = new System.Drawing.Size(272, 27);
             this.txtDatCoc.TabIndex = 11;
             this.txtDatCoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDatCoc.Click += new System.EventHandler(this.txtDatCoc_Click);
+            this.txtDatCoc.TextChanged += new System.EventHandler(this.txtDatCoc_TextChanged);
+            this.txtDatCoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDatCoc_KeyPress);
+            this.txtDatCoc.MouseHover += new System.EventHandler(this.txtDatCoc_MouseHover);
             // 
             // label11
             // 
@@ -550,8 +556,8 @@ namespace QuanLySanBongMini
             this.txtTienSan.ReadOnly = true;
             this.txtTienSan.Size = new System.Drawing.Size(272, 27);
             this.txtTienSan.TabIndex = 11;
-            this.txtTienSan.Text = "b";
             this.txtTienSan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTienSan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTienSan_KeyPress);
             // 
             // label10
             // 
@@ -565,6 +571,7 @@ namespace QuanLySanBongMini
             // dateTimePickerGioRa
             // 
             this.dateTimePickerGioRa.CustomFormat = "HH:mm";
+            this.dateTimePickerGioRa.Enabled = false;
             this.dateTimePickerGioRa.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerGioRa.Location = new System.Drawing.Point(603, 106);
             this.dateTimePickerGioRa.Name = "dateTimePickerGioRa";
@@ -609,7 +616,7 @@ namespace QuanLySanBongMini
             // 
             // dateTimePickerNgayDat
             // 
-            this.dateTimePickerNgayDat.CustomFormat = "dd/MM/yyy";
+            this.dateTimePickerNgayDat.CustomFormat = "MM/dd/yyy";
             this.dateTimePickerNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNgayDat.Location = new System.Drawing.Point(161, 178);
             this.dateTimePickerNgayDat.Name = "dateTimePickerNgayDat";
@@ -633,7 +640,6 @@ namespace QuanLySanBongMini
             this.txtSoDT.ReadOnly = true;
             this.txtSoDT.Size = new System.Drawing.Size(272, 27);
             this.txtSoDT.TabIndex = 1;
-            this.txtSoDT.Text = "a";
             // 
             // label4
             // 
@@ -718,8 +724,8 @@ namespace QuanLySanBongMini
             // panelLoaiSan
             // 
             this.panelLoaiSan.Controls.Add(this.btnTimSan);
-            this.panelLoaiSan.Controls.Add(this.checkBox2);
-            this.panelLoaiSan.Controls.Add(this.checkBox1);
+            this.panelLoaiSan.Controls.Add(this.ckb11Nguoi);
+            this.panelLoaiSan.Controls.Add(this.ckb7Nguoi);
             this.panelLoaiSan.Controls.Add(this.ckb5Nguoi);
             this.panelLoaiSan.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLoaiSan.Location = new System.Drawing.Point(0, 0);
@@ -748,25 +754,27 @@ namespace QuanLySanBongMini
             this.btnTimSan.Text = "Tìm Sân";
             this.btnTimSan.Click += new System.EventHandler(this.btnTimSan_Click);
             // 
-            // checkBox2
+            // ckb11Nguoi
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(233, 23);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(115, 24);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Sân 11 người";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckb11Nguoi.AutoSize = true;
+            this.ckb11Nguoi.Location = new System.Drawing.Point(233, 23);
+            this.ckb11Nguoi.Name = "ckb11Nguoi";
+            this.ckb11Nguoi.Size = new System.Drawing.Size(115, 24);
+            this.ckb11Nguoi.TabIndex = 2;
+            this.ckb11Nguoi.Text = "Sân 11 người";
+            this.ckb11Nguoi.UseVisualStyleBackColor = true;
+            this.ckb11Nguoi.CheckedChanged += new System.EventHandler(this.ckb11Nguoi_CheckedChanged);
             // 
-            // checkBox1
+            // ckb7Nguoi
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(120, 23);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(107, 24);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Sân 7 người";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckb7Nguoi.AutoSize = true;
+            this.ckb7Nguoi.Location = new System.Drawing.Point(120, 23);
+            this.ckb7Nguoi.Name = "ckb7Nguoi";
+            this.ckb7Nguoi.Size = new System.Drawing.Size(107, 24);
+            this.ckb7Nguoi.TabIndex = 1;
+            this.ckb7Nguoi.Text = "Sân 7 người";
+            this.ckb7Nguoi.UseVisualStyleBackColor = true;
+            this.ckb7Nguoi.CheckedChanged += new System.EventHandler(this.ckb7Nguoi_CheckedChanged);
             // 
             // ckb5Nguoi
             // 
@@ -777,6 +785,7 @@ namespace QuanLySanBongMini
             this.ckb5Nguoi.TabIndex = 0;
             this.ckb5Nguoi.Text = "Sân 5 người";
             this.ckb5Nguoi.UseVisualStyleBackColor = true;
+            this.ckb5Nguoi.CheckedChanged += new System.EventHandler(this.ckb5Nguoi_CheckedChanged);
             // 
             // frmDatSan
             // 
@@ -874,8 +883,9 @@ namespace QuanLySanBongMini
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.SimpleButton btnTimSan;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckb11Nguoi;
+        private System.Windows.Forms.CheckBox ckb7Nguoi;
         private System.Windows.Forms.CheckBox ckb5Nguoi;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
