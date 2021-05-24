@@ -90,14 +90,21 @@ namespace QuanLySanBongMini
         {
             if (txtTenKH.Text.Trim().Length > 0 && txtSoDT.Text.Trim().Length > 0 && txtTienSan.Text.Trim().Length > 0)
             {
-                if (DatSanBUS.Instance.datSan(1, 1, 1, dateTimePickerNgayDat.Value.Date, dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay, 100000, 50000, true, ""))
+                if (dateTimePickerGioVao.Value.AddHours(0.9).TimeOfDay > dateTimePickerGioRa.Value.TimeOfDay || dateTimePickerGioVao.Value.TimeOfDay >= dateTimePickerGioRa.Value.TimeOfDay)
                 {
-                    MessageBox.Show("Thêm thành công!");
+                    MessageBox.Show("Vui lòng chọn số lượng giờ đá");
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin");
-                }
+                    if (DatSanBUS.Instance.datSan(1, 1, 1, dateTimePickerNgayDat.Value.Date, dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay, 100000, 50000, true, ""))
+                    {
+                        MessageBox.Show("Thêm thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin");
+                    }
+                }    
             }
             else
             {

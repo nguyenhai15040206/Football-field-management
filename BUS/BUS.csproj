@@ -47,6 +47,7 @@
     <Compile Include="DatSanBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="KiemTraDuLieu.cs" />
+    <Compile Include="LoaiKhachHangBUS.cs" />
     <Compile Include="LoaiSanBUS.cs" />
     <Compile Include="NguoiDungBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DevExpress.XtraGrid;
 using DTO;
 
 namespace BUS
@@ -33,6 +34,33 @@ namespace BUS
             cbo.DataSource = Khachhang;
             cbo.DisplayMember = "tenKhachHang";
             cbo.ValueMember ="maKhachHang";
+        }
+
+        // load khách hàng lên Grid
+        public void loadKhachHang_Grid(GridControl grid)
+        {
+            var KhachHang = KhachHangDAO.Instance.loadTatCaKhachHang();
+            grid.DataSource = KhachHang;
+        }
+
+
+        //kiêm tra trùng số điện thoại
+        public bool KtraTrungSDTKhachHang(string input)
+        {
+            return KhachHangDAO.Instance.KtraTrungSoDienThoai(input);
+        }
+
+        //Thêm khách hàng mới
+        public bool ThemKhachHang(string ten, string sdt)
+        {
+            return KhachHangDAO.Instance.themKhachHang(ten, sdt);
+        }
+
+
+        //Cập nhậy thông tin khách hàng'
+        public bool CapNhatThongTin(int makh, string ten, string sdt, double diem, int maLoai)
+        {
+            return KhachHangDAO.Instance.CapNhatThongtinKH(makh, ten, sdt, diem, maLoai);
         }
     }
 }

@@ -406,6 +406,7 @@ namespace QuanLySanBongMini
             this.txtTenKH.ReadOnly = true;
             this.txtTenKH.Size = new System.Drawing.Size(272, 27);
             this.txtTenKH.TabIndex = 17;
+            this.txtTenKH.Text = "a";
             // 
             // label2
             // 
@@ -549,6 +550,7 @@ namespace QuanLySanBongMini
             this.txtTienSan.ReadOnly = true;
             this.txtTienSan.Size = new System.Drawing.Size(272, 27);
             this.txtTienSan.TabIndex = 11;
+            this.txtTienSan.Text = "b";
             this.txtTienSan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
@@ -631,6 +633,7 @@ namespace QuanLySanBongMini
             this.txtSoDT.ReadOnly = true;
             this.txtSoDT.Size = new System.Drawing.Size(272, 27);
             this.txtSoDT.TabIndex = 1;
+            this.txtSoDT.Text = "a";
             // 
             // label4
             // 

@@ -31,7 +31,7 @@ namespace QuanLySanBongMini
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLKhachHang));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gridContrrolDatSan = new DevExpress.XtraGrid.GridControl();
+            this.gridContrrolKhachHang = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnXoaKH = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -47,7 +47,7 @@ namespace QuanLySanBongMini
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonLamMoi = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLuuDatSan = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCapNhat = new System.Windows.Forms.ToolStripButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.numericUpDownDiemTL = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@ namespace QuanLySanBongMini
             this.label1 = new System.Windows.Forms.Label();
             this.cboLoaiKhachHang = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridContrrolDatSan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContrrolKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoaKH)).BeginInit();
             this.panel3.SuspendLayout();
@@ -73,24 +73,24 @@ namespace QuanLySanBongMini
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.gridContrrolDatSan);
+            this.panel2.Controls.Add(this.gridContrrolKhachHang);
             this.panel2.Location = new System.Drawing.Point(0, 265);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(743, 247);
             this.panel2.TabIndex = 1;
             // 
-            // gridContrrolDatSan
+            // gridContrrolKhachHang
             // 
-            this.gridContrrolDatSan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridContrrolDatSan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridContrrolDatSan.Location = new System.Drawing.Point(0, 0);
-            this.gridContrrolDatSan.MainView = this.gridView2;
-            this.gridContrrolDatSan.Name = "gridContrrolDatSan";
-            this.gridContrrolDatSan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridContrrolKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContrrolKhachHang.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridContrrolKhachHang.Location = new System.Drawing.Point(0, 0);
+            this.gridContrrolKhachHang.MainView = this.gridView2;
+            this.gridContrrolKhachHang.Name = "gridContrrolKhachHang";
+            this.gridContrrolKhachHang.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoaKH});
-            this.gridContrrolDatSan.Size = new System.Drawing.Size(743, 247);
-            this.gridContrrolDatSan.TabIndex = 6;
-            this.gridContrrolDatSan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridContrrolKhachHang.Size = new System.Drawing.Size(743, 247);
+            this.gridContrrolKhachHang.TabIndex = 6;
+            this.gridContrrolKhachHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
@@ -124,7 +124,7 @@ namespace QuanLySanBongMini
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5});
-            this.gridView2.GridControl = this.gridContrrolDatSan;
+            this.gridView2.GridControl = this.gridContrrolKhachHang;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsBehavior.ReadOnly = true;
@@ -133,6 +133,7 @@ namespace QuanLySanBongMini
             this.gridView2.OptionsHint.ShowCellHints = false;
             this.gridView2.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.False;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
+            this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
             // 
             // gridColumn1
             // 
@@ -255,7 +256,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonLamMoi,
             this.toolStripButtonLuuDatSan,
-            this.toolStripButton3});
+            this.toolStripButtonCapNhat});
             this.toolStrip1.Location = new System.Drawing.Point(3, 181);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(740, 37);
@@ -269,6 +270,7 @@ namespace QuanLySanBongMini
             this.toolStripButtonLamMoi.Name = "toolStripButtonLamMoi";
             this.toolStripButtonLamMoi.Size = new System.Drawing.Size(101, 34);
             this.toolStripButtonLamMoi.Text = "Làm mới";
+            this.toolStripButtonLamMoi.Click += new System.EventHandler(this.toolStripButtonLamMoi_Click);
             // 
             // toolStripButtonLuuDatSan
             // 
@@ -277,14 +279,16 @@ namespace QuanLySanBongMini
             this.toolStripButtonLuuDatSan.Name = "toolStripButtonLuuDatSan";
             this.toolStripButtonLuuDatSan.Size = new System.Drawing.Size(159, 34);
             this.toolStripButtonLuuDatSan.Text = "Thêm khách hàng";
+            this.toolStripButtonLuuDatSan.Click += new System.EventHandler(this.toolStripButtonLuuDatSan_Click_1);
             // 
-            // toolStripButton3
+            // toolStripButtonCapNhat
             // 
-            this.toolStripButton3.Image = global::QuanLySanBongMini.Properties.Resources.savepink_removebg_preview1;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(106, 34);
-            this.toolStripButton3.Text = "Cập nhập";
+            this.toolStripButtonCapNhat.Image = global::QuanLySanBongMini.Properties.Resources.savepink_removebg_preview1;
+            this.toolStripButtonCapNhat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCapNhat.Name = "toolStripButtonCapNhat";
+            this.toolStripButtonCapNhat.Size = new System.Drawing.Size(106, 34);
+            this.toolStripButtonCapNhat.Text = "Cập nhập";
+            this.toolStripButtonCapNhat.Click += new System.EventHandler(this.toolStripButtonCapNhat_Click);
             // 
             // simpleButton1
             // 
@@ -375,8 +379,9 @@ namespace QuanLySanBongMini
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmQLKhachHang";
             this.Text = "frmQLKhachHang";
+            this.Load += new System.EventHandler(this.frmQLKhachHang_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridContrrolDatSan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContrrolKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoaKH)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -393,7 +398,7 @@ namespace QuanLySanBongMini
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private DevExpress.XtraGrid.GridControl gridContrrolDatSan;
+        private DevExpress.XtraGrid.GridControl gridContrrolKhachHang;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoaKH;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -409,7 +414,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonLamMoi;
         private System.Windows.Forms.ToolStripButton toolStripButtonLuuDatSan;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCapNhat;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.NumericUpDown numericUpDownDiemTL;
         private System.Windows.Forms.Label label4;
