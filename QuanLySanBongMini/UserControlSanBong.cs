@@ -8,16 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CustomUserControl
+namespace QuanLySanBongMini
 {
     public partial class UserControlSanBong : UserControl
     {
-        public static string a = "";
+
+
         public UserControlSanBong()
         {
             InitializeComponent();
         }
 
+
         
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            int row = int.Parse(this.Tag.ToString());
+            frmDatSan.ptenSan = this.lblTenSan.Text;
+            frmDatSan.pMaSan = this.Tag.ToString();
+            
+        }
     }
 }

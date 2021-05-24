@@ -73,9 +73,29 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4595_jpg_wh860 {
+            get {
+                object obj = ResourceManager.GetObject("4595.jpg_wh860", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6954027 {
             get {
                 object obj = ResourceManager.GetObject("6954027", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +183,37 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_1_15479_soccer_ball_clip_art_soccer_balls_coloring_pages_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("rsz_1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_depositphotos_80362150_stock_illustration_money_exchange_icon_from_business_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("rsz_depositphotos_80362150-stock-illustration-money-exchange-icon-from-business-r" +
+                        "emovebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_depositphotos_96581954_stock_illustration_home_circled_icon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("rsz_depositphotos_96581954-stock-illustration-home-circled-icon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_kissclipart_search_magnifiers_icon_magnifier_icon_icon_ada5d4bb918dc257_removebg_preview_1 {
             get {
                 object obj = ResourceManager.GetObject("rsz_kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-remov" +
@@ -174,9 +225,30 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_transparent_supplier_icon_business_management_icon_inventory_i_5ed798c7e7fca92773728015911876559502_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("rsz_transparent-supplier-icon-business-management-icon-inventory-i-5ed798c7e7fca9" +
+                        "2773728015911876559502-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap savepink_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("savepink-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap savepink_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("savepink-removebg-preview1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

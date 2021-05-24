@@ -94,6 +94,12 @@
     <Compile Include="frmQLNhanVienVaPhanQuyen.Designer.cs">
       <DependentUpon>frmQLNhanVienVaPhanQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanLySanBong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLySanBong.Designer.cs">
+      <DependentUpon>frmQuanLySanBong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThanhToanSan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlSanBong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSanBong.Designer.cs">
+      <DependentUpon>UserControlSanBong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmConfigDatabase.resx">
       <DependentUpon>frmConfigDatabase.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +132,9 @@
     <EmbeddedResource Include="frmQLNhanVienVaPhanQuyen.resx">
       <DependentUpon>frmQLNhanVienVaPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLySanBong.resx">
+      <DependentUpon>frmQuanLySanBong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThanhToanSan.resx">
       <DependentUpon>frmThanhToanSan.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +142,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSanBong.resx">
+      <DependentUpon>UserControlSanBong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -182,10 +200,6 @@
       <Project>{fcf1a496-7fec-4412-b3a6-c4cdcf38917c}</Project>
       <Name>BUS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CustomUserControl\CustomUserControl.csproj">
-      <Project>{06617cbe-2211-47a1-be8f-a5d51cd76657}</Project>
-      <Name>CustomUserControl</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{3A7DABCB-5F16-4DBA-A483-6614BB598693}</Project>
       <Name>DAO</Name>
@@ -206,6 +220,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rsz_kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-removebg-preview_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4595.jpg_wh860.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savepink-removebg-preview1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

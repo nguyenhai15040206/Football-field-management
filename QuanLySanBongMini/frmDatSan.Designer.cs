@@ -82,13 +82,12 @@ namespace QuanLySanBongMini
             this.panel7 = new System.Windows.Forms.Panel();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelLoaiSan = new System.Windows.Forms.Panel();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.btnTimSan = new DevExpress.XtraEditors.SimpleButton();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ckb5Nguoi = new System.Windows.Forms.CheckBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -378,6 +377,7 @@ namespace QuanLySanBongMini
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(96, 34);
             this.toolStripButton3.Text = "Hủy lịch";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // btnBatDau
             // 
@@ -702,9 +702,18 @@ namespace QuanLySanBongMini
             this.tabNavigationPage1.Properties.AppearanceCaption.Options.UseFont = true;
             this.tabNavigationPage1.Size = new System.Drawing.Size(392, 586);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(392, 586);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // panelLoaiSan
             // 
-            this.panelLoaiSan.Controls.Add(this.simpleButton3);
             this.panelLoaiSan.Controls.Add(this.btnTimSan);
             this.panelLoaiSan.Controls.Add(this.checkBox2);
             this.panelLoaiSan.Controls.Add(this.checkBox1);
@@ -714,26 +723,6 @@ namespace QuanLySanBongMini
             this.panelLoaiSan.Name = "panelLoaiSan";
             this.panelLoaiSan.Size = new System.Drawing.Size(392, 102);
             this.panelLoaiSan.TabIndex = 2;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.AppearanceHovered.Options.UseFont = true;
-            this.simpleButton3.BackgroundImage = global::QuanLySanBongMini.Properties.Resources.btuufon112;
-            this.simpleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.simpleButton3.ImageOptions.Image = global::QuanLySanBongMini.Properties.Resources.rsz_kissclipart_search_magnifiers_icon_magnifier_icon_icon_ada5d4bb918dc257_removebg_preview_1;
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.simpleButton3.Location = new System.Drawing.Point(152, 53);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton3.Size = new System.Drawing.Size(136, 41);
-            this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "Làm mới";
             // 
             // btnTimSan
             // 
@@ -785,16 +774,6 @@ namespace QuanLySanBongMini
             this.ckb5Nguoi.TabIndex = 0;
             this.ckb5Nguoi.Text = "Sân 5 người";
             this.ckb5Nguoi.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(392, 586);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // frmDatSan
             // 
@@ -866,7 +845,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lblChonSanBong;
+        public System.Windows.Forms.Label lblChonSanBong;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.ComboBox cboKhachHang;
         private DevExpress.XtraEditors.SimpleButton btnBatDau;
@@ -888,13 +867,12 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panelLoaiSan;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraBars.Navigation.TabPane tabPane1;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.SimpleButton btnTimSan;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox ckb5Nguoi;
-        private DevExpress.XtraBars.Navigation.TabPane tabPane1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

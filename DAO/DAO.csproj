@@ -50,10 +50,6 @@
     <Compile Include="SanBongDAO.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomUserControl\CustomUserControl.csproj">
-      <Project>{06617cbe-2211-47a1-be8f-a5d51cd76657}</Project>
-      <Name>CustomUserControl</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{b1089bcf-5fd4-43c4-ab07-945694458370}</Project>
       <Name>DTO</Name>

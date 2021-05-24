@@ -53,10 +53,6 @@
     <Compile Include="SanBongBUS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomUserControl\CustomUserControl.csproj">
-      <Project>{06617CBE-2211-47A1-BE8F-A5D51CD76657}</Project>
-      <Name>CustomUserControl</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{3a7dabcb-5f16-4dba-a483-6614bb598693}</Project>
       <Name>DAO</Name>
