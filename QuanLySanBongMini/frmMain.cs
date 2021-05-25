@@ -13,7 +13,7 @@ namespace QuanLySanBongMini
 {
     public partial class frmMain : Form
     {
-        private int maND;
+        public static int maND;
         public delegate void sendData(string value);
         public sendData thongTinNguoiDung;
         public sendData maNguoiDung;
@@ -35,6 +35,72 @@ namespace QuanLySanBongMini
         private void frmMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private Form IstActive(Type type)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == type)
+                {
+                    return f;
+                }
+            }
+            return null;
+        }
+
+        private void aToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void quảnLýĐặtSânToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form form = IstActive(typeof(frmDatSan));
+            if (form == null)
+            {
+                frmDatSan frm = new frmDatSan();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void quảnLýNhânViênPhânQuyềnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = IstActive(typeof(frmQLNhanVienVaPhanQuyen));
+            if (form == null)
+            {
+                frmQLNhanVienVaPhanQuyen frm = new frmQLNhanVienVaPhanQuyen();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void quảnLýĐặtSânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = IstActive(typeof(frmQLSanBong));
+            if (form == null)
+            {
+                frmQLSanBong frm = new frmQLSanBong();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
         }
     }
 }

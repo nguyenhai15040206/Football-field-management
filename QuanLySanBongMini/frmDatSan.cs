@@ -89,7 +89,7 @@ namespace QuanLySanBongMini
                     {
                         if (maSan != 0)
                         {
-                            if (DatSanBUS.Instance.datSan(maSan, maKhachHang, 1, dateTimePickerNgayDat.Value.Date, dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay, tienSan, double.Parse(txtDatCoc.Text.Trim()),  txtGhiChu.Text.Trim()))
+                            if (DatSanBUS.Instance.datSan(maSan, maKhachHang, frmMain.maND, dateTimePickerNgayDat.Value.Date, dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay, tienSan, double.Parse(txtDatCoc.Text.Trim()),  txtGhiChu.Text.Trim()))
                             {
                                 MessageBox.Show("Thêm thành công!");
                                 loadLaiSanBongConTrong();
@@ -211,8 +211,14 @@ namespace QuanLySanBongMini
 
         private void btnTimSan_Click(object sender, EventArgs e)
         {
-            
-            loadLaiSanBongConTrong();
+            if (maLoaiSan != 0)
+            {
+                loadLaiSanBongConTrong();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn loại sân bóng!");
+            }    
         }
 
         public void loadLaiSanBongConTrong()

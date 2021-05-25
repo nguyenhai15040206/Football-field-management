@@ -18,18 +18,16 @@ namespace QuanLySanBongMini
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DevExpress.UserSkins.BonusSkins.Register();
-            DevExpress.Skins.SkinManager.EnableFormSkins();
-            //frmDangNhap frm = new frmDangNhap();
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    frmMain mainForm = new frmMain();
-            //    mainForm.thongTinNguoiDung(frm.thongTinND);
-            //    mainForm.maNguoiDung(Convert.ToString(frm.maNguoiDung));
-            //    frm.Close();
-            //    Application.Run(mainForm);
-            //}
-            Application.Run(new frmDatSan());
+            frmDangNhap frm = new frmDangNhap();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                frmMain mainForm = new frmMain();
+                mainForm.thongTinNguoiDung(frm.thongTinND);
+                mainForm.maNguoiDung(Convert.ToString(frm.maNguoiDung));
+                frm.Close();
+                Application.Run(mainForm);
+            }
+            //Application.Run(new frmThanhToanSan());
         }
     }
 }

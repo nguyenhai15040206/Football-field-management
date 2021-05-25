@@ -51,7 +51,6 @@
       <Column Name="GioRa" Type="System.TimeSpan" DbType="Time NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tienSan" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="tienCoc" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ghiChu" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
       <Association Name="KhachHang_DatSan" Member="KhachHang" ThisKey="maKhachHang" OtherKey="maKhachHang" Type="KhachHang" IsForeignKey="true" />
       <Association Name="NguoiDung_DatSan" Member="NguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="NguoiDung" IsForeignKey="true" />

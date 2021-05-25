@@ -78,19 +78,20 @@ namespace QuanLySanBongMini
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.EditValue = "123";
+            this.txtMatKhau.EditValue = "";
             this.txtMatKhau.Location = new System.Drawing.Point(236, 94);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.Properties.Appearance.Options.UseFont = true;
             this.txtMatKhau.Properties.AppearanceFocused.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.Properties.AppearanceFocused.Options.UseFont = true;
+            this.txtMatKhau.Properties.UseSystemPasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(259, 26);
             this.txtMatKhau.TabIndex = 8;
             // 
             // txtTenDN
             // 
-            this.txtTenDN.EditValue = "hainguyen";
+            this.txtTenDN.EditValue = "";
             this.txtTenDN.Location = new System.Drawing.Point(236, 38);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

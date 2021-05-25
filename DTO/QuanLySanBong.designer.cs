@@ -1104,8 +1104,6 @@ namespace DTO
 		
 		private System.Nullable<decimal> _tienCoc;
 		
-		private System.Nullable<bool> _tinhTrang;
-		
 		private string _ghiChu;
 		
 		private EntityRef<KhachHang> _KhachHang;
@@ -1134,8 +1132,6 @@ namespace DTO
     partial void OntienSanChanged();
     partial void OntienCocChanging(System.Nullable<decimal> value);
     partial void OntienCocChanged();
-    partial void OntinhTrangChanging(System.Nullable<bool> value);
-    partial void OntinhTrangChanged();
     partial void OnghiChuChanging(string value);
     partial void OnghiChuChanged();
     #endregion
@@ -1316,26 +1312,6 @@ namespace DTO
 					this._tienCoc = value;
 					this.SendPropertyChanged("tienCoc");
 					this.OntienCocChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tinhTrang", DbType="Bit")]
-		public System.Nullable<bool> tinhTrang
-		{
-			get
-			{
-				return this._tinhTrang;
-			}
-			set
-			{
-				if ((this._tinhTrang != value))
-				{
-					this.OntinhTrangChanging(value);
-					this.SendPropertyChanging();
-					this._tinhTrang = value;
-					this.SendPropertyChanged("tinhTrang");
-					this.OntinhTrangChanged();
 				}
 			}
 		}
