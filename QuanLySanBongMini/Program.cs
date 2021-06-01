@@ -18,6 +18,7 @@ namespace QuanLySanBongMini
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             frmDangNhap frm = new frmDangNhap();
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -27,7 +28,7 @@ namespace QuanLySanBongMini
                 frm.Close();
                 Application.Run(mainForm);
             }
-            //Application.Run(new frmThanhToanSan());
+            //Application.Run(new frmQLNhanVienVaPhanQuyen());
         }
     }
 }

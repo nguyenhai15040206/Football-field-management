@@ -57,6 +57,7 @@ namespace QuanLySanBongMini
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboLoaiKhachHang = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridContrrolKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -154,7 +155,7 @@ namespace QuanLySanBongMini
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Mã khách hàng";
-            this.gridColumn2.FieldName = "maKhachHang";
+            this.gridColumn2.FieldName = "MaKhachHang";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
@@ -163,7 +164,7 @@ namespace QuanLySanBongMini
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Loại khách hàng";
-            this.gridColumn6.FieldName = "loaiKhachHang";
+            this.gridColumn6.FieldName = "TenLoai";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
@@ -172,7 +173,7 @@ namespace QuanLySanBongMini
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Tên khách hàng";
-            this.gridColumn3.FieldName = "tenKhachHang";
+            this.gridColumn3.FieldName = "TenKhachHang";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
@@ -181,7 +182,7 @@ namespace QuanLySanBongMini
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Số điện thoại";
-            this.gridColumn4.FieldName = "soDienThoai";
+            this.gridColumn4.FieldName = "SoDienThoai";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
@@ -190,7 +191,7 @@ namespace QuanLySanBongMini
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Điểm tích lũy";
-            this.gridColumn5.FieldName = "diemTicLuy";
+            this.gridColumn5.FieldName = "DiemTichLuy";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 5;
@@ -198,6 +199,7 @@ namespace QuanLySanBongMini
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -368,6 +370,16 @@ namespace QuanLySanBongMini
             this.cboLoaiKhachHang.Size = new System.Drawing.Size(227, 28);
             this.cboLoaiKhachHang.TabIndex = 0;
             // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label8.Location = new System.Drawing.Point(-1, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(746, 4);
+            this.label8.TabIndex = 4;
+            // 
             // frmQLKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -378,6 +390,7 @@ namespace QuanLySanBongMini
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmQLKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQLKhachHang";
             this.Load += new System.EventHandler(this.frmQLKhachHang_Load);
             this.panel2.ResumeLayout(false);
@@ -424,5 +437,6 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboLoaiKhachHang;
+        private System.Windows.Forms.Label label8;
     }
 }

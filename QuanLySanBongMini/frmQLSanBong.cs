@@ -58,12 +58,12 @@ namespace QuanLySanBongMini
 
         private void toolStripButtonDSSanDabaoTri_Click(object sender, EventArgs e)
         {
-            SanBongBUS.Instance.LoadSanDaBaoTri(gridContrrolDatSan);
+            SanBongBUS.Instance.LoadSanDaBaoTri(gridContrrolSanBong);
         }
 
         private void toolStripButtonDSSanBaoTri_Click(object sender, EventArgs e)
         {
-            SanBongBUS.Instance.LoadSanBaoTri(gridContrrolDatSan);
+            SanBongBUS.Instance.LoadSanBaoTri(gridContrrolSanBong);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -76,6 +76,8 @@ namespace QuanLySanBongMini
         private void frmQLSanBong_Load(object sender, EventArgs e)
         {
             LoaiSanBUS.Instance.loadLoaiSan_com(cboLoaiSanBong);
+
+            SanBongBUS.Instance.loadTaCaSanBong(gridContrrolSanBong);
         }
     }
 }

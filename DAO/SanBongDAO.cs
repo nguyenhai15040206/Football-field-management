@@ -27,13 +27,21 @@ namespace DAO
 
 
         // load tất cả sân bóng
-        public List<sanBong> loadTatCaSanBong()
+        public List<NewSanBongLoaiSan> loadTatCaSanBong()
         {
-            var listSanBong = db.sanBongs.ToList();
+            var listSanBong = (from san in db.sanBongs
+                               join loai in db.LoaiSans on san.maLoaiSan equals loai.maLoaiSan
+                               select new NewSanBongLoaiSan
+                               {
+                                   MaSan = san.maSan,
+                                   TenLoai = loai.tenLoai,
+                                   TenSan = san.tenSan
+                               }).ToList();
             if (listSanBong.Count == 0)
                 return null;
             return listSanBong;
         }
+
 
 
         // load ra tất cả các sân còn trống trong khung giờ vào và khung giờ ra
@@ -133,6 +141,13 @@ namespace DAO
             {
                 return false;
             }
+        }
+
+        // lấy được mã sân bóng với tên sân bóng
+        public int maSan_voiTenSan(string tenSan)
+        {
+            int maSan = db.sanBongs.Where(m => m.tenSan == tenSan.Trim()).SingleOrDefault().maSan;  
+            return maSan;
         }
 
 

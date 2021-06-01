@@ -66,7 +66,7 @@ namespace QuanLySanBongMini
             this.cboLoaiSanBong = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gridContrrolDatSan = new DevExpress.XtraGrid.GridControl();
+            this.gridContrrolSanBong = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -82,7 +82,7 @@ namespace QuanLySanBongMini
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridContrrolDatSan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContrrolSanBong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
@@ -392,7 +392,7 @@ namespace QuanLySanBongMini
             this.cboLoaiSanBong.FormattingEnabled = true;
             this.cboLoaiSanBong.Location = new System.Drawing.Point(139, 30);
             this.cboLoaiSanBong.Name = "cboLoaiSanBong";
-            this.cboLoaiSanBong.Size = new System.Drawing.Size(164, 28);
+            this.cboLoaiSanBong.Size = new System.Drawing.Size(203, 28);
             this.cboLoaiSanBong.TabIndex = 1;
             // 
             // label1
@@ -409,25 +409,25 @@ namespace QuanLySanBongMini
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.gridContrrolDatSan);
+            this.panel1.Controls.Add(this.gridContrrolSanBong);
             this.panel1.Location = new System.Drawing.Point(373, 7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(727, 693);
             this.panel1.TabIndex = 1;
             // 
-            // gridContrrolDatSan
+            // gridContrrolSanBong
             // 
-            this.gridContrrolDatSan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridContrrolDatSan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridContrrolDatSan.Location = new System.Drawing.Point(0, 0);
-            this.gridContrrolDatSan.MainView = this.gridView2;
-            this.gridContrrolDatSan.Name = "gridContrrolDatSan";
-            this.gridContrrolDatSan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridContrrolSanBong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContrrolSanBong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridContrrolSanBong.Location = new System.Drawing.Point(0, 0);
+            this.gridContrrolSanBong.MainView = this.gridView2;
+            this.gridContrrolSanBong.Name = "gridContrrolSanBong";
+            this.gridContrrolSanBong.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
-            this.gridContrrolDatSan.Size = new System.Drawing.Size(727, 693);
-            this.gridContrrolDatSan.TabIndex = 6;
-            this.gridContrrolDatSan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridContrrolSanBong.Size = new System.Drawing.Size(727, 693);
+            this.gridContrrolSanBong.TabIndex = 6;
+            this.gridContrrolSanBong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
@@ -462,7 +462,7 @@ namespace QuanLySanBongMini
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5});
-            this.gridView2.GridControl = this.gridContrrolDatSan;
+            this.gridView2.GridControl = this.gridContrrolSanBong;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsBehavior.ReadOnly = true;
@@ -478,7 +478,7 @@ namespace QuanLySanBongMini
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 99;
+            this.gridColumn1.Width = 77;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -500,7 +500,7 @@ namespace QuanLySanBongMini
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 96;
+            this.gridColumn2.Width = 66;
             // 
             // repositoryItemButtonEdit2
             // 
@@ -519,7 +519,7 @@ namespace QuanLySanBongMini
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 96;
+            this.gridColumn3.Width = 105;
             // 
             // gridColumn4
             // 
@@ -528,7 +528,7 @@ namespace QuanLySanBongMini
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 196;
+            this.gridColumn4.Width = 215;
             // 
             // gridColumn5
             // 
@@ -537,7 +537,7 @@ namespace QuanLySanBongMini
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 215;
+            this.gridColumn5.Width = 239;
             // 
             // frmQLSanBong
             // 
@@ -563,7 +563,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridContrrolDatSan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContrrolSanBong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
@@ -582,7 +582,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.ComboBox cboLoaiSanBong;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraGrid.GridControl gridContrrolDatSan;
+        private DevExpress.XtraGrid.GridControl gridContrrolSanBong;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;

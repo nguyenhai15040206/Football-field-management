@@ -41,11 +41,18 @@ namespace QuanLySanBongMini
 
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            txtTenKH.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn3).ToString();
-            txtSDT.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn4).ToString();
-            numericUpDownDiemTL.Value = decimal.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn5).ToString());
+            try
+            {
+                txtTenKH.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn3).ToString();
+                txtSDT.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn4).ToString();
+                numericUpDownDiemTL.Value = decimal.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn5).ToString());
 
-            maKH = int.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn2).ToString());
+                maKH = int.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn2).ToString());
+            }
+            catch
+            {
+                return;
+            }
 
         }
 

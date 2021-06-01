@@ -73,6 +73,16 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1_15479_soccer_ball_clip_art_soccer_balls_coloring_pages_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1601833 {
             get {
                 object obj = ResourceManager.GetObject("1601833", resourceCulture);
@@ -234,6 +244,16 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NhanVien1 {
+            get {
+                object obj = ResourceManager.GetObject("NhanVien1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap repair_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("repair-removebg-preview", resourceCulture);
@@ -359,9 +379,30 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap transparent_online_payment_icon_smartphone_icon_payment_icon_5e24073cc2d615_5165774315794194527981_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("transparent-online-payment-icon-smartphone-icon-payment-icon-5e24073cc2d615.51657" +
+                        "74315794194527981-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap z2508984184183_1c07aa7b3ef59c19a5100f68077ebc98_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("z2508984184183_1c07aa7b3ef59c19a5100f68077ebc98-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2525335187690_01de74b6b6234fce8c62460120cb2841_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("z2525335187690_01de74b6b6234fce8c62460120cb2841-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

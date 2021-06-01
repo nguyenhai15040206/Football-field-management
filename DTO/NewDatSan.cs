@@ -13,6 +13,7 @@ namespace DTO
 		private System.String _tenKhachhang;
 
 		private System.String _tenNguoiDung;
+        private System.String _soDienThoai;
 
 		private System.DateTime _NgayDat;
 
@@ -38,5 +39,6 @@ namespace DTO
         public string GhiChu { get => _ghiChu; set => _ghiChu = value; }
         public String GioVao { get => _GioVao; set => _GioVao = value; }
         public String GioRa { get => _GioRa; set => _GioRa = value; }
+        public string SoDienThoai { get => _soDienThoai; set => _soDienThoai = value; }
     }
 }

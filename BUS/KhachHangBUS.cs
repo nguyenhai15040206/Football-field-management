@@ -58,6 +58,13 @@ namespace BUS
         }
 
 
+        // lấy thông tin khách hàng từ số điện thoại
+        public int maKhachHang_soDienThoai(string soDienThoai)
+        {
+            return KhachHangDAO.Instance.thongTinKhachHang_soDienThoai(soDienThoai).maKhachHang;
+        }
+
+
         //kiêm tra trùng số điện thoại
         public bool KtraTrungSDTKhachHang(string input)
         {

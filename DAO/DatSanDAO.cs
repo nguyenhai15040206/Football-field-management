@@ -38,6 +38,7 @@ namespace DAO
                           {
                               TenSan = san.tenSan,
                               TenKhachhang = kh.tenKhachHang,
+                              SoDienThoai = kh.soDienThoai,
                               TenNguoiDung = nd.tenNguoiDung,
                               NgayDat = ds.NgayDat,
                               GioVao = new DateTime(ds.GioVao.Ticks).ToString("HH:mm"),
@@ -73,6 +74,30 @@ namespace DAO
             catch(Exception e)
             {
                 Console.WriteLine("" + e);
+                return false;
+            }
+        }
+
+        // xóa đặt sân
+        public bool xoaDatSan(int maSan, int maKhachHang, DateTime ngayDat, TimeSpan gioVao, TimeSpan gioRa)
+        {
+            try
+            {
+                var queryDatSan =
+                    (from DatSan in db.DatSans
+                     where
+                       DatSan.maSan == maSan &&
+                       DatSan.maKhachHang == maKhachHang &&
+                       DatSan.NgayDat == ngayDat &&
+                       DatSan.GioVao == gioVao &&
+                       DatSan.GioRa == gioRa
+                     select DatSan).SingleOrDefault();
+                db.DatSans.DeleteOnSubmit(queryDatSan);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
                 return false;
             }
         }

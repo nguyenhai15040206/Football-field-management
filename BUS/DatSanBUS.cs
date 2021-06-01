@@ -37,5 +37,11 @@ namespace BUS
         {
             return DatSanDAO.Instance.datSan(maSan, maKhachHang, maNguoiDung, ngayDat, gioVao, gioRa, tienSan, tienCoc, ghiChu);
         }
+
+        // hủy lịch
+        public bool xoaDatSan(int maSan, int maKhachHang, DateTime ngayDat, TimeSpan gioVao, TimeSpan gioRa)
+        {
+            return DatSanDAO.Instance.xoaDatSan(maSan, maKhachHang, ngayDat, gioVao, gioRa);
+        }
     }
 }

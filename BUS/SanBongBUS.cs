@@ -24,6 +24,12 @@ namespace BUS
                 return instance;
             }
         }
+
+        //
+        public void loadTaCaSanBong(GridControl gv)
+        {
+            gv.DataSource = SanBongDAO.Instance.loadTatCaSanBong();
+        }
         //thêm sân bóng
         public bool themSan(string ten, bool tinhTrang, int ma)
         {
@@ -48,6 +54,14 @@ namespace BUS
         {
             var san = SanBongDAO.Instance.loadTatCaSanBongBaoTri();
             grid.DataSource = san;
+        }
+
+        // lấy ra maSan với ten san bóng
+        public int maSan_voiTenSan(string tenSan)
+        {
+            int maSan = 0;
+            maSan = SanBongDAO.Instance.maSan_voiTenSan(tenSan.Trim());
+            return maSan;
         }
 
     }

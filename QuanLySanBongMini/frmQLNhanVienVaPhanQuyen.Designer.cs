@@ -31,6 +31,7 @@ namespace QuanLySanBongMini
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLNhanVienVaPhanQuyen));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -183,12 +184,23 @@ namespace QuanLySanBongMini
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1394, 44);
             this.panel1.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label8.Location = new System.Drawing.Point(0, 38);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(1394, 4);
+            this.label8.TabIndex = 4;
             // 
             // label1
             // 
@@ -1254,6 +1266,7 @@ namespace QuanLySanBongMini
             this.gridView6.OptionsView.ColumnAutoWidth = false;
             this.gridView6.OptionsView.ShowGroupExpandCollapseButtons = false;
             this.gridView6.OptionsView.ShowGroupPanel = false;
+            this.gridView6.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView6_RowClick);
             // 
             // gridColumn29
             // 
@@ -1433,6 +1446,7 @@ namespace QuanLySanBongMini
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmQLNhanVienVaPhanQuyen";
             this.Text = "frmQLNhanVienVaPhanQuyen";
+            this.Load += new System.EventHandler(this.frmQLNhanVienVaPhanQuyen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1592,5 +1606,6 @@ namespace QuanLySanBongMini
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit6;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -102,5 +102,35 @@ namespace QuanLySanBongMini
                 form.Activate();
             }
         }
+
+        private void thốngKêDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = IstActive(typeof(frmThongKeDoanhThu));
+            if (form == null)
+            {
+                frmThongKeDoanhThu frm = new frmThongKeDoanhThu();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = IstActive(typeof(frmThanhToanSan));
+            if (form == null)
+            {
+                frmThanhToanSan frm = new frmThanhToanSan();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
     }
 }

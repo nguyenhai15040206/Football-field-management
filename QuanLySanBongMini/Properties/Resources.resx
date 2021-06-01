@@ -133,6 +133,9 @@
   <data name="rsz_kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-removebg-preview_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-removebg-preview_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="transparent-online-payment-icon-smartphone-icon-payment-icon-5e24073cc2d615.5165774315794194527981-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transparent-online-payment-icon-smartphone-icon-payment-icon-5e24073cc2d615.5165774315794194527981-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btuufon112" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btuufon112.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,6 +154,9 @@
   <data name="6954027" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6954027.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="boscheduler_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boscheduler_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ezgif.com-gif-maker-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ezgif.com-gif-maker-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -165,6 +171,9 @@
   </data>
   <data name="4595.jpg_wh860" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4595.jpg_wh860.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z2525335187690_01de74b6b6234fce8c62460120cb2841-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z2525335187690_01de74b6b6234fce8c62460120cb2841-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_addpink-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_addpink-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,7 +220,10 @@
   <data name="butbut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\butbut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="boscheduler_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boscheduler_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NhanVien1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NhanVien1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

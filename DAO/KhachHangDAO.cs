@@ -59,6 +59,18 @@ namespace DAO
 
         }
 
+        // lấy thông tin khách hàng với số điện thoại
+        public KhachHang thongTinKhachHang_soDienThoai(string soDienThoai)
+        {
+            var kh = db.KhachHangs.SingleOrDefault(m => m.soDienThoai == soDienThoai);
+            if (kh == null)
+            {
+                return null;
+            }
+            return kh;
+
+        }
+
 
 
         ///Thêm khách hàng

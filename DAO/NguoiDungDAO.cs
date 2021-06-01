@@ -28,7 +28,45 @@ namespace DAO
 
         QuanLySanBongDataContext db = new QuanLySanBongDataContext();
 
+        // load nhóm người dùng
+        public List<QL_NhomNguoiDung> loadNhomNguoiDung()
+        {
+            var listNguoiDung = db.QL_NhomNguoiDungs.ToList();
+            return listNguoiDung;
 
+        }
+
+        // load người dùng
+        public List<NguoiDung> loadNguoiDung()
+        {
+            var listNguoiDung = db.NguoiDungs.ToList();
+            return listNguoiDung;
+        }
+        // load người dùng theo mã nhóm người dùng
+        public List<NguoiDung> loadNguoiDungTheoNhom(int maNhom)
+        {
+            var listNguoiDung = (from nd in db.NguoiDungs
+                                 join nhom in db.QL_NguoiDungNhomNguoiDungs on nd.maNguoiDung equals nhom.maNguoiDung
+                                 where nhom.maNhom == maNhom
+                                 select (nd)).ToList();
+            return listNguoiDung;
+        }
+
+
+        // load người dùng chưa có trong nhóm
+        public List<NguoiDung> loadNguoiDungChuaCoNhom()
+        {
+            var listNguoiDung = (from nd in db.NguoiDungs
+                                 where
+                                   !
+                                     (from QL_NguoiDungNhomNguoiDung in db.QL_NguoiDungNhomNguoiDungs
+                                      select new
+                                      {
+                                          MaNguoiDung = (int)QL_NguoiDungNhomNguoiDung.NguoiDung.maNguoiDung
+                                      }).Contains(new { MaNguoiDung = nd.maNguoiDung })
+                                 select nd).ToList();
+            return listNguoiDung;
+        }
 
         // check config
         public int checConfig()

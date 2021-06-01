@@ -15,6 +15,7 @@ namespace QuanLySanBongMini
 {
     public partial class frmDatSan : Form
     {
+        int row = -1;
         public UserControlSanBong[] sanBong;
         public static string ptenSan = string.Empty;
         public static string pMaSan = string.Empty;
@@ -30,8 +31,6 @@ namespace QuanLySanBongMini
         public frmDatSan()
         {
             InitializeComponent();
-            //dateTimePickerNgayDat.MinDate = DateTime.Now;
-
         }
 
 
@@ -58,30 +57,46 @@ namespace QuanLySanBongMini
 
         }
 
-        private void toolStripButtonLamMoi_Click(object sender, EventArgs e)
+        public void resetDuLieu()
         {
+            DatSanBUS.Instance.loadDatSan(gridContrrolDatSan);
             flowLayoutPanel1.Controls.Clear();
             numericUpDownGioThue.Value = 1;
             cboKhachHang.SelectedIndex = 0;
+            maLoaiSan = 0;
+            maSan = 0;
+            maKhachHang = 0;
+            row = -1;
+            ckb11Nguoi.Checked = ckb5Nguoi.Checked = ckb7Nguoi.Checked = false;
             dateTimePickerGioVao.Value = DateTime.Now;
             dateTimePickerGioRa.Value = DateTime.Now;
             lblChonSanBong.Text = "CHƯA CHỌN SÂN BÓNG";
+            dateTimePickerNgayDat.MinDate = DateTime.Now;
             foreach (Control item in groupBox1.Controls)
             {
-                if(item.GetType() == typeof(TextBox))
+                if (item.GetType() == typeof(TextBox))
                 {
                     item.Text = string.Empty;
-                }    
+                }
             }
+        }
+
+        private void toolStripButtonLamMoi_Click(object sender, EventArgs e)
+        {
+            resetDuLieu();
+            toolStripButtonLuuDatSan.Enabled = true;
+            
         }
 
         private void toolStripButtonLuuDatSan_Click(object sender, EventArgs e)
         {
             if (txtTenKH.Text.Trim().Length > 0 && txtSoDT.Text.Trim().Length > 0 && txtTienSan.Text.Trim().Length > 0)
             {
-                if (dateTimePickerGioVao.Value.AddHours(0.9).TimeOfDay > dateTimePickerGioRa.Value.TimeOfDay || dateTimePickerGioVao.Value.TimeOfDay >= dateTimePickerGioRa.Value.TimeOfDay)
+                if (dateTimePickerGioVao.Value.AddHours(0.9).TimeOfDay > dateTimePickerGioRa.Value.TimeOfDay || dateTimePickerGioVao.Value.TimeOfDay >= dateTimePickerGioRa.Value.TimeOfDay
+                    || dateTimePickerGioVao.Value < DateTime.Now)
                 {
                     MessageBox.Show("Vui lòng chọn số lượng giờ đá");
+                    return;
                 }
                 else
                 {
@@ -89,125 +104,131 @@ namespace QuanLySanBongMini
                     {
                         if (maSan != 0)
                         {
-                            if (DatSanBUS.Instance.datSan(maSan, maKhachHang, frmMain.maND, dateTimePickerNgayDat.Value.Date, dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay, tienSan, double.Parse(txtDatCoc.Text.Trim()),  txtGhiChu.Text.Trim()))
+                            if (DatSanBUS.Instance.datSan(maSan, maKhachHang, 1, dateTimePickerNgayDat.Value.Date, TimeSpan.Parse(new DateTime(dateTimePickerGioVao.Value.TimeOfDay.Ticks).ToString("HH:mm")),
+                                TimeSpan.Parse(new DateTime(dateTimePickerGioRa.Value.TimeOfDay.Ticks).ToString("HH:mm")), tienSan, double.Parse(txtDatCoc.Text.Trim()),  txtGhiChu.Text.Trim()))
                             {
-                                MessageBox.Show("Thêm thành công!");
+                                MessageBox.Show("Thêm lịch đặt sân thành công!");
                                 loadLaiSanBongConTrong();
-                                DatSanBUS.Instance.loadDatSan(gridContrrolDatSan);
                                 maKhachHang = 0;
                                 maSan = 0;
                                 tienSan = 0;
+                                resetDuLieu();
                             }
                             else
                             {
                                 MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin");
+                                return;
                             }
                         }
                         else
                         {
                             MessageBox.Show("Vui lòng tìm và chọn sân bóng cần đặt!");
+                            return;
                         }    
                     }
                     else
                     {
                         MessageBox.Show("Vui lòng chọn khách hàng!");
+                        return;
                     }    
                 }    
             }
             else
             {
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin!");
+                return;
             }    
         }
 
         private void btnBatDau_Click(object sender, EventArgs e)
         {
-            if (maLoaiSan != 0)
+            if (dateTimePickerGioVao.Value >= DateTime.Now)
             {
-                dateTimePickerGioRa.Value = dateTimePickerGioVao.Value.AddHours(double.Parse(numericUpDownGioThue.Value.ToString()));
-                // Tham lam
-                double gioVao = (double)dateTimePickerGioVao.Value.Hour + (double)((double)dateTimePickerGioVao.Value.Minute / 60);
-                double soGio = (double)numericUpDownGioThue.Value;
-                double gioRa = gioVao + soGio;
-                List<DonGiaGio> dgg = DonGiaGioBUS.Instance.loadDonGiaGio_maLoaiSan(maLoaiSan);
-                if(dgg.Count ==0)
+                if (maLoaiSan != 0)
                 {
-                    MessageBox.Show("Chưa cập nhập đơn giá cho loại sân này");
-                    return;
-                }    
-                for (int i = 0; i < dgg.Count - 1; i++)
-                {
-                    if (gioVao >= dgg[i].tuKhungGio && gioVao < dgg[i].denKhungGio)
+                    dateTimePickerGioRa.Value = dateTimePickerGioVao.Value.AddHours(double.Parse(numericUpDownGioThue.Value.ToString()));
+                    // Tham lam
+                    double gioVao = (double)dateTimePickerGioVao.Value.Hour + (double)((double)dateTimePickerGioVao.Value.Minute / 60);
+                    double soGio = (double)numericUpDownGioThue.Value;
+                    double gioRa = gioVao + soGio;
+                    List<DonGiaGio> dgg = DonGiaGioBUS.Instance.loadDonGiaGio_maLoaiSan(maLoaiSan);
+                    if (dgg.Count == 0)
                     {
-                        ptuKhungGio = dgg[i].tuKhungGio;
-                        pdenKhungGio = dgg[i].denKhungGio;
-                        if (pdenKhungGio - gioVao != soGio)
+                        MessageBox.Show("Chưa cập nhập đơn giá cho loại sân này");
+                        return;
+                    }
+                    for (int i = 0; i < dgg.Count - 1; i++)
+                    {
+                        if (gioVao >= dgg[i].tuKhungGio && gioVao < dgg[i].denKhungGio)
                         {
-                            gioDu = soGio - (pdenKhungGio - gioVao);
-                            tien += (pdenKhungGio - gioVao) * (double)dgg[i].donGia;
-                            if (gioDu != 0)
+                            ptuKhungGio = dgg[i].tuKhungGio;
+                            pdenKhungGio = dgg[i].denKhungGio;
+                            if (pdenKhungGio - gioVao < soGio)
                             {
-                                double m = gioDu;
-                                for (int j = i + 1; j < dgg.Count; j++)
+                                gioDu = soGio - (pdenKhungGio - gioVao);
+                                tien += (pdenKhungGio - gioVao) * (double)dgg[i].donGia;
+                                if (gioDu != 0)
                                 {
-                                    if (dgg[j].denKhungGio - (dgg[j - 1].denKhungGio + m) >= 0)
+                                    double m = gioDu;
+                                    for (int j = i + 1; j < dgg.Count; j++)
                                     {
-                                        tien += m * (double)dgg[j].donGia;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        m = (dgg[j - 1].denKhungGio + m) - dgg[j].denKhungGio;
-                                        tien += (dgg[j].denKhungGio - dgg[j].tuKhungGio) * (double)dgg[j].donGia;
-                                        if (m != 0)
+                                        if (dgg[j].denKhungGio - (dgg[j - 1].denKhungGio + m) >= 0)
                                         {
-                                            continue;
+                                            tien += m * (double)dgg[j].donGia;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            m = (dgg[j - 1].denKhungGio + m) - dgg[j].denKhungGio;
+                                            tien += (dgg[j].denKhungGio - dgg[j].tuKhungGio) * (double)dgg[j].donGia;
+                                            if (m != 0)
+                                            {
+                                                continue;
+                                            }
                                         }
                                     }
+                                }
+                                else
+                                {
+                                    return;
                                 }
                             }
                             else
                             {
-                                return;
+                                tien = soGio * (double)dgg[i].donGia;
+                                break;
                             }
-                        }
-                        else
-                        {
-                            tien = soGio * (double)dgg[i].donGia;
                             break;
                         }
-                        break;
+                        continue;
                     }
-                    continue;
-                }
-                if (tien == 0)
-                {
-                    MessageBox.Show("Giờ này chưa cập nhập đon giá! Vui lòng chọn giờ khác");
-                    return;
+                    if (tien == 0)
+                    {
+                        MessageBox.Show("Giờ này chưa cập nhập đon giá! Vui lòng chọn giờ khác");
+                        return;
+                    }
+                    else
+                    {
+                        txtTienSan.Text = string.Format("{0:0,0} vnđ", Math.Round(tien, 0));
+                        tienSan = tien;
+                        tien = 0;
+                    }
                 }
                 else
                 {
-                    txtTienSan.Text = string.Format("{0:0,0} vnđ", Math.Round(tien, 0));
-                    tienSan = tien;
-                    tien = 0;
+                    MessageBox.Show("Vui lòng chọn sân bóng");
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn sân bóng");
+                MessageBox.Show("Vui lòng chọn giờ vào hợp lệ");
+                toolTip1.SetToolTip(dateTimePickerGioVao, "Giờ vào phải lớn hơn hoặc bằng giờ hiện tại");
+                dateTimePickerGioVao.Focus();
+                return;
             }    
 
         }
 
-        private void dockPanel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnTimSan_Click(object sender, EventArgs e)
         {
@@ -228,6 +249,7 @@ namespace QuanLySanBongMini
             if (listSanBong == null)
             {
                 MessageBox.Show("Không có sân trống với loại sân này!");
+                return;
             }
             else
             {
@@ -245,9 +267,34 @@ namespace QuanLySanBongMini
             }
         }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void toolStripButtonHuySan_Click(object sender, EventArgs e)
         {
-            
+            if (row !=-1)
+            {
+                DialogResult rs = MessageBox.Show("Bạn có chắc muốn hủy lịch đặt này không?", "Thông báo hủy sân", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (rs == DialogResult.Yes)
+                {
+                    if (DatSanBUS.Instance.xoaDatSan(maSan, int.Parse(cboKhachHang.SelectedValue.ToString()), dateTimePickerNgayDat.Value.Date,
+                        TimeSpan.Parse(new DateTime(dateTimePickerGioVao.Value.TimeOfDay.Ticks).ToString("HH:mm")),
+                                        TimeSpan.Parse(new DateTime(dateTimePickerGioRa.Value.TimeOfDay.Ticks).ToString("HH:mm"))))
+                    {
+                        MessageBox.Show("Xóa lịch đặt sân thành công!");
+                        resetDuLieu();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại, vui lòng kiểm tra lại thông tin!");
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn lịch đặt sân cần xóa", "Thông báo hủy sân", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }    
         }
 
         private void cboKhachHang_SelectedIndexChanged(object sender, EventArgs e)
@@ -264,11 +311,6 @@ namespace QuanLySanBongMini
             }
         }
 
-        private void txtTienSan_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
         private void txtDatCoc_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -277,7 +319,7 @@ namespace QuanLySanBongMini
             }
             else
             {
-                
+                toolTip1.SetToolTip(txtDatCoc, "Vui lòng nhập số tiền hợp lệ");
             }    
         }
 
@@ -286,18 +328,8 @@ namespace QuanLySanBongMini
             
         }
 
-        private void txtDatCoc_Click(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(txtDatCoc, "Vui lòng nhập số tiền");
-        }
 
-        private void txtDatCoc_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(txtDatCoc, "Vui lòng nhập số tiền");
-        }
-
-
-
+        #region sự kiện cho checkBox
         private void ckb5Nguoi_CheckedChanged(object sender, EventArgs e)
         {
             if(ckb5Nguoi.Checked== true)
@@ -345,6 +377,46 @@ namespace QuanLySanBongMini
             {
                 ckb7Nguoi.Checked = false;
             }
+        }
+        #endregion
+
+
+        // databiding
+        private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            toolStripButtonLuuDatSan.Enabled = false;
+            try
+            {
+                row = e.RowHandle;
+                dateTimePickerNgayDat.MinDate = DateTime.Parse("31/12/2020");
+                lblChonSanBong.Text = "SÂN ĐANG CHỌN: " + (gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnTenSan).ToString().ToUpper());
+                txtGhiChu.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnGhiChu).ToString();
+                txtTenKH.Text = (gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnTenKh).ToString());
+                txtSoDT.Text = (gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnSoDT).ToString());
+                txtTienSan.Text = string.Format("{0:0,0} vnđ", double.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnTienSan).ToString()));
+                txtDatCoc.Text = string.Format("{0:0,0} vnđ", double.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnTienCoc).ToString()));
+                maSan = SanBongBUS.Instance.maSan_voiTenSan(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnTenSan).ToString());
+                dateTimePickerNgayDat.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnNgayDat).ToString();
+                dateTimePickerGioVao.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnGioVao).ToString();
+                dateTimePickerGioRa.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnGioRa).ToString();
+                maKhachHang = KhachHangBUS.Instance.maKhachHang_soDienThoai(txtSoDT.Text.Trim());
+                cboKhachHang.SelectedValue = maKhachHang;
+            }
+            catch
+            {
+                return;
+            }
+
+        }
+
+        private void txtTenKH_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void simpleButtonThemKH_Click(object sender, EventArgs e)
+        {
+            frmQLKhachHang frm = new frmQLKhachHang();
+            frm.ShowDialog();
         }
     }
 }
