@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v19.2" />
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -64,6 +67,9 @@
     <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="QuanLySanBongMini">
+      <HintPath>obj\Debug\QuanLySanBongMini.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -71,6 +77,8 @@
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -99,6 +107,12 @@
     </Compile>
     <Compile Include="frmDatSan.Designer.cs">
       <DependentUpon>frmDatSan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGioiThieuSanBong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGioiThieuSanBong.Designer.cs">
+      <DependentUpon>frmGioiThieuSanBong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -150,6 +164,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlBangGiaGio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlBangGiaGio.Designer.cs">
+      <DependentUpon>UserControlBangGiaGio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlGioiThieuSan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlGioiThieuSan.Designer.cs">
+      <DependentUpon>UserControlGioiThieuSan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlSanBong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -164,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatSan.resx">
       <DependentUpon>frmDatSan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGioiThieuSanBong.resx">
+      <DependentUpon>frmGioiThieuSanBong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -193,6 +222,13 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlBangGiaGio.resx">
+      <DependentUpon>UserControlBangGiaGio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlGioiThieuSan.resx">
+      <DependentUpon>UserControlGioiThieuSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlSanBong.resx">
       <DependentUpon>UserControlSanBong.cs</DependentUpon>
@@ -322,6 +358,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\71iaJi9LcL_SX425_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-manchester-united-f-c-liverpool-f-c-football-man-attraktive-inspiration-manchester-united-wandtatto-5bf378129f3475.0136628415426826426521-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lich-thi-dau-bong-da-hom-nay-ngay12-41523479911.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backdrop-phong-nen-su-kien-giai-bong-da-dep-file-psd-2051.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z2527808536980_0131e36eb61b5df6cc67674defda4f9b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z2527813046685_6f539f57a18e943fbedd85a7483a225d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z2527813051251_34abbf4f15e5e073850e1b80a834fb71.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-football-shading-poster-background-vector-material-image_127994.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-football-shading-poster-background-vector-material-image_127994 %281%29 %281%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

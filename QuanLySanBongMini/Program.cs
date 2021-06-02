@@ -19,17 +19,16 @@ namespace QuanLySanBongMini
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            frmDangNhap frm = new frmDangNhap();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                frmMain mainForm = new frmMain();
-                mainForm.thongTinNguoiDung(frm.thongTinND);
-                mainForm.maNguoiDung(Convert.ToString(frm.maNguoiDung));
-                frm.Close();
-                Application.Run(mainForm);
-            }
-            //Application.Run(new frmQLNhanVienVaPhanQuyen());
-            //a
+            //frmDangNhap frm = new frmDangNhap();
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    frmMain mainForm = new frmMain();
+            //    mainForm.thongTinNguoiDung(frm.thongTinND);
+            //    mainForm.maNguoiDung(Convert.ToString(frm.maNguoiDung));
+            //    frm.Close();
+            //    Application.Run(mainForm);
+            //}
+            Application.Run(new frmQuanLySanBong());
         }
     }
 }

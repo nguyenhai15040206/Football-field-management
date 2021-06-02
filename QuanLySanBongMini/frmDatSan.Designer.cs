@@ -32,6 +32,7 @@ namespace QuanLySanBongMini
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatSan));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -91,7 +92,6 @@ namespace QuanLySanBongMini
             this.ckb7Nguoi = new System.Windows.Forms.CheckBox();
             this.ckb5Nguoi = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -120,6 +120,16 @@ namespace QuanLySanBongMini
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1394, 44);
             this.panel1.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.BackColor = System.Drawing.Color.Black;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label9.Location = new System.Drawing.Point(0, 36);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(1394, 4);
+            this.label9.TabIndex = 4;
             // 
             // label1
             // 
@@ -446,6 +456,8 @@ namespace QuanLySanBongMini
             // 
             // cboKhachHang
             // 
+            this.cboKhachHang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboKhachHang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboKhachHang.FormattingEnabled = true;
             this.cboKhachHang.Location = new System.Drawing.Point(161, 69);
             this.cboKhachHang.Name = "cboKhachHang";
@@ -800,16 +812,6 @@ namespace QuanLySanBongMini
             this.ckb5Nguoi.Text = "Sân 5 người";
             this.ckb5Nguoi.UseVisualStyleBackColor = true;
             this.ckb5Nguoi.CheckedChanged += new System.EventHandler(this.ckb5Nguoi_CheckedChanged);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.BackColor = System.Drawing.Color.Black;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Location = new System.Drawing.Point(0, 36);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(1394, 4);
-            this.label9.TabIndex = 4;
             // 
             // frmDatSan
             // 

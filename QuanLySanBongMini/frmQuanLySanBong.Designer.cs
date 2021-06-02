@@ -29,15 +29,18 @@ namespace QuanLySanBongMini
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLySanBong));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelShow = new System.Windows.Forms.Panel();
             this.btnQLKhoHang = new DevExpress.XtraEditors.SimpleButton();
             this.btnQLGiaCa = new DevExpress.XtraEditors.SimpleButton();
             this.btnQLSanBong = new DevExpress.XtraEditors.SimpleButton();
+            this.panelShow = new System.Windows.Forms.Panel();
+            this.userControlBangGiaGio1 = new QuanLySanBongMini.UserControlBangGiaGio();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelShow.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,15 +76,6 @@ namespace QuanLySanBongMini
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(289, 707);
             this.panel2.TabIndex = 3;
-            // 
-            // panelShow
-            // 
-            this.panelShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelShow.Location = new System.Drawing.Point(289, 54);
-            this.panelShow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelShow.Name = "panelShow";
-            this.panelShow.Size = new System.Drawing.Size(1105, 707);
-            this.panelShow.TabIndex = 4;
             // 
             // btnQLKhoHang
             // 
@@ -134,6 +128,26 @@ namespace QuanLySanBongMini
             this.btnQLSanBong.TabIndex = 0;
             this.btnQLSanBong.Text = "Quản lý sân bóng";
             // 
+            // panelShow
+            // 
+            this.panelShow.Controls.Add(this.userControlBangGiaGio1);
+            this.panelShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelShow.Location = new System.Drawing.Point(289, 54);
+            this.panelShow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelShow.Name = "panelShow";
+            this.panelShow.Size = new System.Drawing.Size(1105, 707);
+            this.panelShow.TabIndex = 4;
+            // 
+            // userControlBangGiaGio1
+            // 
+            this.userControlBangGiaGio1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userControlBangGiaGio1.BackgroundImage")));
+            this.userControlBangGiaGio1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.userControlBangGiaGio1.Location = new System.Drawing.Point(-91, -63);
+            this.userControlBangGiaGio1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userControlBangGiaGio1.Name = "userControlBangGiaGio1";
+            this.userControlBangGiaGio1.Size = new System.Drawing.Size(1306, 635);
+            this.userControlBangGiaGio1.TabIndex = 0;
+            // 
             // frmQuanLySanBong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -151,6 +165,7 @@ namespace QuanLySanBongMini
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelShow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -164,5 +179,6 @@ namespace QuanLySanBongMini
         private DevExpress.XtraEditors.SimpleButton btnQLSanBong;
         private DevExpress.XtraEditors.SimpleButton btnQLKhoHang;
         private DevExpress.XtraEditors.SimpleButton btnQLGiaCa;
+        private UserControlBangGiaGio userControlBangGiaGio1;
     }
 }

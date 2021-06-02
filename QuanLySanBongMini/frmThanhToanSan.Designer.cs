@@ -83,6 +83,7 @@ namespace QuanLySanBongMini
             this.panel4 = new System.Windows.Forms.Panel();
             this.treeListThucUong = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.btnXoaThucUong = new System.Windows.Forms.DataGridViewImageColumn();
             this.cbbThucUong = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -179,6 +180,7 @@ namespace QuanLySanBongMini
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnXoaThucUong,
             this.cbbThucUong,
             this.Column3,
             this.Column4,
@@ -190,6 +192,7 @@ namespace QuanLySanBongMini
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1097, 341);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel6
             // 
@@ -224,7 +227,6 @@ namespace QuanLySanBongMini
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1097, 340);
             this.panel8.TabIndex = 0;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // groupBox1
             // 
@@ -264,7 +266,6 @@ namespace QuanLySanBongMini
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết đặt sân và thanh toán";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // textBox8
             // 
@@ -661,6 +662,13 @@ namespace QuanLySanBongMini
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
             // 
+            // btnXoaThucUong
+            // 
+            this.btnXoaThucUong.HeaderText = "";
+            this.btnXoaThucUong.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.btnXoaThucUong.Name = "btnXoaThucUong";
+            this.btnXoaThucUong.Width = 30;
+            // 
             // cbbThucUong
             // 
             this.cbbThucUong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -791,6 +799,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewImageColumn btnXoaThucUong;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbbThucUong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;

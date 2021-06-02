@@ -29,7 +29,6 @@ namespace QuanLySanBongMini
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLNhanVienVaPhanQuyen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -126,7 +125,6 @@ namespace QuanLySanBongMini
             this.repositoryItemButtonEdit6 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.btnLuuPhanQuyen = new DevExpress.XtraEditors.SimpleButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.treeList2 = new DevExpress.XtraTreeList.TreeList();
@@ -174,7 +172,6 @@ namespace QuanLySanBongMini
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
-            this.panel14.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeList2)).BeginInit();
@@ -1310,29 +1307,11 @@ namespace QuanLySanBongMini
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.btnLuuPhanQuyen);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1120, 60);
             this.panel14.TabIndex = 0;
-            // 
-            // btnLuuPhanQuyen
-            // 
-            this.btnLuuPhanQuyen.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuPhanQuyen.Appearance.Options.UseFont = true;
-            this.btnLuuPhanQuyen.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuPhanQuyen.AppearanceHovered.Options.UseFont = true;
-            this.btnLuuPhanQuyen.BackgroundImage = global::QuanLySanBongMini.Properties.Resources._6954027;
-            this.btnLuuPhanQuyen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLuuPhanQuyen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuPhanQuyen.ImageOptions.Image")));
-            this.btnLuuPhanQuyen.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnLuuPhanQuyen.Location = new System.Drawing.Point(19, 10);
-            this.btnLuuPhanQuyen.Name = "btnLuuPhanQuyen";
-            this.btnLuuPhanQuyen.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnLuuPhanQuyen.Size = new System.Drawing.Size(145, 43);
-            this.btnLuuPhanQuyen.TabIndex = 0;
-            this.btnLuuPhanQuyen.Text = "Lưu";
             // 
             // panel3
             // 
@@ -1491,7 +1470,6 @@ namespace QuanLySanBongMini
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
-            this.panel14.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeList2)).EndInit();
@@ -1589,7 +1567,6 @@ namespace QuanLySanBongMini
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private System.Windows.Forms.Panel panel14;
-        private DevExpress.XtraEditors.SimpleButton btnLuuPhanQuyen;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.GroupBox groupBox6;
         private DevExpress.XtraGrid.GridControl gridControl6;

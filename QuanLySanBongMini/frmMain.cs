@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DevExpress.XtraBars.Docking2010.Views.Tabbed;
 
 namespace QuanLySanBongMini
 {
@@ -22,6 +23,27 @@ namespace QuanLySanBongMini
             InitializeComponent();
             thongTinNguoiDung = new sendData(getTTNguoiDung);
             maNguoiDung = new sendData(getMaNguoiDung);
+
+            Form form = IstActive(typeof(frmGioiThieuSanBong));
+            if (form == null)
+            {
+                frmGioiThieuSanBong frm = new frmGioiThieuSanBong();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+
+            tabbedView1.DocumentAdded += TabbedView1_DocumentAdded;
+
+
+        }
+
+        private void TabbedView1_DocumentAdded(object sender, DevExpress.XtraBars.Docking2010.Views.DocumentEventArgs e)
+        {
+            ((Document)tabbedView1.Documents[tabbedView1.Documents.Count - 1]).Appearance.Header.BackColor = Color.SeaShell;
         }
 
         public void getTTNguoiDung(string ttNguoiDung)

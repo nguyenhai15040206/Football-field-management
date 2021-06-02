@@ -113,6 +113,16 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _71iaJi9LcL_SX425__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("71iaJi9LcL_SX425_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -136,6 +146,16 @@ namespace QuanLySanBongMini.Properties {
         internal static System.Drawing.Bitmap addpink_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("addpink-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backdrop_phong_nen_su_kien_giai_bong_da_dep_file_psd_2051 {
+            get {
+                object obj = ResourceManager.GetObject("backdrop-phong-nen-su-kien-giai-bong-da-dep-file-psd-2051", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -244,9 +264,51 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kisspng_manchester_united_f_c_liverpool_f_c_football_man_attraktive_inspiration_manchester_united_wandtatto_5bf378129f3475_0136628415426826426521_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-manchester-united-f-c-liverpool-f-c-football-man-attraktive-inspiration-m" +
+                        "anchester-united-wandtatto-5bf378129f3475.0136628415426826426521-removebg-previe" +
+                        "w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lich_thi_dau_bong_da_hom_nay_ngay12_41523479911 {
+            get {
+                object obj = ResourceManager.GetObject("lich-thi-dau-bong-da-hom-nay-ngay12-41523479911", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NhanVien1 {
             get {
                 object obj = ResourceManager.GetObject("NhanVien1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_football_shading_poster_background_vector_material_image_127994 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-football-shading-poster-background-vector-material-image_127994", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_football_shading_poster_background_vector_material_image_127994__1___1_ {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-football-shading-poster-background-vector-material-image_127994 (1) (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,6 +465,36 @@ namespace QuanLySanBongMini.Properties {
         internal static System.Drawing.Bitmap z2525335187690_01de74b6b6234fce8c62460120cb2841_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("z2525335187690_01de74b6b6234fce8c62460120cb2841-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2527808536980_0131e36eb61b5df6cc67674defda4f9b {
+            get {
+                object obj = ResourceManager.GetObject("z2527808536980_0131e36eb61b5df6cc67674defda4f9b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2527813046685_6f539f57a18e943fbedd85a7483a225d {
+            get {
+                object obj = ResourceManager.GetObject("z2527813046685_6f539f57a18e943fbedd85a7483a225d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2527813051251_34abbf4f15e5e073850e1b80a834fb71 {
+            get {
+                object obj = ResourceManager.GetObject("z2527813051251_34abbf4f15e5e073850e1b80a834fb71", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -41,9 +41,9 @@ namespace QuanLySanBongMini
             this.quảnLýNhânViênPhânQuyềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýĐặtSânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thốngKêDoanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.thốngKêDoanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -77,20 +77,20 @@ namespace QuanLySanBongMini
             // aToolStripMenuItem
             // 
             this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-            this.aToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.aToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.aToolStripMenuItem.Text = "Đăng nhập";
             this.aToolStripMenuItem.Click += new System.EventHandler(this.aToolStripMenuItem_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.thoátToolStripMenuItem.Text = "Thoát";
             // 
             // quảnLýNhânViênToolStripMenuItem
@@ -131,19 +131,19 @@ namespace QuanLySanBongMini
             this.quảnLýĐặtSânToolStripMenuItem.Text = "Bảo Trì Sân";
             this.quảnLýĐặtSânToolStripMenuItem.Click += new System.EventHandler(this.quảnLýĐặtSânToolStripMenuItem_Click);
             // 
-            // documentManager1
-            // 
-            this.documentManager1.MdiParent = this;
-            this.documentManager1.View = this.tabbedView1;
-            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
-            this.tabbedView1});
-            // 
             // thốngKêDoanhThuToolStripMenuItem
             // 
             this.thốngKêDoanhThuToolStripMenuItem.Name = "thốngKêDoanhThuToolStripMenuItem";
             this.thốngKêDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.thốngKêDoanhThuToolStripMenuItem.Text = "Thống Kê Doanh Thu";
             this.thốngKêDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.thốngKêDoanhThuToolStripMenuItem_Click);
+            // 
+            // documentManager1
+            // 
+            this.documentManager1.MdiParent = this;
+            this.documentManager1.View = this.tabbedView1;
+            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.tabbedView1});
             // 
             // frmMain
             // 

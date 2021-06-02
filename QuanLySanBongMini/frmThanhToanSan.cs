@@ -34,14 +34,16 @@ namespace QuanLySanBongMini
             //DonGiaGioBUS.Instance.loadDonGiaGio_TreeList(treeListDGG);
         }
 
-        private void panel8_Paint(object sender, PaintEventArgs e)
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(dataGridView1.Columns[e.RowIndex].Name == "btnXoaThucUong")
+            {
+                if(MessageBox.Show("Bạn có chắc muốn xóa thức uống này không?","Thông báo xóa!",MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                {
 
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+                }    
+            }    
         }
     }
 }

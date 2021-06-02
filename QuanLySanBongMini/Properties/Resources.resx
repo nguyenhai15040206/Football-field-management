@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icon-two-settings-cogwheels-icon-cog-icon-png-favpng-updnr1Z5wMVYm37mfx2EGxAdE-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-two-settings-cogwheels-icon-cog-icon-png-favpng-updnr1Z5wMVYm37mfx2EGxAdE-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1601833" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1601833.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,11 +145,14 @@
   <data name="btuufon112" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btuufon112.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icloud-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icloud-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-football-shading-poster-background-vector-material-image_127994" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-football-shading-poster-background-vector-material-image_127994.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_depositphotos_80362150-stock-illustration-money-exchange-icon-from-business-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_depositphotos_80362150-stock-illustration-money-exchange-icon-from-business-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,8 +172,14 @@
   <data name="rsz_1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="backdrop-phong-nen-su-kien-giai-bong-da-dep-file-psd-2051" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backdrop-phong-nen-su-kien-giai-bong-da-dep-file-psd-2051.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="rsz_repair-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_repair-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="butbut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\butbut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,17 +193,23 @@
   <data name="rsz_addpink-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_addpink-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="z2527813046685_6f539f57a18e943fbedd85a7483a225d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z2527813046685_6f539f57a18e943fbedd85a7483a225d.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="clean-icon-cleaner-icon-hacker-icon-vQ1cP2c8-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clean-icon-cleaner-icon-hacker-icon-vQ1cP2c8-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="savepink-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\savepink-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icloud-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icloud-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="savepink-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\savepink-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="savepink-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\savepink-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-removebg-preview-_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kissclipart-search-magnifiers-icon-magnifier-icon-icon-ada5d4bb918dc257-removebg-preview-_1_.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,11 +223,14 @@
   <data name="1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="kisspng-manchester-united-f-c-liverpool-f-c-football-man-attraktive-inspiration-manchester-united-wandtatto-5bf378129f3475.0136628415426826426521-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-manchester-united-f-c-liverpool-f-c-football-man-attraktive-inspiration-manchester-united-wandtatto-5bf378129f3475.0136628415426826426521-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="rsz_depositphotos_80362150-stock-illustration-money-exchange-icon-from-business-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_depositphotos_80362150-stock-illustration-money-exchange-icon-from-business-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="z2527813051251_34abbf4f15e5e073850e1b80a834fb71" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z2527813051251_34abbf4f15e5e073850e1b80a834fb71.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_transparent-supplier-icon-business-management-icon-inventory-i-5ed798c7e7fca92773728015911876559502-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_transparent-supplier-icon-business-management-icon-inventory-i-5ed798c7e7fca92773728015911876559502-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,16 +238,19 @@
   <data name="rsz_depositphotos_96581954-stock-illustration-home-circled-icon-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_depositphotos_96581954-stock-illustration-home-circled-icon-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-two-settings-cogwheels-icon-cog-icon-png-favpng-updnr1Z5wMVYm37mfx2EGxAdE-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-two-settings-cogwheels-icon-cog-icon-png-favpng-updnr1Z5wMVYm37mfx2EGxAdE-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lich-thi-dau-bong-da-hom-nay-ngay12-41523479911" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lich-thi-dau-bong-da-hom-nay-ngay12-41523479911.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="butbut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\butbut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="z2527808536980_0131e36eb61b5df6cc67674defda4f9b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z2527808536980_0131e36eb61b5df6cc67674defda4f9b.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="71iaJi9LcL_SX425_-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\71iaJi9LcL_SX425_-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NhanVien1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NhanVien1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1-15479_soccer-ball-clip-art-soccer-balls-coloring-pages-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-football-shading-poster-background-vector-material-image_127994 (1) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-football-shading-poster-background-vector-material-image_127994 (1) (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

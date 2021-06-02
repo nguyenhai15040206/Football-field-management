@@ -50,6 +50,43 @@ namespace DAO
             return listDGG;
         }
 
+        //
+        // load tất cả các đơn giá giờ với ngày cập nhật mới nhất
+        public List<NewDonGiaGio> loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan()
+        {
+            var listDGG = (from a in db.DonGiaGios
+                           from ls in db.LoaiSans
+                           from b in (
+                               (from DonGiaGio in db.DonGiaGios
+                                group DonGiaGio by new
+                                {
+                                    DonGiaGio.tuKhungGio,
+                                    DonGiaGio.denKhungGio
+                                } into g
+                                select new
+                                {
+                                    date = (DateTime?)g.Max(p => p.ngayCapNhat),
+                                    g.Key.tuKhungGio,
+                                    g.Key.denKhungGio
+                                }))
+
+                           where
+                             a.ngayCapNhat == b.date &&
+                             a.tuKhungGio == b.tuKhungGio &&
+                             a.denKhungGio == b.denKhungGio &&
+                             a.maloaiSan == ls.maLoaiSan
+                           select new NewDonGiaGio {
+                               MaloaiSan = a.maloaiSan,
+                               TuKhungGio = a.tuKhungGio,
+                               DenKhungGio = a.denKhungGio,
+                               NgayCapNhat = a.ngayCapNhat,
+                               TenLoaiSan = ls.tenLoai,
+                               DonGia = a.donGia
+
+                           }).ToList();
+            return listDGG;
+        }
+
 
 
         // load tất cả các đơn giá giờ với ngày cập nhật mới nhất và với maxLoaiSan 
