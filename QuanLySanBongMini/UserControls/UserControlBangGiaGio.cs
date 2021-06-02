@@ -20,7 +20,14 @@ namespace QuanLySanBongMini
 
         private void UserControlBangGiaGio_Load(object sender, EventArgs e)
         {
-            DonGiaGioBUS.Instance.loadDonGiaGio_NgayCNMoiNhat_ListView(listView1);
+            try
+            {
+                DonGiaGioBUS.Instance.loadDonGiaGio_NgayCNMoiNhat_ListView(listView1);
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }

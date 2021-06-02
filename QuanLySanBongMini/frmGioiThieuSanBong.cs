@@ -20,14 +20,14 @@ namespace QuanLySanBongMini
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            //bunifuTransition2.HideSync(userControlBangGiaGio1);
+            bunifuTransition2.HideSync(userControlBangGiaGio1);
             //bunifuTransition1.ShowSync(userControlGioiThieuSan1);
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            //bunifuTransition2.HideSync(userControlGioiThieuSan1);
-            //bunifuTransition1.ShowSync(userControlBangGiaGio1);
+           // bunifuTransition2.HideSync(userControlGioiThieuSan1);
+            bunifuTransition1.ShowSync(userControlBangGiaGio1);
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)

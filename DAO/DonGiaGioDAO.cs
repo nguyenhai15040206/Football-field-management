@@ -83,7 +83,7 @@ namespace DAO
                                TenLoaiSan = ls.tenLoai,
                                DonGia = a.donGia
 
-                           }).ToList();
+                           }).OrderBy(m=>m.MaloaiSan).ToList();
             return listDGG;
         }
 
