@@ -15,18 +15,18 @@ namespace QuanLySanBongMini
         public frmGioiThieuSanBong()
         {
             InitializeComponent();
-            //userControlGioiThieuSan1.Visible = true;
+            userControlGioiThieuSan1.Visible = true;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             bunifuTransition2.HideSync(userControlBangGiaGio1);
-            //bunifuTransition1.ShowSync(userControlGioiThieuSan1);
+            bunifuTransition1.ShowSync(userControlGioiThieuSan1);
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-           // bunifuTransition2.HideSync(userControlGioiThieuSan1);
+            bunifuTransition2.HideSync(userControlGioiThieuSan1);
             bunifuTransition1.ShowSync(userControlBangGiaGio1);
         }
 

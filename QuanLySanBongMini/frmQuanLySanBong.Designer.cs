@@ -37,7 +37,6 @@ namespace QuanLySanBongMini
             this.btnQLGiaCa = new DevExpress.XtraEditors.SimpleButton();
             this.btnQLSanBong = new DevExpress.XtraEditors.SimpleButton();
             this.panelShow = new System.Windows.Forms.Panel();
-            this.userControlBangGiaGio1 = new QuanLySanBongMini.UserControlBangGiaGio();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelShow.SuspendLayout();
@@ -130,7 +129,6 @@ namespace QuanLySanBongMini
             // 
             // panelShow
             // 
-            this.panelShow.Controls.Add(this.userControlBangGiaGio1);
             this.panelShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelShow.Location = new System.Drawing.Point(289, 54);
             this.panelShow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -140,13 +138,6 @@ namespace QuanLySanBongMini
             // 
             // userControlBangGiaGio1
             // 
-            this.userControlBangGiaGio1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userControlBangGiaGio1.BackgroundImage")));
-            this.userControlBangGiaGio1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userControlBangGiaGio1.Location = new System.Drawing.Point(-91, -63);
-            this.userControlBangGiaGio1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userControlBangGiaGio1.Name = "userControlBangGiaGio1";
-            this.userControlBangGiaGio1.Size = new System.Drawing.Size(1306, 635);
-            this.userControlBangGiaGio1.TabIndex = 0;
             // 
             // frmQuanLySanBong
             // 
@@ -179,6 +170,5 @@ namespace QuanLySanBongMini
         private DevExpress.XtraEditors.SimpleButton btnQLSanBong;
         private DevExpress.XtraEditors.SimpleButton btnQLKhoHang;
         private DevExpress.XtraEditors.SimpleButton btnQLGiaCa;
-        private UserControlBangGiaGio userControlBangGiaGio1;
     }
 }

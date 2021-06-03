@@ -23,7 +23,7 @@ namespace QuanLySanBongMini
             InitializeComponent();
             thongTinNguoiDung = new sendData(getTTNguoiDung);
             maNguoiDung = new sendData(getMaNguoiDung);
-
+            tabbedView1.DocumentAdded += TabbedView1_DocumentAdded;
             Form form = IstActive(typeof(frmGioiThieuSanBong));
             if (form == null)
             {
@@ -36,7 +36,7 @@ namespace QuanLySanBongMini
                 form.Activate();
             }
 
-            tabbedView1.DocumentAdded += TabbedView1_DocumentAdded;
+            
 
 
         }

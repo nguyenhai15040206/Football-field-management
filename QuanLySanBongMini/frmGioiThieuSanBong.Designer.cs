@@ -30,9 +30,9 @@ namespace QuanLySanBongMini
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation7 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGioiThieuSanBong));
-            BunifuAnimatorNS.Animation animation8 = new BunifuAnimatorNS.Animation();
             this.panel2 = new System.Windows.Forms.Panel();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -42,9 +42,10 @@ namespace QuanLySanBongMini
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.userControlBangGiaGio1 = new QuanLySanBongMini.UserControlBangGiaGio();
             this.bunifuTransition2 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.userControlGioiThieuSan1 = new QuanLySanBongMini.UserControlGioiThieuSan();
+            this.userControlBangGiaGio1 = new QuanLySanBongMini.UserControlBangGiaGio();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -100,6 +101,8 @@ namespace QuanLySanBongMini
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.bunifuTransition2.SetDecoration(this.simpleButton1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.simpleButton1, BunifuAnimatorNS.DecorationType.None);
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
             this.simpleButton1.Location = new System.Drawing.Point(1125, 2);
             this.simpleButton1.LookAndFeel.SkinName = "The Bezier";
             this.simpleButton1.LookAndFeel.UseWindowsXPTheme = true;
@@ -130,6 +133,8 @@ namespace QuanLySanBongMini
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::QuanLySanBongMini.Properties.Resources.kisspng_manchester_united_f_c_liverpool_f_c_football_man_attraktive_inspiration_manchester_united_wandtatto_5bf378129f3475_0136628415426826426521_removebg_preview;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox1.ErrorImage = null;
@@ -156,26 +161,27 @@ namespace QuanLySanBongMini
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
             this.bunifuTransition1.Cursor = null;
-            animation7.AnimateOnlyDifferences = true;
-            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
-            animation7.LeafCoeff = 1F;
-            animation7.MaxTime = 1F;
-            animation7.MinTime = 0F;
-            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
-            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
-            animation7.MosaicSize = 0;
-            animation7.Padding = new System.Windows.Forms.Padding(0);
-            animation7.RotateCoeff = 0F;
-            animation7.RotateLimit = 0F;
-            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
-            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
-            animation7.TimeCoeff = 0F;
-            animation7.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation7;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 1F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 0;
+            animation6.Padding = new System.Windows.Forms.Padding(0);
+            animation6.RotateCoeff = 0F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 0F;
+            animation6.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation6;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.userControlBangGiaGio1);
+            this.panel1.Controls.Add(this.userControlGioiThieuSan1);
             this.bunifuTransition2.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -183,6 +189,46 @@ namespace QuanLySanBongMini
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1400, 560);
             this.panel1.TabIndex = 2;
+            // 
+            // bunifuTransition2
+            // 
+            this.bunifuTransition2.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
+            this.bunifuTransition2.Cursor = null;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 20;
+            animation5.Padding = new System.Windows.Forms.Padding(30);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.bunifuTransition2.DefaultAnimation = animation5;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 20;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // userControlGioiThieuSan1
+            // 
+            this.userControlGioiThieuSan1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userControlGioiThieuSan1.BackgroundImage")));
+            this.userControlGioiThieuSan1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuTransition1.SetDecoration(this.userControlGioiThieuSan1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.userControlGioiThieuSan1, BunifuAnimatorNS.DecorationType.None);
+            this.userControlGioiThieuSan1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlGioiThieuSan1.Location = new System.Drawing.Point(0, 0);
+            this.userControlGioiThieuSan1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userControlGioiThieuSan1.Name = "userControlGioiThieuSan1";
+            this.userControlGioiThieuSan1.Size = new System.Drawing.Size(1400, 560);
+            this.userControlGioiThieuSan1.TabIndex = 0;
+            this.userControlGioiThieuSan1.Visible = false;
             // 
             // userControlBangGiaGio1
             // 
@@ -194,34 +240,8 @@ namespace QuanLySanBongMini
             this.userControlBangGiaGio1.Location = new System.Drawing.Point(0, 0);
             this.userControlBangGiaGio1.Name = "userControlBangGiaGio1";
             this.userControlBangGiaGio1.Size = new System.Drawing.Size(1400, 560);
-            this.userControlBangGiaGio1.TabIndex = 4;
+            this.userControlBangGiaGio1.TabIndex = 1;
             this.userControlBangGiaGio1.Visible = false;
-            // 
-            // bunifuTransition2
-            // 
-            this.bunifuTransition2.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
-            this.bunifuTransition2.Cursor = null;
-            animation8.AnimateOnlyDifferences = true;
-            animation8.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.BlindCoeff")));
-            animation8.LeafCoeff = 0F;
-            animation8.MaxTime = 1F;
-            animation8.MinTime = 0F;
-            animation8.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicCoeff")));
-            animation8.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicShift")));
-            animation8.MosaicSize = 20;
-            animation8.Padding = new System.Windows.Forms.Padding(30);
-            animation8.RotateCoeff = 0F;
-            animation8.RotateLimit = 0F;
-            animation8.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.ScaleCoeff")));
-            animation8.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.SlideCoeff")));
-            animation8.TimeCoeff = 0F;
-            animation8.TransparencyCoeff = 0F;
-            this.bunifuTransition2.DefaultAnimation = animation8;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 20;
-            this.bunifuElipse1.TargetControl = this;
             // 
             // frmGioiThieuSanBong
             // 
@@ -259,5 +279,6 @@ namespace QuanLySanBongMini
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Panel panel1;
         private UserControlBangGiaGio userControlBangGiaGio1;
+        private UserControlGioiThieuSan userControlGioiThieuSan1;
     }
 }
