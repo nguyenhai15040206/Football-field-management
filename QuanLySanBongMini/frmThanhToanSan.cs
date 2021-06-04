@@ -174,7 +174,9 @@ namespace QuanLySanBongMini
                     toolStripButtonThanhToan.Enabled = false;
                     if (MessageBox.Show("Thêm thành công! Bạn có muốn in hóa đơn này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-
+                        XtraReportXuatHoaDon rpt = new XtraReportXuatHoaDon();
+                        rpt.DataSource = ReportBUS.Instance.thanhToanSan(maHoaDon);
+                        rpt.ShowPreviewDialog();
                     }
                 }
             }

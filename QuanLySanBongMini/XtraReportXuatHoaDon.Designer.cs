@@ -920,7 +920,7 @@ namespace QuanLySanBongMini
             this.xrLabel23.StylePriority.UseTextAlignment = false;
             this.xrLabel23.Text = "xrLabel23";
             this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            this.xrLabel23.TextFormatString = "{0:0,0} vnđ";
+            this.xrLabel23.TextFormatString = "{0:#,#} vnđ";
             // 
             // xrLabel24
             // 
@@ -1229,7 +1229,7 @@ namespace QuanLySanBongMini
             this.xrLabel13.StylePriority.UseTextAlignment = false;
             this.xrLabel13.Text = "xrLabel13";
             this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            this.xrLabel13.TextFormatString = "{0:dd/MM/yyy}";
+            this.xrLabel13.TextFormatString = "{0:yyyy-MM-dd}";
             // 
             // xrLabel14
             // 
@@ -1317,7 +1317,6 @@ namespace QuanLySanBongMini
             this.ReportHeader});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
-            this.DataMember = "ChiTietHD";
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(9, 12, 8, 10);
