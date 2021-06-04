@@ -63,5 +63,19 @@ namespace BUS
                 return true;
             return false;
         }
+
+        // kiểm tra text chỉ nhập số
+        public static bool ktraChiNhapSo(string input)
+        {
+            try
+            {
+                int.Parse(input);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

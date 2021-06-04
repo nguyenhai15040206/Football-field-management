@@ -28,6 +28,7 @@ namespace QuanLySanBongMini
         double pdenKhungGio;
         double tien = 0;
         double gioDu = 0;
+        double gioVao, soGio, gioRa;
         public frmDatSan()
         {
             InitializeComponent();
@@ -92,139 +93,146 @@ namespace QuanLySanBongMini
         {
             if (txtTenKH.Text.Trim().Length > 0 && txtSoDT.Text.Trim().Length > 0 && txtTienSan.Text.Trim().Length > 0)
             {
-                if (dateTimePickerGioVao.Value.AddHours(0.9).TimeOfDay > dateTimePickerGioRa.Value.TimeOfDay || dateTimePickerGioVao.Value.TimeOfDay >= dateTimePickerGioRa.Value.TimeOfDay
-                    || dateTimePickerGioVao.Value < DateTime.Now)
+                if (maKhachHang != 0)
                 {
-                    MessageBox.Show("Vui lòng chọn số lượng giờ đá");
-                    return;
-                }
-                else
-                {
-                    if (maKhachHang != 0)
+                    if (maSan != 0)
                     {
-                        if (maSan != 0)
+                        if (DatSanBUS.Instance.datSan(maSan, maKhachHang, 1, dateTimePickerNgayDat.Value.Date, TimeSpan.Parse(new DateTime(dateTimePickerGioVao.Value.TimeOfDay.Ticks).ToString("HH:mm")),
+                            TimeSpan.Parse(new DateTime(dateTimePickerGioRa.Value.TimeOfDay.Ticks).ToString("HH:mm")), tienSan, double.Parse(txtDatCoc.Text.Trim()), txtGhiChu.Text.Trim()))
                         {
-                            if (DatSanBUS.Instance.datSan(maSan, maKhachHang, 1, dateTimePickerNgayDat.Value.Date, TimeSpan.Parse(new DateTime(dateTimePickerGioVao.Value.TimeOfDay.Ticks).ToString("HH:mm")),
-                                TimeSpan.Parse(new DateTime(dateTimePickerGioRa.Value.TimeOfDay.Ticks).ToString("HH:mm")), tienSan, double.Parse(txtDatCoc.Text.Trim()),  txtGhiChu.Text.Trim()))
-                            {
-                                MessageBox.Show("Thêm lịch đặt sân thành công!");
-                                loadLaiSanBongConTrong();
-                                maKhachHang = 0;
-                                maSan = 0;
-                                tienSan = 0;
-                                resetDuLieu();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin");
-                                return;
-                            }
+                            MessageBox.Show("Thêm lịch đặt sân thành công!");
+                            loadLaiSanBongConTrong();
+                            maKhachHang = 0;
+                            maSan = 0;
+                            tienSan = 0;
+                            resetDuLieu();
                         }
                         else
                         {
-                            MessageBox.Show("Vui lòng tìm và chọn sân bóng cần đặt!");
+                            MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin");
                             return;
-                        }    
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng chọn khách hàng!");
+                        MessageBox.Show("Vui lòng tìm và chọn sân bóng cần đặt!");
                         return;
-                    }    
-                }    
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn khách hàng!");
+                    return;
+                }
+
             }
             else
             {
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin!");
                 return;
-            }    
+            }  
         }
 
-        private void btnBatDau_Click(object sender, EventArgs e)
+        public void tinhTienSan()
         {
-            if (dateTimePickerGioVao.Value >= DateTime.Now)
+            if (maLoaiSan != 0)
             {
-                if (maLoaiSan != 0)
+                dateTimePickerGioRa.Value = dateTimePickerGioVao.Value.AddHours(double.Parse(numericUpDownGioThue.Value.ToString()));
+
+                // Tham lam
+                List<DonGiaGio> dgg = DonGiaGioBUS.Instance.loadDonGiaGio_maLoaiSan(maLoaiSan);
+                if (dgg.Count == 0)
                 {
-                    dateTimePickerGioRa.Value = dateTimePickerGioVao.Value.AddHours(double.Parse(numericUpDownGioThue.Value.ToString()));
-                    // Tham lam
-                    double gioVao = (double)dateTimePickerGioVao.Value.Hour + (double)((double)dateTimePickerGioVao.Value.Minute / 60);
-                    double soGio = (double)numericUpDownGioThue.Value;
-                    double gioRa = gioVao + soGio;
-                    List<DonGiaGio> dgg = DonGiaGioBUS.Instance.loadDonGiaGio_maLoaiSan(maLoaiSan);
-                    if (dgg.Count == 0)
+                    MessageBox.Show("Chưa cập nhập đơn giá cho loại sân này");
+                    return;
+                }
+                for (int i = 0; i < dgg.Count - 1; i++)
+                {
+                    if (gioVao >= dgg[i].tuKhungGio && gioVao < dgg[i].denKhungGio)
                     {
-                        MessageBox.Show("Chưa cập nhập đơn giá cho loại sân này");
-                        return;
-                    }
-                    for (int i = 0; i < dgg.Count - 1; i++)
-                    {
-                        if (gioVao >= dgg[i].tuKhungGio && gioVao < dgg[i].denKhungGio)
+                        ptuKhungGio = dgg[i].tuKhungGio;
+                        pdenKhungGio = dgg[i].denKhungGio;
+                        if (pdenKhungGio - gioVao < soGio)
                         {
-                            ptuKhungGio = dgg[i].tuKhungGio;
-                            pdenKhungGio = dgg[i].denKhungGio;
-                            if (pdenKhungGio - gioVao < soGio)
+                            gioDu = soGio - (pdenKhungGio - gioVao);
+                            tien += (pdenKhungGio - gioVao) * (double)dgg[i].donGia;
+                            if (gioDu != 0)
                             {
-                                gioDu = soGio - (pdenKhungGio - gioVao);
-                                tien += (pdenKhungGio - gioVao) * (double)dgg[i].donGia;
-                                if (gioDu != 0)
+                                double m = gioDu;
+                                for (int j = i + 1; j < dgg.Count; j++)
                                 {
-                                    double m = gioDu;
-                                    for (int j = i + 1; j < dgg.Count; j++)
+                                    if (dgg[j].denKhungGio - (dgg[j - 1].denKhungGio + m) >= 0)
                                     {
-                                        if (dgg[j].denKhungGio - (dgg[j - 1].denKhungGio + m) >= 0)
+                                        tien += m * (double)dgg[j].donGia;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        m = (dgg[j - 1].denKhungGio + m) - dgg[j].denKhungGio;
+                                        tien += (dgg[j].denKhungGio - dgg[j].tuKhungGio) * (double)dgg[j].donGia;
+                                        if (m != 0)
                                         {
-                                            tien += m * (double)dgg[j].donGia;
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            m = (dgg[j - 1].denKhungGio + m) - dgg[j].denKhungGio;
-                                            tien += (dgg[j].denKhungGio - dgg[j].tuKhungGio) * (double)dgg[j].donGia;
-                                            if (m != 0)
-                                            {
-                                                continue;
-                                            }
+                                            continue;
                                         }
                                     }
-                                }
-                                else
-                                {
-                                    return;
                                 }
                             }
                             else
                             {
-                                tien = soGio * (double)dgg[i].donGia;
-                                break;
+                                return;
                             }
+                        }
+                        else
+                        {
+                            tien = soGio * (double)dgg[i].donGia;
                             break;
                         }
-                        continue;
+                        break;
                     }
-                    if (tien == 0)
-                    {
-                        MessageBox.Show("Giờ này chưa cập nhập đon giá! Vui lòng chọn giờ khác");
-                        return;
-                    }
-                    else
-                    {
-                        txtTienSan.Text = string.Format("{0:0,0} vnđ", Math.Round(tien, 0));
-                        tienSan = tien;
-                        tien = 0;
-                    }
+                    continue;
+                }
+                if (tien == 0)
+                {
+                    MessageBox.Show("Giờ này chưa cập nhập đon giá! Vui lòng chọn giờ khác");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn sân bóng");
+                    tien = Math.Round(tien);
+                    txtTienSan.Text = string.Format("{0:0,0} vnđ",tien);
+                    tienSan = tien;
+                    tien = 0;
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn giờ vào hợp lệ");
-                toolTip1.SetToolTip(dateTimePickerGioVao, "Giờ vào phải lớn hơn hoặc bằng giờ hiện tại");
-                dateTimePickerGioVao.Focus();
-                return;
+                MessageBox.Show("Vui lòng chọn sân bóng");
+            }
+        }
+
+        private void btnBatDau_Click(object sender, EventArgs e)
+        {
+            gioVao = (double)dateTimePickerGioVao.Value.Hour + (double)((double)dateTimePickerGioVao.Value.Minute / 60);
+            soGio = (double)numericUpDownGioThue.Value;
+            gioRa = gioVao + soGio;
+            if (dateTimePickerNgayDat.Value.Date == DateTime.Now.Date)
+            {
+                if(dateTimePickerGioVao.Value.AddMinutes(17).TimeOfDay < DateTime.Now.TimeOfDay)
+                {
+                    MessageBox.Show("Vui lòng chọn giờ vào hợp lệ");
+                    toolTip1.SetToolTip(dateTimePickerGioVao, "Giờ vào phải lớn hơn hoặc bằng giờ hiện tại (được trễ 15p)");
+                    dateTimePickerGioVao.Focus();
+                    return;
+                    
+                }
+                else
+                {
+                    tinhTienSan();
+                }
+            }
+            else
+            {
+                tinhTienSan();
             }    
 
         }

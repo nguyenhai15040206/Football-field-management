@@ -52,6 +52,7 @@
       <Column Name="tienSan" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="tienCoc" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="ghiChu" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="KhachHang_DatSan" Member="KhachHang" ThisKey="maKhachHang" OtherKey="maKhachHang" Type="KhachHang" IsForeignKey="true" />
       <Association Name="NguoiDung_DatSan" Member="NguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="NguoiDung" IsForeignKey="true" />
       <Association Name="sanBong_DatSan" Member="sanBong" ThisKey="maSan" OtherKey="maSan" Type="sanBong" IsForeignKey="true" />
@@ -72,12 +73,20 @@
       <Column Name="maHoaDon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ngayLap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="tienSan" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="giamGia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="tienNuoc" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="tongTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="maSan" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="maKhachHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngayDat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="gioVao" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="gioRa" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
       <Column Name="maNguoiDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="HoaDon_ChiTietHD" Member="ChiTietHDs" ThisKey="maHoaDon" OtherKey="maHoaDon" Type="ChiTietHD" />
       <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="maKhachHang" OtherKey="maKhachHang" Type="KhachHang" IsForeignKey="true" />
       <Association Name="NguoiDung_HoaDon" Member="NguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="NguoiDung" IsForeignKey="true" />
+      <Association Name="sanBong_HoaDon" Member="sanBong" ThisKey="maSan" OtherKey="maSan" Type="sanBong" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
@@ -180,6 +189,7 @@
       <Column Name="maLoaiSan" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="sanBong_DatSan" Member="DatSans" ThisKey="maSan" OtherKey="maSan" Type="DatSan" />
+      <Association Name="sanBong_HoaDon" Member="HoaDons" ThisKey="maSan" OtherKey="maSan" Type="HoaDon" />
       <Association Name="LoaiSan_sanBong" Member="LoaiSan" ThisKey="maLoaiSan" OtherKey="maLoaiSan" Type="LoaiSan" IsForeignKey="true" />
     </Type>
   </Table>

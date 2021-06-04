@@ -33,5 +33,19 @@ namespace DAO
             }
             return listLoaiKH;
         }
+
+        // tìm loại khách hàng để xác định giảm giá bằng số điện thoại sđt khách hàng
+        public LoaiKhachHang timLoaiKhachHang_SĐT(string sdt)
+        {
+            var khachHang = (from loai in db.LoaiKhachHangs
+                             join kh in db.KhachHangs on loai.maLoaiKhachHang equals kh.maLoaiKhachHang
+                             where kh.soDienThoai == sdt
+                             select loai).SingleOrDefault();
+            if(khachHang== null)
+            {
+                return null;
+            }
+            return khachHang;
+        }
     }
 }

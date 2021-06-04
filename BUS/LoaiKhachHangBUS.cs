@@ -32,5 +32,12 @@ namespace BUS
             cbb.DisplayMember = "tenLoai";
             cbb.ValueMember = "maLoaiKhachHang";
         }
+
+        // lấy ra được loại khách hàng số điện thoại khachsh hàng dể lấy được giảm giá
+        public double giamGia (string sdt)
+        {
+            double giamGia = (double)LoaiKhachHangDAO.Instance.timLoaiKhachHang_SĐT(sdt).giamGia;
+            return giamGia;
+        }
     }
 }

@@ -30,5 +30,15 @@ namespace DAO
             var lisThucUong = db.ThucUongs.ToList();
             return lisThucUong;
         }
+
+        public ThucUong timThucUongVoi_Ma(int maThucUong)
+        {
+            var tu = db.ThucUongs.SingleOrDefault(m => m.maThucUong == maThucUong);
+            if (tu == null)
+            {
+                return null;
+            }
+            return tu;
+        }
     }
 }

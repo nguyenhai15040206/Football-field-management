@@ -1,4 +1,8 @@
 ﻿using DAO;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Nodes;
 using DTO;
@@ -27,14 +31,9 @@ namespace BUS
             }
         }
 
-        // load thức uống lên ComboboxEdit
-        public void loadThucUong_Cbo(ComboBox cbo)
-        {
-            cbo.DataSource = ThucUongDAO.Instance.loadTaCaThucUong();
-            cbo.DisplayMember = "tenThucUong";
-            cbo.ValueMember = "maThucUong";
-        }  
-        
+
+
+        QuanLySanBongDataContext db = new QuanLySanBongDataContext();
         // load danh sách thức uống vào treeLisst
         public void loadThucUong_TreeList(TreeList treeList)
         {
@@ -48,6 +47,24 @@ namespace BUS
                 nodes.Tag = (listThucUong[i].maThucUong.ToString()).ToString();
             }    
             treeList.EndUnboundLoad();
+        }
+
+        // load thức uống vào comBoBox 
+        public void loadThucUong_cbo(DataGridViewComboBoxColumn cbo)
+        {
+            cbo.DataSource = ThucUongDAO.Instance.loadTaCaThucUong();
+            cbo.DisplayMember = "tenThucUong";
+            cbo.ValueMember = "maThucUong";
+        }
+
+        // DVT
+        public string DVT(int maThucUong)
+        {
+            return ThucUongDAO.Instance.timThucUongVoi_Ma(maThucUong).DVT;
+        }
+        public double donGia(int maThucUong)
+        {
+            return (double)ThucUongDAO.Instance.timThucUongVoi_Ma(maThucUong).giaBan;
         }
     }
 

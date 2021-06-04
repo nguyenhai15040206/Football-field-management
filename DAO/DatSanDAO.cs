@@ -34,6 +34,33 @@ namespace DAO
                           join nd in db.NguoiDungs on ds.maNguoiDung equals nd.maNguoiDung
                           join kh in db.KhachHangs on ds.maKhachHang equals kh.maKhachHang
                           join san in db.sanBongs on ds.maSan equals san.maSan
+                          orderby ds.NgayDat descending
+                          select new NewDatSan
+                          {
+                              TenSan = san.tenSan,
+                              TenKhachhang = kh.tenKhachHang,
+                              SoDienThoai = kh.soDienThoai,
+                              TenNguoiDung = nd.tenNguoiDung,
+                              NgayDat = ds.NgayDat,
+                              GioVao = new DateTime(ds.GioVao.Ticks).ToString("HH:mm"),
+                              GioRa = new DateTime(ds.GioRa.Ticks).ToString("HH:mm"),
+                              TienSan = ds.tienSan,
+                              TienCoc = ds.tienCoc,
+                              GhiChu = ds.ghiChu,
+
+                          }).ToList();
+            return datSan;
+        }
+
+        // load đặt danh sách đặt sân
+        public List<NewDatSan> loadDatSan_ChuaThanhToan()
+        {
+            var datSan = (from ds in db.DatSans
+                          join nd in db.NguoiDungs on ds.maNguoiDung equals nd.maNguoiDung
+                          join kh in db.KhachHangs on ds.maKhachHang equals kh.maKhachHang
+                          join san in db.sanBongs on ds.maSan equals san.maSan
+                          where ds.tinhTrang == false
+                          orderby ds.NgayDat descending
                           select new NewDatSan
                           {
                               TenSan = san.tenSan,
@@ -67,6 +94,7 @@ namespace DAO
                 ds.tienSan = (decimal)tienSan;
                 ds.tienCoc = (decimal)tienCoc;
                 ds.ghiChu = ghiChu;
+                ds.tinhTrang = false;
                 db.DatSans.InsertOnSubmit(ds);
                 db.SubmitChanges();
                 return true;

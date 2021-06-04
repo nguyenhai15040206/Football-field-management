@@ -29,10 +29,13 @@ namespace QuanLySanBongMini
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToanSan));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToanSan));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,65 +43,68 @@ namespace QuanLySanBongMini
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvChiTietHD = new System.Windows.Forms.DataGridView();
+            this.btnXoa = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cbbThucUong = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.txtKhungGioDa = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonLamMoi = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonLuuDatSan = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonThanhToan = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHuyLich = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.toolStripButtonThanhToanNhieuSan = new System.Windows.Forms.ToolStripButton();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtKhachDua = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.numericUpDownGiamGia = new System.Windows.Forms.NumericUpDown();
+            this.txtGiamGia = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTienNuoc = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtTienThua = new System.Windows.Forms.TextBox();
             this.txtDatCoc = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTienSan = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePickerNgayDat = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.treeListThucUong = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.btnXoaThucUong = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cbbThucUong = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHD)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGiamGia)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListThucUong)).BeginInit();
@@ -168,31 +174,103 @@ namespace QuanLySanBongMini
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.dataGridView1);
+            this.panel9.Controls.Add(this.dgvChiTietHD);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1097, 341);
             this.panel9.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvChiTietHD
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btnXoaThucUong,
+            this.dgvChiTietHD.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvChiTietHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiTietHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnXoa,
             this.cbbThucUong,
-            this.Column3,
+            this.DVT,
+            this.soLuong,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1097, 341);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvChiTietHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvChiTietHD.Location = new System.Drawing.Point(0, 0);
+            this.dgvChiTietHD.MultiSelect = false;
+            this.dgvChiTietHD.Name = "dgvChiTietHD";
+            this.dgvChiTietHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvChiTietHD.Size = new System.Drawing.Size(1097, 341);
+            this.dgvChiTietHD.TabIndex = 2;
+            this.dgvChiTietHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dgvChiTietHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvChiTietHD.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHD_CellValueChanged);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.HeaderText = "";
+            this.btnXoa.Image = global::QuanLySanBongMini.Properties.Resources.close;
+            this.btnXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ToolTipText = "Xóa thức uống";
+            this.btnXoa.Width = 40;
+            // 
+            // cbbThucUong
+            // 
+            this.cbbThucUong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cbbThucUong.DataPropertyName = "maThucUong";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.cbbThucUong.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cbbThucUong.FillWeight = 35.08772F;
+            this.cbbThucUong.HeaderText = "Mặt hàng";
+            this.cbbThucUong.Name = "cbbThucUong";
+            this.cbbThucUong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cbbThucUong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // DVT
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
+            this.DVT.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DVT.HeaderText = "DVT";
+            this.DVT.Name = "DVT";
+            this.DVT.ReadOnly = true;
+            // 
+            // soLuong
+            // 
+            this.soLuong.DataPropertyName = "soluong";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.NullValue = null;
+            this.soLuong.DefaultCellStyle = dataGridViewCellStyle3;
+            this.soLuong.FillWeight = 294.7368F;
+            this.soLuong.HeaderText = "Số lượng";
+            this.soLuong.Name = "soLuong";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "giaBan";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column4.FillWeight = 35.08772F;
+            this.Column4.HeaderText = "Đơn giá";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "thanhTien";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column5.FillWeight = 35.08772F;
+            this.Column5.HeaderText = "Tổng tiền";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // panel6
             // 
@@ -216,9 +294,9 @@ namespace QuanLySanBongMini
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.lookUpEdit1);
             this.panel8.Controls.Add(this.groupBox1);
             this.panel8.Controls.Add(this.simpleButton1);
-            this.panel8.Controls.Add(this.comboBox1);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -228,34 +306,63 @@ namespace QuanLySanBongMini
             this.panel8.Size = new System.Drawing.Size(1097, 340);
             this.panel8.TabIndex = 0;
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(186, 14);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEdit1.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lookUpEdit1.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEdit1.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lookUpEdit1.Properties.AppearanceFocused.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEdit1.Properties.AppearanceFocused.Options.UseFont = true;
+            this.lookUpEdit1.Properties.AutoHeight = false;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenSan", "Tên sân", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenKhachhang", "Tên khách hàng", 140, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SoDienThoai", "Số điện thoại", 90, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NgayDat", "Ngày đặt", 90, DevExpress.Utils.FormatType.DateTime, "dd/MM/yyy", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GioVao", "Giờ vào", 50, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GioRa", "Giờ ra", 50, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TienSan", "Tiền sân", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TienCoc", "Tiền cọc", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookUpEdit1.Properties.NullText = "Chọn một khách hàng thanh toán";
+            this.lookUpEdit1.Size = new System.Drawing.Size(705, 28);
+            this.lookUpEdit1.TabIndex = 19;
+            this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtTongTien);
+            this.groupBox1.Controls.Add(this.txtKhungGioDa);
             this.groupBox1.Controls.Add(this.toolStrip1);
-            this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtKhachDua);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.numericUpDownGiamGia);
+            this.groupBox1.Controls.Add(this.txtGiamGia);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtTienNuoc);
             this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.txtTienThua);
             this.groupBox1.Controls.Add(this.txtDatCoc);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtTienSan);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.dateTimePickerNgayDat);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtSDT);
+            this.groupBox1.Controls.Add(this.txtTenKhachHang);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
@@ -267,16 +374,28 @@ namespace QuanLySanBongMini
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết đặt sân và thanh toán";
             // 
-            // textBox8
+            // txtTongTien
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Snow;
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(177, 136);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(298, 27);
-            this.textBox8.TabIndex = 40;
+            this.txtTongTien.BackColor = System.Drawing.Color.Snow;
+            this.txtTongTien.Enabled = false;
+            this.txtTongTien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.Location = new System.Drawing.Point(627, 104);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
+            this.txtTongTien.Size = new System.Drawing.Size(298, 27);
+            this.txtTongTien.TabIndex = 41;
+            this.txtTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtKhungGioDa
+            // 
+            this.txtKhungGioDa.BackColor = System.Drawing.Color.Snow;
+            this.txtKhungGioDa.Enabled = false;
+            this.txtKhungGioDa.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhungGioDa.Location = new System.Drawing.Point(177, 136);
+            this.txtKhungGioDa.Name = "txtKhungGioDa";
+            this.txtKhungGioDa.ReadOnly = true;
+            this.txtKhungGioDa.Size = new System.Drawing.Size(298, 27);
+            this.txtKhungGioDa.TabIndex = 40;
             // 
             // toolStrip1
             // 
@@ -286,9 +405,9 @@ namespace QuanLySanBongMini
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonLamMoi,
-            this.toolStripButtonLuuDatSan,
+            this.toolStripButtonThanhToan,
             this.toolStripButtonHuyLich,
-            this.toolStripButton1});
+            this.toolStripButtonThanhToanNhieuSan});
             this.toolStrip1.Location = new System.Drawing.Point(3, 235);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1070, 37);
@@ -302,14 +421,17 @@ namespace QuanLySanBongMini
             this.toolStripButtonLamMoi.Name = "toolStripButtonLamMoi";
             this.toolStripButtonLamMoi.Size = new System.Drawing.Size(101, 34);
             this.toolStripButtonLamMoi.Text = "Làm mới";
+            this.toolStripButtonLamMoi.Click += new System.EventHandler(this.toolStripButtonLamMoi_Click);
             // 
-            // toolStripButtonLuuDatSan
+            // toolStripButtonThanhToan
             // 
-            this.toolStripButtonLuuDatSan.Image = global::QuanLySanBongMini.Properties.Resources.transparent_online_payment_icon_smartphone_icon_payment_icon_5e24073cc2d615_5165774315794194527981_removebg_preview;
-            this.toolStripButtonLuuDatSan.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonLuuDatSan.Name = "toolStripButtonLuuDatSan";
-            this.toolStripButtonLuuDatSan.Size = new System.Drawing.Size(117, 34);
-            this.toolStripButtonLuuDatSan.Text = "Thanh toán";
+            this.toolStripButtonThanhToan.Enabled = false;
+            this.toolStripButtonThanhToan.Image = global::QuanLySanBongMini.Properties.Resources.transparent_online_payment_icon_smartphone_icon_payment_icon_5e24073cc2d615_5165774315794194527981_removebg_preview;
+            this.toolStripButtonThanhToan.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonThanhToan.Name = "toolStripButtonThanhToan";
+            this.toolStripButtonThanhToan.Size = new System.Drawing.Size(117, 34);
+            this.toolStripButtonThanhToan.Text = "Thanh toán";
+            this.toolStripButtonThanhToan.Click += new System.EventHandler(this.toolStripButtonThanhToan_Click);
             // 
             // toolStripButtonHuyLich
             // 
@@ -319,23 +441,14 @@ namespace QuanLySanBongMini
             this.toolStripButtonHuyLich.Size = new System.Drawing.Size(114, 34);
             this.toolStripButtonHuyLich.Text = "In hóa đơn";
             // 
-            // toolStripButton1
+            // toolStripButtonThanhToanNhieuSan
             // 
-            this.toolStripButton1.Image = global::QuanLySanBongMini.Properties.Resources.transparent_online_payment_icon_smartphone_icon_payment_icon_5e24073cc2d615_5165774315794194527981_removebg_preview;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(183, 34);
-            this.toolStripButton1.Text = "Thanh toán nhiều sân";
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.Snow;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(627, 169);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(298, 27);
-            this.textBox7.TabIndex = 37;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolStripButtonThanhToanNhieuSan.Image = global::QuanLySanBongMini.Properties.Resources.transparent_online_payment_icon_smartphone_icon_payment_icon_5e24073cc2d615_5165774315794194527981_removebg_preview;
+            this.toolStripButtonThanhToanNhieuSan.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonThanhToanNhieuSan.Name = "toolStripButtonThanhToanNhieuSan";
+            this.toolStripButtonThanhToanNhieuSan.Size = new System.Drawing.Size(183, 34);
+            this.toolStripButtonThanhToanNhieuSan.Text = "Thanh toán nhiều sân";
+            this.toolStripButtonThanhToanNhieuSan.Click += new System.EventHandler(this.toolStripButtonThanhToanNhieuSan_Click);
             // 
             // label18
             // 
@@ -346,15 +459,18 @@ namespace QuanLySanBongMini
             this.label18.TabIndex = 38;
             this.label18.Text = "Tiền thừa:";
             // 
-            // textBox6
+            // txtKhachDua
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Snow;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(627, 137);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(298, 27);
-            this.textBox6.TabIndex = 37;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtKhachDua.BackColor = System.Drawing.Color.Snow;
+            this.txtKhachDua.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhachDua.Location = new System.Drawing.Point(627, 137);
+            this.txtKhachDua.Name = "txtKhachDua";
+            this.txtKhachDua.ReadOnly = true;
+            this.txtKhachDua.Size = new System.Drawing.Size(298, 27);
+            this.txtKhachDua.TabIndex = 37;
+            this.txtKhachDua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtKhachDua.TextChanged += new System.EventHandler(this.txtKhachHang_TextChanged);
+            this.txtKhachDua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhachHang_KeyPress);
             // 
             // label17
             // 
@@ -364,16 +480,6 @@ namespace QuanLySanBongMini
             this.label17.Size = new System.Drawing.Size(95, 21);
             this.label17.TabIndex = 38;
             this.label17.Text = "Khách đưa:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.Snow;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(627, 104);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(298, 27);
-            this.textBox5.TabIndex = 35;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label16
             // 
@@ -404,26 +510,28 @@ namespace QuanLySanBongMini
             this.label14.TabIndex = 33;
             this.label14.Text = "%";
             // 
-            // numericUpDown1
+            // numericUpDownGiamGia
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(627, 37);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(57, 27);
-            this.numericUpDown1.TabIndex = 32;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownGiamGia.BackColor = System.Drawing.Color.Snow;
+            this.numericUpDownGiamGia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownGiamGia.Location = new System.Drawing.Point(627, 37);
+            this.numericUpDownGiamGia.Name = "numericUpDownGiamGia";
+            this.numericUpDownGiamGia.ReadOnly = true;
+            this.numericUpDownGiamGia.Size = new System.Drawing.Size(57, 27);
+            this.numericUpDownGiamGia.TabIndex = 32;
+            this.numericUpDownGiamGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox4
+            // txtGiamGia
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Snow;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(712, 37);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(213, 27);
-            this.textBox4.TabIndex = 30;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtGiamGia.BackColor = System.Drawing.Color.Snow;
+            this.txtGiamGia.Enabled = false;
+            this.txtGiamGia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiamGia.Location = new System.Drawing.Point(712, 37);
+            this.txtGiamGia.Name = "txtGiamGia";
+            this.txtGiamGia.ReadOnly = true;
+            this.txtGiamGia.Size = new System.Drawing.Size(213, 27);
+            this.txtGiamGia.TabIndex = 30;
+            this.txtGiamGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
             // 
@@ -434,17 +542,17 @@ namespace QuanLySanBongMini
             this.label13.TabIndex = 31;
             this.label13.Text = "Giảm giá:";
             // 
-            // textBox3
+            // txtTienNuoc
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Snow;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(627, 70);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(298, 27);
-            this.textBox3.TabIndex = 30;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTienNuoc.BackColor = System.Drawing.Color.Snow;
+            this.txtTienNuoc.Enabled = false;
+            this.txtTienNuoc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienNuoc.Location = new System.Drawing.Point(627, 70);
+            this.txtTienNuoc.Name = "txtTienNuoc";
+            this.txtTienNuoc.ReadOnly = true;
+            this.txtTienNuoc.Size = new System.Drawing.Size(298, 27);
+            this.txtTienNuoc.TabIndex = 30;
+            this.txtTienNuoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
             // 
@@ -454,6 +562,18 @@ namespace QuanLySanBongMini
             this.label12.Size = new System.Drawing.Size(89, 21);
             this.label12.TabIndex = 31;
             this.label12.Text = "Tiền nước:";
+            // 
+            // txtTienThua
+            // 
+            this.txtTienThua.BackColor = System.Drawing.Color.Snow;
+            this.txtTienThua.Enabled = false;
+            this.txtTienThua.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienThua.Location = new System.Drawing.Point(627, 170);
+            this.txtTienThua.Name = "txtTienThua";
+            this.txtTienThua.ReadOnly = true;
+            this.txtTienThua.Size = new System.Drawing.Size(298, 27);
+            this.txtTienThua.TabIndex = 27;
+            this.txtTienThua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDatCoc
             // 
@@ -517,27 +637,28 @@ namespace QuanLySanBongMini
             this.label9.TabIndex = 25;
             this.label9.Text = "Ngày đặt:";
             // 
-            // textBox2
+            // txtSDT
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Snow;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(177, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(298, 27);
-            this.textBox2.TabIndex = 23;
+            this.txtSDT.BackColor = System.Drawing.Color.Snow;
+            this.txtSDT.Enabled = false;
+            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(177, 70);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.ReadOnly = true;
+            this.txtSDT.Size = new System.Drawing.Size(298, 27);
+            this.txtSDT.TabIndex = 23;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
-            // textBox1
+            // txtTenKhachHang
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Snow;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(177, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(298, 27);
-            this.textBox1.TabIndex = 23;
+            this.txtTenKhachHang.BackColor = System.Drawing.Color.Snow;
+            this.txtTenKhachHang.Enabled = false;
+            this.txtTenKhachHang.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKhachHang.Location = new System.Drawing.Point(177, 37);
+            this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.ReadOnly = true;
+            this.txtTenKhachHang.Size = new System.Drawing.Size(298, 27);
+            this.txtTenKhachHang.TabIndex = 23;
             // 
             // label6
             // 
@@ -573,24 +694,16 @@ namespace QuanLySanBongMini
             // 
             this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(690, 14);
+            this.simpleButton1.Location = new System.Drawing.Point(897, 14);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(37, 28);
             this.simpleButton1.TabIndex = 17;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(429, 14);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(255, 28);
-            this.comboBox1.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(273, 21);
+            this.label2.Location = new System.Drawing.Point(30, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 21);
             this.label2.TabIndex = 3;
@@ -662,54 +775,6 @@ namespace QuanLySanBongMini
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
             // 
-            // btnXoaThucUong
-            // 
-            this.btnXoaThucUong.HeaderText = "";
-            this.btnXoaThucUong.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.btnXoaThucUong.Name = "btnXoaThucUong";
-            this.btnXoaThucUong.Width = 30;
-            // 
-            // cbbThucUong
-            // 
-            this.cbbThucUong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cbbThucUong.DataPropertyName = "maThucUong";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.cbbThucUong.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cbbThucUong.HeaderText = "Mặt hàng";
-            this.cbbThucUong.Name = "cbbThucUong";
-            this.cbbThucUong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cbbThucUong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "soluong";
-            this.Column3.HeaderText = "Số lượng";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "giaBan";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "Đơn giá";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "thanhTien";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column5.HeaderText = "Tổng tiền";
-            this.Column5.Name = "Column5";
-            // 
             // frmThanhToanSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -730,16 +795,17 @@ namespace QuanLySanBongMini
             this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHD)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGiamGia)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeListThucUong)).EndInit();
@@ -759,13 +825,12 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraTreeList.TreeList treeListThucUong;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -776,33 +841,36 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.TextBox txtTienSan;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.NumericUpDown numericUpDownGiamGia;
+        private System.Windows.Forms.TextBox txtGiamGia;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTienNuoc;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtKhachDua;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonLamMoi;
-        private System.Windows.Forms.ToolStripButton toolStripButtonLuuDatSan;
+        private System.Windows.Forms.ToolStripButton toolStripButtonThanhToan;
         private System.Windows.Forms.ToolStripButton toolStripButtonHuyLich;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.TextBox txtKhungGioDa;
+        private System.Windows.Forms.ToolStripButton toolStripButtonThanhToanNhieuSan;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn btnXoaThucUong;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.TextBox txtTienThua;
+        private System.Windows.Forms.DataGridView dgvChiTietHD;
+        private System.Windows.Forms.DataGridViewImageColumn btnXoa;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbbThucUong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DVT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

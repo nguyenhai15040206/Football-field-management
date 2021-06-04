@@ -37,18 +37,6 @@ namespace BUS
         }
 
 
-        public void loadDonGiaGio_TreeList(TreeList treeList)
-        {
-            treeList.BeginUnboundLoad();
-            treeList.Nodes.Clear();
-            List<DonGiaGio> listThucUong = DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat();
-            for (int i = 0; i < listThucUong.Count; i++)
-            {
-                TreeListNode nodes = treeList.AppendNode(null, null);
-                nodes.SetValue("name","Từ: "+ listThucUong[i].tuKhungGio.ToString()+ "h đến " + listThucUong[i].denKhungGio.ToString() +"h: "+ string.Format("{0:0.0} vnđ", listThucUong[i].donGia));
-            }
-            treeList.EndUnboundLoad();
-        }
 
 
         public void loadDonGiaGio_NgayCNMoiNhat_ListView(ListView lv)

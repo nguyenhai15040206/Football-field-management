@@ -1106,6 +1106,8 @@ namespace DTO
 		
 		private string _ghiChu;
 		
+		private System.Nullable<bool> _tinhTrang;
+		
 		private EntityRef<KhachHang> _KhachHang;
 		
 		private EntityRef<NguoiDung> _NguoiDung;
@@ -1134,6 +1136,8 @@ namespace DTO
     partial void OntienCocChanged();
     partial void OnghiChuChanging(string value);
     partial void OnghiChuChanged();
+    partial void OntinhTrangChanging(System.Nullable<bool> value);
+    partial void OntinhTrangChanged();
     #endregion
 		
 		public DatSan()
@@ -1332,6 +1336,26 @@ namespace DTO
 					this._ghiChu = value;
 					this.SendPropertyChanged("ghiChu");
 					this.OnghiChuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tinhTrang", DbType="Bit")]
+		public System.Nullable<bool> tinhTrang
+		{
+			get
+			{
+				return this._tinhTrang;
+			}
+			set
+			{
+				if ((this._tinhTrang != value))
+				{
+					this.OntinhTrangChanging(value);
+					this.SendPropertyChanging();
+					this._tinhTrang = value;
+					this.SendPropertyChanged("tinhTrang");
+					this.OntinhTrangChanged();
 				}
 			}
 		}
@@ -1670,17 +1694,33 @@ namespace DTO
 		
 		private System.Nullable<decimal> _tienSan;
 		
+		private System.Nullable<decimal> _giamGia;
+		
+		private System.Nullable<decimal> _tienNuoc;
+		
 		private System.Nullable<decimal> _tongTien;
+		
+		private System.Nullable<int> _maSan;
 		
 		private System.Nullable<int> _maKhachHang;
 		
+		private System.Nullable<System.DateTime> _ngayDat;
+		
+		private System.Nullable<System.TimeSpan> _gioVao;
+		
+		private System.Nullable<System.TimeSpan> _gioRa;
+		
 		private System.Nullable<int> _maNguoiDung;
+		
+		private System.Nullable<bool> _tinhTrang;
 		
 		private EntitySet<ChiTietHD> _ChiTietHDs;
 		
 		private EntityRef<KhachHang> _KhachHang;
 		
 		private EntityRef<NguoiDung> _NguoiDung;
+		
+		private EntityRef<sanBong> _sanBong;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1692,12 +1732,26 @@ namespace DTO
     partial void OnngayLapChanged();
     partial void OntienSanChanging(System.Nullable<decimal> value);
     partial void OntienSanChanged();
+    partial void OngiamGiaChanging(System.Nullable<decimal> value);
+    partial void OngiamGiaChanged();
+    partial void OntienNuocChanging(System.Nullable<decimal> value);
+    partial void OntienNuocChanged();
     partial void OntongTienChanging(System.Nullable<decimal> value);
     partial void OntongTienChanged();
+    partial void OnmaSanChanging(System.Nullable<int> value);
+    partial void OnmaSanChanged();
     partial void OnmaKhachHangChanging(System.Nullable<int> value);
     partial void OnmaKhachHangChanged();
+    partial void OnngayDatChanging(System.Nullable<System.DateTime> value);
+    partial void OnngayDatChanged();
+    partial void OngioVaoChanging(System.Nullable<System.TimeSpan> value);
+    partial void OngioVaoChanged();
+    partial void OngioRaChanging(System.Nullable<System.TimeSpan> value);
+    partial void OngioRaChanged();
     partial void OnmaNguoiDungChanging(System.Nullable<int> value);
     partial void OnmaNguoiDungChanged();
+    partial void OntinhTrangChanging(System.Nullable<bool> value);
+    partial void OntinhTrangChanged();
     #endregion
 		
 		public HoaDon()
@@ -1705,6 +1759,7 @@ namespace DTO
 			this._ChiTietHDs = new EntitySet<ChiTietHD>(new Action<ChiTietHD>(this.attach_ChiTietHDs), new Action<ChiTietHD>(this.detach_ChiTietHDs));
 			this._KhachHang = default(EntityRef<KhachHang>);
 			this._NguoiDung = default(EntityRef<NguoiDung>);
+			this._sanBong = default(EntityRef<sanBong>);
 			OnCreated();
 		}
 		
@@ -1768,6 +1823,46 @@ namespace DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giamGia", DbType="Money")]
+		public System.Nullable<decimal> giamGia
+		{
+			get
+			{
+				return this._giamGia;
+			}
+			set
+			{
+				if ((this._giamGia != value))
+				{
+					this.OngiamGiaChanging(value);
+					this.SendPropertyChanging();
+					this._giamGia = value;
+					this.SendPropertyChanged("giamGia");
+					this.OngiamGiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tienNuoc", DbType="Money")]
+		public System.Nullable<decimal> tienNuoc
+		{
+			get
+			{
+				return this._tienNuoc;
+			}
+			set
+			{
+				if ((this._tienNuoc != value))
+				{
+					this.OntienNuocChanging(value);
+					this.SendPropertyChanging();
+					this._tienNuoc = value;
+					this.SendPropertyChanged("tienNuoc");
+					this.OntienNuocChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongTien", DbType="Money")]
 		public System.Nullable<decimal> tongTien
 		{
@@ -1784,6 +1879,30 @@ namespace DTO
 					this._tongTien = value;
 					this.SendPropertyChanged("tongTien");
 					this.OntongTienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSan", DbType="Int")]
+		public System.Nullable<int> maSan
+		{
+			get
+			{
+				return this._maSan;
+			}
+			set
+			{
+				if ((this._maSan != value))
+				{
+					if (this._sanBong.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaSanChanging(value);
+					this.SendPropertyChanging();
+					this._maSan = value;
+					this.SendPropertyChanged("maSan");
+					this.OnmaSanChanged();
 				}
 			}
 		}
@@ -1812,6 +1931,66 @@ namespace DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayDat", DbType="Date")]
+		public System.Nullable<System.DateTime> ngayDat
+		{
+			get
+			{
+				return this._ngayDat;
+			}
+			set
+			{
+				if ((this._ngayDat != value))
+				{
+					this.OnngayDatChanging(value);
+					this.SendPropertyChanging();
+					this._ngayDat = value;
+					this.SendPropertyChanged("ngayDat");
+					this.OnngayDatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioVao", DbType="Time")]
+		public System.Nullable<System.TimeSpan> gioVao
+		{
+			get
+			{
+				return this._gioVao;
+			}
+			set
+			{
+				if ((this._gioVao != value))
+				{
+					this.OngioVaoChanging(value);
+					this.SendPropertyChanging();
+					this._gioVao = value;
+					this.SendPropertyChanged("gioVao");
+					this.OngioVaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioRa", DbType="Time")]
+		public System.Nullable<System.TimeSpan> gioRa
+		{
+			get
+			{
+				return this._gioRa;
+			}
+			set
+			{
+				if ((this._gioRa != value))
+				{
+					this.OngioRaChanging(value);
+					this.SendPropertyChanging();
+					this._gioRa = value;
+					this.SendPropertyChanged("gioRa");
+					this.OngioRaChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNguoiDung", DbType="Int")]
 		public System.Nullable<int> maNguoiDung
 		{
@@ -1832,6 +2011,26 @@ namespace DTO
 					this._maNguoiDung = value;
 					this.SendPropertyChanged("maNguoiDung");
 					this.OnmaNguoiDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tinhTrang", DbType="Bit")]
+		public System.Nullable<bool> tinhTrang
+		{
+			get
+			{
+				return this._tinhTrang;
+			}
+			set
+			{
+				if ((this._tinhTrang != value))
+				{
+					this.OntinhTrangChanging(value);
+					this.SendPropertyChanging();
+					this._tinhTrang = value;
+					this.SendPropertyChanged("tinhTrang");
+					this.OntinhTrangChanged();
 				}
 			}
 		}
@@ -1913,6 +2112,40 @@ namespace DTO
 						this._maNguoiDung = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("NguoiDung");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="sanBong_HoaDon", Storage="_sanBong", ThisKey="maSan", OtherKey="maSan", IsForeignKey=true)]
+		public sanBong sanBong
+		{
+			get
+			{
+				return this._sanBong.Entity;
+			}
+			set
+			{
+				sanBong previousValue = this._sanBong.Entity;
+				if (((previousValue != value) 
+							|| (this._sanBong.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._sanBong.Entity = null;
+						previousValue.HoaDons.Remove(this);
+					}
+					this._sanBong.Entity = value;
+					if ((value != null))
+					{
+						value.HoaDons.Add(this);
+						this._maSan = value.maSan;
+					}
+					else
+					{
+						this._maSan = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("sanBong");
 				}
 			}
 		}
@@ -3847,6 +4080,8 @@ namespace DTO
 		
 		private EntitySet<DatSan> _DatSans;
 		
+		private EntitySet<HoaDon> _HoaDons;
+		
 		private EntityRef<LoaiSan> _LoaiSan;
 		
     #region Extensibility Method Definitions
@@ -3866,6 +4101,7 @@ namespace DTO
 		public sanBong()
 		{
 			this._DatSans = new EntitySet<DatSan>(new Action<DatSan>(this.attach_DatSans), new Action<DatSan>(this.detach_DatSans));
+			this._HoaDons = new EntitySet<HoaDon>(new Action<HoaDon>(this.attach_HoaDons), new Action<HoaDon>(this.detach_HoaDons));
 			this._LoaiSan = default(EntityRef<LoaiSan>);
 			OnCreated();
 		}
@@ -3967,6 +4203,19 @@ namespace DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="sanBong_HoaDon", Storage="_HoaDons", ThisKey="maSan", OtherKey="maSan")]
+		public EntitySet<HoaDon> HoaDons
+		{
+			get
+			{
+				return this._HoaDons;
+			}
+			set
+			{
+				this._HoaDons.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiSan_sanBong", Storage="_LoaiSan", ThisKey="maLoaiSan", OtherKey="maLoaiSan", IsForeignKey=true)]
 		public LoaiSan LoaiSan
 		{
@@ -4028,6 +4277,18 @@ namespace DTO
 		}
 		
 		private void detach_DatSans(DatSan entity)
+		{
+			this.SendPropertyChanging();
+			entity.sanBong = null;
+		}
+		
+		private void attach_HoaDons(HoaDon entity)
+		{
+			this.SendPropertyChanging();
+			entity.sanBong = this;
+		}
+		
+		private void detach_HoaDons(HoaDon entity)
 		{
 			this.SendPropertyChanging();
 			entity.sanBong = null;
