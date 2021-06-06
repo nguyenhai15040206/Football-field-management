@@ -29,7 +29,6 @@ namespace QuanLySanBongMini
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLKhachHang));
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridContrrolKhachHang = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -41,14 +40,15 @@ namespace QuanLySanBongMini
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonLamMoi = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonLuuDatSan = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonLuuKhachHang = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCapNhat = new System.Windows.Forms.ToolStripButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.toolStripButtonChonH = new System.Windows.Forms.ToolStripButton();
             this.numericUpDownDiemTL = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -57,7 +57,6 @@ namespace QuanLySanBongMini
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboLoaiKhachHang = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridContrrolKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -128,18 +127,20 @@ namespace QuanLySanBongMini
             this.gridView2.GridControl = this.gridContrrolKhachHang;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
-            this.gridView2.OptionsBehavior.ReadOnly = true;
             this.gridView2.OptionsFind.AlwaysVisible = true;
             this.gridView2.OptionsFind.FindNullPrompt = "Nhập thông tin cần tìm kiếm";
             this.gridView2.OptionsHint.ShowCellHints = false;
             this.gridView2.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.False;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
+            this.gridView2.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView2_RowCellClick);
             // 
             // gridColumn1
             // 
             this.gridColumn1.ColumnEdit = this.btnXoaKH;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.ImmediateUpdateRowPosition = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumn1.OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 50;
@@ -207,6 +208,16 @@ namespace QuanLySanBongMini
             this.panel3.Size = new System.Drawing.Size(746, 44);
             this.panel3.TabIndex = 2;
             // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label8.Location = new System.Drawing.Point(-1, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(746, 4);
+            this.label8.TabIndex = 4;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -233,7 +244,6 @@ namespace QuanLySanBongMini
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.toolStrip1);
-            this.groupBox1.Controls.Add(this.simpleButton1);
             this.groupBox1.Controls.Add(this.numericUpDownDiemTL);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtSDT);
@@ -257,8 +267,9 @@ namespace QuanLySanBongMini
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonLamMoi,
-            this.toolStripButtonLuuDatSan,
-            this.toolStripButtonCapNhat});
+            this.toolStripButtonLuuKhachHang,
+            this.toolStripButtonCapNhat,
+            this.toolStripButtonChonH});
             this.toolStrip1.Location = new System.Drawing.Point(3, 181);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(740, 37);
@@ -274,17 +285,19 @@ namespace QuanLySanBongMini
             this.toolStripButtonLamMoi.Text = "Làm mới";
             this.toolStripButtonLamMoi.Click += new System.EventHandler(this.toolStripButtonLamMoi_Click);
             // 
-            // toolStripButtonLuuDatSan
+            // toolStripButtonLuuKhachHang
             // 
-            this.toolStripButtonLuuDatSan.Image = global::QuanLySanBongMini.Properties.Resources.add;
-            this.toolStripButtonLuuDatSan.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonLuuDatSan.Name = "toolStripButtonLuuDatSan";
-            this.toolStripButtonLuuDatSan.Size = new System.Drawing.Size(159, 34);
-            this.toolStripButtonLuuDatSan.Text = "Thêm khách hàng";
-            this.toolStripButtonLuuDatSan.Click += new System.EventHandler(this.toolStripButtonLuuDatSan_Click_1);
+            this.toolStripButtonLuuKhachHang.Enabled = false;
+            this.toolStripButtonLuuKhachHang.Image = global::QuanLySanBongMini.Properties.Resources.add;
+            this.toolStripButtonLuuKhachHang.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLuuKhachHang.Name = "toolStripButtonLuuKhachHang";
+            this.toolStripButtonLuuKhachHang.Size = new System.Drawing.Size(159, 34);
+            this.toolStripButtonLuuKhachHang.Text = "Thêm khách hàng";
+            this.toolStripButtonLuuKhachHang.Click += new System.EventHandler(this.toolStripButtonLuuKhachHang_Click);
             // 
             // toolStripButtonCapNhat
             // 
+            this.toolStripButtonCapNhat.Enabled = false;
             this.toolStripButtonCapNhat.Image = global::QuanLySanBongMini.Properties.Resources.savepink_removebg_preview1;
             this.toolStripButtonCapNhat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonCapNhat.Name = "toolStripButtonCapNhat";
@@ -292,14 +305,15 @@ namespace QuanLySanBongMini
             this.toolStripButtonCapNhat.Text = "Cập nhập";
             this.toolStripButtonCapNhat.Click += new System.EventHandler(this.toolStripButtonCapNhat_Click);
             // 
-            // simpleButton1
+            // toolStripButtonChonH
             // 
-            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(391, 32);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(37, 28);
-            this.simpleButton1.TabIndex = 16;
+            this.toolStripButtonChonH.Enabled = false;
+            this.toolStripButtonChonH.Image = global::QuanLySanBongMini.Properties.Resources.icloud_removebg_preview1;
+            this.toolStripButtonChonH.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonChonH.Name = "toolStripButtonChonH";
+            this.toolStripButtonChonH.Size = new System.Drawing.Size(156, 34);
+            this.toolStripButtonChonH.Text = "Chọn khách hàng";
+            this.toolStripButtonChonH.Click += new System.EventHandler(this.toolStripButtonChonH_Click);
             // 
             // numericUpDownDiemTL
             // 
@@ -367,18 +381,8 @@ namespace QuanLySanBongMini
             this.cboLoaiKhachHang.FormattingEnabled = true;
             this.cboLoaiKhachHang.Location = new System.Drawing.Point(158, 32);
             this.cboLoaiKhachHang.Name = "cboLoaiKhachHang";
-            this.cboLoaiKhachHang.Size = new System.Drawing.Size(227, 28);
+            this.cboLoaiKhachHang.Size = new System.Drawing.Size(270, 28);
             this.cboLoaiKhachHang.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.BackColor = System.Drawing.Color.Black;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Location = new System.Drawing.Point(-1, 36);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(746, 4);
-            this.label8.TabIndex = 4;
             // 
             // frmQLKhachHang
             // 
@@ -426,9 +430,8 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonLamMoi;
-        private System.Windows.Forms.ToolStripButton toolStripButtonLuuDatSan;
+        private System.Windows.Forms.ToolStripButton toolStripButtonLuuKhachHang;
         private System.Windows.Forms.ToolStripButton toolStripButtonCapNhat;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.NumericUpDown numericUpDownDiemTL;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSDT;
@@ -438,5 +441,6 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboLoaiKhachHang;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ToolStripButton toolStripButtonChonH;
     }
 }

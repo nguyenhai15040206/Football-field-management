@@ -45,8 +45,21 @@ namespace DAO
             return ctpnList;
         }
 
+        // tìm phiếu nhập với mã và sản phẩm
+        public ChiTietPN timPhieuNhap_maPNMaTU(int maPhieu, int maTU)
+        {
+            var pn = db.ChiTietPNs.SingleOrDefault(m => m.maPhieuNhap == maPhieu && m.maThucUong == maTU);
+            if(pn == null)
+            {
+                return null;
+            }
+            return pn;
+        }
+
+
         public bool themCTPhieuNhap(int maPhieuNhap, int maThucUong, int soLuong, double giaBan, double thanhTien)
         {
+            db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,db.ChiTietPNs);
             try
             {
                 ChiTietPN ctpn = new ChiTietPN();
@@ -59,14 +72,38 @@ namespace DAO
                 db.SubmitChanges();
                 return true;
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("" + ex);
+                return false;
+            }
+        }
+
+
+        // xóa chi tiết phiếu nhập khi phiếu nhập đó được hủy
+        public bool xoaCTPhieuNhap_phieuNhapHuy(int maPhieuNhap)
+        {
+            try
+            {
+                var ctpn = db.ChiTietPNs.Where(m => m.maPhieuNhap == maPhieuNhap).ToList();
+                if (ctpn.Count == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    db.ChiTietPNs.DeleteAllOnSubmit(ctpn);
+                    db.SubmitChanges();
+                    return true;
+                }
+            }
             catch
             {
                 return false;
             }
         }
 
-
-        // xóa chi tiết hóa đơn
+        // xóa từng ctpn
         public bool xoaCTPhieuNhap(int maPhieuNhap, int maThucUong)
         {
             try
@@ -84,14 +121,14 @@ namespace DAO
 
 
         // cập nhật chi tiết hóa đơn
-        public bool capNhatCTHoaDon(int maHoaDon, int maThucUong, int soLuong, double giaBan, double thanhTien)
+        public bool capNhatCTPhieuNhap(int maPhieu, int maThucUong, int soLuong, double giaBan, double thanhTien)
         {
             try
             {
-                ChiTietHD cthd = db.ChiTietHDs.SingleOrDefault(m => m.maThucUong == maThucUong && m.maHoaDon == maHoaDon);
-                cthd.soLuong = soLuong;
-                cthd.giaBan = (decimal?)giaBan;
-                cthd.thanhTien = (decimal?)thanhTien;
+                ChiTietPN ctpn = db.ChiTietPNs.SingleOrDefault(m => m.maPhieuNhap == maPhieu && m.maThucUong == maThucUong);
+                ctpn.soLuong = soLuong;
+                ctpn.donGia = (decimal?)giaBan;
+                ctpn.thanhTien = (decimal?)thanhTien;
                 db.SubmitChanges();
                 return true;
             }

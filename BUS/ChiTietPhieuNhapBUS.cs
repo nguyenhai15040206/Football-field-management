@@ -48,11 +48,38 @@ namespace BUS
             return ChiTietPhieuNhapDAO.Instance.themCTPhieuNhap(maPhieuNhap, maThucUong, soLuong, giaBan, thanhTien);
         }
 
-        // xóa chi tiết phiếu nhập
+        // xóa từng chi tiết phiếu nhập
         public bool xoaChiTietPN(int maPhieu, int maThucUong)
         {
             return ChiTietPhieuNhapDAO.Instance.xoaCTPhieuNhap(maPhieu, maThucUong);
         }
+
+        // xóa tất cả chi tiết phiếu nhập khi Phiếu nhập này được hủy
+        public bool xoaCTPN_PhieuNhapHuy(int maPhieu)
+        {
+            return ChiTietPhieuNhapDAO.Instance.xoaCTPhieuNhap_phieuNhapHuy(maPhieu);
+        }
+
+        // cập nhật thức uống
+        public bool capNhatCTPhieuNhap(int maPhieu, int maThucUong, int soLuong, double giaBan, double thanhTien)
+        {
+            return ChiTietPhieuNhapDAO.Instance.capNhatCTPhieuNhap(maPhieu, maThucUong, soLuong, giaBan, thanhTien);
+        }
+
+        // trả về tìm thấy hay không tìm thaays CTPN
+        public bool CTPhieuNhap(int maPhieu, int maSP)
+        {
+            var ctpn = ChiTietPhieuNhapDAO.Instance.timPhieuNhap_maPNMaTU(maPhieu, maSP);
+            if(ctpn == null)
+            {
+                return false;
+            }    
+            else
+            {
+                return true;
+            }    
+        }
+
 
 
     }

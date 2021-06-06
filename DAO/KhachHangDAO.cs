@@ -93,6 +93,22 @@ namespace DAO
             }
         }
 
+        // xóa khách hàng
+        public bool xoaKhachHang(int maKhachHang)
+        {
+            try
+            {
+                KhachHang kh = db.KhachHangs.SingleOrDefault(m => m.maKhachHang == maKhachHang);
+                db.KhachHangs.DeleteOnSubmit(kh);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }    
+
 
         //kiểm tra trùng số điện thoại
         public bool KtraTrungSoDienThoai(string input)

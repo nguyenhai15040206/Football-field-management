@@ -41,21 +41,42 @@ namespace DAO
             return db.PhieuNhaps.SingleOrDefault(m => m.maPhieuNhap == maPhieu);
         }
 
-        // load tất cả các phiếu nhập
+        // load tất cả các phiếu nhập với tình trạng bằng true
         public List<NewPhieuNhap> loadTatCaPhieuNhap()
         {
             var phieuNhap = (from pn in db.PhieuNhaps
                              join ncc in db.NhaCungCaps on pn.maNhaCungCap equals ncc.maNhaCungCap
                              join nd in db.NguoiDungs on pn.maNguoiDung equals nd.maNguoiDung
-                             select new NewPhieuNhap { 
-                                    MaPhieuNhap = pn.maPhieuNhap,
-                                    TenNguoiDung = nd.tenNguoiDung,
-                                    TenNhaCungCap = ncc.tenNhaCungCap,
-                                    TongTien = pn.tongTien,
-                                    NgayLap = pn.NgayLap,
-                                    SoDienThoai = ncc.SoDienThoai,
-                                    TinhTrang = pn.tinhTrang
+                             where pn.tinhTrang == true
+                             select new NewPhieuNhap {
+                                 MaPhieuNhap = pn.maPhieuNhap,
+                                 TenNguoiDung = nd.tenNguoiDung,
+                                 TenNhaCungCap = ncc.tenNhaCungCap,
+                                 TongTien = pn.tongTien,
+                                 NgayLap = pn.NgayLap,
+                                 SoDienThoai = ncc.SoDienThoai,
+                                 TinhTrang = pn.tinhTrang
                              }).ToList() ;
+            return phieuNhap;
+        }
+
+        // load tất cả các phiếu nhập với tình trạng bằng false
+        public List<NewPhieuNhap> loadTatCaPhieuNhap_Huy()
+        {
+            var phieuNhap = (from pn in db.PhieuNhaps
+                             join ncc in db.NhaCungCaps on pn.maNhaCungCap equals ncc.maNhaCungCap
+                             join nd in db.NguoiDungs on pn.maNguoiDung equals nd.maNguoiDung
+                             where pn.tinhTrang == false
+                             select new NewPhieuNhap
+                             {
+                                 MaPhieuNhap = pn.maPhieuNhap,
+                                 TenNguoiDung = nd.tenNguoiDung,
+                                 TenNhaCungCap = ncc.tenNhaCungCap,
+                                 TongTien = pn.tongTien,
+                                 NgayLap = pn.NgayLap,
+                                 SoDienThoai = ncc.SoDienThoai,
+                                 TinhTrang = pn.tinhTrang
+                             }).ToList();
             return phieuNhap;
         }
 
@@ -87,6 +108,24 @@ namespace DAO
             {
                 PhieuNhap pn = db.PhieuNhaps.SingleOrDefault(m => m.maPhieuNhap==maPhieuNhap);
                 pn.tinhTrang = false;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // cập nhật phiếu nhập
+        public bool capNhatPhieuNhap(int maPhieuNhap,double tongTien, int maNhaCungCap, int maNguoiDung)
+        {
+            try
+            {
+                PhieuNhap pn = db.PhieuNhaps.SingleOrDefault(m => m.maPhieuNhap== maPhieuNhap);
+                pn.tongTien = (decimal?)tongTien;
+                pn.maNhaCungCap = maNhaCungCap;
+                pn.maNguoiDung = maNguoiDung;
                 db.SubmitChanges();
                 return true;
             }

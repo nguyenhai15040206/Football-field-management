@@ -109,6 +109,18 @@ namespace BUS
         {
             return ThucUongDAO.Instance.xoaThucUong(maThucUong);
         }
+
+        // thêm thức uống
+        public bool themThucUong(string tenThucUong, string DVT, double giaBan, double giaNhap, int soLuong, bool tinhTrang)
+        {
+            return ThucUongDAO.Instance.themThucUong(tenThucUong, DVT, giaBan, giaNhap, soLuong, tinhTrang);
+        }
+
+        // cập nhật thức uống
+        public bool capNhatThucUong(int maTU, string tenThucUong, string DVT, double giaBan, double giaNhap, int soLuong, bool tinhTrang)
+        {
+            return ThucUongDAO.Instance.capNhatThucUong(maTU, tenThucUong, DVT, giaBan, giaNhap, soLuong, tinhTrang);
+        }
     }
 
 

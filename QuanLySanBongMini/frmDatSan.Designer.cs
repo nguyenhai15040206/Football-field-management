@@ -298,6 +298,8 @@ namespace QuanLySanBongMini
             // gridColumnTienSan
             // 
             this.gridColumnTienSan.Caption = "Tiền sân";
+            this.gridColumnTienSan.DisplayFormat.FormatString = "{0:0,0} vnđ";
+            this.gridColumnTienSan.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnTienSan.FieldName = "TienSan";
             this.gridColumnTienSan.Name = "gridColumnTienSan";
             this.gridColumnTienSan.Visible = true;
@@ -307,6 +309,8 @@ namespace QuanLySanBongMini
             // gridColumnTienCoc
             // 
             this.gridColumnTienCoc.Caption = "Tiền cọc";
+            this.gridColumnTienCoc.DisplayFormat.FormatString = "{0:0,0} vnđ";
+            this.gridColumnTienCoc.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnTienCoc.FieldName = "TienCoc";
             this.gridColumnTienCoc.Name = "gridColumnTienCoc";
             this.gridColumnTienCoc.Visible = true;
@@ -399,6 +403,7 @@ namespace QuanLySanBongMini
             // 
             // toolStripButtonHuyLich
             // 
+            this.toolStripButtonHuyLich.Enabled = false;
             this.toolStripButtonHuyLich.Image = global::QuanLySanBongMini.Properties.Resources.delete_removebg_preview;
             this.toolStripButtonHuyLich.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonHuyLich.Name = "toolStripButtonHuyLich";
@@ -464,6 +469,7 @@ namespace QuanLySanBongMini
             this.cboKhachHang.Size = new System.Drawing.Size(229, 28);
             this.cboKhachHang.TabIndex = 0;
             this.cboKhachHang.SelectedIndexChanged += new System.EventHandler(this.cboKhachHang_SelectedIndexChanged);
+            this.cboKhachHang.SelectionChangeCommitted += new System.EventHandler(this.cboKhachHang_SelectionChangeCommitted);
             // 
             // panel6
             // 
@@ -558,6 +564,7 @@ namespace QuanLySanBongMini
             // 
             // txtDatCoc
             // 
+            this.txtDatCoc.BackColor = System.Drawing.Color.Snow;
             this.txtDatCoc.Location = new System.Drawing.Point(603, 178);
             this.txtDatCoc.Name = "txtDatCoc";
             this.txtDatCoc.Size = new System.Drawing.Size(272, 27);
@@ -666,6 +673,7 @@ namespace QuanLySanBongMini
             this.txtSoDT.ReadOnly = true;
             this.txtSoDT.Size = new System.Drawing.Size(272, 27);
             this.txtSoDT.TabIndex = 3;
+            this.txtSoDT.TextChanged += new System.EventHandler(this.txtSoDT_TextChanged);
             // 
             // label4
             // 

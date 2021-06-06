@@ -35,6 +35,7 @@ namespace DAO
 
         public List<ThucUong> loadTaCaThucUong_HetHang()
         {
+            db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db.ThucUongs);
             var lisThucUong = (from tu in db.ThucUongs
                                where tu.tinhTrang== false
                                select tu).ToList();
@@ -44,6 +45,7 @@ namespace DAO
         // load tất cả thức uống với tình trạng còn hàng
         public List<ThucUong> loadTaCaThucUong_ConHang()
         {
+            db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db.ThucUongs);
             var lisThucUong = db.ThucUongs.Where(m => m.tinhTrang == true).OrderByDescending(m=>m.soLuong).ToList();
             return lisThucUong;
         }
@@ -59,10 +61,19 @@ namespace DAO
         }
 
         // thêm thức uống
-        public bool themThucUong(string tenThucUong, string DVT, double giaBan, int soLuong, bool tinhTrang)
+        public bool themThucUong(string tenThucUong, string DVT, double giaBan,double giaNhap ,int soLuong, bool tinhTrang)
         {
             try
             {
+                ThucUong tu = new ThucUong();
+                tu.tenThucUong = tenThucUong;
+                tu.DVT = DVT;
+                tu.giaBan = (decimal?)giaBan;
+                tu.giaNhap = (decimal?)giaNhap;
+                tu.soLuong = soLuong;
+                tu.tinhTrang = tinhTrang;
+                db.ThucUongs.InsertOnSubmit(tu);
+                db.SubmitChanges();
                 return true;
             }
             catch
@@ -88,5 +99,24 @@ namespace DAO
         }
 
         // cập nhật thức uống
+        public bool capNhatThucUong(int maTU,string tenThucUong, string DVT, double giaBan, double giaNhap, int soLuong, bool tinhTrang)
+        {
+            try
+            {
+                ThucUong tu = db.ThucUongs.SingleOrDefault(m => m.maThucUong == maTU);
+                tu.tenThucUong = tenThucUong;
+                tu.DVT = DVT;
+                tu.giaBan = (decimal?)giaBan;
+                tu.giaNhap = (decimal?)giaNhap;
+                tu.soLuong = soLuong;
+                tu.tinhTrang = tinhTrang;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

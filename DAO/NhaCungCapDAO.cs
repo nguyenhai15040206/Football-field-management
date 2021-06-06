@@ -37,5 +37,10 @@ namespace DAO
             return nhaCC;
         }
 
+        public NhaCungCap nhaCungCap_SDT(string sdt)
+        {
+            return db.NhaCungCaps.SingleOrDefault(m => m.SoDienThoai == sdt);
+        }
+
     }
 }

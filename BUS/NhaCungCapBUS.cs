@@ -34,6 +34,11 @@ namespace BUS
             lookUpEdit.CustomDisplayText += LookUpEdit_CustomDisplayText;
         }
 
+        public int maNCC_soDT(string sdt)
+        {
+            return NhaCungCapDAO.Instance.nhaCungCap_SDT(sdt).maNhaCungCap;
+        }
+
         private void LookUpEdit_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             LookUpEdit lookUpEdit = sender as LookUpEdit;

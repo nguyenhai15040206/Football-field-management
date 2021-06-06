@@ -78,6 +78,20 @@ namespace BUS
             }
         }
 
+        // kiểm tra text chỉ nhập số kiểu double
+        public static bool ktraChiNhapSo_double(string input)
+        {
+            try
+            {
+                double.Parse(input);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
         // chuyển tiền thành chữ
         public static string chuyenTienThanhChu(double inputNumber, bool suffix = true)

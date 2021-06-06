@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DTO;
 
@@ -28,7 +29,7 @@ namespace BUS
         }
 
         // load tất cả các khách hàng lên ComboBox
-        public void loadKhachhang_Cbo(ComboBox cbo)
+        public void loadKhachhang_Cbo(System.Windows.Forms.ComboBox cbo)
         {
             var Khachhang = KhachHangDAO.Instance.loadTatCaKhachHang();
             cbo.DataSource = Khachhang;
@@ -82,6 +83,12 @@ namespace BUS
         public bool CapNhatThongTin(int makh, string ten, string sdt, double diem, int maLoai)
         {
             return KhachHangDAO.Instance.CapNhatThongtinKH(makh, ten, sdt, diem, maLoai);
+        }
+
+        // xóa thông tin Khách hàng
+        public bool xoaKhachHang(int maKhachHang)
+        {
+            return KhachHangDAO.Instance.xoaKhachHang(maKhachHang);
         }
     }
 }

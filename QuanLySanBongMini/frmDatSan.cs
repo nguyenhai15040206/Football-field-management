@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DAO;
+using DevExpress.XtraEditors;
 using DTO;
 
 namespace QuanLySanBongMini
@@ -22,13 +23,18 @@ namespace QuanLySanBongMini
         int maSan=0;
         int maKhachHang = 0;
         int maLoaiSan = 0;
-        double tienSan = 0;
+        double tienSan = 0, datCoc=0;
         // 
         double ptuKhungGio;
         double pdenKhungGio;
         double tien = 0;
         double gioDu = 0;
         double gioVao, soGio, gioRa;
+
+        // truyền dữ liệu
+        public static string tenKhachHang_LayDL = string.Empty;
+        public static string soDienThoai_LayDL = string.Empty;
+        public static string maKhachHang_LayDL = string.Empty;
         public frmDatSan()
         {
             InitializeComponent();
@@ -86,7 +92,7 @@ namespace QuanLySanBongMini
         {
             resetDuLieu();
             toolStripButtonLuuDatSan.Enabled = true;
-            
+            toolStripButtonHuyLich.Enabled = false;
         }
 
         private void toolStripButtonLuuDatSan_Click(object sender, EventArgs e)
@@ -97,38 +103,47 @@ namespace QuanLySanBongMini
                 {
                     if (maSan != 0)
                     {
-                        if (DatSanBUS.Instance.datSan(maSan, maKhachHang, 1, dateTimePickerNgayDat.Value.Date, TimeSpan.Parse(new DateTime(dateTimePickerGioVao.Value.TimeOfDay.Ticks).ToString("HH:mm")),
-                            TimeSpan.Parse(new DateTime(dateTimePickerGioRa.Value.TimeOfDay.Ticks).ToString("HH:mm")), tienSan, double.Parse(txtDatCoc.Text.Trim()), txtGhiChu.Text.Trim()))
+                        if (txtDatCoc.Text.Trim().Length > 0 && double.Parse(txtDatCoc.Text.Trim())>= datCoc)
                         {
-                            MessageBox.Show("Thêm lịch đặt sân thành công!");
-                            loadLaiSanBongConTrong();
-                            maKhachHang = 0;
-                            maSan = 0;
-                            tienSan = 0;
-                            resetDuLieu();
+                            if (DatSanBUS.Instance.datSan(maSan, maKhachHang, 1, dateTimePickerNgayDat.Value.Date, TimeSpan.Parse(new DateTime(dateTimePickerGioVao.Value.TimeOfDay.Ticks).ToString("HH:mm")),
+                                TimeSpan.Parse(new DateTime(dateTimePickerGioRa.Value.TimeOfDay.Ticks).ToString("HH:mm")), tienSan, int.Parse(txtDatCoc.Text.Trim()), txtGhiChu.Text.Trim()))
+                            {
+                                XtraMessageBox.Show("Thêm lịch đặt sân thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                loadLaiSanBongConTrong();
+                                maKhachHang = 0;
+                                maSan = 0;
+                                tienSan = 0;
+                                datCoc = 0;
+                                resetDuLieu();
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại thông tin");
-                            return;
-                        }
+                            XtraMessageBox.Show("Vui lòng nhập số tiền đặt cọc (50% trở lên)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtDatCoc.Focus();
+                        }    
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng tìm và chọn sân bóng cần đặt!");
+                        XtraMessageBox.Show("Vui lòng tìm và chọn sân bóng cần đặt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn khách hàng!");
+                    XtraMessageBox.Show("Vui lòng chọn khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
             }
             else
             {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin!");
+                XtraMessageBox.Show("Vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }  
         }
@@ -143,7 +158,7 @@ namespace QuanLySanBongMini
                 List<DonGiaGio> dgg = DonGiaGioBUS.Instance.loadDonGiaGio_maLoaiSan(maLoaiSan);
                 if (dgg.Count == 0)
                 {
-                    MessageBox.Show("Chưa cập nhập đơn giá cho loại sân này");
+                    XtraMessageBox.Show("Chưa cập nhập đơn giá cho loại sân này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 for (int i = 0; i < dgg.Count - 1; i++)
@@ -193,7 +208,7 @@ namespace QuanLySanBongMini
                 }
                 if (tien == 0)
                 {
-                    MessageBox.Show("Giờ này chưa cập nhập đon giá! Vui lòng chọn giờ khác");
+                    XtraMessageBox.Show("Giờ này chưa cập nhập đon giá! Vui lòng chọn giờ khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 else
@@ -201,12 +216,13 @@ namespace QuanLySanBongMini
                     tien = Math.Round(tien);
                     txtTienSan.Text = string.Format("{0:0,0} vnđ",tien);
                     tienSan = tien;
+                    datCoc = Math.Round(tienSan * 50 / 100);
                     tien = 0;
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn sân bóng");
+                XtraMessageBox.Show("Vui lòng chọn sân bóng");
             }
         }
 
@@ -219,7 +235,7 @@ namespace QuanLySanBongMini
             {
                 if(dateTimePickerGioVao.Value.AddMinutes(17).TimeOfDay < DateTime.Now.TimeOfDay)
                 {
-                    MessageBox.Show("Vui lòng chọn giờ vào hợp lệ");
+                    XtraMessageBox.Show("Vui lòng chọn giờ vào hợp lệ");
                     toolTip1.SetToolTip(dateTimePickerGioVao, "Giờ vào phải lớn hơn hoặc bằng giờ hiện tại (được trễ 15p)");
                     dateTimePickerGioVao.Focus();
                     return;
@@ -246,7 +262,7 @@ namespace QuanLySanBongMini
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn loại sân bóng!");
+                XtraMessageBox.Show("Vui lòng chọn loại sân bóng!");
             }    
         }
 
@@ -256,7 +272,7 @@ namespace QuanLySanBongMini
             List<sanBong> listSanBong = SanBongDAO.Instance.loadTatCaSanBongConTrong(dateTimePickerGioVao.Value.TimeOfDay, dateTimePickerGioRa.Value.TimeOfDay, dateTimePickerNgayDat.Value.Date, maLoaiSan);
             if (listSanBong == null)
             {
-                MessageBox.Show("Không có sân trống với loại sân này!");
+                XtraMessageBox.Show("Không có sân trống với loại sân này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -279,19 +295,19 @@ namespace QuanLySanBongMini
         {
             if (row !=-1)
             {
-                DialogResult rs = MessageBox.Show("Bạn có chắc muốn hủy lịch đặt này không?", "Thông báo hủy sân", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult rs = XtraMessageBox.Show("Bạn có chắc muốn hủy lịch đặt này không?", "Thông báo hủy sân", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (rs == DialogResult.Yes)
                 {
                     if (DatSanBUS.Instance.xoaDatSan(maSan, int.Parse(cboKhachHang.SelectedValue.ToString()), dateTimePickerNgayDat.Value.Date,
                         TimeSpan.Parse(new DateTime(dateTimePickerGioVao.Value.TimeOfDay.Ticks).ToString("HH:mm")),
                                         TimeSpan.Parse(new DateTime(dateTimePickerGioRa.Value.TimeOfDay.Ticks).ToString("HH:mm"))))
                     {
-                        MessageBox.Show("Xóa lịch đặt sân thành công!");
+                        XtraMessageBox.Show("Xóa lịch đặt sân thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         resetDuLieu();
                     }
                     else
                     {
-                        MessageBox.Show("Xóa thất bại, vui lòng kiểm tra lại thông tin!");
+                        XtraMessageBox.Show("Xóa thất bại, vui lòng kiểm tra lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -301,7 +317,7 @@ namespace QuanLySanBongMini
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn lịch đặt sân cần xóa", "Thông báo hủy sân", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Vui lòng chọn lịch đặt sân cần xóa", "Thông báo hủy sân", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }    
         }
 
@@ -309,9 +325,7 @@ namespace QuanLySanBongMini
         {
             try
             {
-                maKhachHang = int.Parse(cboKhachHang.SelectedValue.ToString());
-                txtTenKH.Text = KhachHangBUS.Instance.hotenKhachHang(maKhachHang);
-                txtSoDT.Text = KhachHangBUS.Instance.soDienThoai(maKhachHang);
+                
             }
             catch
             {
@@ -409,11 +423,33 @@ namespace QuanLySanBongMini
                 dateTimePickerGioRa.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnGioRa).ToString();
                 maKhachHang = KhachHangBUS.Instance.maKhachHang_soDienThoai(txtSoDT.Text.Trim());
                 cboKhachHang.SelectedValue = maKhachHang;
+                toolStripButtonHuyLich.Enabled = true;
             }
             catch
             {
                 return;
             }
+
+        }
+
+        private void cboKhachHang_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                maKhachHang = int.Parse(cboKhachHang.SelectedValue.ToString());
+                txtTenKH.Text = KhachHangBUS.Instance.hotenKhachHang(maKhachHang);
+                txtSoDT.Text = KhachHangBUS.Instance.soDienThoai(maKhachHang);
+            }
+            catch
+            {
+                maKhachHang = int.Parse(cboKhachHang.SelectedValue.ToString());
+                txtTenKH.Text = KhachHangBUS.Instance.hotenKhachHang(maKhachHang);
+                txtSoDT.Text = KhachHangBUS.Instance.soDienThoai(maKhachHang);
+            }
+        }
+
+        private void txtSoDT_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
@@ -423,8 +459,25 @@ namespace QuanLySanBongMini
 
         private void simpleButtonThemKH_Click(object sender, EventArgs e)
         {
+            int maKH = 0;
             frmQLKhachHang frm = new frmQLKhachHang();
             frm.ShowDialog();
+            if (!string.IsNullOrEmpty(tenKhachHang_LayDL))
+            {
+                this.txtTenKH.Text = tenKhachHang_LayDL;
+            }
+            if (!string.IsNullOrEmpty(soDienThoai_LayDL))
+            {
+                this.txtSoDT.Text = soDienThoai_LayDL;
+            }
+
+            if(!string.IsNullOrEmpty(maKhachHang_LayDL))
+            {
+                maKH = int.Parse(maKhachHang_LayDL);
+            }    
+            KhachHangBUS.Instance.loadKhachhang_Cbo(cboKhachHang);
+            cboKhachHang.SelectedValue = maKH;
+
         }
     }
 }

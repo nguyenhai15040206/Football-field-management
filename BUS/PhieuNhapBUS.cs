@@ -32,10 +32,27 @@ namespace BUS
             dgv.DataSource = PhieuNhapDAO.Instance.loadTatCaPhieuNhap();
         }
 
+        public void loadTatCaPhieuNhap_TinhTrangHuy(GridControl dgv)
+        {
+            dgv.DataSource = PhieuNhapDAO.Instance.loadTatCaPhieuNhap_Huy();
+        }
+
         // thêm phiếu nhập
         public bool themPhieuNhap(double tongTien, int maNCC, int maNguoiDung)
         {
             return PhieuNhapDAO.Instance.themPhieuNhap(tongTien, maNCC, maNguoiDung);
+        }
+
+        // xóa phiếu nhập
+        public bool xoaPhieuNhap(int maPhieu)
+        {
+            return PhieuNhapDAO.Instance.xoaPhieuNhap(maPhieu);
+        }
+
+        // cập nhật phiếu nhập
+        public bool capNhatPhieuNhap(int maPhieuNhap, double tongTien, int maNhaCungCap, int maNguoiDung)
+        {
+            return PhieuNhapDAO.Instance.capNhatPhieuNhap(maPhieuNhap, tongTien, maNhaCungCap, maNguoiDung);
         }
 
         // mã phiếu nhập mới nhất
