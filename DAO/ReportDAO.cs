@@ -59,6 +59,35 @@ namespace DAO
             table = ToDataTable(query);   
             return table;
         }
+
+        // tạo phiếu nhập hàng
+        public DataTable phieuNhapHang(int maPhieu)
+        {
+            DataTable table = new DataTable();
+            var query = (from pn in db.PhieuNhaps
+                         join ctpn in db.ChiTietPNs on pn.maPhieuNhap equals ctpn.maPhieuNhap
+                         join tu in db.ThucUongs on ctpn.maThucUong equals tu.maThucUong
+                         join ncc in db.NhaCungCaps on pn.maNhaCungCap equals ncc.maNhaCungCap
+                         join nd in db.NguoiDungs on pn.maNguoiDung equals nd.maNguoiDung
+                         where pn.maPhieuNhap == maPhieu
+                         select new
+                         {
+                             pn.maPhieuNhap,
+                             pn.NgayLap,
+                             nd.tenNguoiDung,
+                             ncc.tenNhaCungCap,
+                             ncc.SoDienThoai,
+                             ncc.diaChi,
+                             tu.tenThucUong,
+                             tu.DVT,
+                             tu.giaNhap,
+                             ctpn.thanhTien,
+                             ctpn.soLuong,
+                             pn.tongTien,
+                         }).ToList();
+            table = ToDataTable(query);
+            return table;
+        }
         public DataTable ToDataTable<T>(List<T> items)
         {
             DataTable dataTable = new DataTable(typeof(T).Name);

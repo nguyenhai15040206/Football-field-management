@@ -42,7 +42,7 @@ namespace DAO
             try
             {
                 HoaDon hd = new HoaDon();
-                hd.ngayLap = DateTime.Now.Date;
+                hd.ngayLap = DateTime.Parse(DateTime.Now.Date.ToString("MM-dd-yyy"));
                 hd.tienSan = (decimal?)tienSan;
                 hd.giamGia = (decimal?)giamGia;
                 hd.tienNuoc = (decimal?)tienNuoc;

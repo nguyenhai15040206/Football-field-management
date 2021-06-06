@@ -17,6 +17,7 @@
       <Column Name="tenThucUong" Type="System.String" DbType="NVarChar(51)" CanBeNull="true" />
       <Column Name="DVT" Type="System.String" DbType="NVarChar(21)" CanBeNull="true" />
       <Column Name="giaBan" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="giaNhap" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="soLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="ThucUong_ChiTietHD" Member="ChiTietHDs" ThisKey="maThucUong" OtherKey="maThucUong" Type="ChiTietHD" />
@@ -150,6 +151,7 @@
       <Column Name="tongTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="maNhaCungCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="maNguoiDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="PhieuNhap_ChiTietPN" Member="ChiTietPNs" ThisKey="maPhieuNhap" OtherKey="maPhieuNhap" Type="ChiTietPN" />
       <Association Name="NhaCungCap_PhieuNhap" Member="NhaCungCap" ThisKey="maNhaCungCap" OtherKey="maNhaCungCap" Type="NhaCungCap" IsForeignKey="true" />
       <Association Name="NguoiDung_PhieuNhap" Member="NguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="NguoiDung" IsForeignKey="true" />

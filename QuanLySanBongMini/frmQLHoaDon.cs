@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLySanBongMini
 {
-    public partial class frmQuanLySanBong : Form
+    public partial class frmQLHoaDon : Form
     {
-        public frmQuanLySanBong()
+        public frmQLHoaDon()
         {
             InitializeComponent();
-        }
-
-        private void frmQuanLySanBong_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

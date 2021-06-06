@@ -29,5 +29,14 @@ namespace BUS
         {
             return ReportDAO.Instance.phieuThanhToan(maPhieu);
         }
+
+
+
+        public DataTable inPhieuNhap(int maPhieuNhap)
+        {
+            return ReportDAO.Instance.phieuNhapHang(maPhieuNhap);
+        }
+
+
     }
 }

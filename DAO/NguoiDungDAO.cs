@@ -93,6 +93,7 @@ namespace DAO
             return nguoiDung;
         }
 
+        //
         public NguoiDung ttNguoiDung(string tenDangNhap)
         {
 

@@ -24,10 +24,27 @@ namespace DAO
         }
         QuanLySanBongDataContext db = new QuanLySanBongDataContext();
 
-        // load tất cả các thức uống
+
+        // load tất cả thức uống
         public List<ThucUong> loadTaCaThucUong()
         {
             var lisThucUong = db.ThucUongs.ToList();
+            return lisThucUong;
+        }
+        // load tất cả các thức uống còn hàng
+
+        public List<ThucUong> loadTaCaThucUong_HetHang()
+        {
+            var lisThucUong = (from tu in db.ThucUongs
+                               where tu.tinhTrang== false
+                               select tu).ToList();
+            return lisThucUong;
+        }
+
+        // load tất cả thức uống với tình trạng còn hàng
+        public List<ThucUong> loadTaCaThucUong_ConHang()
+        {
+            var lisThucUong = db.ThucUongs.Where(m => m.tinhTrang == true).OrderByDescending(m=>m.soLuong).ToList();
             return lisThucUong;
         }
 
@@ -40,5 +57,36 @@ namespace DAO
             }
             return tu;
         }
+
+        // thêm thức uống
+        public bool themThucUong(string tenThucUong, string DVT, double giaBan, int soLuong, bool tinhTrang)
+        {
+            try
+            {
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // xóa thức uống 
+        public bool xoaThucUong(int maThucUong)
+        {
+            try
+            {
+                var thucUong = db.ThucUongs.SingleOrDefault(m => m.maThucUong == maThucUong);
+                db.ThucUongs.DeleteOnSubmit(thucUong);
+                db.SubmitChanges();
+                return true;
+            }   
+            catch
+            {
+                return false;
+            }
+        }
+
+        // cập nhật thức uống
     }
 }

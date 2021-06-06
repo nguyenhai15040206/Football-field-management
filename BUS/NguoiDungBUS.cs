@@ -143,5 +143,7 @@ namespace BUS
             dgv.DataSource = NguoiDungDAO.Instance.loadNguoiDungChuaCoNhom();
         }
 
+
+
     }
 }

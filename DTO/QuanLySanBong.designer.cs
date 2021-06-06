@@ -504,6 +504,8 @@ namespace DTO
 		
 		private System.Nullable<decimal> _giaBan;
 		
+		private System.Nullable<decimal> _giaNhap;
+		
 		private System.Nullable<int> _soLuong;
 		
 		private System.Nullable<bool> _tinhTrang;
@@ -524,6 +526,8 @@ namespace DTO
     partial void OnDVTChanged();
     partial void OngiaBanChanging(System.Nullable<decimal> value);
     partial void OngiaBanChanged();
+    partial void OngiaNhapChanging(System.Nullable<decimal> value);
+    partial void OngiaNhapChanged();
     partial void OnsoLuongChanging(System.Nullable<int> value);
     partial void OnsoLuongChanged();
     partial void OntinhTrangChanging(System.Nullable<bool> value);
@@ -613,6 +617,26 @@ namespace DTO
 					this._giaBan = value;
 					this.SendPropertyChanged("giaBan");
 					this.OngiaBanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giaNhap", DbType="Money")]
+		public System.Nullable<decimal> giaNhap
+		{
+			get
+			{
+				return this._giaNhap;
+			}
+			set
+			{
+				if ((this._giaNhap != value))
+				{
+					this.OngiaNhapChanging(value);
+					this.SendPropertyChanging();
+					this._giaNhap = value;
+					this.SendPropertyChanged("giaNhap");
+					this.OngiaNhapChanged();
 				}
 			}
 		}
@@ -3262,6 +3286,8 @@ namespace DTO
 		
 		private System.Nullable<int> _maNguoiDung;
 		
+		private System.Nullable<bool> _tinhTrang;
+		
 		private EntitySet<ChiTietPN> _ChiTietPNs;
 		
 		private EntityRef<NhaCungCap> _NhaCungCap;
@@ -3282,6 +3308,8 @@ namespace DTO
     partial void OnmaNhaCungCapChanged();
     partial void OnmaNguoiDungChanging(System.Nullable<int> value);
     partial void OnmaNguoiDungChanged();
+    partial void OntinhTrangChanging(System.Nullable<bool> value);
+    partial void OntinhTrangChanged();
     #endregion
 		
 		public PhieuNhap()
@@ -3396,6 +3424,26 @@ namespace DTO
 					this._maNguoiDung = value;
 					this.SendPropertyChanged("maNguoiDung");
 					this.OnmaNguoiDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tinhTrang", DbType="Bit")]
+		public System.Nullable<bool> tinhTrang
+		{
+			get
+			{
+				return this._tinhTrang;
+			}
+			set
+			{
+				if ((this._tinhTrang != value))
+				{
+					this.OntinhTrangChanging(value);
+					this.SendPropertyChanging();
+					this._tinhTrang = value;
+					this.SendPropertyChanged("tinhTrang");
+					this.OntinhTrangChanged();
 				}
 			}
 		}

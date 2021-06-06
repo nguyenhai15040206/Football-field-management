@@ -121,6 +121,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLHoaDon.Designer.cs">
+      <DependentUpon>frmQLHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQLKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,11 +151,11 @@
     <Compile Include="frmQLSanPhanVaKhoHang.Designer.cs">
       <DependentUpon>frmQLSanPhanVaKhoHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLySanBong.cs">
+    <Compile Include="frmPhieuNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLySanBong.Designer.cs">
-      <DependentUpon>frmQuanLySanBong.cs</DependentUpon>
+    <Compile Include="frmPhieuNhapHang.Designer.cs">
+      <DependentUpon>frmPhieuNhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThanhToanSan.cs">
       <SubType>Form</SubType>
@@ -183,6 +189,12 @@
     <Compile Include="UserControls\UserControlSanBong.Designer.cs">
       <DependentUpon>UserControlSanBong.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportPhieuNhap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportPhieuNhap.Designer.cs">
+      <DependentUpon>XtraReportPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportXuatHoaDon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -204,6 +216,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQLHoaDon.resx">
+      <DependentUpon>frmQLHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQLKhachHang.resx">
       <DependentUpon>frmQLKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,8 +231,8 @@
     <EmbeddedResource Include="frmQLSanPhanVaKhoHang.resx">
       <DependentUpon>frmQLSanPhanVaKhoHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLySanBong.resx">
-      <DependentUpon>frmQuanLySanBong.cs</DependentUpon>
+    <EmbeddedResource Include="frmPhieuNhapHang.resx">
+      <DependentUpon>frmPhieuNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThanhToanSan.resx">
       <DependentUpon>frmThanhToanSan.cs</DependentUpon>
@@ -239,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlSanBong.resx">
       <DependentUpon>UserControlSanBong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportPhieuNhap.resx">
+      <DependentUpon>XtraReportPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportXuatHoaDon.resx">
       <DependentUpon>XtraReportXuatHoaDon.cs</DependentUpon>
@@ -398,6 +416,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparent-excel-icon-file-folders-icon-60100a4a984341.9522453416116639466237-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

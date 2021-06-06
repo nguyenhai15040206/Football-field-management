@@ -451,6 +451,17 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap transparent_excel_icon_file_folders_icon_60100a4a984341_9522453416116639466237_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("transparent-excel-icon-file-folders-icon-60100a4a984341.9522453416116639466237-re" +
+                        "movebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap transparent_online_payment_icon_smartphone_icon_payment_icon_5e24073cc2d615_5165774315794194527981_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("transparent-online-payment-icon-smartphone-icon-payment-icon-5e24073cc2d615.51657" +
