@@ -41,7 +41,7 @@ namespace QuanLySanBongMini
 
         private void frmThanhToanSan_Load(object sender, EventArgs e)
         {
-            // load danh sách đặt sân chưa thanh toán
+              // load danh sách đặt sân chưa thanh toán
             DatSanBUS.Instance.loadDatSanChuaThanhToan(lookUpEdit1);
 
             // load danh sách thức uống lên treeList
