@@ -32,14 +32,9 @@ namespace BUS
 
         // load chi tiết phiếu nhập theo mã phiếu
         public void loadCTPN_maPhieuNhap(GridControl dgv,int maPhieu)
-        {
-            
+        { 
             List<NewChiTietPN> ctpn = ChiTietPhieuNhapDAO.Instance.loadChiTietPN_maPhieuNhap(maPhieu);
             dgv.DataSource = new BindingList<NewChiTietPN>(ctpn);
-            
-
-            
-
         }
 
         // thêm chi tiết phiếu nhập

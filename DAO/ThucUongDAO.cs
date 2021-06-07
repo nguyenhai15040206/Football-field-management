@@ -118,5 +118,63 @@ namespace DAO
                 return false;
             }
         }
+
+
+        // nhập nhật số lượng khi mua
+        public bool capNhatSoLuongKhiMua(int maThucUong ,int soLuongMua)
+        {
+            bool tinhTrang = true;
+            int sLHienHanh = 0;
+            try
+            {
+                var tu = db.ThucUongs.SingleOrDefault(m => m.maThucUong== maThucUong);
+                sLHienHanh = (int)timThucUongVoi_Ma(maThucUong).soLuong;
+                tu.soLuong = (sLHienHanh - soLuongMua) <= 0 ?0: (sLHienHanh - soLuongMua);
+                if (tu.soLuong == 0)
+                {
+                    tinhTrang = false;
+                }
+                else
+                {
+                    tinhTrang = true;
+                }
+                tu.tinhTrang = tinhTrang;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
+        public bool capNhatSoLuongKhiHuy(int maThucUong, int soLuongHuy)
+        {
+            bool tinhTrang = true;
+            int sLHienHanh = 0;
+            try
+            {
+                var tu = db.ThucUongs.SingleOrDefault(m => m.maThucUong == maThucUong);
+                sLHienHanh = (int)timThucUongVoi_Ma(maThucUong).soLuong;
+                tu.soLuong = (sLHienHanh + soLuongHuy);
+                if (tu.soLuong == 0)
+                {
+                    tinhTrang = false;
+                }
+                else
+                {
+                    tinhTrang = true;
+                }
+                tu.tinhTrang = tinhTrang;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
     }
 }

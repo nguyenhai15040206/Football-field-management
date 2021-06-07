@@ -54,8 +54,6 @@ namespace QuanLySanBongMini
 
         public void lamMoiDuLieu()
         {
-            gridColumnCapNhat.Visible = false;
-            gridColumnThemMoi.Visible = false;
             maPhieuNhap = 0;
             tongTien = 0;
             txtNguoiNhap.Text = "";
@@ -67,6 +65,7 @@ namespace QuanLySanBongMini
 
         private void toolStripButtonLamMoi_Click(object sender, EventArgs e)
         {
+            gridViewCTPN.OptionsBehavior.Editable = true;
             toolStripButtonInPhieu.Enabled = false;
             toolStripButtonLuuPN.Enabled = true;
             ChiTietPhieuNhapBUS.Instance.loadCTPN_maPhieuNhap(gridControlCTPN, 0);
@@ -94,6 +93,7 @@ namespace QuanLySanBongMini
                             double donGia = double.Parse(gridViewCTPN.GetRowCellValue(i, gridColumnDonGia).ToString());
                             double thanhTien = soLuong * 24 * donGia;
                             ChiTietPhieuNhapBUS.Instance.themCTPhieuNhap(maPhieuNhap, maThucUong, soLuong * 24, donGia, thanhTien);
+                            ThucUongBUS.Instance.capNhatSoLuongKhiHuy(maThucUong,soLuong*24);
                         }
                         toolStripButtonLuuPN.Enabled = false;
                         if (MessageBox.Show("Thêm thành công! Bạn có muốn in phiếu nhập này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -127,13 +127,6 @@ namespace QuanLySanBongMini
             xRLabel.Text = KiemTraDuLieu.chuyenTienThanhChu((double)tongTien);
             rpt.DataSource = ReportBUS.Instance.inPhieuNhap(maPhieuNhap);
             rpt.ShowPreviewDialog();
-        }
-
-
-
-        private void dgvChiTietPN_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            e.Cancel = true;
         }
 
         private void gridViewCTPN_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -180,8 +173,6 @@ namespace QuanLySanBongMini
             {
                 maPhieuNhap = int.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn2).ToString().Trim());
                 ChiTietPhieuNhapBUS.Instance.loadCTPN_maPhieuNhap(gridControlCTPN, maPhieuNhap);
-                gridColumnCapNhat.Visible = true;
-                gridColumnThemMoi.VisibleIndex = gridViewCTPN.RowCount + 1;
                 txtNguoiNhap.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnNguoiNhap).ToString();
                 txtTongTien.Text = string.Format("{0:0,0} vnđ", double.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnTongTien).ToString()));
                 toolStripButtonInPhieu.Enabled = true;
@@ -190,7 +181,7 @@ namespace QuanLySanBongMini
                 lookUpEdit1.EditValue = maNCC;
                 tinhTrang = bool.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumnTinhTrang).ToString());
                 bunifuCkbTinhTrang.Checked = tinhTrang;
-
+                gridViewCTPN.OptionsBehavior.Editable = false;
             }
             catch
             {
@@ -209,10 +200,13 @@ namespace QuanLySanBongMini
                     {
                         if (PhieuNhapBUS.Instance.xoaPhieuNhap(maPhieuNhap))
                         {
-                            if (ChiTietPhieuNhapBUS.Instance.xoaCTPN_PhieuNhapHuy(maPhieuNhap))
+                            MessageBox.Show("Phiếu nhập này đã được hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            for(int i= 0; i< gridViewCTPN.RowCount-1; i++)
                             {
-                                MessageBox.Show("Phiếu nhập này đã được hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
+                                int maThucUong = int.Parse(gridViewCTPN.GetRowCellValue(i, gridColumnMaThucUong).ToString());
+                                int soLuong = int.Parse(gridViewCTPN.GetRowCellValue(i, gridColumnSL).ToString());
+                                ThucUongBUS.Instance.capNhatSoLuongKhiMua(maThucUong,soLuong*24);
+                            }    
                             lamMoiDuLieu();
                             ChiTietPhieuNhapBUS.Instance.loadCTPN_maPhieuNhap(gridControlCTPN, 0);
                         }
@@ -231,6 +225,7 @@ namespace QuanLySanBongMini
             if (bunifuCkbTinhTrang.Checked == true)
             {
                 tinhTrang = true;
+                blTinhTrang.Text = "Đơn đã nhập";
                 lamMoiDuLieu();
                 PhieuNhapBUS.Instance.loadTatCaPhieuNhap(gridContrrolPN);
                 
@@ -238,6 +233,7 @@ namespace QuanLySanBongMini
             else
             {
                 tinhTrang = false;
+                blTinhTrang.Text = "Đơn đã hủy";
                 lamMoiDuLieu();
                 PhieuNhapBUS.Instance.loadTatCaPhieuNhap_TinhTrangHuy(gridContrrolPN);
                 
@@ -262,77 +258,18 @@ namespace QuanLySanBongMini
         {
             if(e.Column.Name== "gridColumnXoa")
             {
-                if (gridViewCTPN.DataRowCount != 0)
+                if (maThucUong > 0)
                 {
-                    if (maThucUong > 0)
+                    if (gridViewCTPN.DataRowCount != 0)
                     {
-                        if (ChiTietPhieuNhapBUS.Instance.CTPhieuNhap(maPhieuNhap, maThucUong))
-                        {
-                            if (XtraMessageBox.Show("Bạn có chắc muốn xóa sản phẩm này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                            {
-                                if (ChiTietPhieuNhapBUS.Instance.xoaChiTietPN(maPhieuNhap, maThucUong))
-                                {
-                                    ChiTietPhieuNhapBUS.Instance.loadCTPN_maPhieuNhap(gridControlCTPN, maPhieuNhap);
-                                    tinhTienTong();
-                                    if (PhieuNhapBUS.Instance.capNhatPhieuNhap(maPhieuNhap, tongTien, int.Parse(lookUpEdit1.EditValue.ToString()), 1))
-                                    {
-                                        XtraMessageBox.Show("Xóa chi tiết phiếu nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        lamMoiDuLieu();
-                                    }
-                                }
-                            }
-                        }
-                        else
+                        if (ChiTietPhieuNhapBUS.Instance.CTPhieuNhap(maPhieuNhap, maThucUong) == false)
                         {
                             gridViewCTPN.DeleteRow(dongChon);
                             tinhTienTong();
-                        }    
+                        }
                     }
                 }
             } 
-            if(e.Column.Name == "gridColumnCapNhat")
-            {
-                if (maThucUong > 0)
-                {
-                    if (ChiTietPhieuNhapBUS.Instance.CTPhieuNhap(maPhieuNhap, maThucUong))
-                    {
-                        if (XtraMessageBox.Show("Bạn có chắc muốn cập nhật Số lượng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-
-                            if (ChiTietPhieuNhapBUS.Instance.capNhatCTPhieuNhap(maPhieuNhap, maThucUong, soLuong, giaNhap, thanhTien))
-                            {
-                                ChiTietPhieuNhapBUS.Instance.loadCTPN_maPhieuNhap(gridControlCTPN, maPhieuNhap);
-                                tinhTienTong();
-                                if (PhieuNhapBUS.Instance.capNhatPhieuNhap(maPhieuNhap, tongTien, int.Parse(lookUpEdit1.EditValue.ToString()), 1))
-                                {
-                                    XtraMessageBox.Show("Cập nhật chi tiết thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    lamMoiDuLieu();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            if (e.Column.Name == "gridColumnThemMoi") 
-            {
-                if (maThucUong > 0)
-                {
-                    if (ChiTietPhieuNhapBUS.Instance.themCTPhieuNhap(maPhieuNhap, maThucUong, soLuong, giaNhap, thanhTien))
-                    {
-                        ChiTietPhieuNhapBUS.Instance.loadCTPN_maPhieuNhap(gridControlCTPN, maPhieuNhap);
-                        tinhTienTong();
-                        if (PhieuNhapBUS.Instance.capNhatPhieuNhap(maPhieuNhap, tongTien, int.Parse(lookUpEdit1.EditValue.ToString()), 1))
-                        {
-                            XtraMessageBox.Show("Thêm sản phẩm và phiếu nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            lamMoiDuLieu();
-                        }
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("Sản phẩm này đã có! Vui lòng chọn sản phẩm khác hoặc cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }    
-                }
-            }
         }
 
         private void repositoryItemButtonEditXoaCTPN_Click(object sender, EventArgs e)

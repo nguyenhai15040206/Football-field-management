@@ -52,18 +52,16 @@ namespace QuanLySanBongMini
             this.panel4 = new System.Windows.Forms.Panel();
             this.gridControlCTPN = new DevExpress.XtraGrid.GridControl();
             this.gridViewCTPN = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumnXoa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEditXoaCTPN = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumnCapNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnCapNhatCTPN = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumnThemMoi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnAddCTPN = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumnMaThucUong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditThucUong = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumnDVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnSL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditXoaCTPN = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnCapNhatCTPN = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnAddCTPN = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.gridContrrolPN = new DevExpress.XtraGrid.GridControl();
@@ -78,6 +76,7 @@ namespace QuanLySanBongMini
             this.gridColumnNguoiNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnTongTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.blTinhTrang = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCkbTinhTrang = new Bunifu.Framework.UI.BunifuCheckbox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonLamMoi = new System.Windows.Forms.ToolStripButton();
@@ -96,10 +95,10 @@ namespace QuanLySanBongMini
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCTPN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditThucUong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditXoaCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCapNhatCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddCTPN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditThucUong)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridContrrolPN)).BeginInit();
@@ -209,14 +208,12 @@ namespace QuanLySanBongMini
             this.gridViewCTPN.AppearancePrint.Preview.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewCTPN.AppearancePrint.Preview.Options.UseFont = true;
             this.gridViewCTPN.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumnXoa,
-            this.gridColumnCapNhat,
-            this.gridColumnThemMoi,
             this.gridColumnMaThucUong,
             this.gridColumnDVT,
             this.gridColumnSL,
             this.gridColumnDonGia,
-            this.gridColumnThanhTien});
+            this.gridColumnThanhTien,
+            this.gridColumnXoa});
             this.gridViewCTPN.GridControl = this.gridControlCTPN;
             this.gridViewCTPN.Name = "gridViewCTPN";
             this.gridViewCTPN.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -230,69 +227,6 @@ namespace QuanLySanBongMini
             this.gridViewCTPN.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewCTPN_CellValueChanged);
             this.gridViewCTPN.Click += new System.EventHandler(this.gridViewCTPN_Click);
             // 
-            // gridColumnXoa
-            // 
-            this.gridColumnXoa.ColumnEdit = this.repositoryItemButtonEditXoaCTPN;
-            this.gridColumnXoa.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridColumnXoa.Name = "gridColumnXoa";
-            this.gridColumnXoa.OptionsColumn.ImmediateUpdateRowPosition = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnXoa.OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnXoa.OptionsEditForm.ColumnSpan = 3;
-            this.gridColumnXoa.OptionsEditForm.StartNewRow = true;
-            this.gridColumnXoa.Visible = true;
-            this.gridColumnXoa.VisibleIndex = 0;
-            this.gridColumnXoa.Width = 43;
-            // 
-            // repositoryItemButtonEditXoaCTPN
-            // 
-            this.repositoryItemButtonEditXoaCTPN.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
-            this.repositoryItemButtonEditXoaCTPN.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Xóa", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEditXoaCTPN.Name = "repositoryItemButtonEditXoaCTPN";
-            this.repositoryItemButtonEditXoaCTPN.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditXoaCTPN.Click += new System.EventHandler(this.repositoryItemButtonEditXoaCTPN_Click);
-            // 
-            // gridColumnCapNhat
-            // 
-            this.gridColumnCapNhat.ColumnEdit = this.btnCapNhatCTPN;
-            this.gridColumnCapNhat.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridColumnCapNhat.Name = "gridColumnCapNhat";
-            this.gridColumnCapNhat.OptionsColumn.ImmediateUpdateRowPosition = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnCapNhat.OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnCapNhat.OptionsEditForm.ColumnSpan = 3;
-            this.gridColumnCapNhat.OptionsEditForm.StartNewRow = true;
-            this.gridColumnCapNhat.Width = 39;
-            // 
-            // btnCapNhatCTPN
-            // 
-            this.btnCapNhatCTPN.AutoHeight = false;
-            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
-            this.btnCapNhatCTPN.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "Cập nhật", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnCapNhatCTPN.Name = "btnCapNhatCTPN";
-            this.btnCapNhatCTPN.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // gridColumnThemMoi
-            // 
-            this.gridColumnThemMoi.ColumnEdit = this.btnAddCTPN;
-            this.gridColumnThemMoi.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridColumnThemMoi.Name = "gridColumnThemMoi";
-            this.gridColumnThemMoi.OptionsColumn.ImmediateUpdateRowPosition = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnThemMoi.OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnThemMoi.OptionsEditForm.ColumnSpan = 3;
-            this.gridColumnThemMoi.OptionsEditForm.StartNewRow = true;
-            this.gridColumnThemMoi.Width = 37;
-            // 
-            // btnAddCTPN
-            // 
-            this.btnAddCTPN.AutoHeight = false;
-            editorButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions3.SvgImage")));
-            this.btnAddCTPN.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "Thêm", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnAddCTPN.Name = "btnAddCTPN";
-            this.btnAddCTPN.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
             // gridColumnMaThucUong
             // 
             this.gridColumnMaThucUong.Caption = "Thức uống";
@@ -303,7 +237,7 @@ namespace QuanLySanBongMini
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MaThucUong", "{0}")});
             this.gridColumnMaThucUong.Visible = true;
             this.gridColumnMaThucUong.VisibleIndex = 1;
-            this.gridColumnMaThucUong.Width = 228;
+            this.gridColumnMaThucUong.Width = 244;
             // 
             // repositoryItemLookUpEditThucUong
             // 
@@ -337,7 +271,7 @@ namespace QuanLySanBongMini
             this.gridColumnDVT.OptionsColumn.ReadOnly = true;
             this.gridColumnDVT.Visible = true;
             this.gridColumnDVT.VisibleIndex = 2;
-            this.gridColumnDVT.Width = 112;
+            this.gridColumnDVT.Width = 119;
             // 
             // gridColumnSL
             // 
@@ -346,7 +280,7 @@ namespace QuanLySanBongMini
             this.gridColumnSL.Name = "gridColumnSL";
             this.gridColumnSL.Visible = true;
             this.gridColumnSL.VisibleIndex = 3;
-            this.gridColumnSL.Width = 150;
+            this.gridColumnSL.Width = 161;
             // 
             // gridColumnDonGia
             // 
@@ -360,7 +294,7 @@ namespace QuanLySanBongMini
             this.gridColumnDonGia.OptionsColumn.ReadOnly = true;
             this.gridColumnDonGia.Visible = true;
             this.gridColumnDonGia.VisibleIndex = 4;
-            this.gridColumnDonGia.Width = 242;
+            this.gridColumnDonGia.Width = 260;
             // 
             // gridColumnThanhTien
             // 
@@ -376,7 +310,43 @@ namespace QuanLySanBongMini
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThanhTien", "SUM={0:0,0} vnđ")});
             this.gridColumnThanhTien.Visible = true;
             this.gridColumnThanhTien.VisibleIndex = 5;
-            this.gridColumnThanhTien.Width = 274;
+            this.gridColumnThanhTien.Width = 300;
+            // 
+            // gridColumnXoa
+            // 
+            this.gridColumnXoa.ColumnEdit = this.repositoryItemButtonEditXoaCTPN;
+            this.gridColumnXoa.Name = "gridColumnXoa";
+            this.gridColumnXoa.Visible = true;
+            this.gridColumnXoa.VisibleIndex = 0;
+            this.gridColumnXoa.Width = 43;
+            // 
+            // repositoryItemButtonEditXoaCTPN
+            // 
+            this.repositoryItemButtonEditXoaCTPN.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            this.repositoryItemButtonEditXoaCTPN.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Xóa", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEditXoaCTPN.Name = "repositoryItemButtonEditXoaCTPN";
+            this.repositoryItemButtonEditXoaCTPN.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditXoaCTPN.Click += new System.EventHandler(this.repositoryItemButtonEditXoaCTPN_Click);
+            // 
+            // btnCapNhatCTPN
+            // 
+            this.btnCapNhatCTPN.AutoHeight = false;
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
+            this.btnCapNhatCTPN.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "Cập nhật", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnCapNhatCTPN.Name = "btnCapNhatCTPN";
+            this.btnCapNhatCTPN.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // btnAddCTPN
+            // 
+            this.btnAddCTPN.AutoHeight = false;
+            editorButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions3.SvgImage")));
+            this.btnAddCTPN.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "Thêm", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnAddCTPN.Name = "btnAddCTPN";
+            this.btnAddCTPN.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // panel3
             // 
@@ -541,6 +511,7 @@ namespace QuanLySanBongMini
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.blTinhTrang);
             this.panel5.Controls.Add(this.bunifuCkbTinhTrang);
             this.panel5.Controls.Add(this.toolStrip1);
             this.panel5.Controls.Add(this.txtTongTien);
@@ -557,10 +528,19 @@ namespace QuanLySanBongMini
             this.panel5.Size = new System.Drawing.Size(490, 333);
             this.panel5.TabIndex = 22;
             // 
+            // blTinhTrang
+            // 
+            this.blTinhTrang.AutoSize = true;
+            this.blTinhTrang.Location = new System.Drawing.Point(157, 166);
+            this.blTinhTrang.Name = "blTinhTrang";
+            this.blTinhTrang.Size = new System.Drawing.Size(95, 20);
+            this.blTinhTrang.TabIndex = 25;
+            this.blTinhTrang.Text = "Đơn đã nhập";
+            // 
             // bunifuCkbTinhTrang
             // 
             this.bunifuCkbTinhTrang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCkbTinhTrang.ChechedOffColor = System.Drawing.Color.White;
+            this.bunifuCkbTinhTrang.ChechedOffColor = System.Drawing.Color.Red;
             this.bunifuCkbTinhTrang.Checked = true;
             this.bunifuCkbTinhTrang.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCkbTinhTrang.ForeColor = System.Drawing.Color.White;
@@ -716,6 +696,7 @@ namespace QuanLySanBongMini
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPhieuNhapHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuanLySanBong";
             this.Load += new System.EventHandler(this.frmQuanLySanBong_Load);
             this.panel1.ResumeLayout(false);
@@ -724,10 +705,10 @@ namespace QuanLySanBongMini
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCTPN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditThucUong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditXoaCTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCapNhatCTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddCTPN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditThucUong)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridContrrolPN)).EndInit();
@@ -778,10 +759,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.ToolStripButton toolStripButtonInPhieu;
         private DevExpress.XtraGrid.GridControl gridControlCTPN;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewCTPN;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnXoa;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditXoaCTPN;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnCapNhat;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnThemMoi;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaThucUong;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnDVT;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnSL;
@@ -790,5 +768,7 @@ namespace QuanLySanBongMini
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnCapNhatCTPN;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnAddCTPN;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditThucUong;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnXoa;
+        private Bunifu.Framework.UI.BunifuCustomLabel blTinhTrang;
     }
 }

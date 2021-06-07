@@ -24,6 +24,25 @@ namespace DAO
         }
         QuanLySanBongDataContext db = new QuanLySanBongDataContext();
 
+        // load chi tiết hóa đơn với mã hóa đơn
+        public List<NewChiTietHD> loadChiTietHD_maPhieuNhap(int maHoaDon)
+        {
+            var cthdList = (from hd in db.HoaDons
+                            join cthd in db.ChiTietHDs on hd.maHoaDon equals cthd.maHoaDon
+                            join tu in db.ThucUongs on cthd.maThucUong equals tu.maThucUong
+                            where hd.maHoaDon == maHoaDon
+                            select new NewChiTietHD
+                            {
+                                MaThucUong = tu.maThucUong,
+                                DVT = tu.DVT,
+                                SoLuong = (int)cthd.soLuong,
+                                DonGia = (double)cthd.giaBan,
+                                ThanhTien = (double)cthd.thanhTien
+                            }).ToList();
+
+            return cthdList;
+        }
+
         // thêm chi tiết hóa đơn
         public bool themCTHoaDon(int maHoaDon, int maThucUong, int soLuong, double giaBan, double thanhTien )
         {
@@ -61,6 +80,30 @@ namespace DAO
                 return false;
             }
         }
+
+        // xóa chi tiết phiếu nhập khi phiếu nhập đó được hủy
+        public bool xoaCTHDieuNhap_HoaDonHuy(int maHoaDon)
+        {
+            try
+            {
+                var cthd = db.ChiTietHDs.Where(m => m.maHoaDon == maHoaDon).ToList();
+                if (cthd.Count == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    db.ChiTietHDs.DeleteAllOnSubmit(cthd);
+                    db.SubmitChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
 
         // cập nhật chi tiết hóa đơn

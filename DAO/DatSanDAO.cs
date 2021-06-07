@@ -129,5 +129,28 @@ namespace DAO
                 return false;
             }
         }
+
+        public bool capNhatDatSan(int maSan, int maKhachHang, DateTime ngayDat, TimeSpan gioVao, TimeSpan gioRa, bool tinhTrang)
+        {
+            try
+            {
+                var queryDatSan =
+                    (from DatSan in db.DatSans
+                     where
+                       DatSan.maSan == maSan &&
+                       DatSan.maKhachHang == maKhachHang &&
+                       DatSan.NgayDat == ngayDat &&
+                       DatSan.GioVao == gioVao &&
+                       DatSan.GioRa == gioRa
+                     select DatSan).SingleOrDefault();
+                queryDatSan.tinhTrang = tinhTrang;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

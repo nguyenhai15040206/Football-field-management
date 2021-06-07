@@ -18,7 +18,7 @@ namespace QuanLySanBongMini
         int dongChon = 0;
         double tienSan = 0, datCoc = 0, giamGia = 0;
         double tienNuoc = 0, tongTien = 0;
-        int maKhachHang = 0,maSan=0;
+        int maKhachHang = 0, maSan = 0;
         DateTime ngayDat;
         TimeSpan gioVao, gioRa;
         public frmThanhToanSan()
@@ -29,7 +29,7 @@ namespace QuanLySanBongMini
         public void resetDuLieu()
         {
             dongChon = 0;
-            tienNuoc = tienSan =datCoc = giamGia =tongTien= maKhachHang= maSan=0;
+            tienNuoc = tienSan = datCoc = giamGia = tongTien = maKhachHang = maSan = 0;
             foreach (Control item in groupBox1.Controls)
             {
                 if (item.GetType() == typeof(TextBox))
@@ -41,7 +41,7 @@ namespace QuanLySanBongMini
 
         private void frmThanhToanSan_Load(object sender, EventArgs e)
         {
-              // load danh sách đặt sân chưa thanh toán
+            // load danh sách đặt sân chưa thanh toán
             DatSanBUS.Instance.loadDatSanChuaThanhToan(lookUpEdit1);
 
             // load danh sách thức uống lên treeList
@@ -60,7 +60,7 @@ namespace QuanLySanBongMini
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
-            }   
+            }
         }
 
         private void txtKhachHang_TextChanged(object sender, EventArgs e)
@@ -69,14 +69,14 @@ namespace QuanLySanBongMini
             double khachDua = 0;
             khachDua = txtKhachDua.Text.Trim() == "" ? 0 : double.Parse(txtKhachDua.Text.Trim());
             txtTienThua.Text = string.Format("{0:0,0} vnđ", (khachDua - tongTien));
-            if (txtKhachDua.Text.Trim().Length >0 && khachDua >= tongTien)
+            if (txtKhachDua.Text.Trim().Length > 0 && khachDua >= tongTien)
             {
                 toolStripButtonThanhToan.Enabled = true;
             }
             else
             {
                 toolStripButtonThanhToan.Enabled = false;
-            }    
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -117,10 +117,22 @@ namespace QuanLySanBongMini
             rpt.ShowPreviewDialog();
         }
 
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            // load danh sách đặt sân chưa thanh toán
+            DatSanBUS.Instance.loadDatSanChuaThanhToan(lookUpEdit1);
+        }
+
+        private void toolStripButtonInHoaDon_Click(object sender, EventArgs e)
+        {
+            frmQLHoaDon frm = new frmQLHoaDon();
+            frm.ShowDialog();
+        }
+
         private void dgvChiTietHD_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if(dgvChiTietHD.CurrentRow !=null)
+
+            if (dgvChiTietHD.CurrentRow != null)
             {
                 try
                 {
@@ -145,21 +157,20 @@ namespace QuanLySanBongMini
                         dgvChiTietHD.Rows[dongChon].Cells[3].Value = 1;
                         dgvChiTietHD.Rows[dongChon].Cells[5].Value = ThucUongBUS.Instance.donGia(int.Parse(dgvChiTietHD.Rows[dongChon].Cells[1].Value.ToString())) * 1;
                         tinhTienTong();
-                    }    
+                    }
                 }
                 catch
                 {
                     return;
                 }
-            }    
+            }
         }
 
         private void toolStripButtonThanhToan_Click(object sender, EventArgs e)
         {
-            
             if (txtSDT.Text.Trim().Length > 0)
             {
-                if (HoaDonBUS.Instance.themHoaDon(tienSan, giamGia, tienNuoc, tongTien,maSan, maKhachHang,ngayDat,gioVao,gioRa, 1))
+                if (HoaDonBUS.Instance.themHoaDon(tienSan, giamGia, tienNuoc, tongTien, maSan, maKhachHang, ngayDat, gioVao, gioRa, 1))
                 {
                     int maHoaDon = HoaDonBUS.Instance.maHoaDon_top1();
                     for (int i = 0; i < dgvChiTietHD.Rows.Count - 1; i++)
@@ -169,8 +180,14 @@ namespace QuanLySanBongMini
                         int soLuong = int.Parse(dgvChiTietHD.Rows[i].Cells[3].Value.ToString());
                         double donGia = double.Parse(dgvChiTietHD.Rows[i].Cells[4].Value.ToString());
                         double thanhTien = soLuong * donGia;
-                        ChiTietHoaDonBUS.Instance.themCTHoaDon(maHoaDon, maThucUong, soLuong, donGia, thanhTien);
+                        if (ChiTietHoaDonBUS.Instance.themCTHoaDon(maHoaDon, maThucUong, soLuong, donGia, thanhTien))
+                        {
+                            ThucUongBUS.Instance.capNhatSoLuongKhiMua(maThucUong, soLuong);
+                        }
+
                     }
+                    DatSanBUS.Instance.capNhatDatSan_DaThanhToan(maSan, maKhachHang, ngayDat, gioVao, gioRa, true);
+                    DatSanBUS.Instance.loadDatSanChuaThanhToan(lookUpEdit1);
                     toolStripButtonThanhToan.Enabled = false;
                     if (MessageBox.Show("Thêm thành công! Bạn có muốn in hóa đơn này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
@@ -183,17 +200,14 @@ namespace QuanLySanBongMini
             else
             {
                 MessageBox.Show("Vui lòng sân cần thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }    
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dongChon = e.RowIndex;
-            
+
         }
-
-
-
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
             try
@@ -209,7 +223,7 @@ namespace QuanLySanBongMini
                 maSan = SanBongBUS.Instance.maSan_voiTenSan(lookUpEdit1.GetColumnValue("TenSan").ToString().Trim());
                 gioVao = TimeSpan.Parse(lookUpEdit1.GetColumnValue("GioVao").ToString());
                 gioRa = TimeSpan.Parse(lookUpEdit1.GetColumnValue("GioRa").ToString());
-                txtKhungGioDa.Text = "Từ: " +lookUpEdit1.GetColumnValue("GioVao").ToString()+" đến: " + lookUpEdit1.GetColumnValue("GioRa").ToString();
+                txtKhungGioDa.Text = "Từ: " + lookUpEdit1.GetColumnValue("GioVao").ToString() + " đến: " + lookUpEdit1.GetColumnValue("GioRa").ToString();
                 txtTienSan.Text = string.Format("{0:0,0} vnđ", double.Parse(lookUpEdit1.GetColumnValue("TienSan").ToString()));
                 txtDatCoc.Text = string.Format("{0:0,0} vnđ", double.Parse(lookUpEdit1.GetColumnValue("TienCoc").ToString()));
                 numericUpDownGiamGia.Value = (decimal)LoaiKhachHangBUS.Instance.giamGia(txtSDT.Text.Trim());
@@ -217,25 +231,21 @@ namespace QuanLySanBongMini
                 txtKhachDua.Text = "";
                 txtTienThua.Text = "";
                 txtKhachDua.Focus();
-                
+
             }
             catch
             {
                 return;
             }
-            
         }
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-            
+
             giamGia = Math.Round(tienSan * (double)numericUpDownGiamGia.Value / 100);
             txtGiamGia.Text = string.Format("{0:0,0} vnđ", giamGia);
             tongTien = Math.Round(tienSan - datCoc - giamGia + tienNuoc);
             txtTongTien.Text = string.Format("{0:0,0} vnđ", tongTien);
-            
-
-
         }
     }
 }

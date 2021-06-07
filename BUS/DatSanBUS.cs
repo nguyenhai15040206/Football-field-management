@@ -68,5 +68,17 @@ namespace BUS
         {
             return DatSanDAO.Instance.xoaDatSan(maSan, maKhachHang, ngayDat, gioVao, gioRa);
         }
+
+        // cập nhật tình trạng đã thanh toán khi Người dùng thanh toán
+        public bool capNhatDatSan_DaThanhToan(int maSan, int maKhachHang, DateTime ngayDat, TimeSpan gioVao, TimeSpan gioRa, bool tinhTrang)
+        {
+            return DatSanDAO.Instance.capNhatDatSan(maSan, maKhachHang, ngayDat, gioVao, gioRa, tinhTrang);
+        }
+
+        // cập nhật tình trạng chưa thanh toán khi Người dùng hủy hóa đơn
+        public bool capNhatDatSan_ChuaThanhToan(int maSan, int maKhachHang, DateTime ngayDat, TimeSpan gioVao, TimeSpan gioRa, bool tinhTrang)
+        {
+            return DatSanDAO.Instance.capNhatDatSan(maSan, maKhachHang, ngayDat, gioVao, gioRa, tinhTrang);
+        }
     }
 }

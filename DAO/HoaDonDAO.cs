@@ -25,6 +25,42 @@ namespace DAO
 
         QuanLySanBongDataContext db = new QuanLySanBongDataContext();
 
+        // load hoas ddown
+        public List<NewHoaDon> loadHoaDon(bool tinhTrang)
+        {
+            var hoaDon = (from hd in db.HoaDons
+                          from ds in db.DatSans
+                          from kh in db.KhachHangs
+                          from san in db.sanBongs
+                          where hd.maSan == ds.maSan &&
+                          hd.ngayDat == ds.NgayDat &&
+                          hd.gioVao == ds.GioVao &&
+                          hd.gioRa == ds.GioRa &&
+                          hd.maSan == san.maSan &&
+                          hd.maKhachHang == kh.maKhachHang && 
+                          hd.tinhTrang == tinhTrang
+                          select new NewHoaDon
+                          {     
+                              MaHoaDon = hd.maHoaDon,
+                              DatCoc = (double)ds.tienCoc,
+                              GiamGia = (double)hd.giamGia,
+                              GioRa = (TimeSpan)hd.gioRa,
+                              GioVao = (TimeSpan) hd.gioVao,
+                              MaNguoiDung = (int)hd.maNguoiDung,
+                              NgayDat = (DateTime)hd.ngayDat,
+                              NgayLap = (DateTime)hd.ngayLap,
+                              SoDienThoai = kh.soDienThoai,
+                              TenKhachHang = kh.tenKhachHang,
+                              TenSan = san.tenSan,
+                              TienNuoc = (double)hd.tienNuoc,
+                              TienSan = (double) hd.tienSan,
+                              TongTien= (double) hd.tongTien,
+                              TinhTrang = (bool)hd.tinhTrang,
+                          }).ToList();
+            return hoaDon;
+
+        }
+
         // lấy mã hóa đơn mới nhất
         public int maHoaDon_top1()
         {
@@ -65,7 +101,7 @@ namespace DAO
         }
 
         // hủy hóa đơn(có nghĩa hóa đơn này không có giá trị)
-        public bool huyHoaDon(int maHoaDon,bool tinhTrang)
+        public bool huyHoaDon(int maHoaDon)
         {
             try
             {
@@ -79,6 +115,7 @@ namespace DAO
                 return false;
             }
         }
+
 
     }
 }

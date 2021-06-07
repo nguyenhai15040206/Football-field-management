@@ -420,6 +420,9 @@
   <ItemGroup>
     <None Include="Resources\transparent-excel-icon-file-folders-icon-60100a4a984341.9522453416116639466237-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-edit-profile-icon-png-image_4102538.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

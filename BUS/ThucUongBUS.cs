@@ -121,6 +121,24 @@ namespace BUS
         {
             return ThucUongDAO.Instance.capNhatThucUong(maTU, tenThucUong, DVT, giaBan, giaNhap, soLuong, tinhTrang);
         }
+
+
+
+        //////////////
+        /// cập nhật số lượng khi sản phẩm dược mua hoặc hóa đơn đó không kkhar dụng
+        // nhập nhật số lượng khi mua
+        public bool capNhatSoLuongKhiMua(int maThucUong, int soLuongMua)
+        {
+            return ThucUongDAO.Instance.capNhatSoLuongKhiMua(maThucUong, soLuongMua);
+
+        }
+
+        public bool capNhatSoLuongKhiHuy(int maThucUong, int soLuongHuy)
+        {
+            return ThucUongDAO.Instance.capNhatSoLuongKhiHuy(maThucUong, soLuongHuy);
+
+        }
+
     }
 
 

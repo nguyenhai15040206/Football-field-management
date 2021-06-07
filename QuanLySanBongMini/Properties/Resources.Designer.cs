@@ -326,6 +326,16 @@ namespace QuanLySanBongMini.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngtree_vector_edit_profile_icon_png_image_4102538 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-vector-edit-profile-icon-png-image_4102538", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap repair_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("repair-removebg-preview", resourceCulture);

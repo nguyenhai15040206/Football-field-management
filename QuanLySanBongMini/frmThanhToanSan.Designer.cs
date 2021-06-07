@@ -30,12 +30,12 @@ namespace QuanLySanBongMini
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToanSan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +44,12 @@ namespace QuanLySanBongMini
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dgvChiTietHD = new System.Windows.Forms.DataGridView();
+            this.btnXoa = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cbbThucUong = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -54,7 +60,7 @@ namespace QuanLySanBongMini
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonLamMoi = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonThanhToan = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonHuyLich = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonInHoaDon = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonThanhToanNhieuSan = new System.Windows.Forms.ToolStripButton();
             this.label18 = new System.Windows.Forms.Label();
             this.txtKhachDua = new System.Windows.Forms.TextBox();
@@ -79,7 +85,7 @@ namespace QuanLySanBongMini
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefesh = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -87,12 +93,6 @@ namespace QuanLySanBongMini
             this.treeListThucUong = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnXoa = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cbbThucUong = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -203,6 +203,76 @@ namespace QuanLySanBongMini
             this.dgvChiTietHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvChiTietHD.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHD_CellValueChanged);
             // 
+            // btnXoa
+            // 
+            this.btnXoa.HeaderText = "";
+            this.btnXoa.Image = global::QuanLySanBongMini.Properties.Resources.close;
+            this.btnXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ToolTipText = "Xóa thức uống";
+            this.btnXoa.Width = 40;
+            // 
+            // cbbThucUong
+            // 
+            this.cbbThucUong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cbbThucUong.DataPropertyName = "maThucUong";
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.cbbThucUong.DefaultCellStyle = dataGridViewCellStyle6;
+            this.cbbThucUong.FillWeight = 35.08772F;
+            this.cbbThucUong.HeaderText = "Mặt hàng";
+            this.cbbThucUong.Name = "cbbThucUong";
+            this.cbbThucUong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cbbThucUong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // DVT
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SeaShell;
+            this.DVT.DefaultCellStyle = dataGridViewCellStyle7;
+            this.DVT.HeaderText = "DVT";
+            this.DVT.Name = "DVT";
+            this.DVT.ReadOnly = true;
+            // 
+            // soLuong
+            // 
+            this.soLuong.DataPropertyName = "soluong";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.soLuong.DefaultCellStyle = dataGridViewCellStyle8;
+            this.soLuong.FillWeight = 294.7368F;
+            this.soLuong.HeaderText = "Số lượng";
+            this.soLuong.Name = "soLuong";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "giaBan";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = "0";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Column4.FillWeight = 35.08772F;
+            this.Column4.HeaderText = "Đơn giá";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "thanhTien";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle10.Format = "N0";
+            dataGridViewCellStyle10.NullValue = "0";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Column5.FillWeight = 35.08772F;
+            this.Column5.HeaderText = "Tổng tiền";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label23);
@@ -227,7 +297,7 @@ namespace QuanLySanBongMini
             // 
             this.panel8.Controls.Add(this.lookUpEdit1);
             this.panel8.Controls.Add(this.groupBox1);
-            this.panel8.Controls.Add(this.simpleButton1);
+            this.panel8.Controls.Add(this.btnRefesh);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -236,6 +306,7 @@ namespace QuanLySanBongMini
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1097, 340);
             this.panel8.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.panel8, "Refesh");
             // 
             // lookUpEdit1
             // 
@@ -337,13 +408,12 @@ namespace QuanLySanBongMini
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonLamMoi,
             this.toolStripButtonThanhToan,
-            this.toolStripButtonHuyLich,
+            this.toolStripButtonInHoaDon,
             this.toolStripButtonThanhToanNhieuSan});
             this.toolStrip1.Location = new System.Drawing.Point(3, 235);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1070, 37);
             this.toolStrip1.TabIndex = 39;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButtonLamMoi
             // 
@@ -364,13 +434,14 @@ namespace QuanLySanBongMini
             this.toolStripButtonThanhToan.Text = "Thanh toán";
             this.toolStripButtonThanhToan.Click += new System.EventHandler(this.toolStripButtonThanhToan_Click);
             // 
-            // toolStripButtonHuyLich
+            // toolStripButtonInHoaDon
             // 
-            this.toolStripButtonHuyLich.Image = global::QuanLySanBongMini.Properties.Resources.z2525335187690_01de74b6b6234fce8c62460120cb2841_removebg_preview;
-            this.toolStripButtonHuyLich.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonHuyLich.Name = "toolStripButtonHuyLich";
-            this.toolStripButtonHuyLich.Size = new System.Drawing.Size(114, 34);
-            this.toolStripButtonHuyLich.Text = "In hóa đơn";
+            this.toolStripButtonInHoaDon.Image = global::QuanLySanBongMini.Properties.Resources.z2525335187690_01de74b6b6234fce8c62460120cb2841_removebg_preview;
+            this.toolStripButtonInHoaDon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonInHoaDon.Name = "toolStripButtonInHoaDon";
+            this.toolStripButtonInHoaDon.Size = new System.Drawing.Size(134, 34);
+            this.toolStripButtonInHoaDon.Text = "In lại hóa đơn";
+            this.toolStripButtonInHoaDon.Click += new System.EventHandler(this.toolStripButtonInHoaDon_Click);
             // 
             // toolStripButtonThanhToanNhieuSan
             // 
@@ -621,14 +692,16 @@ namespace QuanLySanBongMini
             this.label4.TabIndex = 20;
             this.label4.Text = "Tên khách hàng:";
             // 
-            // simpleButton1
+            // btnRefesh
             // 
-            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(897, 14);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(37, 28);
-            this.simpleButton1.TabIndex = 17;
+            this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefesh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnRefesh.Location = new System.Drawing.Point(897, 12);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnRefesh.Size = new System.Drawing.Size(37, 36);
+            this.btnRefesh.TabIndex = 17;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // label2
             // 
@@ -706,76 +779,6 @@ namespace QuanLySanBongMini
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
             // 
-            // btnXoa
-            // 
-            this.btnXoa.HeaderText = "";
-            this.btnXoa.Image = global::QuanLySanBongMini.Properties.Resources.close;
-            this.btnXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ToolTipText = "Xóa thức uống";
-            this.btnXoa.Width = 40;
-            // 
-            // cbbThucUong
-            // 
-            this.cbbThucUong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cbbThucUong.DataPropertyName = "maThucUong";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.cbbThucUong.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cbbThucUong.FillWeight = 35.08772F;
-            this.cbbThucUong.HeaderText = "Mặt hàng";
-            this.cbbThucUong.Name = "cbbThucUong";
-            this.cbbThucUong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cbbThucUong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // DVT
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
-            this.DVT.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DVT.HeaderText = "DVT";
-            this.DVT.Name = "DVT";
-            this.DVT.ReadOnly = true;
-            // 
-            // soLuong
-            // 
-            this.soLuong.DataPropertyName = "soluong";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.soLuong.DefaultCellStyle = dataGridViewCellStyle3;
-            this.soLuong.FillWeight = 294.7368F;
-            this.soLuong.HeaderText = "Số lượng";
-            this.soLuong.Name = "soLuong";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "giaBan";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column4.FillWeight = 35.08772F;
-            this.Column4.HeaderText = "Đơn giá";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "thanhTien";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column5.FillWeight = 35.08772F;
-            this.Column5.HeaderText = "Tổng tiền";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
             // frmThanhToanSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -827,7 +830,7 @@ namespace QuanLySanBongMini
         private DevExpress.XtraTreeList.TreeList treeListThucUong;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnRefesh;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSDT;
@@ -855,7 +858,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonLamMoi;
         private System.Windows.Forms.ToolStripButton toolStripButtonThanhToan;
-        private System.Windows.Forms.ToolStripButton toolStripButtonHuyLich;
+        private System.Windows.Forms.ToolStripButton toolStripButtonInHoaDon;
         private System.Windows.Forms.TextBox txtKhungGioDa;
         private System.Windows.Forms.ToolStripButton toolStripButtonThanhToanNhieuSan;
         private System.Windows.Forms.Panel panel5;

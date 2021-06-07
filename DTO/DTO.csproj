@@ -43,9 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckConfig.cs" />
+    <Compile Include="NewChiTietHD.cs" />
     <Compile Include="NewChiTietPN.cs" />
     <Compile Include="NewDatSan.cs" />
     <Compile Include="NewDonGiaGio.cs" />
+    <Compile Include="NewHoaDon.cs" />
     <Compile Include="NewKhachHangLoaiKH.cs" />
     <Compile Include="NewPhieuNhap.cs" />
     <Compile Include="NewQL_PhanQuyen.cs" />
