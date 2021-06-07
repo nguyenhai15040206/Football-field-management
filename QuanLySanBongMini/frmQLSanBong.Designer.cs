@@ -185,7 +185,7 @@ namespace QuanLySanBongMini
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
             this.gridContrrolSanBong.Size = new System.Drawing.Size(947, 717);
-            this.gridContrrolSanBong.TabIndex = 7;
+            this.gridContrrolSanBong.TabIndex = 0;
             this.gridContrrolSanBong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSanBong});
             // 
@@ -349,7 +349,7 @@ namespace QuanLySanBongMini
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tenLoai", "Loại sân bóng")});
             this.lookUpEditLoaiSan.Properties.NullText = "Chọn loại sân";
             this.lookUpEditLoaiSan.Size = new System.Drawing.Size(252, 26);
-            this.lookUpEditLoaiSan.TabIndex = 25;
+            this.lookUpEditLoaiSan.TabIndex = 0;
             this.lookUpEditLoaiSan.EditValueChanged += new System.EventHandler(this.lookUpEditLoaiSan_EditValueChanged);
             // 
             // panelShow
@@ -392,7 +392,7 @@ namespace QuanLySanBongMini
             this.toolStrip2.Location = new System.Drawing.Point(3, 174);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(434, 37);
-            this.toolStrip2.TabIndex = 22;
+            this.toolStrip2.TabIndex = 5;
             this.toolStrip2.Text = "toolStrip2";
             // 
             // toolStripButtonLamMoiDDG
@@ -598,7 +598,7 @@ namespace QuanLySanBongMini
             this.txtDonGia.Location = new System.Drawing.Point(140, 141);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(252, 27);
-            this.txtDonGia.TabIndex = 19;
+            this.txtDonGia.TabIndex = 4;
             this.txtDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
             this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
@@ -623,7 +623,7 @@ namespace QuanLySanBongMini
             this.dateTimePickerNgayCNDGG.Location = new System.Drawing.Point(139, 108);
             this.dateTimePickerNgayCNDGG.Name = "dateTimePickerNgayCNDGG";
             this.dateTimePickerNgayCNDGG.Size = new System.Drawing.Size(253, 27);
-            this.dateTimePickerNgayCNDGG.TabIndex = 16;
+            this.dateTimePickerNgayCNDGG.TabIndex = 3;
             // 
             // label7
             // 
@@ -657,7 +657,7 @@ namespace QuanLySanBongMini
             0});
             this.numericUpDownDenKG.Name = "numericUpDownDenKG";
             this.numericUpDownDenKG.Size = new System.Drawing.Size(251, 27);
-            this.numericUpDownDenKG.TabIndex = 7;
+            this.numericUpDownDenKG.TabIndex = 2;
             this.numericUpDownDenKG.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDownDenKG.Value = new decimal(new int[] {
             1,
@@ -697,7 +697,7 @@ namespace QuanLySanBongMini
             0});
             this.numericUpDownTuKKG.Name = "numericUpDownTuKKG";
             this.numericUpDownTuKKG.Size = new System.Drawing.Size(251, 27);
-            this.numericUpDownTuKKG.TabIndex = 7;
+            this.numericUpDownTuKKG.TabIndex = 1;
             this.numericUpDownTuKKG.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDownTuKKG.Value = new decimal(new int[] {
             1,
@@ -723,7 +723,7 @@ namespace QuanLySanBongMini
             this.txtTenLoaiSan.Name = "txtTenLoaiSan";
             this.txtTenLoaiSan.ReadOnly = true;
             this.txtTenLoaiSan.Size = new System.Drawing.Size(252, 27);
-            this.txtTenLoaiSan.TabIndex = 5;
+            this.txtTenLoaiSan.TabIndex = 0;
             // 
             // label2
             // 
@@ -759,7 +759,7 @@ namespace QuanLySanBongMini
             this.bunifuCkbTinhTrang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuCkbTinhTrang.Name = "bunifuCkbTinhTrang";
             this.bunifuCkbTinhTrang.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCkbTinhTrang.TabIndex = 22;
+            this.bunifuCkbTinhTrang.TabIndex = 2;
             this.bunifuCkbTinhTrang.OnChange += new System.EventHandler(this.bunifuCkbTinhTrang_OnChange);
             // 
             // toolStrip1
@@ -776,7 +776,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.Location = new System.Drawing.Point(3, 142);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(434, 37);
-            this.toolStrip1.TabIndex = 20;
+            this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButtonLamMoi
@@ -813,7 +813,7 @@ namespace QuanLySanBongMini
             this.txtTenSan.Location = new System.Drawing.Point(139, 66);
             this.txtTenSan.Name = "txtTenSan";
             this.txtTenSan.Size = new System.Drawing.Size(252, 27);
-            this.txtTenSan.TabIndex = 3;
+            this.txtTenSan.TabIndex = 1;
             // 
             // label3
             // 

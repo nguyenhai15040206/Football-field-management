@@ -28,7 +28,7 @@ namespace QuanLySanBongMini
             //    frm.Close();
             //    Application.Run(mainForm);
             //}
-             Application.Run(new frmDatSan());
+            Application.Run(new frmQLNhanVienVaPhanQuyen());
         }
 
 

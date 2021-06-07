@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,7 +79,7 @@ namespace DAO
             try
             {
                 HoaDon hd = new HoaDon();
-                hd.ngayLap = DateTime.Parse(DateTime.Now.Date.ToString("MM-dd-yyy"));
+                hd.ngayLap = DateTime.Parse(DateTime.Now.Date.ToString("dd-MM-yyy"));
                 hd.tienSan = (decimal?)tienSan;
                 hd.giamGia = (decimal?)giamGia;
                 hd.tienNuoc = (decimal?)tienNuoc;
@@ -114,6 +115,25 @@ namespace DAO
             {
                 return false;
             }
+        }
+
+
+
+        // thống kê doanh thu 12 tháng
+        public DataTable thongKeDoanhThuTheoThang()
+        {
+            var thongKe = (from HoaDon in db.HoaDons
+                           where HoaDon.tinhTrang == true
+                           group HoaDon by new
+                           {
+                               Column1 = (int?)HoaDon.ngayLap.Value.Month
+                           } into g
+                           select new
+                           {
+                               thang = g.Key.Column1,
+                               tong = (decimal?)g.Sum(p => p.tongTien)
+                           }).ToList();
+            return ReportDAO.Instance.ToDataTable(thongKe);
         }
 
 

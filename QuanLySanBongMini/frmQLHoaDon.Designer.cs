@@ -166,7 +166,7 @@ namespace QuanLySanBongMini
             this.gridControlHD.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoaPN});
             this.gridControlHD.Size = new System.Drawing.Size(1284, 320);
-            this.gridControlHD.TabIndex = 27;
+            this.gridControlHD.TabIndex = 0;
             this.gridControlHD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -411,7 +411,7 @@ namespace QuanLySanBongMini
             this.btnAddCTPN,
             this.repositoryItemLookUpEditThucUong});
             this.gridControlCTHD.Size = new System.Drawing.Size(796, 303);
-            this.gridControlCTHD.TabIndex = 28;
+            this.gridControlCTHD.TabIndex = 0;
             this.gridControlCTHD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCTHD});
             // 
@@ -618,7 +618,7 @@ namespace QuanLySanBongMini
             this.bunifuCkbTinhTrang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuCkbTinhTrang.Name = "bunifuCkbTinhTrang";
             this.bunifuCkbTinhTrang.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCkbTinhTrang.TabIndex = 55;
+            this.bunifuCkbTinhTrang.TabIndex = 6;
             this.bunifuCkbTinhTrang.OnChange += new System.EventHandler(this.bunifuCkbTinhTrang_OnChange);
             // 
             // txtTongTien
@@ -630,7 +630,7 @@ namespace QuanLySanBongMini
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(298, 27);
-            this.txtTongTien.TabIndex = 54;
+            this.txtTongTien.TabIndex = 5;
             this.txtTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label16
@@ -652,7 +652,7 @@ namespace QuanLySanBongMini
             this.txtTienNuoc.Name = "txtTienNuoc";
             this.txtTienNuoc.ReadOnly = true;
             this.txtTienNuoc.Size = new System.Drawing.Size(298, 27);
-            this.txtTienNuoc.TabIndex = 51;
+            this.txtTienNuoc.TabIndex = 4;
             this.txtTienNuoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
@@ -674,7 +674,7 @@ namespace QuanLySanBongMini
             this.txtKhungGioDa.Name = "txtKhungGioDa";
             this.txtKhungGioDa.ReadOnly = true;
             this.txtKhungGioDa.Size = new System.Drawing.Size(298, 27);
-            this.txtKhungGioDa.TabIndex = 48;
+            this.txtKhungGioDa.TabIndex = 3;
             // 
             // dateTimePickerNgayDat
             // 
@@ -685,7 +685,7 @@ namespace QuanLySanBongMini
             this.dateTimePickerNgayDat.Location = new System.Drawing.Point(154, 75);
             this.dateTimePickerNgayDat.Name = "dateTimePickerNgayDat";
             this.dateTimePickerNgayDat.Size = new System.Drawing.Size(298, 27);
-            this.dateTimePickerNgayDat.TabIndex = 46;
+            this.dateTimePickerNgayDat.TabIndex = 2;
             // 
             // label9
             // 
@@ -706,7 +706,7 @@ namespace QuanLySanBongMini
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.ReadOnly = true;
             this.txtSDT.Size = new System.Drawing.Size(298, 27);
-            this.txtSDT.TabIndex = 44;
+            this.txtSDT.TabIndex = 1;
             // 
             // txtTenKhachHang
             // 
@@ -717,7 +717,7 @@ namespace QuanLySanBongMini
             this.txtTenKhachHang.Name = "txtTenKhachHang";
             this.txtTenKhachHang.ReadOnly = true;
             this.txtTenKhachHang.Size = new System.Drawing.Size(298, 27);
-            this.txtTenKhachHang.TabIndex = 45;
+            this.txtTenKhachHang.TabIndex = 0;
             // 
             // label6
             // 
@@ -759,7 +759,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.Location = new System.Drawing.Point(0, 266);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(488, 37);
-            this.toolStrip1.TabIndex = 23;
+            this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButtonInPhieu

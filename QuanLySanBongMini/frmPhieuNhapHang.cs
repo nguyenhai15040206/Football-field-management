@@ -91,9 +91,9 @@ namespace QuanLySanBongMini
                             int maThucUong = int.Parse(gridViewCTPN.GetRowCellValue(i, gridColumnMaThucUong).ToString());
                             int soLuong = int.Parse(gridViewCTPN.GetRowCellValue(i, gridColumnSL).ToString());
                             double donGia = double.Parse(gridViewCTPN.GetRowCellValue(i, gridColumnDonGia).ToString());
-                            double thanhTien = soLuong * 24 * donGia;
-                            ChiTietPhieuNhapBUS.Instance.themCTPhieuNhap(maPhieuNhap, maThucUong, soLuong * 24, donGia, thanhTien);
-                            ThucUongBUS.Instance.capNhatSoLuongKhiHuy(maThucUong,soLuong*24);
+                            double thanhTien = soLuong * donGia;
+                            ChiTietPhieuNhapBUS.Instance.themCTPhieuNhap(maPhieuNhap, maThucUong, soLuong , donGia, thanhTien);
+                            ThucUongBUS.Instance.capNhatSoLuongKhiHuy(maThucUong,soLuong);
                         }
                         toolStripButtonLuuPN.Enabled = false;
                         if (MessageBox.Show("Thêm thành công! Bạn có muốn in phiếu nhập này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -140,19 +140,19 @@ namespace QuanLySanBongMini
                 if (int.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnSL).ToString()) == 0 || gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnSL) == null)
                 {
                     gridViewCTPN.SetRowCellValue(e.RowHandle, "SoLuong", 1);
-                    gridViewCTPN.SetRowCellValue(e.RowHandle, "ThanhTien", 1 * 24 * (double.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnDonGia).ToString())));
+                    gridViewCTPN.SetRowCellValue(e.RowHandle, "ThanhTien", 1  * (double.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnDonGia).ToString())));
                     tinhTienTong();
                 }
                 else
                 {
-                    gridViewCTPN.SetRowCellValue(e.RowHandle, "ThanhTien", int.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnSL).ToString()) * 24 *
+                    gridViewCTPN.SetRowCellValue(e.RowHandle, "ThanhTien", int.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnSL).ToString()) * 
                         (double.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnDonGia).ToString())));
                     tinhTienTong();
                 }
             }
             if (e.Column.Name == "gridColumnSL")
             {
-                gridViewCTPN.SetRowCellValue(e.RowHandle, "ThanhTien", int.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnSL).ToString()) * 24 *
+                gridViewCTPN.SetRowCellValue(e.RowHandle, "ThanhTien", int.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnSL).ToString()) * 
                         (double.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnDonGia).ToString())));
                 tinhTienTong();
             }
@@ -205,7 +205,7 @@ namespace QuanLySanBongMini
                             {
                                 int maThucUong = int.Parse(gridViewCTPN.GetRowCellValue(i, gridColumnMaThucUong).ToString());
                                 int soLuong = int.Parse(gridViewCTPN.GetRowCellValue(i, gridColumnSL).ToString());
-                                ThucUongBUS.Instance.capNhatSoLuongKhiMua(maThucUong,soLuong*24);
+                                ThucUongBUS.Instance.capNhatSoLuongKhiMua(maThucUong,soLuong);
                             }    
                             lamMoiDuLieu();
                             ChiTietPhieuNhapBUS.Instance.loadCTPN_maPhieuNhap(gridControlCTPN, 0);
@@ -246,7 +246,7 @@ namespace QuanLySanBongMini
             if( gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnMaThucUong)!= null)
             {
                 maThucUong = int.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnMaThucUong).ToString());
-                soLuong = int.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnSL).ToString()) * 24;
+                soLuong = int.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnSL).ToString()) ;
                 giaNhap = double.Parse(gridViewCTPN.GetRowCellValue(e.RowHandle, gridColumnDonGia).ToString());
                 thanhTien = soLuong * giaNhap;
                 dongChon = e.RowHandle;

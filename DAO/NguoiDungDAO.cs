@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DAO
 {
     public class NguoiDungDAO
@@ -28,13 +29,6 @@ namespace DAO
 
         QuanLySanBongDataContext db = new QuanLySanBongDataContext();
 
-        // load nhóm người dùng
-        public List<QL_NhomNguoiDung> loadNhomNguoiDung()
-        {
-            var listNguoiDung = db.QL_NhomNguoiDungs.ToList();
-            return listNguoiDung;
-
-        }
 
         // load người dùng
         public List<NguoiDung> loadNguoiDung()
@@ -96,8 +90,28 @@ namespace DAO
         //
         public NguoiDung ttNguoiDung(string tenDangNhap)
         {
-
-            return db.NguoiDungs.SingleOrDefault(m => m.tenDangNhap == tenDangNhap);
+            return db.NguoiDungs.AsEnumerable().FirstOrDefault(m => m.tenDangNhap == tenDangNhap);
         }
+
+        //đổi mật khẩu
+        public bool doiMatKhau(string tenDN, string pass)
+        {
+            try
+            {
+                NguoiDung ng = db.NguoiDungs.SingleOrDefault(m => m.tenDangNhap == tenDN);
+                ng.matKhau = pass;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //kiểm tra tên đăng nhập có trùng
+        
+
+
     }
 }

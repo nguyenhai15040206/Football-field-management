@@ -86,6 +86,7 @@ namespace QuanLySanBongMini
                     if (SanBongBUS.Instance.xoaSanBong(maSan))
                     {
                         XtraMessageBox.Show("Xóa sân bóng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        SanBongBUS.Instance.LoadSanBong_TinhTrang(gridContrrolSanBong, tinhTrang);
                     }  
                     else
                     {
@@ -246,23 +247,36 @@ namespace QuanLySanBongMini
 
         private void toolStripButtonThemDGG_Click(object sender, EventArgs e)
         {
-            if(txtTenLoaiSan.Text.Trim().Length>0&&numericUpDownDenKG.Value>0&&numericUpDownDenKG.Value>0&&txtDonGia.Text.Trim().Length>0)
+            if(txtDonGia.Text.Trim().Length>0)
             {
                 if(numericUpDownDenKG.Value - numericUpDownTuKKG.Value >= 1)
                 {
-                    if (DonGiaGioBUS.Instance.themDonGiaGio(int.Parse(lookUpEditLoaiSan.EditValue.ToString()),(double)numericUpDownTuKKG.Value,(double)numericUpDownDenKG.Value,dateTimePickerNgayCNDGG.Value.Date,decimal.Parse(txtDonGia.Text)))
+                    if (DonGiaGioBUS.Instance.kiemTraTrungDonGiaGio(int.Parse(lookUpEditLoaiSan.EditValue.ToString()), (double)numericUpDownTuKKG.Value, (double)numericUpDownDenKG.Value, dateTimePickerNgayCNDGG.Value.Date))
                     {
-                        XtraMessageBox.Show("Thêm đơn giá mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (DonGiaGioBUS.Instance.themDonGiaGio(int.Parse(lookUpEditLoaiSan.EditValue.ToString()), (double)numericUpDownTuKKG.Value, (double)numericUpDownDenKG.Value, decimal.Parse(txtDonGia.Text)))
+                        {
+                            XtraMessageBox.Show("Thêm đơn giá mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DonGiaGioBUS.Instance.loadDonGia_NgayCNMoiNhat_Grid_MaLoaiSan(gridControl3, int.Parse(lookUpEditLoaiSan.EditValue.ToString()));
+                            numericUpDownTuKKG.Focus();
+                        }
                     }
+                    else
+                    {
+                        XtraMessageBox.Show("Đơn giá này đã có! Bạn có thể chọn vào chỉnh sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lamMoiDuLieu();
+                        DonGiaGioBUS.Instance.loadDonGia_NgayCNMoiNhat_Grid_MaLoaiSan(gridControl3, int.Parse(lookUpEditLoaiSan.EditValue.ToString()));
+                    }    
                 } 
                 else
                 {
                     XtraMessageBox.Show("Khung giờ không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    numericUpDownDenKG.Focus();
                 }    
             }   
             else
             {
-                XtraMessageBox.Show("Không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Đơn giá không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtDonGia.Focus();
             }    
         }
 
@@ -293,6 +307,7 @@ namespace QuanLySanBongMini
             else
             {
                 XtraMessageBox.Show("Vui lòng nhập đơn giá cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtDonGia.Focus();
             }    
         }
     }

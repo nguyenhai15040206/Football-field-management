@@ -37,7 +37,7 @@ namespace DAO
                             {
                                 MaThucUong = tu.maThucUong,
                                 DVT = sp.DVT,
-                                SoLuong = (int)ctpn.soLuong / 24,
+                                SoLuong = (int)ctpn.soLuong,
                                 DonGia = (double)ctpn.donGia,
                                 ThanhTien =(double) ctpn.thanhTien
                             }).ToList();

@@ -173,7 +173,7 @@ namespace QuanLySanBongMini
             this.btnAddCTPN,
             this.repositoryItemLookUpEditThucUong});
             this.gridControlCTPN.Size = new System.Drawing.Size(1152, 304);
-            this.gridControlCTPN.TabIndex = 27;
+            this.gridControlCTPN.TabIndex = 0;
             this.gridControlCTPN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCTPN});
             // 
@@ -275,7 +275,7 @@ namespace QuanLySanBongMini
             // 
             // gridColumnSL
             // 
-            this.gridColumnSL.Caption = "Số lượng (Thùng 24)";
+            this.gridColumnSL.Caption = "Số lượng";
             this.gridColumnSL.FieldName = "SoLuong";
             this.gridColumnSL.Name = "gridColumnSL";
             this.gridColumnSL.Visible = true;
@@ -377,7 +377,7 @@ namespace QuanLySanBongMini
             this.gridContrrolPN.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoaPN});
             this.gridContrrolPN.Size = new System.Drawing.Size(662, 333);
-            this.gridContrrolPN.TabIndex = 26;
+            this.gridContrrolPN.TabIndex = 0;
             this.gridContrrolPN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -548,7 +548,7 @@ namespace QuanLySanBongMini
             this.bunifuCkbTinhTrang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuCkbTinhTrang.Name = "bunifuCkbTinhTrang";
             this.bunifuCkbTinhTrang.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCkbTinhTrang.TabIndex = 24;
+            this.bunifuCkbTinhTrang.TabIndex = 4;
             this.bunifuCkbTinhTrang.OnChange += new System.EventHandler(this.bunifuCkbTinhTrang_OnChange);
             // 
             // toolStrip1
@@ -563,7 +563,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.Location = new System.Drawing.Point(0, 296);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(490, 37);
-            this.toolStrip1.TabIndex = 23;
+            this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButtonLamMoi
@@ -602,7 +602,7 @@ namespace QuanLySanBongMini
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(272, 27);
-            this.txtTongTien.TabIndex = 22;
+            this.txtTongTien.TabIndex = 3;
             // 
             // txtNguoiNhap
             // 
@@ -611,7 +611,7 @@ namespace QuanLySanBongMini
             this.txtNguoiNhap.Name = "txtNguoiNhap";
             this.txtNguoiNhap.ReadOnly = true;
             this.txtNguoiNhap.Size = new System.Drawing.Size(272, 27);
-            this.txtNguoiNhap.TabIndex = 22;
+            this.txtNguoiNhap.TabIndex = 2;
             // 
             // label5
             // 
@@ -630,7 +630,7 @@ namespace QuanLySanBongMini
             this.dateTimePickerNgayDat.Location = new System.Drawing.Point(130, 60);
             this.dateTimePickerNgayDat.Name = "dateTimePickerNgayDat";
             this.dateTimePickerNgayDat.Size = new System.Drawing.Size(272, 27);
-            this.dateTimePickerNgayDat.TabIndex = 21;
+            this.dateTimePickerNgayDat.TabIndex = 1;
             // 
             // label4
             // 
@@ -663,7 +663,7 @@ namespace QuanLySanBongMini
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("diaChi", "Địa chỉ", 160, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lookUpEdit1.Properties.NullText = "Chọn một nha cung cấp";
             this.lookUpEdit1.Size = new System.Drawing.Size(348, 28);
-            this.lookUpEdit1.TabIndex = 20;
+            this.lookUpEdit1.TabIndex = 0;
             // 
             // label3
             // 

@@ -101,41 +101,12 @@ namespace BUS
                 nd.soDienThoai;
         }
 
-        public void loadNhomNguoiDung(TreeList tv)
-        {
-            tv.BeginUnboundLoad();
-
-            tv.Nodes.Clear();
-            List<QL_NhomNguoiDung> nd = NguoiDungDAO.Instance.loadNhomNguoiDung();
-            for (int i = 0; i < nd.Count; i++)
-            {
-                TreeListNode nodes = tv.AppendNode(null, null);
-                nodes.SetValue("name", nd[i].tenNhom.ToString());
-                nodes.Tag = (nd[i].maNhom.ToString()).ToString();
-                string maNhom = (string)nodes.Tag;
-                List<NguoiDung> ndNhomND = NguoiDungDAO.Instance.loadNguoiDungTheoNhom(int.Parse(maNhom.ToString()));
-                for (int j = 0; j < ndNhomND.Count; j++)
-                {
-                    TreeListNode childNodes = null;
-                    childNodes = tv.AppendNode(null, nodes);
-                    childNodes.SetValue("name", "Tài khoản: " + ndNhomND[j].tenDangNhap);
-                }
-
-
-            }
-            tv.EndUnboundLoad();
-        }
-
         // load tất cả người dùng
         public void loadNguoiDung(GridControl gv)
         {
             gv.DataSource = NguoiDungDAO.Instance.loadNguoiDung();
         }
 
-        public void loadNhomNguoiDung_GridCOntrol(GridControl gv)
-        {
-            gv.DataSource = NguoiDungDAO.Instance.loadNhomNguoiDung();
-        }
 
         public void loadNguoiDungChuaCoNhom(GridControl dgv)
         {
@@ -143,6 +114,29 @@ namespace BUS
             dgv.DataSource = NguoiDungDAO.Instance.loadNguoiDungChuaCoNhom();
         }
 
+        public bool doiMatKhau(string tenDN, string pass)
+        {
+            return NguoiDungDAO.Instance.doiMatKhau(tenDN, pass);
+        }
+
+
+
+        public bool KiemTraTenDangNhap(string tenDN)
+        {
+            try
+            {
+                var nguoiDung = NguoiDungDAO.Instance.ttNguoiDung(tenDN);
+                if (nguoiDung ==null)
+                {
+                    return false;
+                }  
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
 
     }

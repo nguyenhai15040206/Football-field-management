@@ -59,6 +59,7 @@
     <Compile Include="LoaiSanBUS.cs" />
     <Compile Include="NguoiDungBUS.cs" />
     <Compile Include="NhaCungCapBUS.cs" />
+    <Compile Include="NhomNguoiDungBUS.cs" />
     <Compile Include="PhieuNhapBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportBUS.cs" />

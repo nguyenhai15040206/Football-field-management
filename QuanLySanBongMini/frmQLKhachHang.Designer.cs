@@ -89,7 +89,7 @@ namespace QuanLySanBongMini
             this.gridContrrolKhachHang.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoaKH});
             this.gridContrrolKhachHang.Size = new System.Drawing.Size(743, 247);
-            this.gridContrrolKhachHang.TabIndex = 6;
+            this.gridContrrolKhachHang.TabIndex = 0;
             this.gridContrrolKhachHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -273,7 +273,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.Location = new System.Drawing.Point(3, 181);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(740, 37);
-            this.toolStrip1.TabIndex = 20;
+            this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButtonLamMoi
@@ -323,7 +323,7 @@ namespace QuanLySanBongMini
             this.numericUpDownDiemTL.ReadOnly = true;
             this.numericUpDownDiemTL.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.numericUpDownDiemTL.Size = new System.Drawing.Size(270, 27);
-            this.numericUpDownDiemTL.TabIndex = 4;
+            this.numericUpDownDiemTL.TabIndex = 3;
             this.numericUpDownDiemTL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
@@ -340,7 +340,7 @@ namespace QuanLySanBongMini
             this.txtSDT.Location = new System.Drawing.Point(158, 105);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(270, 27);
-            this.txtSDT.TabIndex = 3;
+            this.txtSDT.TabIndex = 2;
             // 
             // label2
             // 
@@ -356,7 +356,7 @@ namespace QuanLySanBongMini
             this.txtTenKH.Location = new System.Drawing.Point(158, 69);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(270, 27);
-            this.txtTenKH.TabIndex = 3;
+            this.txtTenKH.TabIndex = 1;
             // 
             // label3
             // 

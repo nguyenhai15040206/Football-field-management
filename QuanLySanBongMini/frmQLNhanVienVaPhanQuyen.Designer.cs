@@ -39,7 +39,7 @@ namespace QuanLySanBongMini
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlNDCoNhom = new DevExpress.XtraGrid.GridControl();
             this.gridViewNguoiDungDaCoNhom = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +58,7 @@ namespace QuanLySanBongMini
             this.btnADD = new DevExpress.XtraEditors.SimpleButton();
             this.panel10 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlNguoiDungChuaCoNhom = new DevExpress.XtraGrid.GridControl();
             this.gridViewnguoiDungChuaCoNhom = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,6 +86,10 @@ namespace QuanLySanBongMini
             this.gridColumnNgayVL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnHoatDong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonLamMoi = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonLuuKhachHang = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCapNhat = new System.Windows.Forms.ToolStripButton();
             this.ckbHoatDong = new System.Windows.Forms.CheckBox();
             this.dateTimePickerNgayVL = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
@@ -103,14 +107,10 @@ namespace QuanLySanBongMini
             this.label12 = new System.Windows.Forms.Label();
             this.txtMaNguoiDung = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.menutItemThem = new System.Windows.Forms.ToolStripButton();
-            this.btnUpdate = new System.Windows.Forms.ToolStripButton();
-            this.btnClean = new System.Windows.Forms.ToolStripButton();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panel15 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.gridControl6 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlQuyénDmanHinh = new DevExpress.XtraGrid.GridControl();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -118,7 +118,7 @@ namespace QuanLySanBongMini
             this.repositoryItemButtonEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.gridControlQLNhomND = new DevExpress.XtraGrid.GridControl();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewDSNDPhanQuyen = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -130,7 +130,7 @@ namespace QuanLySanBongMini
             this.treeList2 = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.treeList1 = new DevExpress.XtraTreeList.TreeList();
+            this.treeListNguoiDUng = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -141,7 +141,7 @@ namespace QuanLySanBongMini
             this.groupBox2.SuspendLayout();
             this.panel12.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlNDCoNhom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewNguoiDungDaCoNhom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
@@ -149,7 +149,7 @@ namespace QuanLySanBongMini
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlNguoiDungChuaCoNhom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewnguoiDungChuaCoNhom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
@@ -164,19 +164,19 @@ namespace QuanLySanBongMini
             this.tabNavigationPage2.SuspendLayout();
             this.panel15.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlQuyénDmanHinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit7)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlQLNhomND)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDSNDPhanQuyen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeList2)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListNguoiDUng)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -295,7 +295,7 @@ namespace QuanLySanBongMini
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.gridControl3);
+            this.groupBox4.Controls.Add(this.gridControlNDCoNhom);
             this.groupBox4.Controls.Add(this.panel13);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -306,17 +306,17 @@ namespace QuanLySanBongMini
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DS đã phân nhóm";
             // 
-            // gridControl3
+            // gridControlNDCoNhom
             // 
-            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.Location = new System.Drawing.Point(3, 61);
-            this.gridControl3.MainView = this.gridViewNguoiDungDaCoNhom;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridControlNDCoNhom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlNDCoNhom.Location = new System.Drawing.Point(3, 61);
+            this.gridControlNDCoNhom.MainView = this.gridViewNguoiDungDaCoNhom;
+            this.gridControlNDCoNhom.Name = "gridControlNDCoNhom";
+            this.gridControlNDCoNhom.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit4});
-            this.gridControl3.Size = new System.Drawing.Size(483, 198);
-            this.gridControl3.TabIndex = 5;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlNDCoNhom.Size = new System.Drawing.Size(483, 198);
+            this.gridControlNDCoNhom.TabIndex = 1;
+            this.gridControlNDCoNhom.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewNguoiDungDaCoNhom,
             this.gridView4});
             // 
@@ -352,7 +352,7 @@ namespace QuanLySanBongMini
             this.gridColumn15,
             this.gridColumn16,
             this.gridColumn17});
-            this.gridViewNguoiDungDaCoNhom.GridControl = this.gridControl3;
+            this.gridViewNguoiDungDaCoNhom.GridControl = this.gridControlNDCoNhom;
             this.gridViewNguoiDungDaCoNhom.Name = "gridViewNguoiDungDaCoNhom";
             this.gridViewNguoiDungDaCoNhom.OptionsBehavior.Editable = false;
             this.gridViewNguoiDungDaCoNhom.OptionsBehavior.ReadOnly = true;
@@ -369,6 +369,7 @@ namespace QuanLySanBongMini
             this.gridViewNguoiDungDaCoNhom.OptionsView.ShowGroupExpandCollapseButtons = false;
             this.gridViewNguoiDungDaCoNhom.OptionsView.ShowGroupPanel = false;
             this.gridViewNguoiDungDaCoNhom.OptionsView.ShowIndicator = false;
+            this.gridViewNguoiDungDaCoNhom.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewNguoiDungDaCoNhom_RowClick);
             // 
             // gridColumn10
             // 
@@ -444,7 +445,7 @@ namespace QuanLySanBongMini
             // 
             // gridView4
             // 
-            this.gridView4.GridControl = this.gridControl3;
+            this.gridView4.GridControl = this.gridControlNDCoNhom;
             this.gridView4.Name = "gridView4";
             // 
             // panel13
@@ -455,7 +456,7 @@ namespace QuanLySanBongMini
             this.panel13.Location = new System.Drawing.Point(3, 23);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(483, 38);
-            this.panel13.TabIndex = 2;
+            this.panel13.TabIndex = 0;
             // 
             // cboNhomNguoiDung
             // 
@@ -463,7 +464,8 @@ namespace QuanLySanBongMini
             this.cboNhomNguoiDung.Location = new System.Drawing.Point(160, 3);
             this.cboNhomNguoiDung.Name = "cboNhomNguoiDung";
             this.cboNhomNguoiDung.Size = new System.Drawing.Size(296, 28);
-            this.cboNhomNguoiDung.TabIndex = 1;
+            this.cboNhomNguoiDung.TabIndex = 0;
+            this.cboNhomNguoiDung.SelectedIndexChanged += new System.EventHandler(this.cboNhomNguoiDung_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -495,6 +497,7 @@ namespace QuanLySanBongMini
             this.btnRemove.Size = new System.Drawing.Size(71, 34);
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "<<";
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnADD
             // 
@@ -505,8 +508,9 @@ namespace QuanLySanBongMini
             this.btnADD.Location = new System.Drawing.Point(11, 83);
             this.btnADD.Name = "btnADD";
             this.btnADD.Size = new System.Drawing.Size(71, 34);
-            this.btnADD.TabIndex = 2;
+            this.btnADD.TabIndex = 0;
             this.btnADD.Text = ">>";
+            this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
             // 
             // panel10
             // 
@@ -519,7 +523,7 @@ namespace QuanLySanBongMini
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.gridControl2);
+            this.groupBox3.Controls.Add(this.gridControlNguoiDungChuaCoNhom);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
@@ -529,17 +533,17 @@ namespace QuanLySanBongMini
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DS người dùng chưa có nhóm";
             // 
-            // gridControl2
+            // gridControlNguoiDungChuaCoNhom
             // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(3, 23);
-            this.gridControl2.MainView = this.gridViewnguoiDungChuaCoNhom;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridControlNguoiDungChuaCoNhom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlNguoiDungChuaCoNhom.Location = new System.Drawing.Point(3, 23);
+            this.gridControlNguoiDungChuaCoNhom.MainView = this.gridViewnguoiDungChuaCoNhom;
+            this.gridControlNguoiDungChuaCoNhom.Name = "gridControlNguoiDungChuaCoNhom";
+            this.gridControlNguoiDungChuaCoNhom.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit3});
-            this.gridControl2.Size = new System.Drawing.Size(527, 236);
-            this.gridControl2.TabIndex = 4;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlNguoiDungChuaCoNhom.Size = new System.Drawing.Size(527, 236);
+            this.gridControlNguoiDungChuaCoNhom.TabIndex = 0;
+            this.gridControlNguoiDungChuaCoNhom.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewnguoiDungChuaCoNhom,
             this.gridView3});
             // 
@@ -575,7 +579,7 @@ namespace QuanLySanBongMini
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn11});
-            this.gridViewnguoiDungChuaCoNhom.GridControl = this.gridControl2;
+            this.gridViewnguoiDungChuaCoNhom.GridControl = this.gridControlNguoiDungChuaCoNhom;
             this.gridViewnguoiDungChuaCoNhom.Name = "gridViewnguoiDungChuaCoNhom";
             this.gridViewnguoiDungChuaCoNhom.OptionsBehavior.Editable = false;
             this.gridViewnguoiDungChuaCoNhom.OptionsBehavior.ReadOnly = true;
@@ -584,6 +588,7 @@ namespace QuanLySanBongMini
             this.gridViewnguoiDungChuaCoNhom.OptionsHint.ShowCellHints = false;
             this.gridViewnguoiDungChuaCoNhom.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.False;
             this.gridViewnguoiDungChuaCoNhom.OptionsView.ColumnAutoWidth = false;
+            this.gridViewnguoiDungChuaCoNhom.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewnguoiDungChuaCoNhom_RowClick);
             // 
             // gridColumn3
             // 
@@ -659,7 +664,7 @@ namespace QuanLySanBongMini
             // 
             // gridView3
             // 
-            this.gridView3.GridControl = this.gridControl2;
+            this.gridView3.GridControl = this.gridControlNguoiDungChuaCoNhom;
             this.gridView3.Name = "gridView3";
             // 
             // groupBox1
@@ -703,7 +708,7 @@ namespace QuanLySanBongMini
             this.gridContrrolNguoiDung.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
             this.gridContrrolNguoiDung.Size = new System.Drawing.Size(695, 374);
-            this.gridContrrolNguoiDung.TabIndex = 4;
+            this.gridContrrolNguoiDung.TabIndex = 0;
             this.gridContrrolNguoiDung.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -853,6 +858,7 @@ namespace QuanLySanBongMini
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.toolStrip1);
             this.panel8.Controls.Add(this.ckbHoatDong);
             this.panel8.Controls.Add(this.dateTimePickerNgayVL);
             this.panel8.Controls.Add(this.label18);
@@ -870,7 +876,6 @@ namespace QuanLySanBongMini
             this.panel8.Controls.Add(this.label12);
             this.panel8.Controls.Add(this.txtMaNguoiDung);
             this.panel8.Controls.Add(this.label11);
-            this.panel8.Controls.Add(this.toolStrip1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel8.Location = new System.Drawing.Point(0, 0);
@@ -878,13 +883,55 @@ namespace QuanLySanBongMini
             this.panel8.Size = new System.Drawing.Size(419, 374);
             this.panel8.TabIndex = 0;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonLamMoi,
+            this.toolStripButtonLuuKhachHang,
+            this.toolStripButtonCapNhat});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 337);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(419, 37);
+            this.toolStrip1.TabIndex = 9;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonLamMoi
+            // 
+            this.toolStripButtonLamMoi.Image = global::QuanLySanBongMini.Properties.Resources.addpink_removebg_preview;
+            this.toolStripButtonLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLamMoi.Name = "toolStripButtonLamMoi";
+            this.toolStripButtonLamMoi.Size = new System.Drawing.Size(101, 34);
+            this.toolStripButtonLamMoi.Text = "Làm mới";
+            this.toolStripButtonLamMoi.Click += new System.EventHandler(this.toolStripButtonLamMoi_Click);
+            // 
+            // toolStripButtonLuuKhachHang
+            // 
+            this.toolStripButtonLuuKhachHang.Enabled = false;
+            this.toolStripButtonLuuKhachHang.Image = global::QuanLySanBongMini.Properties.Resources.add;
+            this.toolStripButtonLuuKhachHang.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLuuKhachHang.Name = "toolStripButtonLuuKhachHang";
+            this.toolStripButtonLuuKhachHang.Size = new System.Drawing.Size(161, 34);
+            this.toolStripButtonLuuKhachHang.Text = "Thêm người dùng";
+            // 
+            // toolStripButtonCapNhat
+            // 
+            this.toolStripButtonCapNhat.Enabled = false;
+            this.toolStripButtonCapNhat.Image = global::QuanLySanBongMini.Properties.Resources.savepink_removebg_preview1;
+            this.toolStripButtonCapNhat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCapNhat.Name = "toolStripButtonCapNhat";
+            this.toolStripButtonCapNhat.Size = new System.Drawing.Size(106, 34);
+            this.toolStripButtonCapNhat.Text = "Cập nhập";
+            // 
             // ckbHoatDong
             // 
             this.ckbHoatDong.AutoSize = true;
-            this.ckbHoatDong.Location = new System.Drawing.Point(127, 345);
+            this.ckbHoatDong.Location = new System.Drawing.Point(127, 296);
             this.ckbHoatDong.Name = "ckbHoatDong";
             this.ckbHoatDong.Size = new System.Drawing.Size(100, 24);
-            this.ckbHoatDong.TabIndex = 22;
+            this.ckbHoatDong.TabIndex = 8;
             this.ckbHoatDong.Text = "Hoạt động";
             this.ckbHoatDong.UseVisualStyleBackColor = true;
             // 
@@ -892,15 +939,15 @@ namespace QuanLySanBongMini
             // 
             this.dateTimePickerNgayVL.Enabled = false;
             this.dateTimePickerNgayVL.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNgayVL.Location = new System.Drawing.Point(127, 309);
+            this.dateTimePickerNgayVL.Location = new System.Drawing.Point(127, 260);
             this.dateTimePickerNgayVL.Name = "dateTimePickerNgayVL";
             this.dateTimePickerNgayVL.Size = new System.Drawing.Size(278, 27);
-            this.dateTimePickerNgayVL.TabIndex = 21;
+            this.dateTimePickerNgayVL.TabIndex = 7;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(5, 316);
+            this.label18.Location = new System.Drawing.Point(5, 267);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(104, 20);
             this.label18.TabIndex = 6;
@@ -908,15 +955,15 @@ namespace QuanLySanBongMini
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(127, 273);
+            this.txtEmail.Location = new System.Drawing.Point(127, 224);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(278, 27);
-            this.txtEmail.TabIndex = 14;
+            this.txtEmail.TabIndex = 6;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(5, 280);
+            this.label17.Location = new System.Drawing.Point(5, 231);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(49, 20);
             this.label17.TabIndex = 7;
@@ -924,15 +971,15 @@ namespace QuanLySanBongMini
             // 
             // txtSoDienThoai
             // 
-            this.txtSoDienThoai.Location = new System.Drawing.Point(127, 237);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(127, 188);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(278, 27);
-            this.txtSoDienThoai.TabIndex = 15;
+            this.txtSoDienThoai.TabIndex = 5;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(5, 244);
+            this.label16.Location = new System.Drawing.Point(5, 195);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(100, 20);
             this.label16.TabIndex = 8;
@@ -941,15 +988,15 @@ namespace QuanLySanBongMini
             // txtDiaChi
             // 
             this.txtDiaChi.BackColor = System.Drawing.Color.White;
-            this.txtDiaChi.Location = new System.Drawing.Point(127, 201);
+            this.txtDiaChi.Location = new System.Drawing.Point(127, 152);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(278, 27);
-            this.txtDiaChi.TabIndex = 16;
+            this.txtDiaChi.TabIndex = 4;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(5, 208);
+            this.label15.Location = new System.Drawing.Point(5, 159);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(58, 20);
             this.label15.TabIndex = 9;
@@ -958,16 +1005,16 @@ namespace QuanLySanBongMini
             // txtMatKhau
             // 
             this.txtMatKhau.BackColor = System.Drawing.Color.White;
-            this.txtMatKhau.Location = new System.Drawing.Point(127, 165);
+            this.txtMatKhau.Location = new System.Drawing.Point(127, 116);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(278, 27);
-            this.txtMatKhau.TabIndex = 17;
+            this.txtMatKhau.TabIndex = 3;
             this.txtMatKhau.UseSystemPasswordChar = true;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(5, 172);
+            this.label14.Location = new System.Drawing.Point(5, 123);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(73, 20);
             this.label14.TabIndex = 10;
@@ -975,15 +1022,15 @@ namespace QuanLySanBongMini
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(127, 129);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(127, 80);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(278, 27);
-            this.txtTenDangNhap.TabIndex = 18;
+            this.txtTenDangNhap.TabIndex = 2;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(5, 136);
+            this.label13.Location = new System.Drawing.Point(5, 87);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(110, 20);
             this.label13.TabIndex = 11;
@@ -991,15 +1038,15 @@ namespace QuanLySanBongMini
             // 
             // txtTenNguoiDung
             // 
-            this.txtTenNguoiDung.Location = new System.Drawing.Point(127, 93);
+            this.txtTenNguoiDung.Location = new System.Drawing.Point(127, 44);
             this.txtTenNguoiDung.Name = "txtTenNguoiDung";
             this.txtTenNguoiDung.Size = new System.Drawing.Size(278, 27);
-            this.txtTenNguoiDung.TabIndex = 19;
+            this.txtTenNguoiDung.TabIndex = 1;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(5, 100);
+            this.label12.Location = new System.Drawing.Point(5, 51);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(116, 20);
             this.label12.TabIndex = 12;
@@ -1007,71 +1054,20 @@ namespace QuanLySanBongMini
             // 
             // txtMaNguoiDung
             // 
-            this.txtMaNguoiDung.Location = new System.Drawing.Point(127, 57);
+            this.txtMaNguoiDung.Location = new System.Drawing.Point(127, 8);
             this.txtMaNguoiDung.Name = "txtMaNguoiDung";
             this.txtMaNguoiDung.ReadOnly = true;
             this.txtMaNguoiDung.Size = new System.Drawing.Size(157, 27);
-            this.txtMaNguoiDung.TabIndex = 20;
+            this.txtMaNguoiDung.TabIndex = 0;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(5, 64);
+            this.label11.Location = new System.Drawing.Point(5, 15);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(114, 20);
             this.label11.TabIndex = 13;
             this.label11.Text = "Mã người dùng:";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menutItemThem,
-            this.btnUpdate,
-            this.btnClean});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(419, 37);
-            this.toolStrip1.TabIndex = 5;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // menutItemThem
-            // 
-            this.menutItemThem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.menutItemThem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menutItemThem.Image = global::QuanLySanBongMini.Properties.Resources.addpink_removebg_preview;
-            this.menutItemThem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.menutItemThem.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
-            this.menutItemThem.Name = "menutItemThem";
-            this.menutItemThem.Size = new System.Drawing.Size(34, 34);
-            this.menutItemThem.Text = "toolStripButton1";
-            this.menutItemThem.ToolTipText = "Thêm mới";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Image = global::QuanLySanBongMini.Properties.Resources.savepink_removebg_preview;
-            this.btnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(34, 34);
-            this.btnUpdate.Text = "toolStripButton1";
-            this.btnUpdate.ToolTipText = "Cập nhật";
-            // 
-            // btnClean
-            // 
-            this.btnClean.BackColor = System.Drawing.Color.Transparent;
-            this.btnClean.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnClean.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Image = global::QuanLySanBongMini.Properties.Resources.clean_icon_cleaner_icon_hacker_icon_vQ1cP2c8_removebg_preview;
-            this.btnClean.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(34, 34);
-            this.btnClean.Text = "toolStripButton2";
-            this.btnClean.ToolTipText = "làm mới";
             // 
             // tabNavigationPage2
             // 
@@ -1099,7 +1095,7 @@ namespace QuanLySanBongMini
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.gridControl6);
+            this.groupBox6.Controls.Add(this.gridControlQuyénDmanHinh);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(471, 0);
             this.groupBox6.Name = "groupBox6";
@@ -1108,17 +1104,17 @@ namespace QuanLySanBongMini
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Danh sách quyền chức năng";
             // 
-            // gridControl6
+            // gridControlQuyénDmanHinh
             // 
-            this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl6.Location = new System.Drawing.Point(3, 23);
-            this.gridControl6.MainView = this.gridView7;
-            this.gridControl6.Name = "gridControl6";
-            this.gridControl6.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridControlQuyénDmanHinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlQuyénDmanHinh.Location = new System.Drawing.Point(3, 23);
+            this.gridControlQuyénDmanHinh.MainView = this.gridView7;
+            this.gridControlQuyénDmanHinh.Name = "gridControlQuyénDmanHinh";
+            this.gridControlQuyénDmanHinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit7});
-            this.gridControl6.Size = new System.Drawing.Size(643, 602);
-            this.gridControl6.TabIndex = 5;
-            this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlQuyénDmanHinh.Size = new System.Drawing.Size(643, 602);
+            this.gridControlQuyénDmanHinh.TabIndex = 5;
+            this.gridControlQuyénDmanHinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7});
             // 
             // gridView7
@@ -1149,7 +1145,7 @@ namespace QuanLySanBongMini
             this.gridColumn26,
             this.gridColumn27,
             this.gridColumn28});
-            this.gridView7.GridControl = this.gridControl6;
+            this.gridView7.GridControl = this.gridControlQuyénDmanHinh;
             this.gridView7.Name = "gridView7";
             this.gridView7.OptionsFind.AlwaysVisible = true;
             this.gridView7.OptionsFind.FindNullPrompt = "Nhập thông tin cần tìm kiếm";
@@ -1165,7 +1161,7 @@ namespace QuanLySanBongMini
             this.gridColumn26.OptionsColumn.ReadOnly = true;
             this.gridColumn26.Visible = true;
             this.gridColumn26.VisibleIndex = 0;
-            this.gridColumn26.Width = 143;
+            this.gridColumn26.Width = 156;
             // 
             // gridColumn27
             // 
@@ -1175,7 +1171,7 @@ namespace QuanLySanBongMini
             this.gridColumn27.OptionsColumn.ReadOnly = true;
             this.gridColumn27.Visible = true;
             this.gridColumn27.VisibleIndex = 1;
-            this.gridColumn27.Width = 408;
+            this.gridColumn27.Width = 298;
             // 
             // gridColumn28
             // 
@@ -1209,61 +1205,61 @@ namespace QuanLySanBongMini
             // 
             this.gridControlQLNhomND.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlQLNhomND.Location = new System.Drawing.Point(3, 23);
-            this.gridControlQLNhomND.MainView = this.gridView6;
+            this.gridControlQLNhomND.MainView = this.gridViewDSNDPhanQuyen;
             this.gridControlQLNhomND.Name = "gridControlQLNhomND";
             this.gridControlQLNhomND.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit6});
             this.gridControlQLNhomND.Size = new System.Drawing.Size(465, 602);
             this.gridControlQLNhomND.TabIndex = 6;
             this.gridControlQLNhomND.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView6,
+            this.gridViewDSNDPhanQuyen,
             this.gridView8});
             // 
-            // gridView6
+            // gridViewDSNDPhanQuyen
             // 
-            this.gridView6.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.gridView6.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.FilterPanel.Options.UseFont = true;
-            this.gridView6.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.FocusedCell.Options.UseFont = true;
-            this.gridView6.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridView6.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridView6.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView6.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.OddRow.Options.UseFont = true;
-            this.gridView6.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.Row.Options.UseFont = true;
-            this.gridView6.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.SelectedRow.Options.UseFont = true;
-            this.gridView6.Appearance.VertLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.VertLine.Options.UseFont = true;
-            this.gridView6.Appearance.ViewCaption.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView6.Appearance.ViewCaption.Options.UseFont = true;
-            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewDSNDPhanQuyen.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.FocusedCell.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.OddRow.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.Row.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.SelectedRow.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.VertLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.VertLine.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Appearance.ViewCaption.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewDSNDPhanQuyen.Appearance.ViewCaption.Options.UseFont = true;
+            this.gridViewDSNDPhanQuyen.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn29,
             this.gridColumn30,
             this.gridColumn31});
-            this.gridView6.GridControl = this.gridControlQLNhomND;
-            this.gridView6.Name = "gridView6";
-            this.gridView6.OptionsBehavior.Editable = false;
-            this.gridView6.OptionsBehavior.ReadOnly = true;
-            this.gridView6.OptionsFind.AllowFindPanel = false;
-            this.gridView6.OptionsFind.FindNullPrompt = "Nhập thông tin cần tìm kiếm";
-            this.gridView6.OptionsFind.ShowClearButton = false;
-            this.gridView6.OptionsFind.ShowCloseButton = false;
-            this.gridView6.OptionsFind.ShowFindButton = false;
-            this.gridView6.OptionsFind.ShowSearchNavButtons = false;
-            this.gridView6.OptionsHint.ShowCellHints = false;
-            this.gridView6.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.gridView6.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView6.OptionsView.ColumnAutoWidth = false;
-            this.gridView6.OptionsView.ShowGroupExpandCollapseButtons = false;
-            this.gridView6.OptionsView.ShowGroupPanel = false;
-            this.gridView6.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView6_RowClick);
+            this.gridViewDSNDPhanQuyen.GridControl = this.gridControlQLNhomND;
+            this.gridViewDSNDPhanQuyen.Name = "gridViewDSNDPhanQuyen";
+            this.gridViewDSNDPhanQuyen.OptionsBehavior.Editable = false;
+            this.gridViewDSNDPhanQuyen.OptionsBehavior.ReadOnly = true;
+            this.gridViewDSNDPhanQuyen.OptionsFind.AllowFindPanel = false;
+            this.gridViewDSNDPhanQuyen.OptionsFind.FindNullPrompt = "Nhập thông tin cần tìm kiếm";
+            this.gridViewDSNDPhanQuyen.OptionsFind.ShowClearButton = false;
+            this.gridViewDSNDPhanQuyen.OptionsFind.ShowCloseButton = false;
+            this.gridViewDSNDPhanQuyen.OptionsFind.ShowFindButton = false;
+            this.gridViewDSNDPhanQuyen.OptionsFind.ShowSearchNavButtons = false;
+            this.gridViewDSNDPhanQuyen.OptionsHint.ShowCellHints = false;
+            this.gridViewDSNDPhanQuyen.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridViewDSNDPhanQuyen.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewDSNDPhanQuyen.OptionsView.ColumnAutoWidth = false;
+            this.gridViewDSNDPhanQuyen.OptionsView.ShowGroupExpandCollapseButtons = false;
+            this.gridViewDSNDPhanQuyen.OptionsView.ShowGroupPanel = false;
+            this.gridViewDSNDPhanQuyen.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView6_RowClick);
             // 
             // gridColumn29
             // 
@@ -1357,6 +1353,7 @@ namespace QuanLySanBongMini
             this.treeList2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeList2.Location = new System.Drawing.Point(0, 0);
             this.treeList2.Name = "treeList2";
+            this.treeList2.OptionsBehavior.ReadOnly = true;
             this.treeList2.Size = new System.Drawing.Size(274, 453);
             this.treeList2.TabIndex = 1;
             // 
@@ -1370,40 +1367,41 @@ namespace QuanLySanBongMini
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.treeList1);
+            this.panel5.Controls.Add(this.treeListNguoiDUng);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(274, 264);
             this.panel5.TabIndex = 0;
             // 
-            // treeList1
+            // treeListNguoiDUng
             // 
-            this.treeList1.Appearance.BandPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeList1.Appearance.BandPanel.Options.UseFont = true;
-            this.treeList1.Appearance.Caption.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeList1.Appearance.Caption.Options.UseFont = true;
-            this.treeList1.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeList1.Appearance.EvenRow.Options.UseFont = true;
-            this.treeList1.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeList1.Appearance.FocusedCell.Options.UseFont = true;
-            this.treeList1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeList1.Appearance.FocusedRow.Options.UseFont = true;
-            this.treeList1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeList1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.treeList1.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeList1.Appearance.OddRow.Options.UseFont = true;
-            this.treeList1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeList1.Appearance.Row.Options.UseFont = true;
-            this.treeList1.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeList1.Appearance.SelectedRow.Options.UseFont = true;
-            this.treeList1.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListNguoiDUng.Appearance.BandPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListNguoiDUng.Appearance.BandPanel.Options.UseFont = true;
+            this.treeListNguoiDUng.Appearance.Caption.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListNguoiDUng.Appearance.Caption.Options.UseFont = true;
+            this.treeListNguoiDUng.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListNguoiDUng.Appearance.EvenRow.Options.UseFont = true;
+            this.treeListNguoiDUng.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListNguoiDUng.Appearance.FocusedCell.Options.UseFont = true;
+            this.treeListNguoiDUng.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListNguoiDUng.Appearance.FocusedRow.Options.UseFont = true;
+            this.treeListNguoiDUng.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListNguoiDUng.Appearance.HeaderPanel.Options.UseFont = true;
+            this.treeListNguoiDUng.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListNguoiDUng.Appearance.OddRow.Options.UseFont = true;
+            this.treeListNguoiDUng.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListNguoiDUng.Appearance.Row.Options.UseFont = true;
+            this.treeListNguoiDUng.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListNguoiDUng.Appearance.SelectedRow.Options.UseFont = true;
+            this.treeListNguoiDUng.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumn1});
-            this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeList1.Location = new System.Drawing.Point(0, 0);
-            this.treeList1.Name = "treeList1";
-            this.treeList1.Size = new System.Drawing.Size(274, 264);
-            this.treeList1.TabIndex = 0;
+            this.treeListNguoiDUng.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeListNguoiDUng.Location = new System.Drawing.Point(0, 0);
+            this.treeListNguoiDUng.Name = "treeListNguoiDUng";
+            this.treeListNguoiDUng.OptionsBehavior.ReadOnly = true;
+            this.treeListNguoiDUng.Size = new System.Drawing.Size(274, 264);
+            this.treeListNguoiDUng.TabIndex = 0;
             // 
             // treeListColumn1
             // 
@@ -1437,7 +1435,7 @@ namespace QuanLySanBongMini
             this.groupBox2.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlNDCoNhom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewNguoiDungDaCoNhom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
@@ -1446,7 +1444,7 @@ namespace QuanLySanBongMini
             this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlNguoiDungChuaCoNhom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewnguoiDungChuaCoNhom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
@@ -1463,19 +1461,19 @@ namespace QuanLySanBongMini
             this.tabNavigationPage2.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlQuyénDmanHinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit7)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlQLNhomND)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDSNDPhanQuyen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeList2)).EndInit();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListNguoiDUng)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1488,7 +1486,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
-        private DevExpress.XtraTreeList.TreeList treeList1;
+        private DevExpress.XtraTreeList.TreeList treeListNguoiDUng;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private System.Windows.Forms.Panel panel6;
         private DevExpress.XtraTreeList.TreeList treeList2;
@@ -1530,14 +1528,10 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtMaNguoiDung;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton menutItemThem;
-        private System.Windows.Forms.ToolStripButton btnUpdate;
-        private System.Windows.Forms.ToolStripButton btnClean;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.GroupBox groupBox4;
-        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.GridControl gridControlNDCoNhom;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewNguoiDungDaCoNhom;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
@@ -1556,7 +1550,7 @@ namespace QuanLySanBongMini
         private DevExpress.XtraEditors.SimpleButton btnADD;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.GroupBox groupBox3;
-        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.GridControl gridControlNguoiDungChuaCoNhom;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewnguoiDungChuaCoNhom;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
@@ -1570,7 +1564,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.GroupBox groupBox6;
-        private DevExpress.XtraGrid.GridControl gridControl6;
+        private DevExpress.XtraGrid.GridControl gridControlQuyénDmanHinh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
@@ -1578,12 +1572,16 @@ namespace QuanLySanBongMini
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit7;
         private System.Windows.Forms.GroupBox groupBox5;
         private DevExpress.XtraGrid.GridControl gridControlQLNhomND;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewDSNDPhanQuyen;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit6;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonLamMoi;
+        private System.Windows.Forms.ToolStripButton toolStripButtonLuuKhachHang;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCapNhat;
     }
 }

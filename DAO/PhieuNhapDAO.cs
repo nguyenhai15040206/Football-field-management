@@ -86,7 +86,7 @@ namespace DAO
             try
             {
                 PhieuNhap pn = new PhieuNhap();
-                pn.NgayLap = DateTime.Parse(DateTime.Now.Date.ToString("MM/dd/yyy"));
+                pn.NgayLap = DateTime.Parse(DateTime.Now.Date.ToString("dd-MM-yyy"));
                 pn.tongTien = (decimal?)tongTien;
                 pn.maNhaCungCap = maNCC;
                 pn.maNguoiDung = maNguoiDung;

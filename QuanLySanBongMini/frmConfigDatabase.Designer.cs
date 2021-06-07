@@ -54,7 +54,7 @@ namespace QuanLySanBongMini
             this.btnHuyBo.Location = new System.Drawing.Point(297, 173);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(119, 34);
-            this.btnHuyBo.TabIndex = 15;
+            this.btnHuyBo.TabIndex = 5;
             this.btnHuyBo.Text = "Hủy bỏ";
             this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
@@ -67,7 +67,7 @@ namespace QuanLySanBongMini
             this.btnCapNhat.Location = new System.Drawing.Point(146, 173);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(119, 34);
-            this.btnCapNhat.TabIndex = 14;
+            this.btnCapNhat.TabIndex = 4;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
@@ -77,7 +77,7 @@ namespace QuanLySanBongMini
             this.cboDatabase.Location = new System.Drawing.Point(146, 128);
             this.cboDatabase.Name = "cboDatabase";
             this.cboDatabase.Size = new System.Drawing.Size(270, 28);
-            this.cboDatabase.TabIndex = 13;
+            this.cboDatabase.TabIndex = 3;
             this.cboDatabase.DropDown += new System.EventHandler(this.cboDatabase_DropDown);
             // 
             // label4
@@ -94,7 +94,7 @@ namespace QuanLySanBongMini
             this.txtPass.Location = new System.Drawing.Point(146, 92);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(270, 27);
-            this.txtPass.TabIndex = 12;
+            this.txtPass.TabIndex = 2;
             // 
             // label3
             // 
@@ -110,7 +110,7 @@ namespace QuanLySanBongMini
             this.txtUsername.Location = new System.Drawing.Point(146, 56);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(270, 27);
-            this.txtUsername.TabIndex = 11;
+            this.txtUsername.TabIndex = 1;
             // 
             // label2
             // 
@@ -127,7 +127,7 @@ namespace QuanLySanBongMini
             this.cboServername.Location = new System.Drawing.Point(146, 19);
             this.cboServername.Name = "cboServername";
             this.cboServername.Size = new System.Drawing.Size(270, 28);
-            this.cboServername.TabIndex = 10;
+            this.cboServername.TabIndex = 0;
             this.cboServername.DropDown += new System.EventHandler(this.cboServername_DropDown);
             // 
             // label1

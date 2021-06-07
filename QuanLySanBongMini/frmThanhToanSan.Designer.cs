@@ -30,11 +30,11 @@ namespace QuanLySanBongMini
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToanSan));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -198,7 +198,7 @@ namespace QuanLySanBongMini
             this.dgvChiTietHD.Name = "dgvChiTietHD";
             this.dgvChiTietHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvChiTietHD.Size = new System.Drawing.Size(1097, 341);
-            this.dgvChiTietHD.TabIndex = 2;
+            this.dgvChiTietHD.TabIndex = 0;
             this.dgvChiTietHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dgvChiTietHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvChiTietHD.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHD_CellValueChanged);
@@ -216,10 +216,10 @@ namespace QuanLySanBongMini
             // 
             this.cbbThucUong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cbbThucUong.DataPropertyName = "maThucUong";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.cbbThucUong.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.cbbThucUong.DefaultCellStyle = dataGridViewCellStyle1;
             this.cbbThucUong.FillWeight = 35.08772F;
             this.cbbThucUong.HeaderText = "Mặt hàng";
             this.cbbThucUong.Name = "cbbThucUong";
@@ -228,8 +228,8 @@ namespace QuanLySanBongMini
             // 
             // DVT
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SeaShell;
-            this.DVT.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
+            this.DVT.DefaultCellStyle = dataGridViewCellStyle2;
             this.DVT.HeaderText = "DVT";
             this.DVT.Name = "DVT";
             this.DVT.ReadOnly = true;
@@ -237,10 +237,10 @@ namespace QuanLySanBongMini
             // soLuong
             // 
             this.soLuong.DataPropertyName = "soluong";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.soLuong.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.soLuong.DefaultCellStyle = dataGridViewCellStyle3;
             this.soLuong.FillWeight = 294.7368F;
             this.soLuong.HeaderText = "Số lượng";
             this.soLuong.Name = "soLuong";
@@ -249,11 +249,11 @@ namespace QuanLySanBongMini
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.DataPropertyName = "giaBan";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = "0";
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column4.FillWeight = 35.08772F;
             this.Column4.HeaderText = "Đơn giá";
             this.Column4.Name = "Column4";
@@ -263,11 +263,11 @@ namespace QuanLySanBongMini
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column5.DataPropertyName = "thanhTien";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle10.Format = "N0";
-            dataGridViewCellStyle10.NullValue = "0";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column5.FillWeight = 35.08772F;
             this.Column5.HeaderText = "Tổng tiền";
             this.Column5.Name = "Column5";
@@ -334,7 +334,7 @@ namespace QuanLySanBongMini
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TienCoc", "Tiền cọc", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lookUpEdit1.Properties.NullText = "Chọn một khách hàng thanh toán";
             this.lookUpEdit1.Size = new System.Drawing.Size(705, 28);
-            this.lookUpEdit1.TabIndex = 19;
+            this.lookUpEdit1.TabIndex = 0;
             this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
             // 
             // groupBox1
@@ -385,7 +385,7 @@ namespace QuanLySanBongMini
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(298, 27);
-            this.txtTongTien.TabIndex = 41;
+            this.txtTongTien.TabIndex = 9;
             this.txtTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtKhungGioDa
@@ -397,7 +397,7 @@ namespace QuanLySanBongMini
             this.txtKhungGioDa.Name = "txtKhungGioDa";
             this.txtKhungGioDa.ReadOnly = true;
             this.txtKhungGioDa.Size = new System.Drawing.Size(298, 27);
-            this.txtKhungGioDa.TabIndex = 40;
+            this.txtKhungGioDa.TabIndex = 3;
             // 
             // toolStrip1
             // 
@@ -413,7 +413,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.Location = new System.Drawing.Point(3, 235);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1070, 37);
-            this.toolStrip1.TabIndex = 39;
+            this.toolStrip1.TabIndex = 12;
             // 
             // toolStripButtonLamMoi
             // 
@@ -469,7 +469,7 @@ namespace QuanLySanBongMini
             this.txtKhachDua.Name = "txtKhachDua";
             this.txtKhachDua.ReadOnly = true;
             this.txtKhachDua.Size = new System.Drawing.Size(298, 27);
-            this.txtKhachDua.TabIndex = 37;
+            this.txtKhachDua.TabIndex = 10;
             this.txtKhachDua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtKhachDua.TextChanged += new System.EventHandler(this.txtKhachHang_TextChanged);
             this.txtKhachDua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhachHang_KeyPress);
@@ -520,7 +520,7 @@ namespace QuanLySanBongMini
             this.numericUpDownGiamGia.Name = "numericUpDownGiamGia";
             this.numericUpDownGiamGia.ReadOnly = true;
             this.numericUpDownGiamGia.Size = new System.Drawing.Size(57, 27);
-            this.numericUpDownGiamGia.TabIndex = 32;
+            this.numericUpDownGiamGia.TabIndex = 6;
             this.numericUpDownGiamGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtGiamGia
@@ -532,7 +532,7 @@ namespace QuanLySanBongMini
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.ReadOnly = true;
             this.txtGiamGia.Size = new System.Drawing.Size(213, 27);
-            this.txtGiamGia.TabIndex = 30;
+            this.txtGiamGia.TabIndex = 7;
             this.txtGiamGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
@@ -553,7 +553,7 @@ namespace QuanLySanBongMini
             this.txtTienNuoc.Name = "txtTienNuoc";
             this.txtTienNuoc.ReadOnly = true;
             this.txtTienNuoc.Size = new System.Drawing.Size(298, 27);
-            this.txtTienNuoc.TabIndex = 30;
+            this.txtTienNuoc.TabIndex = 8;
             this.txtTienNuoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
@@ -574,7 +574,7 @@ namespace QuanLySanBongMini
             this.txtTienThua.Name = "txtTienThua";
             this.txtTienThua.ReadOnly = true;
             this.txtTienThua.Size = new System.Drawing.Size(298, 27);
-            this.txtTienThua.TabIndex = 27;
+            this.txtTienThua.TabIndex = 11;
             this.txtTienThua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDatCoc
@@ -586,7 +586,7 @@ namespace QuanLySanBongMini
             this.txtDatCoc.Name = "txtDatCoc";
             this.txtDatCoc.ReadOnly = true;
             this.txtDatCoc.Size = new System.Drawing.Size(298, 27);
-            this.txtDatCoc.TabIndex = 27;
+            this.txtDatCoc.TabIndex = 5;
             this.txtDatCoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
@@ -607,7 +607,7 @@ namespace QuanLySanBongMini
             this.txtTienSan.Name = "txtTienSan";
             this.txtTienSan.ReadOnly = true;
             this.txtTienSan.Size = new System.Drawing.Size(298, 27);
-            this.txtTienSan.TabIndex = 26;
+            this.txtTienSan.TabIndex = 4;
             this.txtTienSan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
@@ -628,7 +628,7 @@ namespace QuanLySanBongMini
             this.dateTimePickerNgayDat.Location = new System.Drawing.Point(177, 103);
             this.dateTimePickerNgayDat.Name = "dateTimePickerNgayDat";
             this.dateTimePickerNgayDat.Size = new System.Drawing.Size(298, 27);
-            this.dateTimePickerNgayDat.TabIndex = 24;
+            this.dateTimePickerNgayDat.TabIndex = 2;
             // 
             // label9
             // 
@@ -648,7 +648,7 @@ namespace QuanLySanBongMini
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.ReadOnly = true;
             this.txtSDT.Size = new System.Drawing.Size(298, 27);
-            this.txtSDT.TabIndex = 23;
+            this.txtSDT.TabIndex = 1;
             this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtTenKhachHang
@@ -660,7 +660,7 @@ namespace QuanLySanBongMini
             this.txtTenKhachHang.Name = "txtTenKhachHang";
             this.txtTenKhachHang.ReadOnly = true;
             this.txtTenKhachHang.Size = new System.Drawing.Size(298, 27);
-            this.txtTenKhachHang.TabIndex = 23;
+            this.txtTenKhachHang.TabIndex = 0;
             // 
             // label6
             // 
@@ -695,12 +695,12 @@ namespace QuanLySanBongMini
             // btnRefesh
             // 
             this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefesh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnRefesh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefesh.ImageOptions.SvgImage")));
             this.btnRefesh.Location = new System.Drawing.Point(897, 12);
             this.btnRefesh.Name = "btnRefesh";
             this.btnRefesh.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnRefesh.Size = new System.Drawing.Size(37, 36);
-            this.btnRefesh.TabIndex = 17;
+            this.btnRefesh.TabIndex = 1;
             this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // label2

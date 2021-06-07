@@ -76,10 +76,6 @@ namespace QuanLySanBongMini
             return null;
         }
 
-        private void aToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
         private void quảnLýĐặtSânToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Form form = IstActive(typeof(frmDatSan));
@@ -97,10 +93,10 @@ namespace QuanLySanBongMini
 
         private void quảnLýNhânViênPhânQuyềnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = IstActive(typeof(frmQLNhanVienVaPhanQuyen));
+            Form form = IstActive(typeof(frmQLHoaDon));
             if (form == null)
             {
-                frmQLNhanVienVaPhanQuyen frm = new frmQLNhanVienVaPhanQuyen();
+                frmQLHoaDon frm = new frmQLHoaDon();
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -146,6 +142,57 @@ namespace QuanLySanBongMini
             if (form == null)
             {
                 frmThanhToanSan frm = new frmThanhToanSan();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = IstActive(typeof(frmQLNhanVienVaPhanQuyen));
+            if (form == null)
+            {
+                frmQLNhanVienVaPhanQuyen frm = new frmQLNhanVienVaPhanQuyen();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau frm = new frmDoiMatKhau();
+            frm.ShowDialog();
+        }
+
+        private void quảnLýSânBóngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = IstActive(typeof(frmQLSanBong));
+            if (form == null)
+            {
+                frmQLSanBong frm = new frmQLSanBong();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
+        }
+
+        private void quảnLýThứcUốngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = IstActive(typeof(frmQLSanPhanVaKhoHang));
+            if (form == null)
+            {
+                frmQLSanPhanVaKhoHang frm = new frmQLSanPhanVaKhoHang();
                 frm.MdiParent = this;
                 frm.Show();
             }

@@ -138,7 +138,7 @@ namespace QuanLySanBongMini
             this.label6.Location = new System.Drawing.Point(0, 206);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(1394, 4);
-            this.label6.TabIndex = 8;
+            this.label6.TabIndex = 1;
             // 
             // gridContrrolThucUong
             // 
@@ -151,7 +151,7 @@ namespace QuanLySanBongMini
             this.btnXoaThucUong,
             this.btnThemPhieuNhap});
             this.gridContrrolThucUong.Size = new System.Drawing.Size(1394, 511);
-            this.gridContrrolThucUong.TabIndex = 7;
+            this.gridContrrolThucUong.TabIndex = 0;
             this.gridContrrolThucUong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -361,7 +361,7 @@ namespace QuanLySanBongMini
             this.bunifuckkbTinhTrang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuckkbTinhTrang.Name = "bunifuckkbTinhTrang";
             this.bunifuckkbTinhTrang.Size = new System.Drawing.Size(20, 20);
-            this.bunifuckkbTinhTrang.TabIndex = 23;
+            this.bunifuckkbTinhTrang.TabIndex = 5;
             this.bunifuckkbTinhTrang.OnChange += new System.EventHandler(this.bunifuckkbTinhTrang_OnChange);
             // 
             // txtDonGiaNhap
@@ -369,14 +369,14 @@ namespace QuanLySanBongMini
             this.txtDonGiaNhap.Location = new System.Drawing.Point(591, 83);
             this.txtDonGiaNhap.Name = "txtDonGiaNhap";
             this.txtDonGiaNhap.Size = new System.Drawing.Size(261, 29);
-            this.txtDonGiaNhap.TabIndex = 22;
+            this.txtDonGiaNhap.TabIndex = 4;
             // 
             // txtDonGia
             // 
             this.txtDonGia.Location = new System.Drawing.Point(591, 45);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(261, 29);
-            this.txtDonGia.TabIndex = 22;
+            this.txtDonGia.TabIndex = 3;
             // 
             // toolStrip1
             // 
@@ -392,7 +392,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.Location = new System.Drawing.Point(3, 166);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1388, 37);
-            this.toolStrip1.TabIndex = 21;
+            this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButtonLamMoi
@@ -455,7 +455,7 @@ namespace QuanLySanBongMini
             0});
             this.numericUpDownSL.Name = "numericUpDownSL";
             this.numericUpDownSL.Size = new System.Drawing.Size(261, 29);
-            this.numericUpDownSL.TabIndex = 4;
+            this.numericUpDownSL.TabIndex = 2;
             this.numericUpDownSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
@@ -486,7 +486,7 @@ namespace QuanLySanBongMini
             this.cboDonViTinh.Location = new System.Drawing.Point(166, 83);
             this.cboDonViTinh.Name = "cboDonViTinh";
             this.cboDonViTinh.Size = new System.Drawing.Size(261, 29);
-            this.cboDonViTinh.TabIndex = 2;
+            this.cboDonViTinh.TabIndex = 1;
             // 
             // label3
             // 
@@ -502,7 +502,7 @@ namespace QuanLySanBongMini
             this.txtTenThucUong.Location = new System.Drawing.Point(166, 45);
             this.txtTenThucUong.Name = "txtTenThucUong";
             this.txtTenThucUong.Size = new System.Drawing.Size(261, 29);
-            this.txtTenThucUong.TabIndex = 1;
+            this.txtTenThucUong.TabIndex = 0;
             // 
             // label2
             // 

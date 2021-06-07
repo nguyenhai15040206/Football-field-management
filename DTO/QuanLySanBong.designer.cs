@@ -84,7 +84,7 @@ namespace DTO
     #endregion
 		
 		public QuanLySanBongDataContext() : 
-				base(global::DTO.Properties.Settings.Default.QL_SanBongDaMiniConnectionString, mappingSource)
+				base(global::DTO.Properties.Settings.Default.Conn, mappingSource)
 		{
 			OnCreated();
 		}

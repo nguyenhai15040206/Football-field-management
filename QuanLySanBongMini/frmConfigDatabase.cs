@@ -24,8 +24,6 @@ namespace QuanLySanBongMini
                 && txtUsername.Text.Trim() != "")
             {
                 NguoiDungBUS.Instance.saveConfig(cboServername.Text, txtUsername.Text, txtPass.Text, cboDatabase.Text);
-                frmDangNhap frm = new frmDangNhap();
-                frm.Show();
                 this.Hide();
             }
             else

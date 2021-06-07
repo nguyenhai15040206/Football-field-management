@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,31 +61,45 @@ namespace QuanLySanBongMini
         {
             frmConfigDatabase frm = new frmConfigDatabase();
             frm.ShowDialog();
-            this.Hide();
         }
         public void ProcessLogin()
         {
             try
             {
-                if (NguoiDungBUS.Instance.dangNhapHeThong(txtTenDN.Text.Trim(), txtMatKhau.Text.Trim()) == 300)
+                if (NguoiDungBUS.Instance.KiemTraTenDangNhap(txtTenDN.Text.Trim()))
                 {
-                    maNguoiDung = NguoiDungBUS.Instance.maNguoiDung(txtTenDN.Text.Trim());
-                    thongTinND = NguoiDungBUS.Instance.thongTinNguoiDung(txtTenDN.Text.Trim());
-                    this.DialogResult = DialogResult.OK;
+                    if (NguoiDungBUS.Instance.dangNhapHeThong(txtTenDN.Text.Trim(), txtMatKhau.Text.Trim()) == 300)
+                    {
+                        maNguoiDung = NguoiDungBUS.Instance.maNguoiDung(txtTenDN.Text.Trim());
+                        thongTinND = NguoiDungBUS.Instance.thongTinNguoiDung(txtTenDN.Text.Trim());
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    if (NguoiDungBUS.Instance.dangNhapHeThong(txtTenDN.Text.Trim(), txtMatKhau.Text.Trim()) == 200)
+                    {
+                        MessageBox.Show("Tài khoản không khả dụng");
+                    }
+                    if (NguoiDungBUS.Instance.dangNhapHeThong(txtTenDN.Text.Trim(), txtMatKhau.Text.Trim()) == 100)
+                    {
+                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
+                        txtTenDN.Focus();
+                    }
                 }
-                if (NguoiDungBUS.Instance.dangNhapHeThong(txtTenDN.Text.Trim(), txtMatKhau.Text.Trim()) == 200)
+                else
                 {
-                    MessageBox.Show("Tài khoản không khả dụng");
-                }
-                if (NguoiDungBUS.Instance.dangNhapHeThong(txtTenDN.Text.Trim(), txtMatKhau.Text.Trim()) == 100)
-                {
-                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
-                }
+                    XtraMessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTenDN.Focus();
+                }    
             }
             catch
             {
 
             }
+        }
+
+        private void hyperlinkLabelControl1_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau frm = new frmDoiMatKhau();
+            frm.ShowDialog();
         }
     }
 }

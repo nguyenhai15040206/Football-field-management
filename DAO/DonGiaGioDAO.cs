@@ -24,32 +24,6 @@ namespace DAO
             }
         }
         QuanLySanBongDataContext db = new QuanLySanBongDataContext();
-
-        // load tất cả các đơn giá giờ với ngày cập nhật mới nhất
-        public List<DonGiaGio> loadDonGiaGio_NgayCNMoiNhat()
-        {
-            var listDGG = (from a in db.DonGiaGios
-                           from b in (
-                               (from DonGiaGio in db.DonGiaGios
-                                group DonGiaGio by new
-                                {
-                                    DonGiaGio.tuKhungGio,
-                                    DonGiaGio.denKhungGio
-                                } into g
-                                select new
-                                {
-                                    date = (DateTime?)g.Max(p => p.ngayCapNhat),
-                                    g.Key.tuKhungGio,
-                                    g.Key.denKhungGio
-                                }))
-                           where
-                             a.ngayCapNhat == b.date &&
-                             a.tuKhungGio == b.tuKhungGio &&
-                             a.denKhungGio == b.denKhungGio
-                           select a).ToList();
-            return listDGG;
-        }
-
         //
         // load tất cả các đơn giá giờ với ngày cập nhật mới nhất
         public List<NewDonGiaGio> loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan()
@@ -60,6 +34,7 @@ namespace DAO
                                (from DonGiaGio in db.DonGiaGios
                                 group DonGiaGio by new
                                 {
+                                    DonGiaGio.maloaiSan,
                                     DonGiaGio.tuKhungGio,
                                     DonGiaGio.denKhungGio
                                 } into g
@@ -67,13 +42,15 @@ namespace DAO
                                 {
                                     date = (DateTime?)g.Max(p => p.ngayCapNhat),
                                     g.Key.tuKhungGio,
-                                    g.Key.denKhungGio
+                                    g.Key.denKhungGio,
+                                    g.Key.maloaiSan
                                 }))
 
                            where
                              a.ngayCapNhat == b.date &&
                              a.tuKhungGio == b.tuKhungGio &&
                              a.denKhungGio == b.denKhungGio &&
+                             a.maloaiSan == b.maloaiSan &&
                              a.maloaiSan == ls.maLoaiSan
                            select new NewDonGiaGio {
                                MaloaiSan = a.maloaiSan,
@@ -98,20 +75,25 @@ namespace DAO
                                (from DonGiaGio in db.DonGiaGios
                                 group DonGiaGio by new
                                 {
+                                    DonGiaGio.maloaiSan,
                                     DonGiaGio.tuKhungGio,
                                     DonGiaGio.denKhungGio
                                 } into g
                                 select new
                                 {
+                                    
                                     date = (DateTime?)g.Max(p => p.ngayCapNhat),
                                     g.Key.tuKhungGio,
-                                    g.Key.denKhungGio
+                                    g.Key.denKhungGio,
+                                    g.Key.maloaiSan
                                 }))
 
                            where
+                             
                              a.ngayCapNhat == b.date &&
                              a.tuKhungGio == b.tuKhungGio &&
                              a.denKhungGio == b.denKhungGio &&
+                             a.maloaiSan == b.maloaiSan &&
                              a.maloaiSan == ls.maLoaiSan &&
                              ls.maLoaiSan == maLoaiSan
                            select new NewDonGiaGio
@@ -123,7 +105,7 @@ namespace DAO
                                TenLoaiSan = ls.tenLoai,
                                DonGia = a.donGia
 
-                           }).OrderBy(m => m.MaloaiSan).ToList();
+                           }).OrderBy(m => m.TuKhungGio).ToList();
             return listDGG;
         }
 
@@ -155,24 +137,37 @@ namespace DAO
             return listDGG;
         }
 
+        // kiểm tra trung đon giá mới
+        public bool kiemTraTrungDonGiaGio(int maLoai, double tuGK, double denKG, DateTime ngayCapNhat)
+        {
+            var donGiaGio = db.DonGiaGios.SingleOrDefault(m => m.maloaiSan == maLoai && m.tuKhungGio == tuGK
+            && m.denKhungGio == denKG && m.ngayCapNhat == ngayCapNhat);
+            if (donGiaGio != null)
+            {
+                return false;
+            }
+            return true;
+        }
 
         // thêm đơn giá giờ mới
-        public bool themDonGiaGio(int maLoai, double tuGK, double denKG, DateTime ngayCN, decimal donGia)
+        public bool themDonGiaGio(int maLoai, double tuGK, double denKG, decimal donGia)
         {
+            //db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db.DonGiaGios);
             try
             {
                 DonGiaGio dgg = new DonGiaGio();
                 dgg.maloaiSan = maLoai;
                 dgg.tuKhungGio = tuGK;
                 dgg.denKhungGio = denKG;
-                dgg.ngayCapNhat = ngayCN;
+                dgg.ngayCapNhat = DateTime.Parse(DateTime.Now.Date.ToString("dd-MM-yyy")); ;
                 dgg.donGia = donGia;
                 db.DonGiaGios.InsertOnSubmit(dgg);
                 db.SubmitChanges();
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex);
                 return false;
             }
         }
@@ -186,8 +181,6 @@ namespace DAO
                 && m.denKhungGio == denKhungGio && m.ngayCapNhat == ngayCN);
                 if (donGiaGio != null)
                 {
-                    db.DonGiaGios.DeleteOnSubmit(donGiaGio);
-                    db.SubmitChanges();
                     DonGiaGio dggMoi = new DonGiaGio();
                     dggMoi.maloaiSan = maLoai;
                     dggMoi.tuKhungGio = tuKhungGio;

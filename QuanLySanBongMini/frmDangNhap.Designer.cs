@@ -36,6 +36,7 @@ namespace QuanLySanBongMini
             this.txtTenDN = new DevExpress.XtraEditors.TextEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDN.Properties)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@ namespace QuanLySanBongMini
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnLogin.Size = new System.Drawing.Size(117, 38);
-            this.btnLogin.TabIndex = 9;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -87,7 +88,7 @@ namespace QuanLySanBongMini
             this.txtMatKhau.Properties.AppearanceFocused.Options.UseFont = true;
             this.txtMatKhau.Properties.UseSystemPasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(259, 26);
-            this.txtMatKhau.TabIndex = 8;
+            this.txtMatKhau.TabIndex = 1;
             // 
             // txtTenDN
             // 
@@ -99,7 +100,7 @@ namespace QuanLySanBongMini
             this.txtTenDN.Properties.AppearanceFocused.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDN.Properties.AppearanceFocused.Options.UseFont = true;
             this.txtTenDN.Size = new System.Drawing.Size(259, 26);
-            this.txtTenDN.TabIndex = 7;
+            this.txtTenDN.TabIndex = 0;
             // 
             // panel1
             // 
@@ -107,7 +108,7 @@ namespace QuanLySanBongMini
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 152);
+            this.panel1.Size = new System.Drawing.Size(212, 178);
             this.panel1.TabIndex = 13;
             // 
             // btnHuy
@@ -122,15 +123,27 @@ namespace QuanLySanBongMini
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnHuy.Size = new System.Drawing.Size(117, 38);
-            this.btnHuy.TabIndex = 10;
+            this.btnHuy.TabIndex = 3;
             this.btnHuy.Text = "Hủy";
+            // 
+            // hyperlinkLabelControl1
+            // 
+            this.hyperlinkLabelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hyperlinkLabelControl1.Appearance.Options.UseFont = true;
+            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(378, 170);
+            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
+            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(114, 20);
+            this.hyperlinkLabelControl1.TabIndex = 4;
+            this.hyperlinkLabelControl1.Text = "Quyên mật khẩu?";
+            this.hyperlinkLabelControl1.Click += new System.EventHandler(this.hyperlinkLabelControl1_Click);
             // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(507, 176);
+            this.ClientSize = new System.Drawing.Size(507, 200);
+            this.Controls.Add(this.hyperlinkLabelControl1);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.labelControl2);
@@ -159,5 +172,6 @@ namespace QuanLySanBongMini
         private DevExpress.XtraEditors.TextEdit txtMatKhau;
         private DevExpress.XtraEditors.TextEdit txtTenDN;
         private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
     }
 }

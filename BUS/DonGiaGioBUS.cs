@@ -52,9 +52,9 @@ namespace BUS
         }
 
         //thêm đơn giá giờ
-        public bool themDonGiaGio(int maLoai, double tuGK, double denKG, DateTime ngayCN, decimal donGia)
+        public bool themDonGiaGio(int maLoai, double tuGK, double denKG, decimal donGia)
         {
-            return DonGiaGioDAO.Instance.themDonGiaGio(maLoai, tuGK, denKG, ngayCN, donGia);
+            return DonGiaGioDAO.Instance.themDonGiaGio(maLoai, tuGK, denKG, donGia);
         }
 
         // xóa đơn giá giờ với mã sân
@@ -67,6 +67,12 @@ namespace BUS
         public bool capNhatDonGiaGio(int maLoai, double tuKhungGio, double denKhungGio, DateTime ngayCN, double donGia)
         {
             return DonGiaGioDAO.Instance.capNhatDonGiaGio(maLoai, tuKhungGio, denKhungGio, ngayCN, donGia);
+        }
+
+        // kkieemr tra trùng đơn giá giờ
+        public bool kiemTraTrungDonGiaGio(int maLoai, double tuGK, double denKG, DateTime ngayCapNhat)
+        {
+            return DonGiaGioDAO.Instance.kiemTraTrungDonGiaGio(maLoai, tuGK, denKG, ngayCapNhat);
         }
     }
 }

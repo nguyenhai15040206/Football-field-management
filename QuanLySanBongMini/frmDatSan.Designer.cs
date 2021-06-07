@@ -379,7 +379,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.Location = new System.Drawing.Point(3, 248);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(996, 37);
-            this.toolStrip1.TabIndex = 12;
+            this.toolStrip1.TabIndex = 11;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButtonLamMoi
@@ -426,7 +426,7 @@ namespace QuanLySanBongMini
             this.btnBatDau.Location = new System.Drawing.Point(776, 70);
             this.btnBatDau.Name = "btnBatDau";
             this.btnBatDau.Size = new System.Drawing.Size(99, 63);
-            this.btnBatDau.TabIndex = 7;
+            this.btnBatDau.TabIndex = 6;
             this.btnBatDau.Text = "Bắt dầu";
             this.btnBatDau.Click += new System.EventHandler(this.btnBatDau_Click);
             // 
@@ -437,7 +437,7 @@ namespace QuanLySanBongMini
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.ReadOnly = true;
             this.txtTenKH.Size = new System.Drawing.Size(272, 27);
-            this.txtTenKH.TabIndex = 2;
+            this.txtTenKH.TabIndex = 1;
             this.txtTenKH.TextChanged += new System.EventHandler(this.txtTenKH_TextChanged);
             // 
             // label2
@@ -538,7 +538,7 @@ namespace QuanLySanBongMini
             0});
             this.numericUpDownGioThue.Name = "numericUpDownGioThue";
             this.numericUpDownGioThue.Size = new System.Drawing.Size(167, 27);
-            this.numericUpDownGioThue.TabIndex = 6;
+            this.numericUpDownGioThue.TabIndex = 5;
             this.numericUpDownGioThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDownGioThue.Value = new decimal(new int[] {
             1,
@@ -609,7 +609,7 @@ namespace QuanLySanBongMini
             this.dateTimePickerGioRa.Location = new System.Drawing.Point(603, 106);
             this.dateTimePickerGioRa.Name = "dateTimePickerGioRa";
             this.dateTimePickerGioRa.Size = new System.Drawing.Size(167, 27);
-            this.dateTimePickerGioRa.TabIndex = 11;
+            this.dateTimePickerGioRa.TabIndex = 7;
             // 
             // label8
             // 
@@ -636,7 +636,7 @@ namespace QuanLySanBongMini
             this.dateTimePickerGioVao.Location = new System.Drawing.Point(161, 214);
             this.dateTimePickerGioVao.Name = "dateTimePickerGioVao";
             this.dateTimePickerGioVao.Size = new System.Drawing.Size(272, 27);
-            this.dateTimePickerGioVao.TabIndex = 5;
+            this.dateTimePickerGioVao.TabIndex = 4;
             // 
             // label6
             // 
@@ -654,7 +654,7 @@ namespace QuanLySanBongMini
             this.dateTimePickerNgayDat.Location = new System.Drawing.Point(161, 178);
             this.dateTimePickerNgayDat.Name = "dateTimePickerNgayDat";
             this.dateTimePickerNgayDat.Size = new System.Drawing.Size(272, 27);
-            this.dateTimePickerNgayDat.TabIndex = 4;
+            this.dateTimePickerNgayDat.TabIndex = 3;
             // 
             // label5
             // 
@@ -672,7 +672,7 @@ namespace QuanLySanBongMini
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.ReadOnly = true;
             this.txtSoDT.Size = new System.Drawing.Size(272, 27);
-            this.txtSoDT.TabIndex = 3;
+            this.txtSoDT.TabIndex = 2;
             this.txtSoDT.TextChanged += new System.EventHandler(this.txtSoDT_TextChanged);
             // 
             // label4
