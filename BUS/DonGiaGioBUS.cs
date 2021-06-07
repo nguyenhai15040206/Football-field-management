@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DevExpress.XtraGrid;
 using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Nodes;
 using DTO;
@@ -28,7 +29,7 @@ namespace BUS
             }
         }
 
-
+        // load don giá có ngày cập nhật mới nhất
         public List<DonGiaGio> loadDonGiaGio_maLoaiSan(int maLoaiSan)
         {
             List<DonGiaGio> dg = new List<DonGiaGio>();
@@ -38,22 +39,34 @@ namespace BUS
 
 
 
-
-        public void loadDonGiaGio_NgayCNMoiNhat_ListView(ListView lv)
+        // load đơn giá có ngày cập nhật mới nhất có tên loại sân
+        public void loadDonGiaGio_NgayCNMoiNhat_Grid(GridControl dgv)
         {
-            ListViewItem[] kq = new ListViewItem[DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan().Count];
-            ListViewItem[] kq1 = new ListViewItem[DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan().Count];
-            ListViewItem[] kq2 = new ListViewItem[DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan().Count];
-            for (int i =0; i < DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan().Count; i++)
-            {
-                    ListViewItem lvItem = new ListViewItem(new[] { DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan()[i].TenLoaiSan, "Từ: "+DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan()[i].TuKhungGio +" đến: "+
-                    DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan()[i].DenKhungGio, DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan()[i].NgayCapNhat.ToString("dd-MM-yyy"),
-                string.Format("{0:0,0} vnđ",DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan()[i].DonGia)});
-                    lvItem.Name = DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan()[i].MaloaiSan.ToString();
-                    kq[i] = lvItem;
-            }
-            lv.Items.Clear();
-            lv.Items.AddRange(kq);
+            dgv.DataSource = DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_tenLoaiSan();
+        }
+
+        // load đơn giá có ngày cập nhật mới nhất có tên loại sân với mã
+        public void loadDonGia_NgayCNMoiNhat_Grid_MaLoaiSan(GridControl dgv, int maLoaiSan)
+        {
+            dgv.DataSource = DonGiaGioDAO.Instance.loadDonGiaGio_NgayCNMoiNhat_TenLoaiMaLoaiSan(maLoaiSan);
+        }
+
+        //thêm đơn giá giờ
+        public bool themDonGiaGio(int maLoai, double tuGK, double denKG, DateTime ngayCN, decimal donGia)
+        {
+            return DonGiaGioDAO.Instance.themDonGiaGio(maLoai, tuGK, denKG, ngayCN, donGia);
+        }
+
+        // xóa đơn giá giờ với mã sân
+        public bool xoaDonGiaGioVoiMa(int maLoaiSan)
+        {
+            return DonGiaGioDAO.Instance.xoaDonGiaGioVoiMa(maLoaiSan);
+        }
+        
+        // cập nhật lại đơn giá
+        public bool capNhatDonGiaGio(int maLoai, double tuKhungGio, double denKhungGio, DateTime ngayCN, double donGia)
+        {
+            return DonGiaGioDAO.Instance.capNhatDonGiaGio(maLoai, tuKhungGio, denKhungGio, ngayCN, donGia);
         }
     }
 }

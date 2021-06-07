@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DevExpress.XtraEditors;
 using DTO;
 
 namespace BUS
@@ -26,41 +27,12 @@ namespace BUS
             }
         }
 
-        // load tất cả các loại sân lên Panel bằng checkBox
-        //public void loadLoaiSan_ckb(Panel panel)
-        //{
-        //    List<LoaiSan> listLoaiSan = LoaiSanDAO.Instance.loadTaCaLoaiSan();
-        //    if (listLoaiSan.Count == 0)
-        //    {
-        //        return;
-        //    }
-
-        //    int top = 10;
-        //    int left = 10;
-        //    for (int i=0; i < listLoaiSan.Count; i++)
-        //    {
-        //        CheckBox ckb = new CheckBox();
-        //        ckb.Text = listLoaiSan[i].tenLoai;
-        //        ckb.Name = listLoaiSan[i].maLoaiSan.ToString();
-        //        ckb.Top = top;
-        //        top +
-        //        ckb.Left = 30;
-        //        panel.Controls.Add(ckb);
-        //    }
-
-        //    int a= panel.Controls.Count;
-
-        //} 
-
-
-
-        //Load tất cả loại sân
-        public void loadLoaiSan_com(ComboBox cbb)
+        public void loadLoaiSam_LookUpEdit(LookUpEdit lookUpEdit)
         {
             var loaiSan = LoaiSanDAO.Instance.loadTaCaLoaiSan();
-            cbb.DataSource = loaiSan;
-            cbb.DisplayMember = "TenLoai";
-            cbb.ValueMember = "MaLoaiSan";
+            lookUpEdit.Properties.DataSource = loaiSan;
+            lookUpEdit.Properties.DisplayMember = "tenLoai";
+            lookUpEdit.Properties.ValueMember = "maLoaiSan";
         }
 
     }

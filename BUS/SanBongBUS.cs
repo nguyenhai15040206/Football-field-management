@@ -43,15 +43,9 @@ namespace BUS
 
 
         //load tất cả sân đã bảo trì thành công
-        public void LoadSanDaBaoTri(GridControl grid)
+        public void LoadSanBong_TinhTrang(GridControl grid, bool tinhTrang)
         {
-            var san = SanBongDAO.Instance.loadTatCaSanBongDaBaoTri();
-            grid.DataSource = san;
-        }
-        //load tất cả sân đã bảo trì thành công
-        public void LoadSanBaoTri(GridControl grid)
-        {
-            var san = SanBongDAO.Instance.loadTatCaSanBongBaoTri();
+            var san = SanBongDAO.Instance.loadTatCaSanBong_VoiTinhTrang(tinhTrang);
             grid.DataSource = san;
         }
 
@@ -62,6 +56,26 @@ namespace BUS
             maSan = SanBongDAO.Instance.maSan_voiTenSan(tenSan.Trim());
             return maSan;
         }
+
+        // xóa sân bóng
+        public bool xoaSanBong(int maSanBong)
+        {
+            return SanBongDAO.Instance.xoaSanBong(maSanBong);
+        }
+
+        // lấy ra sân bóng đang được sử dụng hôm nay
+        public List<int> sanDangDuocSuDungHomNay()
+        {
+            return DatSanDAO.Instance.layRaTatCaSanDuocDat_BangNgayHienTai();
+        }
+        // bảo trì sân bóng
+        public bool baoTriSanBong(int maSan,bool tinhTrang)
+        {
+            return SanBongDAO.Instance.baoTriSanBong(maSan, tinhTrang);
+        }
+
+
+        //
 
     }
 }

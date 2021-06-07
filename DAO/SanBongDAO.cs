@@ -68,31 +68,11 @@ namespace DAO
 
 
         // load sân bóng còn sử dụng được
-        public List<NewSanBongLoaiSan> loadTatCaSanBongDaBaoTri()
+        public List<NewSanBongLoaiSan> loadTatCaSanBong_VoiTinhTrang(bool tinhTrang)
         {
             var listSanBong = (from sb in db.sanBongs
                                join lsb in db.LoaiSans on sb.maLoaiSan equals lsb.maLoaiSan
-                               where sb.tinhTrang == false
-                               select new NewSanBongLoaiSan
-                               {
-                                   MaSan = sb.maSan,
-                                   TenSan = sb.tenSan,
-                                   TenLoai = lsb.tenLoai
-                               }).ToList();
-            if (listSanBong.Count == 0)
-            {
-                return null;
-            }
-            return listSanBong;
-        }
-
-
-        // load sân bóng còn bảo trì
-        public List<NewSanBongLoaiSan> loadTatCaSanBongBaoTri()
-        {
-            var listSanBong = (from sb in db.sanBongs
-                               join lsb in db.LoaiSans on sb.maLoaiSan equals lsb.maLoaiSan
-                               where sb.tinhTrang == true
+                               where sb.tinhTrang == tinhTrang
                                select new NewSanBongLoaiSan
                                {
                                    MaSan = sb.maSan,
@@ -125,6 +105,22 @@ namespace DAO
             }
         }
 
+        // bảo trì sân bóng
+        public bool baoTriSanBong(int maSan, bool tinhTrang)
+        {
+            try
+            {
+                sanBong san = db.sanBongs.SingleOrDefault(m => m.maSan == maSan);
+                san.tinhTrang = tinhTrang;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         //kiểm tra trùng tên sân
         public bool TrungTenSan(string input)
         {
@@ -142,6 +138,23 @@ namespace DAO
                 return false;
             }
         }
+
+        // xóa sân bóng
+        public bool xoaSanBong(int maSanBong)
+        {
+            try
+            {
+                var san = db.sanBongs.SingleOrDefault(m => m.maSan == maSanBong);
+                db.sanBongs.DeleteOnSubmit(san);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("" + ex);
+                return false;
+            }
+        }    
 
         // lấy được mã sân bóng với tên sân bóng
         public int maSan_voiTenSan(string tenSan)

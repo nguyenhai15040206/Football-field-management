@@ -66,6 +66,7 @@ namespace QuanLySanBongMini
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1400, 105);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // simpleButton2
             // 
@@ -279,7 +280,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Panel panel1;
-        private UserControlBangGiaGio userControlBangGiaGio1;
         private UserControlGioiThieuSan userControlGioiThieuSan1;
+        private UserControlBangGiaGio userControlBangGiaGio1;
     }
 }

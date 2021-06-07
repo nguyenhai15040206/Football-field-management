@@ -52,6 +52,16 @@ namespace DAO
             return datSan;
         }
 
+        public List<int> layRaTatCaSanDuocDat_BangNgayHienTai()
+        {
+            var maSan = db.DatSans.Where(m => m.NgayDat == DateTime.Now.Date).Select(m=>m.maSan).ToList();
+            if(maSan.Count == 0)
+            {
+                return null;
+            }    
+            return maSan;  
+        }
+
         // load đặt danh sách đặt sân
         public List<NewDatSan> loadDatSan_ChuaThanhToan()
         {

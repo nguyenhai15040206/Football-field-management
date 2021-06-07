@@ -22,7 +22,7 @@ namespace QuanLySanBongMini
         {
             try
             {
-                DonGiaGioBUS.Instance.loadDonGiaGio_NgayCNMoiNhat_ListView(listView1);
+                DonGiaGioBUS.Instance.loadDonGiaGio_NgayCNMoiNhat_Grid(gridControl3) ;
             }
             catch
             {
