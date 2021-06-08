@@ -833,7 +833,7 @@ namespace QuanLySanBongMini
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmDatSan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDatSan";
+            this.Text = "Quản lý đặt sân";
             this.Load += new System.EventHandler(this.frmDatSan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

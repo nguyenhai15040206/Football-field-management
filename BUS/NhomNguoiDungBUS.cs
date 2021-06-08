@@ -91,5 +91,23 @@ namespace BUS
         {
             return NhomNguoiDungDAO.Instance.maNhomNguoiDungDauTien();
         }
+
+        // get mã nhóm người dùng
+        public List<int> getMaNhomNguoiDung(int maNguoiDung)
+        {
+            return NhomNguoiDungDAO.Instance.getMaNhomNguoiDung(maNguoiDung);
+        }
+
+        // get ma ManHinh từ mã nhóm
+        public List<QL_PhanQuyen> getMaManHinh(int maNhom)
+        {
+            return NhomNguoiDungDAO.Instance.getMaManHinh(maNhom);
+        }
+
+        // phân quyền
+        public bool phanQuyen(int maNhom, int maaManHinh, bool coQuyen)
+        {
+            return NhomNguoiDungDAO.Instance.phanQuyen(maNhom, maaManHinh, coQuyen);
+        }
     }
 }

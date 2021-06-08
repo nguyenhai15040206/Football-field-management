@@ -16,6 +16,8 @@ namespace QuanLySanBongMini
     {
         int row = -1, rowMaNDNhom = -1;
         int maNhom = 0;
+        int maManHinh = 0;
+        bool hoatDong = true;
         public frmQLNhanVienVaPhanQuyen()
         {
             InitializeComponent();
@@ -29,8 +31,8 @@ namespace QuanLySanBongMini
             NhomNguoiDungBUS.Instance.loadNhomNguoiDung(treeListNguoiDUng);
             // load nhóm người dùng lên comBoBox
             NhomNguoiDungBUS.Instance.loadDSNhomNguoiDungComboBox(cboNhomNguoiDung);
-            // load tất cả người dùng
-            NguoiDungBUS.Instance.loadNguoiDung(gridContrrolNguoiDung);
+            // load tất cả người dùng còn hoạt động
+            NguoiDungBUS.Instance.loadNguoiDung_TinhTrang(gridContrrolNguoiDung, hoatDong);
 
             // laod ds người dùng chưa có nhóm
             NguoiDungBUS.Instance.loadNguoiDungChuaCoNhom(gridControlNguoiDungChuaCoNhom);
@@ -40,7 +42,7 @@ namespace QuanLySanBongMini
 
             NhomNguoiDungBUS.Instance.loadDSNhomNguoiDung_GridControl(gridControlQLNhomND);
 
-            //DanhMucManHinhBUS.Instance.loadDanhMucManHinh(treeList2);
+            DanhMucManHinhBUS.Instance.loadDanhMucManHinh(treeList2);
         }
 
         public void loadLaiForm()
@@ -74,6 +76,17 @@ namespace QuanLySanBongMini
         private void toolStripButtonLamMoi_Click(object sender, EventArgs e)
         {
             txtMatKhau.ReadOnly = false;
+            txtTenDangNhap.ReadOnly = false;
+            toolStripButtonLuuND.Enabled = true;
+            toolStripButtonCapNhat.Enabled = false;
+            foreach(Control item in panel8.Controls)
+            {
+                if(item.GetType() == typeof(TextBox))
+                {
+                    item.Text = string.Empty;
+                }    
+            }
+            txtTenNguoiDung.Focus();
         }
 
         private void btnADD_Click(object sender, EventArgs e)
@@ -118,6 +131,176 @@ namespace QuanLySanBongMini
             rowMaNDNhom = int.Parse(gridViewNguoiDungDaCoNhom.GetRowCellValue(gridViewNguoiDungDaCoNhom.FocusedRowHandle, gridColumn10).ToString());
             btnADD.Enabled = false;
             btnRemove.Enabled = true;
+        }
+
+        private void bunifuckbHoatHong_OnChange(object sender, EventArgs e)
+        {
+            if(bunifuckbHoatHong.Checked== true)
+            {
+                hoatDong = true;
+                NguoiDungBUS.Instance.loadNguoiDung_TinhTrang(gridContrrolNguoiDung, hoatDong);
+                lbTinhTrang.Text = "Hoạt động";
+            }    
+            else
+            {
+                hoatDong = false;
+                NguoiDungBUS.Instance.loadNguoiDung_TinhTrang(gridContrrolNguoiDung, hoatDong);
+                lbTinhTrang.Text = "Không hoạt động";
+            }    
+        }
+
+        private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            try
+            {
+                txtMaNguoiDung.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnMaNguoiDung).ToString();
+                txtTenDangNhap.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnTenDN).ToString();
+                txtTenNguoiDung.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnTenNguoiDung).ToString();
+                txtSoDienThoai.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnSoDienThoai).ToString();
+                txtEmail.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnEmail).ToString();
+                txtMatKhau.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnMatKhau).ToString();
+                dateTimePickerNgayVL.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnNgayVL).ToString();
+                toolStripButtonLuuND.Enabled = false;
+                txtMatKhau.ReadOnly = true;
+                txtTenDangNhap.ReadOnly = true;
+                if (bunifuckbHoatHong.Checked==true)
+                {
+                    toolStripButtonCapNhat.Enabled = true;
+                }    
+                else
+                {
+                    toolStripButtonCapNhat.Enabled = false;
+                }    
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void toolStripButtonLuuND_Click(object sender, EventArgs e)
+        {
+            if (txtTenNguoiDung.Text.Trim().Length > 0 && txtTenDangNhap.Text.Trim().Length > 0 && txtMatKhau.Text.Trim().Length > 0 && txtDiaChi.Text.Trim().Length > 0 &&
+                txtSoDienThoai.Text.Trim().Length > 0 && txtEmail.Text.Trim().Length > 0)
+            {
+                if (KiemTraDuLieu.kiemTraKhoanTrang(txtTenDangNhap.Text.Trim()) && KiemTraDuLieu.kiemTraKhoanTrang(txtMatKhau.Text.Trim()))
+                {
+                    if (KiemTraDuLieu.KtraSoDienThoai(txtSoDienThoai.Text))
+                    {
+                        if (KiemTraDuLieu.KtraEmail(txtEmail.Text.Trim()))
+                        {
+                            if (NguoiDungBUS.Instance.KiemTraTenDangNhap(txtTenDangNhap.Text.Trim())==false)
+                            {
+                                if (NguoiDungBUS.Instance.kiemTraSoDienThoai(txtSoDienThoai.Text.Trim()))
+                                {
+                                    if (NguoiDungBUS.Instance.themNguoiDung(txtTenNguoiDung.Text.Trim(), txtTenDangNhap.Text.Trim(), txtMatKhau.Text,
+                                    txtDiaChi.Text, txtSoDienThoai.Text, txtEmail.Text, dateTimePickerNgayVL.Value, hoatDong))
+                                    {
+                                        XtraMessageBox.Show("Thêm người dùng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        NguoiDungBUS.Instance.loadNguoiDung_TinhTrang(gridContrrolNguoiDung, hoatDong);
+                                        toolStripButtonLuuND.Enabled = false;
+                                    }
+                                }
+                                else
+                                {
+                                    XtraMessageBox.Show("Số điện thoại đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    txtSoDienThoai.Focus();
+                                }    
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Tên đăng nhập đã tồn tại vui lòng nhập tên khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                txtTenDangNhap.Focus();
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Nhập sai định dạng email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtEmail.Focus();
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Nhập sai định dạng số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtSoDienThoai.Focus();
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Tên đăng nhập hoặc mật khẩu không chứa khoản trắng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTenDangNhap.Focus();
+                }    
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenNguoiDung.Focus();
+            }
+        }
+
+        private void gridView2_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            if (e.Column.Name == "gridColumnXoa")
+            {
+                if (MessageBox.Show("Bạn có chắc muốn xóa nhân viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                }
+            }
+        }
+
+        private void toolStripButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            if (txtTenNguoiDung.Text.Trim().Length > 0  && txtDiaChi.Text.Trim().Length > 0 &&
+                txtSoDienThoai.Text.Trim().Length > 0 && txtEmail.Text.Trim().Length > 0)
+            {
+                if (KiemTraDuLieu.KtraSoDienThoai(txtSoDienThoai.Text))
+                {
+                    if (KiemTraDuLieu.KtraEmail(txtEmail.Text.Trim()))
+                    {
+                        if (NguoiDungBUS.Instance.capNhatNhanVien(int.Parse(txtMaNguoiDung.Text.Trim()),txtTenNguoiDung.Text.Trim(), 
+                            txtDiaChi.Text.Trim(),txtSoDienThoai.Text.Trim(),txtEmail.Text.Trim(),hoatDong))
+                        {
+                            XtraMessageBox.Show("Cập nhật người dùng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            NguoiDungBUS.Instance.loadNguoiDung_TinhTrang(gridContrrolNguoiDung, hoatDong);
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Số điện thoại đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtSoDienThoai.Focus();
+                        }    
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Nhập sai định dạng email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtEmail.Focus();
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Nhập sai định dạng số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtSoDienThoai.Focus();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenNguoiDung.Focus();
+            }
+        }
+
+        private void gridView7_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            maManHinh = int.Parse(gridView7.GetRowCellValue(e.RowHandle, gridColumnMaMnHinh).ToString());
+        }
+
+        private void gridView7_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            if(e.Column.Name== "gridColumnCoQuyen")
+            {
+                MessageBox.Show("a");
+            }    
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

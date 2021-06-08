@@ -869,7 +869,7 @@ namespace QuanLySanBongMini
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmQLSanBong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmQLSanBong";
+            this.Text = "Quản lý sân bóng";
             this.Load += new System.EventHandler(this.frmQLSanBong_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

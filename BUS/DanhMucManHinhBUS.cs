@@ -49,5 +49,6 @@ namespace BUS
         {
             gv.DataSource = DanhMucManHinhVaPhanQuyenDAO.Instance.danhSachQuyenChucNang(maNhom);
         }
+
     }
 }

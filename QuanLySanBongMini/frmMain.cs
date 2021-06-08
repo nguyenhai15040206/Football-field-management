@@ -35,10 +35,7 @@ namespace QuanLySanBongMini
             {
                 form.Activate();
             }
-
             
-
-
         }
 
         private void TabbedView1_DocumentAdded(object sender, DevExpress.XtraBars.Docking2010.Views.DocumentEventArgs e)
@@ -53,6 +50,7 @@ namespace QuanLySanBongMini
         public void getMaNguoiDung(string maNguoiDung)
         {
             maND = int.Parse(maNguoiDung.Trim());
+            PhanQuyenBUS.Instance.phanQuyen(menuStrip1, maND);
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -108,17 +106,7 @@ namespace QuanLySanBongMini
 
         private void quảnLýĐặtSânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = IstActive(typeof(frmQLSanBong));
-            if (form == null)
-            {
-                frmQLSanBong frm = new frmQLSanBong();
-                frm.MdiParent = this;
-                frm.Show();
-            }
-            else
-            {
-                form.Activate();
-            }
+            
         }
 
         private void thốngKêDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,6 +188,16 @@ namespace QuanLySanBongMini
             {
                 form.Activate();
             }
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

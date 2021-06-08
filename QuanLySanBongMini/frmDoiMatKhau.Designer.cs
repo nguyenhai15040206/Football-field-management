@@ -184,7 +184,7 @@ namespace QuanLySanBongMini
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDoiMatKhau";
+            this.Text = "Đổi mật khẩu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

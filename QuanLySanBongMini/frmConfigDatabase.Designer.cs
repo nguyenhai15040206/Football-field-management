@@ -159,7 +159,7 @@ namespace QuanLySanBongMini
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmConfigDatabase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmConfigDatabase";
+            this.Text = "Chỉnh sửa kết nối";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -798,7 +798,7 @@ namespace QuanLySanBongMini
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmQLHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmQLHoaDon";
+            this.Text = "Thông tin hóa đơn";
             this.Load += new System.EventHandler(this.frmQLHoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

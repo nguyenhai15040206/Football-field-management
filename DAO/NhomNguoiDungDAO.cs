@@ -52,6 +52,19 @@ namespace DAO
             }
         }
 
+        // lấy được mã nhóm người dùng với maNguoiDung
+        public List<int> getMaNhomNguoiDung(int maNguoiDung)
+        {
+            var nguoiDung = db.QL_NguoiDungNhomNguoiDungs.Where(m => m.maNguoiDung == maNguoiDung).Select(m => m.maNhom).ToList();
+            return nguoiDung;
+        }
+        // lấy được danh sách phân quyền từ maNhom
+        public List<QL_PhanQuyen> getMaManHinh(int maNhom)
+        {
+            var phanQuyen = db.QL_PhanQuyens.Where(m => m.maNhom == maNhom).ToList();
+            return phanQuyen;
+        }
+
         // lấy Nhóm người dùng có mã đầu tiền
         public int maNhomNguoiDungDauTien()
         {
@@ -66,6 +79,22 @@ namespace DAO
             {
                 var nguoiDung = db.QL_NguoiDungNhomNguoiDungs.SingleOrDefault(m => m.maNguoiDung == maNguoiDung && m.maNhom == maNhom);
                 db.QL_NguoiDungNhomNguoiDungs.DeleteOnSubmit(nguoiDung);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // phân quyền
+        public bool phanQuyen(int maNhom, int maaManHinh, bool coQuyen)
+        {
+            try
+            {
+                var phanQuyen = db.QL_PhanQuyens.SingleOrDefault(m => m.maManHinh == maaManHinh && m.maNhom == maNhom);
+                phanQuyen.coQuyen = coQuyen;
                 db.SubmitChanges();
                 return true;
             }

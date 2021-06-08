@@ -525,7 +525,7 @@ namespace QuanLySanBongMini
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmQLSanPhanVaKhoHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmQLSanPhanVaKhoHang";
+            this.Text = "Quản lý sản phẩn";
             this.Load += new System.EventHandler(this.frmQLSanPhanVaKhoHang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

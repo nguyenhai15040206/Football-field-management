@@ -107,6 +107,11 @@ namespace BUS
             gv.DataSource = NguoiDungDAO.Instance.loadNguoiDung();
         }
 
+        public void loadNguoiDung_TinhTrang(GridControl gv, bool tinhTrang)
+        {
+            gv.DataSource = NguoiDungDAO.Instance.loadNguoiDung_TinhTrang(tinhTrang);
+        }
+
 
         public void loadNguoiDungChuaCoNhom(GridControl dgv)
         {
@@ -136,6 +141,39 @@ namespace BUS
             {
                 return false;
             }
+        }
+
+        // kiểm tra số điện thoại có bị trùng hay không
+        public bool kiemTraSoDienThoai(string soDIenThoai)
+        {
+            try
+            {
+                var nd = NguoiDungDAO.Instance.ttNguoiDung_SoDienThoai(soDIenThoai);
+                if(nd !=null)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // thêm người dùng
+        public bool themNguoiDung(string tenNguoiDung, string tenDangNhap, string matKhau, string diaChi, string soDienThoai,
+            string email, DateTime ngayVaoLam, bool hoatDong)
+        {
+            return NguoiDungDAO.Instance.themNguoiDung(tenNguoiDung, tenDangNhap, KiemTraDuLieu.MD5Hash(matKhau), diaChi, soDienThoai, email, ngayVaoLam, hoatDong);
+        }
+
+        // cập nhật nhân viên
+        // cập nhật nhân viên
+        public bool capNhatNhanVien(int maNhanVien, string tenNguoiDung, string diaChi, string soDienThoai,
+            string email, bool hoatDong)
+        {
+            return NguoiDungDAO.Instance.capNhatNhanVien(maNhanVien, tenNguoiDung, diaChi, soDienThoai, email, hoatDong);
         }
 
 

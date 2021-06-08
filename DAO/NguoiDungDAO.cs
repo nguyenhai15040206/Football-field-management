@@ -36,6 +36,13 @@ namespace DAO
             var listNguoiDung = db.NguoiDungs.ToList();
             return listNguoiDung;
         }
+
+        // load người dùng theo tình trạng
+        public List<NguoiDung> loadNguoiDung_TinhTrang(bool tinhTrang)
+        {
+            var listNguoiDung = db.NguoiDungs.Where(m=>m.hoatDong== tinhTrang).ToList();
+            return listNguoiDung;
+        }
         // load người dùng theo mã nhóm người dùng
         public List<NguoiDung> loadNguoiDungTheoNhom(int maNhom)
         {
@@ -93,6 +100,12 @@ namespace DAO
             return db.NguoiDungs.AsEnumerable().FirstOrDefault(m => m.tenDangNhap == tenDangNhap);
         }
 
+        // kiểm tra số điện thoại
+        public NguoiDung ttNguoiDung_SoDienThoai(string soDienThoai)
+        {
+            return db.NguoiDungs.SingleOrDefault(m => m.soDienThoai == soDienThoai);
+        }
+
         //đổi mật khẩu
         public bool doiMatKhau(string tenDN, string pass)
         {
@@ -109,8 +122,78 @@ namespace DAO
             }
         }
 
-        //kiểm tra tên đăng nhập có trùng
-        
+
+        // thêm người dùng
+        public bool themNguoiDung(string tenNguoiDung, string tenDangNhap, string matKhau, string diaChi, string soDienThoai,
+            string email, DateTime ngayVaoLam, bool hoatDong)
+        {
+            try
+            {
+                NguoiDung nd = new NguoiDung();
+                nd.tenNguoiDung = tenNguoiDung;
+                nd.tenDangNhap = tenDangNhap;
+                nd.matKhau = matKhau;
+                nd.diaChi = diaChi;
+                nd.soDienThoai = soDienThoai;
+                nd.email = email;
+                nd.ngayVaoLam = ngayVaoLam;
+                nd.hoatDong = hoatDong;
+                db.NguoiDungs.InsertOnSubmit(nd);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        // cập nhật nhân viên
+        public bool capNhatNhanVien(int maNhanVien ,string tenNguoiDung, string diaChi, string soDienThoai,
+            string email, bool hoatDong)
+        {
+            try
+            {
+                NguoiDung nd = db.NguoiDungs.SingleOrDefault(m => m.maNguoiDung == maNhanVien);
+                if(nd == null)
+                {
+                    return false;
+                }
+                if (soDienThoai == nd.soDienThoai)
+                {
+                    nd.tenNguoiDung = tenNguoiDung;
+                    nd.diaChi = diaChi;
+                    nd.email = email;
+                    nd.hoatDong = hoatDong;
+                    db.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    if (ttNguoiDung_SoDienThoai(soDienThoai) == null)
+                    {
+                        nd.tenNguoiDung = tenNguoiDung;
+                        nd.diaChi = diaChi;
+                        nd.email = email;
+                        nd.soDienThoai = soDienThoai;
+                        nd.hoatDong = hoatDong;
+                        db.SubmitChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }    
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
 
 
     }
