@@ -108,5 +108,57 @@ namespace DAO
             //put a breakpoint here and check datatable
             return dataTable;
         }
+
+
+        //
+        public DataTable ThongKeDoanhThuTheoNgay(DateTime ngay)
+        {
+            DataTable table = new DataTable();
+            var thongKe = (from hd in db.HoaDons
+                           where hd.tinhTrang == true
+                           && hd.ngayLap == ngay.Date
+                           select hd).ToList();
+            table = ToDataTable(thongKe);
+            return table;
+        }
+        public double tongTien_theoNgay(DateTime ngay)
+        {
+            return (double)db.HoaDons.Where(m => m.tinhTrang == true && m.ngayLap == ngay.Date).Sum(m => m.tongTien);
+        }
+
+
+        //
+
+        public DataTable ThongKeDoanhThuTheoThang(int thang, int nam)
+        {
+            DataTable table = new DataTable();
+            var thongKe = (from hd in db.HoaDons
+                           where hd.tinhTrang == true
+                           && hd.ngayLap.Value.Month == thang
+                           && hd.ngayLap.Value.Year == nam
+                           select hd).ToList();
+            table = ToDataTable(thongKe);
+            return table;
+        }
+        public double tongTien_theoTTnag(int thang, int nam)
+        {
+            return (double)db.HoaDons.Where(m => m.tinhTrang == true && m.ngayLap.Value.Month == thang && m.ngayLap.Value.Year == nam).Sum(m => m.tongTien);
+        }
+
+
+        public DataTable ThongKeDoanhThuTheoNam(int nam)
+        {
+            DataTable table = new DataTable();
+            var thongKe = (from hd in db.HoaDons
+                           where hd.tinhTrang == true
+                           && hd.ngayLap.Value.Year == nam
+                           select hd).ToList();
+            table = ToDataTable(thongKe);
+            return table;
+        }
+        public double tongTien_theoNam( int nam)
+        {
+            return (double)db.HoaDons.Where(m => m.tinhTrang == true && m.ngayLap.Value.Year == nam).Sum(m => m.tongTien);
+        }
     }
 }

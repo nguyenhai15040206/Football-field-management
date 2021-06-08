@@ -111,7 +111,7 @@ namespace QuanLySanBongMini
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panel15 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.gridControlQuyénDmanHinh = new DevExpress.XtraGrid.GridControl();
+            this.gridControlQuyenDmanHinh = new DevExpress.XtraGrid.GridControl();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnMaMnHinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -167,7 +167,7 @@ namespace QuanLySanBongMini
             this.tabNavigationPage2.SuspendLayout();
             this.panel15.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlQuyénDmanHinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlQuyenDmanHinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit7)).BeginInit();
@@ -1120,7 +1120,7 @@ namespace QuanLySanBongMini
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.gridControlQuyénDmanHinh);
+            this.groupBox6.Controls.Add(this.gridControlQuyenDmanHinh);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(471, 0);
             this.groupBox6.Name = "groupBox6";
@@ -1129,19 +1129,19 @@ namespace QuanLySanBongMini
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Danh sách quyền chức năng";
             // 
-            // gridControlQuyénDmanHinh
+            // gridControlQuyenDmanHinh
             // 
-            this.gridControlQuyénDmanHinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlQuyénDmanHinh.Location = new System.Drawing.Point(3, 23);
-            this.gridControlQuyénDmanHinh.MainView = this.gridView7;
-            this.gridControlQuyénDmanHinh.Name = "gridControlQuyénDmanHinh";
-            this.gridControlQuyénDmanHinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridControlQuyenDmanHinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlQuyenDmanHinh.Location = new System.Drawing.Point(3, 23);
+            this.gridControlQuyenDmanHinh.MainView = this.gridView7;
+            this.gridControlQuyenDmanHinh.Name = "gridControlQuyenDmanHinh";
+            this.gridControlQuyenDmanHinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit7,
             this.repositoryItemCalcEdit1,
             this.repositoryItemCheckEdit1});
-            this.gridControlQuyénDmanHinh.Size = new System.Drawing.Size(643, 598);
-            this.gridControlQuyénDmanHinh.TabIndex = 5;
-            this.gridControlQuyénDmanHinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlQuyenDmanHinh.Size = new System.Drawing.Size(643, 598);
+            this.gridControlQuyenDmanHinh.TabIndex = 5;
+            this.gridControlQuyenDmanHinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7});
             // 
             // gridView7
@@ -1172,8 +1172,9 @@ namespace QuanLySanBongMini
             this.gridColumnMaMnHinh,
             this.gridColumn27,
             this.gridColumnCoQuyen});
-            this.gridView7.GridControl = this.gridControlQuyénDmanHinh;
+            this.gridView7.GridControl = this.gridControlQuyenDmanHinh;
             this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsBehavior.Editable = false;
             this.gridView7.OptionsFind.AlwaysVisible = true;
             this.gridView7.OptionsFind.FindNullPrompt = "Nhập thông tin cần tìm kiếm";
             this.gridView7.OptionsHint.ShowCellHints = false;
@@ -1208,6 +1209,8 @@ namespace QuanLySanBongMini
             this.gridColumnCoQuyen.ColumnEdit = this.repositoryItemCheckEdit1;
             this.gridColumnCoQuyen.FieldName = "CoQuyen";
             this.gridColumnCoQuyen.Name = "gridColumnCoQuyen";
+            this.gridColumnCoQuyen.OptionsColumn.ImmediateUpdateRowPosition = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnCoQuyen.OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnCoQuyen.Visible = true;
             this.gridColumnCoQuyen.VisibleIndex = 2;
             this.gridColumnCoQuyen.Width = 189;
@@ -1503,7 +1506,7 @@ namespace QuanLySanBongMini
             this.tabNavigationPage2.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlQuyénDmanHinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlQuyenDmanHinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit7)).EndInit();
@@ -1607,7 +1610,7 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.GroupBox groupBox6;
-        private DevExpress.XtraGrid.GridControl gridControlQuyénDmanHinh;
+        private DevExpress.XtraGrid.GridControl gridControlQuyenDmanHinh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaMnHinh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;

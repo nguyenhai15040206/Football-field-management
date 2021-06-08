@@ -201,6 +201,12 @@
     <Compile Include="XtraReportPhieuNhap.Designer.cs">
       <DependentUpon>XtraReportPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportThongKeDoanhThu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportThongKeDoanhThu.Designer.cs">
+      <DependentUpon>XtraReportThongKeDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportXuatHoaDon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportPhieuNhap.resx">
       <DependentUpon>XtraReportPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportThongKeDoanhThu.resx">
+      <DependentUpon>XtraReportThongKeDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportXuatHoaDon.resx">
       <DependentUpon>XtraReportXuatHoaDon.cs</DependentUpon>

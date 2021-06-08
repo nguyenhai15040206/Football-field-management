@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 
 namespace QuanLySanBongMini
 {
@@ -99,6 +100,13 @@ namespace QuanLySanBongMini
             {
                 return;
             }
+        }
+
+        private void toolStripButtonInPhieu_Click(object sender, EventArgs e)
+        {
+            XtraReportXuatHoaDon rpt = new XtraReportXuatHoaDon();
+            rpt.DataSource = ReportBUS.Instance.thanhToanSan(maHoaDon);
+            rpt.ShowPreviewDialog();
         }
 
         private void gridView2_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)

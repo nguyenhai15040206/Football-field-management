@@ -29,9 +29,9 @@ namespace QuanLySanBongMini
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,13 +41,13 @@ namespace QuanLySanBongMini
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnINHangNgay = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerNam = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.pkThang = new System.Windows.Forms.DateTimePicker();
-            this.btnInTheoThang = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerNgay = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnInTheoNam = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,9 +82,9 @@ namespace QuanLySanBongMini
             this.label4.Location = new System.Drawing.Point(13, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(350, 25);
+            this.label4.Size = new System.Drawing.Size(492, 25);
             this.label4.TabIndex = 1;
-            this.label4.Text = "THỐNG KÊ DOANH THU VÀ TỒN KHO";
+            this.label4.Text = "THỐNG KÊ DOANH THU THEO NGÀY - THÁNG - NĂM";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
@@ -110,34 +110,34 @@ namespace QuanLySanBongMini
             // 
             this.chart1.BackColor = System.Drawing.Color.PeachPuff;
             this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.LegendText = "Thống kê tiền\\n theo hàng tháng";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.LegendText = "Thống kê tiền\\n theo hàng tháng";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(959, 697);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnINHangNgay);
-            this.panel4.Controls.Add(this.dateTimePicker3);
+            this.panel4.Controls.Add(this.dateTimePickerNam);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.pkThang);
-            this.panel4.Controls.Add(this.btnInTheoThang);
-            this.panel4.Controls.Add(this.dateTimePicker1);
+            this.panel4.Controls.Add(this.dateTimePickerNgay);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.btnInTheoNam);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -161,27 +161,29 @@ namespace QuanLySanBongMini
             this.btnINHangNgay.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnINHangNgay.Location = new System.Drawing.Point(175, 94);
             this.btnINHangNgay.Name = "btnINHangNgay";
-            this.btnINHangNgay.Size = new System.Drawing.Size(160, 46);
+            this.btnINHangNgay.Size = new System.Drawing.Size(157, 39);
             this.btnINHangNgay.TabIndex = 1;
             this.btnINHangNgay.Text = "In";
             this.btnINHangNgay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnINHangNgay.UseCompatibleTextRendering = true;
             this.btnINHangNgay.UseVisualStyleBackColor = true;
+            this.btnINHangNgay.Click += new System.EventHandler(this.btnINHangNgay_Click);
             // 
-            // dateTimePicker3
+            // dateTimePickerNam
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(52, 327);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(289, 29);
-            this.dateTimePicker3.TabIndex = 4;
+            this.dateTimePickerNam.CustomFormat = "yyy";
+            this.dateTimePickerNam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerNam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerNam.Location = new System.Drawing.Point(43, 329);
+            this.dateTimePickerNam.Name = "dateTimePickerNam";
+            this.dateTimePickerNam.Size = new System.Drawing.Size(289, 29);
+            this.dateTimePickerNam.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 176);
+            this.label2.Location = new System.Drawing.Point(39, 174);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 21);
             this.label2.TabIndex = 5;
@@ -189,59 +191,63 @@ namespace QuanLySanBongMini
             // 
             // pkThang
             // 
+            this.pkThang.CustomFormat = "MM/yyy";
             this.pkThang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pkThang.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.pkThang.Location = new System.Drawing.Point(46, 198);
+            this.pkThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.pkThang.Location = new System.Drawing.Point(43, 198);
             this.pkThang.Name = "pkThang";
             this.pkThang.Size = new System.Drawing.Size(289, 29);
             this.pkThang.TabIndex = 2;
             // 
-            // btnInTheoThang
+            // dateTimePickerNgay
             // 
-            this.btnInTheoThang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInTheoThang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInTheoThang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInTheoThang.Location = new System.Drawing.Point(175, 232);
-            this.btnInTheoThang.Name = "btnInTheoThang";
-            this.btnInTheoThang.Size = new System.Drawing.Size(160, 46);
-            this.btnInTheoThang.TabIndex = 3;
-            this.btnInTheoThang.Text = "In";
-            this.btnInTheoThang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInTheoThang.UseCompatibleTextRendering = true;
-            this.btnInTheoThang.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(43, 59);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(289, 29);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePickerNgay.CustomFormat = "MM/dd/yyy";
+            this.dateTimePickerNgay.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerNgay.Location = new System.Drawing.Point(43, 59);
+            this.dateTimePickerNgay.Name = "dateTimePickerNgay";
+            this.dateTimePickerNgay.Size = new System.Drawing.Size(289, 29);
+            this.dateTimePickerNgay.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(48, 305);
+            this.label3.Location = new System.Drawing.Point(42, 305);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(216, 21);
             this.label3.TabIndex = 4;
             this.label3.Text = "Thống kê theo hàng năm>>";
             // 
-            // btnInTheoNam
+            // button1
             // 
-            this.btnInTheoNam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInTheoNam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInTheoNam.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInTheoNam.Location = new System.Drawing.Point(181, 361);
-            this.btnInTheoNam.Name = "btnInTheoNam";
-            this.btnInTheoNam.Size = new System.Drawing.Size(160, 46);
-            this.btnInTheoNam.TabIndex = 5;
-            this.btnInTheoNam.Text = "In";
-            this.btnInTheoNam.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInTheoNam.UseCompatibleTextRendering = true;
-            this.btnInTheoNam.UseVisualStyleBackColor = true;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(175, 233);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 39);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "In";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseCompatibleTextRendering = true;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(175, 364);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(157, 39);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "In";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseCompatibleTextRendering = true;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmThongKeDoanhThu
             // 
@@ -278,12 +284,12 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnINHangNgay;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNam;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker pkThang;
-        private System.Windows.Forms.Button btnInTheoThang;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNgay;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnInTheoNam;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

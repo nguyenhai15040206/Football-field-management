@@ -38,5 +38,36 @@ namespace BUS
         }
 
 
+        public DataTable ThongKeDoanhThuTheoNgay(DateTime ngay)
+        {
+            return ReportDAO.Instance.ThongKeDoanhThuTheoNgay(ngay);
+        }
+        public double tongTien_theoNgay(DateTime ngay)
+        {
+            return ReportDAO.Instance.tongTien_theoNgay(ngay);
+        }
+
+
+        public DataTable ThongKeDoanhThuTheoThang(int thang, int nam)
+        {
+            return ReportDAO.Instance.ThongKeDoanhThuTheoThang(thang, nam);
+        }
+
+        public double tongTien_theoThang(int thang, int nam)
+        {
+            return ReportDAO.Instance.tongTien_theoTTnag(thang,nam);
+        }
+
+        public DataTable ThongKeDoanhThuTheoNam(int nam)
+        {
+            return ReportDAO.Instance.ThongKeDoanhThuTheoNam(nam);
+        }
+
+        public double tongTien_theoNam( int nam)
+        {
+            return ReportDAO.Instance.tongTien_theoNam(nam);
+        }
+
+
     }
 }

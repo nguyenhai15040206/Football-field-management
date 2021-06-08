@@ -16,8 +16,10 @@ namespace QuanLySanBongMini
     {
         int row = -1, rowMaNDNhom = -1;
         int maNhom = 0;
+        int maNhomPhanQuyen = 0; 
         int maManHinh = 0;
         bool hoatDong = true;
+        bool coQuyen = true;
         public frmQLNhanVienVaPhanQuyen()
         {
             InitializeComponent();
@@ -59,8 +61,8 @@ namespace QuanLySanBongMini
             // load danh sách quyền chức năng
             try
             {
-                int maNhom = int.Parse(gridViewDSNDPhanQuyen.GetRowCellValue(gridViewDSNDPhanQuyen.FocusedRowHandle, gridColumn29).ToString());
-                DanhMucManHinhBUS.Instance.loadDanhSachQuyenChucNang(gridControlQuyénDmanHinh, maNhom);
+                maNhomPhanQuyen = int.Parse(gridViewDSNDPhanQuyen.GetRowCellValue(gridViewDSNDPhanQuyen.FocusedRowHandle, gridColumn29).ToString());
+                DanhMucManHinhBUS.Instance.loadDanhSachQuyenChucNang(gridControlQuyenDmanHinh, maNhomPhanQuyen);
             }
             catch
             {
@@ -293,13 +295,25 @@ namespace QuanLySanBongMini
         private void gridView7_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             maManHinh = int.Parse(gridView7.GetRowCellValue(e.RowHandle, gridColumnMaMnHinh).ToString());
+            coQuyen = (bool.Parse(gridView7.GetRowCellValue(e.RowHandle, gridColumnCoQuyen).ToString()));
         }
 
         private void gridView7_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             if(e.Column.Name== "gridColumnCoQuyen")
             {
-                MessageBox.Show("a");
+                if(coQuyen==true)
+                {
+                    NhomNguoiDungBUS.Instance.phanQuyen(maNhomPhanQuyen, maManHinh, false);
+                    DanhMucManHinhBUS.Instance.loadDanhSachQuyenChucNang(gridControlQuyenDmanHinh, maNhomPhanQuyen);
+                }    
+                else
+                {
+                    NhomNguoiDungBUS.Instance.phanQuyen(maNhomPhanQuyen, maManHinh, true);
+                    DanhMucManHinhBUS.Instance.loadDanhSachQuyenChucNang(gridControlQuyenDmanHinh, maNhomPhanQuyen);
+                }    
+
+                
             }    
         }
 

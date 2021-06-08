@@ -61,7 +61,6 @@ namespace QuanLySanBongMini
             this.toolStripButtonLamMoi = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonThanhToan = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonInHoaDon = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonThanhToanNhieuSan = new System.Windows.Forms.ToolStripButton();
             this.label18 = new System.Windows.Forms.Label();
             this.txtKhachDua = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -408,8 +407,7 @@ namespace QuanLySanBongMini
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonLamMoi,
             this.toolStripButtonThanhToan,
-            this.toolStripButtonInHoaDon,
-            this.toolStripButtonThanhToanNhieuSan});
+            this.toolStripButtonInHoaDon});
             this.toolStrip1.Location = new System.Drawing.Point(3, 235);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1070, 37);
@@ -442,15 +440,6 @@ namespace QuanLySanBongMini
             this.toolStripButtonInHoaDon.Size = new System.Drawing.Size(134, 34);
             this.toolStripButtonInHoaDon.Text = "In lại hóa đơn";
             this.toolStripButtonInHoaDon.Click += new System.EventHandler(this.toolStripButtonInHoaDon_Click);
-            // 
-            // toolStripButtonThanhToanNhieuSan
-            // 
-            this.toolStripButtonThanhToanNhieuSan.Image = global::QuanLySanBongMini.Properties.Resources.transparent_online_payment_icon_smartphone_icon_payment_icon_5e24073cc2d615_5165774315794194527981_removebg_preview;
-            this.toolStripButtonThanhToanNhieuSan.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonThanhToanNhieuSan.Name = "toolStripButtonThanhToanNhieuSan";
-            this.toolStripButtonThanhToanNhieuSan.Size = new System.Drawing.Size(183, 34);
-            this.toolStripButtonThanhToanNhieuSan.Text = "Thanh toán nhiều sân";
-            this.toolStripButtonThanhToanNhieuSan.Click += new System.EventHandler(this.toolStripButtonThanhToanNhieuSan_Click);
             // 
             // label18
             // 
@@ -860,7 +849,6 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.ToolStripButton toolStripButtonThanhToan;
         private System.Windows.Forms.ToolStripButton toolStripButtonInHoaDon;
         private System.Windows.Forms.TextBox txtKhungGioDa;
-        private System.Windows.Forms.ToolStripButton toolStripButtonThanhToanNhieuSan;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label23;

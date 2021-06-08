@@ -770,6 +770,7 @@ namespace QuanLySanBongMini
             this.toolStripButtonInPhieu.Name = "toolStripButtonInPhieu";
             this.toolStripButtonInPhieu.Size = new System.Drawing.Size(114, 34);
             this.toolStripButtonInPhieu.Text = "In hóa đơn";
+            this.toolStripButtonInPhieu.Click += new System.EventHandler(this.toolStripButtonInPhieu_Click);
             // 
             // miniToolStrip
             // 
