@@ -95,6 +95,7 @@ namespace QuanLySanBongMini
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(270, 27);
             this.txtPass.TabIndex = 2;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // label3
             // 

@@ -105,7 +105,7 @@ namespace QuanLySanBongMini
                     {
                         if (txtDatCoc.Text.Trim().Length > 0 && double.Parse(txtDatCoc.Text.Trim())>= datCoc)
                         {
-                            if (DatSanBUS.Instance.datSan(maSan, maKhachHang, 1, dateTimePickerNgayDat.Value.Date, TimeSpan.Parse(new DateTime(dateTimePickerGioVao.Value.TimeOfDay.Ticks).ToString("HH:mm")),
+                            if (DatSanBUS.Instance.datSan(maSan, maKhachHang, frmMain.maND, dateTimePickerNgayDat.Value.Date, TimeSpan.Parse(new DateTime(dateTimePickerGioVao.Value.TimeOfDay.Ticks).ToString("HH:mm")),
                                 TimeSpan.Parse(new DateTime(dateTimePickerGioRa.Value.TimeOfDay.Ticks).ToString("HH:mm")), tienSan, int.Parse(txtDatCoc.Text.Trim()), txtGhiChu.Text.Trim()))
                             {
                                 XtraMessageBox.Show("Thêm lịch đặt sân thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

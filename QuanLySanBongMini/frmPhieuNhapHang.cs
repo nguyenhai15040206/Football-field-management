@@ -83,7 +83,7 @@ namespace QuanLySanBongMini
             {
                 if (tongTien != 0)
                 {
-                    if (PhieuNhapBUS.Instance.themPhieuNhap(tongTien, int.Parse(lookUpEdit1.EditValue.ToString()), 1))
+                    if (PhieuNhapBUS.Instance.themPhieuNhap(tongTien, int.Parse(lookUpEdit1.EditValue.ToString()), frmMain.maND))
                     {
                         maPhieuNhap = PhieuNhapBUS.Instance.maPhieuNhapMoiNhat();
                         for (int i = 0; i < gridViewCTPN.RowCount - 1; i++)

@@ -170,7 +170,7 @@ namespace QuanLySanBongMini
         {
             if (txtSDT.Text.Trim().Length > 0)
             {
-                if (HoaDonBUS.Instance.themHoaDon(tienSan, giamGia, tienNuoc, tongTien, maSan, maKhachHang, ngayDat, gioVao, gioRa, 1))
+                if (HoaDonBUS.Instance.themHoaDon(tienSan, giamGia, tienNuoc, tongTien, maSan, maKhachHang, ngayDat, gioVao, gioRa, frmMain.maND))
                 {
                     int maHoaDon = HoaDonBUS.Instance.maHoaDon_top1();
                     for (int i = 0; i < dgvChiTietHD.Rows.Count - 1; i++)
