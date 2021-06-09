@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{FCF1A496-7FEC-4412-B3A6-C4CDCF38917C}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupQLSanBongMini", "SetupQLSanBongMini\SetupQLSanBongMini.vdproj", "{CDFB1B99-B5A9-4B8E-AE98-5EFDD90C6298}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,8 +33,6 @@ Global
 		{FCF1A496-7FEC-4412-B3A6-C4CDCF38917C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCF1A496-7FEC-4412-B3A6-C4CDCF38917C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCF1A496-7FEC-4412-B3A6-C4CDCF38917C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDFB1B99-B5A9-4B8E-AE98-5EFDD90C6298}.Debug|Any CPU.ActiveCfg = Debug
-		{CDFB1B99-B5A9-4B8E-AE98-5EFDD90C6298}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,33 +25,73 @@ namespace QuanLySanBongMini
             {
                 if (NguoiDungBUS.Instance.KiemTraTenDangNhap(txtTenDN.Text))
                 {
-                    if (txtMatKhau.Text.Trim() == txtNhapLaiMK.Text.Trim())
+                    if (KiemTraDuLieu.kiemTraKhoanTrang(txtMatKhau.Text.Trim()) && KiemTraDuLieu.kiemTraKhoanTrang(txtNhapLaiMK.Text.Trim()))
                     {
-                        if (NguoiDungBUS.Instance.doiMatKhau(txtTenDN.Text, KiemTraDuLieu.MD5Hash(txtMatKhau.Text)))
+                        if (txtMatKhau.Text.Trim() == txtNhapLaiMK.Text.Trim())
                         {
-                            XtraMessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (NguoiDungBUS.Instance.doiMatKhau(txtTenDN.Text, KiemTraDuLieu.MD5Hash(txtMatKhau.Text)))
+                            {
+                                XtraMessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Program.frm = null;
+                                if (Program.frm == null || Program.frm.IsDisposed)
+                                {
+                                    Program.frm = new frmDangNhap();
+                                }
+                                this.Visible = false;
+                                Program.frm.Show();
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Mật khẩu không khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            txtNhapLaiMK.Focus();
                         }
                     }
                     else
                     {
-                        XtraMessageBox.Show("Mật khẩu không khớp");
-                    }
+                        XtraMessageBox.Show("Mật khẩu không có khoản trắng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtMatKhau.Focus();
+                    }    
                 }
                 else
                 {
-                    XtraMessageBox.Show("Tên đăng nhập sai!");
+                    XtraMessageBox.Show("Tên đăng nhập sai!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtTenDN.Focus();
                 }
             }   
             else
             {
-                XtraMessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                XtraMessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtTenDN.Focus();
             }    
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
+        }
+
+        private void frmDoiMatKhau_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
         }
     }
 }

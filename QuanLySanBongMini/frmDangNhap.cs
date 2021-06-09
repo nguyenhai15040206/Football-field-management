@@ -25,13 +25,13 @@ namespace QuanLySanBongMini
         {
             if (txtTenDN.Text.Trim().Length <= 0)
             {
-                MessageBox.Show("Tên đăng nhập không được bỏ trống");
+                XtraMessageBox.Show("Tên đăng nhập không được bỏ trống","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 this.txtTenDN.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(txtMatKhau.Text))
             {
-                MessageBox.Show("Mật khẩu không được bỏ trống");
+                XtraMessageBox.Show("Mật khẩu không được bỏ trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.txtMatKhau.Focus();
                 return;
             }
@@ -44,7 +44,7 @@ namespace QuanLySanBongMini
             {
                 // chuổi cấu hình không phù hợp
                 // xử lý cấu hình
-                MessageBox.Show("Chuỗi cấu hình không tồn tại");
+                XtraMessageBox.Show("Chuỗi cấu hình không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 ProcessConfig();
 
 
@@ -52,15 +52,20 @@ namespace QuanLySanBongMini
             if (kq == 2)
             {
                 // xử lý cấu hình
-                MessageBox.Show("Chuỗi cấu hình không phù hợp");
+                XtraMessageBox.Show("Chuỗi cấu hình không phù hợp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 ProcessConfig();
             }
         }
 
         public void ProcessConfig()
         {
-            frmConfigDatabase frm = new frmConfigDatabase();
-            frm.ShowDialog();
+            Program.frm = null;
+            if (Program.frm == null || Program.frm.IsDisposed)
+            {
+                Program.frmConfigDatabase = new frmConfigDatabase();
+            }
+            this.Visible = false;
+            Program.frmConfigDatabase.Show();
         }
         public void ProcessLogin()
         {
@@ -72,15 +77,22 @@ namespace QuanLySanBongMini
                     {
                         maNguoiDung = NguoiDungBUS.Instance.maNguoiDung(txtTenDN.Text.Trim());
                         thongTinND = NguoiDungBUS.Instance.thongTinNguoiDung(txtTenDN.Text.Trim());
-                        this.DialogResult = DialogResult.OK;
+                        if (Program.mainForm == null || Program.mainForm.IsDisposed)
+                        {
+                            Program.mainForm = new frmMain();
+                            Program.mainForm.thongTinNguoiDung(Program.frm.thongTinND);
+                            Program.mainForm.maNguoiDung(Convert.ToString(Program.frm.maNguoiDung));
+                        }
+                        Program.frm.Visible= false;
+                        Program.mainForm.Show();
                     }
                     if (NguoiDungBUS.Instance.dangNhapHeThong(txtTenDN.Text.Trim(), txtMatKhau.Text.Trim()) == 200)
                     {
-                        MessageBox.Show("Tài khoản không khả dụng");
+                        XtraMessageBox.Show("Tài khoản không khả dụng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     if (NguoiDungBUS.Instance.dangNhapHeThong(txtTenDN.Text.Trim(), txtMatKhau.Text.Trim()) == 100)
                     {
-                        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
+                        XtraMessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtTenDN.Focus();
                     }
                 }
@@ -98,8 +110,41 @@ namespace QuanLySanBongMini
 
         private void hyperlinkLabelControl1_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frm = new frmDoiMatKhau();
-            frm.ShowDialog();
+            Program.frm = null;
+            if (Program.frm == null || Program.frm.IsDisposed)
+            {
+                Program.frmDoiMatKhau = new frmDoiMatKhau();
+            }
+            this.Visible = false;
+            Program.frmDoiMatKhau.Show();
+        }
+
+        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
         }
     }
 }

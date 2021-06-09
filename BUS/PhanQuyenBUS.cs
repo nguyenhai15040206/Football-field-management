@@ -49,11 +49,11 @@ namespace BUS
 
                     FindMenuPhanQuyen(((ToolStripMenuItem)(menu)).DropDownItems, pScreenName, pEnable);
                     menu.Enabled = CheckAllMenuChildVisible(((ToolStripMenuItem)(menu)).DropDownItems);
-                    menu.Enabled = menu.Enabled;
+                    menu.Visible = menu.Enabled;
                 }
                 else if (string.Equals(pScreenName, menu.Tag))
                 {
-                    menu.Enabled = pEnable; menu.Enabled = pEnable;
+                    menu.Enabled = pEnable; menu.Visible = pEnable;
                 }
             }
         }

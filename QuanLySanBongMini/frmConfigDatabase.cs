@@ -25,6 +25,14 @@ namespace QuanLySanBongMini
             {
                 NguoiDungBUS.Instance.saveConfig(cboServername.Text, txtUsername.Text, txtPass.Text, cboDatabase.Text);
                 this.Hide();
+                Program.frm = null;
+                if (Program.frm == null || Program.frm.IsDisposed)
+                {
+                    Program.frm = new frmDangNhap();
+                }
+                this.Visible = false;
+                Program.frm.Show();
+                
             }
             else
             {
@@ -44,7 +52,30 @@ namespace QuanLySanBongMini
 
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
+        }
+
+        private void frmConfigDatabase_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
         }
     }
 }

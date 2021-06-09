@@ -54,6 +54,7 @@ namespace QuanLySanBongMini
 
         public void lamMoiDuLieu()
         {
+            txtNguoiNhap.Text = "";
             maPhieuNhap = 0;
             tongTien = 0;
             txtNguoiNhap.Text = "";
@@ -77,7 +78,7 @@ namespace QuanLySanBongMini
         {
             if (lookUpEdit1.EditValue == null)
             {
-                MessageBox.Show("Vui lòng chọn nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Vui lòng chọn nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -96,7 +97,7 @@ namespace QuanLySanBongMini
                             ThucUongBUS.Instance.capNhatSoLuongKhiHuy(maThucUong,soLuong);
                         }
                         toolStripButtonLuuPN.Enabled = false;
-                        if (MessageBox.Show("Thêm thành công! Bạn có muốn in phiếu nhập này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (XtraMessageBox.Show("Thêm thành công! Bạn có muốn in phiếu nhập này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             XtraReportPhieuNhap rpt = new XtraReportPhieuNhap();
                             XRLabel xRLabel = rpt.xrLabelTienChu;
@@ -112,7 +113,7 @@ namespace QuanLySanBongMini
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn sản phẩm cần nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Vui lòng chọn sản phẩm cần nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -196,11 +197,11 @@ namespace QuanLySanBongMini
                 maPhieuNhap = int.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridColumn2).ToString().Trim());
                 if (tinhTrang == true)
                 {
-                    if (MessageBox.Show("Bạn có chắc muốn hủy có đơn này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (XtraMessageBox.Show("Bạn có chắc muốn hủy có đơn này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         if (PhieuNhapBUS.Instance.xoaPhieuNhap(maPhieuNhap))
                         {
-                            MessageBox.Show("Phiếu nhập này đã được hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            XtraMessageBox.Show("Phiếu nhập này đã được hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             for(int i= 0; i< gridViewCTPN.RowCount-1; i++)
                             {
                                 int maThucUong = int.Parse(gridViewCTPN.GetRowCellValue(i, gridColumnMaThucUong).ToString());
@@ -214,7 +215,7 @@ namespace QuanLySanBongMini
                 }
                 else
                 {
-                    MessageBox.Show("Phiếu nhập không khả dụng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Phiếu nhập không khả dụng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -238,6 +239,11 @@ namespace QuanLySanBongMini
                 PhieuNhapBUS.Instance.loadTatCaPhieuNhap_TinhTrangHuy(gridContrrolPN);
                 
             }
+        }
+
+        private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            txtNguoiNhap.Text = NguoiDungBUS.Instance.ttNguoiDung_tenND(frmMain.maND);
         }
 
         private void gridViewCTPN_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

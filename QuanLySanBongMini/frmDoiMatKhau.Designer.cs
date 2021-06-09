@@ -185,6 +185,7 @@ namespace QuanLySanBongMini
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDoiMatKhau_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

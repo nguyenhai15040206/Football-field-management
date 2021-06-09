@@ -125,6 +125,7 @@ namespace QuanLySanBongMini
             this.btnHuy.Size = new System.Drawing.Size(117, 38);
             this.btnHuy.TabIndex = 3;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // hyperlinkLabelControl1
             // 
@@ -156,6 +157,7 @@ namespace QuanLySanBongMini
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăg nhập hệ thống";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDangNhap_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDN.Properties)).EndInit();
             this.ResumeLayout(false);

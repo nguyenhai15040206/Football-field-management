@@ -192,12 +192,56 @@ namespace QuanLySanBongMini
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            Program.frm = null;
+            if (Program.frm == null || Program.frm.IsDisposed)
+            {
+                Program.frm = new frmDangNhap();
+            }
+            this.Visible = false;
+            Program.frm.Show();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
+        }
+
+        private void giớiThiệuSânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = IstActive(typeof(frmGioiThieuSanBong));
+            if (form == null)
+            {
+                frmGioiThieuSanBong frm = new frmGioiThieuSanBong();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Activate();
+            }
         }
     }
 }

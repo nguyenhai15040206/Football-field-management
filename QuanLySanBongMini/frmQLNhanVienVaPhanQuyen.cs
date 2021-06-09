@@ -159,6 +159,7 @@ namespace QuanLySanBongMini
                 txtTenDangNhap.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnTenDN).ToString();
                 txtTenNguoiDung.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnTenNguoiDung).ToString();
                 txtSoDienThoai.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnSoDienThoai).ToString();
+                txtDiaChi.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnDiaChi).ToString();
                 txtEmail.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnEmail).ToString();
                 txtMatKhau.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnMatKhau).ToString();
                 dateTimePickerNgayVL.Text = gridView2.GetRowCellValue(e.RowHandle, gridColumnNgayVL).ToString();
@@ -235,7 +236,7 @@ namespace QuanLySanBongMini
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XtraMessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenNguoiDung.Focus();
             }
         }
@@ -244,9 +245,16 @@ namespace QuanLySanBongMini
         {
             if (e.Column.Name == "gridColumnXoa")
             {
-                if (MessageBox.Show("Bạn có chắc muốn xóa nhân viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (bunifuckbHoatHong.Checked == true)
                 {
-
+                    if (XtraMessageBox.Show("Bạn có chắc muốn xóa nhân viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (NguoiDungBUS.Instance.xoaNhanVien(int.Parse(gridView2.GetRowCellValue(e.RowHandle, gridColumnMaNguoiDung).ToString()), false))
+                        {
+                            XtraMessageBox.Show("Nhân viên không còn hoạt động!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            NguoiDungBUS.Instance.loadNguoiDung_TinhTrang(gridContrrolNguoiDung, hoatDong);
+                        }    
+                }
                 }
             }
         }

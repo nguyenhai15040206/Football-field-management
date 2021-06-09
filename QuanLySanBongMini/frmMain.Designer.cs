@@ -35,6 +35,7 @@ namespace QuanLySanBongMini
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýĐặtSânToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,7 @@ namespace QuanLySanBongMini
             this.thốngKêDoanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giớiThiệuSânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -69,6 +70,7 @@ namespace QuanLySanBongMini
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.giớiThiệuSânToolStripMenuItem,
             this.đổiMậtKhẩuToolStripMenuItem,
             this.quảnLýTàiKhoảnToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem,
@@ -92,6 +94,13 @@ namespace QuanLySanBongMini
             this.quảnLýTàiKhoảnToolStripMenuItem.Tag = "1";
             this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Quản lý tài khoản && Phân quyền";
             this.quảnLýTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýTàiKhoảnToolStripMenuItem_Click);
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(289, 24);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
@@ -176,12 +185,12 @@ namespace QuanLySanBongMini
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
-            // đăngXuấtToolStripMenuItem
+            // giớiThiệuSânToolStripMenuItem
             // 
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(289, 24);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
-            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            this.giớiThiệuSânToolStripMenuItem.Name = "giớiThiệuSânToolStripMenuItem";
+            this.giớiThiệuSânToolStripMenuItem.Size = new System.Drawing.Size(289, 24);
+            this.giớiThiệuSânToolStripMenuItem.Text = "Giới thiệu sân";
+            this.giớiThiệuSânToolStripMenuItem.Click += new System.EventHandler(this.giớiThiệuSânToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -199,6 +208,7 @@ namespace QuanLySanBongMini
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý đặt sân bóng đá mini";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -227,5 +237,6 @@ namespace QuanLySanBongMini
         private System.Windows.Forms.ToolStripMenuItem quảnLýSânBóngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýThứcUốngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem giớiThiệuSânToolStripMenuItem;
     }
 }

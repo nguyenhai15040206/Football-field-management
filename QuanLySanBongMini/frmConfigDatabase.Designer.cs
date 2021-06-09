@@ -161,6 +161,7 @@ namespace QuanLySanBongMini
             this.Name = "frmConfigDatabase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa kết nối";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmConfigDatabase_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

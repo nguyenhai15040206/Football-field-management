@@ -149,7 +149,7 @@ namespace QuanLySanBongMini
                         }
                         else
                         {
-                            MessageBox.Show("Vui lòng nhập số lượng chính xác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            XtraMessageBox.Show("Vui lòng nhập số lượng chính xác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
@@ -189,7 +189,7 @@ namespace QuanLySanBongMini
                     DatSanBUS.Instance.capNhatDatSan_DaThanhToan(maSan, maKhachHang, ngayDat, gioVao, gioRa, true);
                     DatSanBUS.Instance.loadDatSanChuaThanhToan(lookUpEdit1);
                     toolStripButtonThanhToan.Enabled = false;
-                    if (MessageBox.Show("Thêm thành công! Bạn có muốn in hóa đơn này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (XtraMessageBox.Show("Thêm thành công! Bạn có muốn in hóa đơn này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         XtraReportXuatHoaDon rpt = new XtraReportXuatHoaDon();
                         rpt.DataSource = ReportBUS.Instance.thanhToanSan(maHoaDon);
@@ -199,7 +199,7 @@ namespace QuanLySanBongMini
             }
             else
             {
-                MessageBox.Show("Vui lòng sân cần thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XtraMessageBox.Show("Vui lòng sân cần thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -10,7 +10,10 @@ namespace QuanLySanBongMini
 {
     static class Program
     {
-        public static int maNguoiDUng = 0;
+        public static frmDangNhap frm = null;
+        public static frmMain mainForm = null;
+        public static frmConfigDatabase frmConfigDatabase = null;
+        public static frmDoiMatKhau frmDoiMatKhau = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,21 +22,8 @@ namespace QuanLySanBongMini
         { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            frmDangNhap frm = new frmDangNhap();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                frmMain mainForm = new frmMain();
-                mainForm.thongTinNguoiDung(frm.thongTinND);
-                mainForm.maNguoiDung(Convert.ToString(frm.maNguoiDung));
-                frm.Close();
-                if (mainForm.ShowDialog() == DialogResult.OK)
-                {
-                    frmDangNhap frmDangNhap = new frmDangNhap();
-                    mainForm.Close();
-                    Application.Run(frmDangNhap);
-                }
-            }
+            frm = new frmDangNhap();
+            Application.Run(frm);
             //Application.Run(new frmThongKeDoanhThu());
             //a
         }

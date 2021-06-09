@@ -235,7 +235,7 @@ namespace QuanLySanBongMini
             {
                 if(dateTimePickerGioVao.Value.AddMinutes(17).TimeOfDay < DateTime.Now.TimeOfDay)
                 {
-                    XtraMessageBox.Show("Vui lòng chọn giờ vào hợp lệ");
+                    XtraMessageBox.Show("Vui lòng chọn giờ vào hợp lệ","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     toolTip1.SetToolTip(dateTimePickerGioVao, "Giờ vào phải lớn hơn hoặc bằng giờ hiện tại (được trễ 15p)");
                     dateTimePickerGioVao.Focus();
                     return;
@@ -262,7 +262,7 @@ namespace QuanLySanBongMini
             }
             else
             {
-                XtraMessageBox.Show("Vui lòng chọn loại sân bóng!");
+                XtraMessageBox.Show("Vui lòng chọn loại sân bóng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }    
         }
 

@@ -101,6 +101,12 @@ namespace BUS
                 nd.soDienThoai;
         }
 
+        public string ttNguoiDung_tenND(int maND)
+        {
+            var nd = NguoiDungDAO.Instance.ttNguoiDung_tenND(maND);
+            return nd.tenNguoiDung +" - "+ nd.soDienThoai;
+        }
+
         // load tất cả người dùng
         public void loadNguoiDung(GridControl gv)
         {
@@ -174,6 +180,12 @@ namespace BUS
             string email, bool hoatDong)
         {
             return NguoiDungDAO.Instance.capNhatNhanVien(maNhanVien, tenNguoiDung, diaChi, soDienThoai, email, hoatDong);
+        }
+
+        // xóa người dùng
+        public bool xoaNhanVien(int maNguoiDung, bool hoatDong)
+        {
+            return NguoiDungDAO.Instance.xoaNhanVien(maNguoiDung, hoatDong);
         }
 
 

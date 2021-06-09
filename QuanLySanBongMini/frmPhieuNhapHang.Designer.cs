@@ -664,6 +664,7 @@ namespace QuanLySanBongMini
             this.lookUpEdit1.Properties.NullText = "Chọn một nha cung cấp";
             this.lookUpEdit1.Size = new System.Drawing.Size(348, 28);
             this.lookUpEdit1.TabIndex = 0;
+            this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
             // 
             // label3
             // 
