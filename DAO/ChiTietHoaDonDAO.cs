@@ -123,5 +123,11 @@ namespace DAO
                 return false;
             }
         }
+
+        // đếm số lượng chi tiết hóa đơn với mã hóa đơn
+        public int soLuongCTHD_MaHD(int maHoaDon)
+        {
+            return db.ChiTietHDs.Where(m => m.maHoaDon == maHoaDon).Count();
+        }
     }
 }

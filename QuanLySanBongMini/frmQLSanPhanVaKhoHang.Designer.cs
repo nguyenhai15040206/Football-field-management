@@ -353,7 +353,7 @@ namespace QuanLySanBongMini
             // bunifuckkbTinhTrang
             // 
             this.bunifuckkbTinhTrang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuckkbTinhTrang.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuckkbTinhTrang.ChechedOffColor = System.Drawing.Color.Red;
             this.bunifuckkbTinhTrang.Checked = true;
             this.bunifuckkbTinhTrang.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuckkbTinhTrang.ForeColor = System.Drawing.Color.White;

@@ -164,6 +164,10 @@ namespace QuanLySanBongMini
                         XtraMessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ThucUongBUS.Instance.loadThucUong_GridControl(gridContrrolThucUong, tinhTrang);
                     }
+                    else
+                    {
+                        XtraMessageBox.Show("Thức uống này còn hàng không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }    
                 }
             }    
         }

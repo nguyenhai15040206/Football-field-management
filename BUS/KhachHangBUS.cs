@@ -90,5 +90,16 @@ namespace BUS
         {
             return KhachHangDAO.Instance.xoaKhachHang(maKhachHang);
         }
+
+        // cập nhật điểm tích lũy
+        public bool capNhatDienTichLuy_khiDat(int maKhachHang)
+        {
+            return KhachHangDAO.Instance.capNhatDienTichLuy_khiDat(maKhachHang);
+        }
+
+        public bool capNhatDienTichLuy_khiHuy(int maKhachHang)
+        {
+            return KhachHangDAO.Instance.capNhatDienTichLuy_khiHuy(maKhachHang);
+        }
     }
 }

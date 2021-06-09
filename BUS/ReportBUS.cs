@@ -27,7 +27,11 @@ namespace BUS
 
         public DataTable thanhToanSan(int maPhieu)
         {
-            return ReportDAO.Instance.phieuThanhToan(maPhieu);
+            if (ChiTietHoaDonBUS.Instance.soLuongCTHD_MaHD(maPhieu) > 0)
+            {
+                return ReportDAO.Instance.phieuThanhToan(maPhieu);
+            }
+            return ReportDAO.Instance.phieuThanhToan_KhongCoTU(maPhieu);
         }
 
 

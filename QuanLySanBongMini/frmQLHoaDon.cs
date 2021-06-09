@@ -128,7 +128,8 @@ namespace QuanLySanBongMini
                                 int maSP = int.Parse(gridViewCTHD.GetRowCellValue(i, gridColumnMaThucUong).ToString());
                                 int soLuong = int.Parse(gridViewCTHD.GetRowCellValue(i, gridColumnSL).ToString());
                                 ThucUongBUS.Instance.capNhatSoLuongKhiHuy(maSP, soLuong);
-                            }    
+                            }
+                            KhachHangBUS.Instance.capNhatDienTichLuy_khiHuy(maKhachHang);
                             lamMoiDuLieu();
                             HoaDonBUS.Instance.loadHoaDon_GridControl(gridControlHD, true);
                         }

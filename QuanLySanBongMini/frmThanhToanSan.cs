@@ -188,6 +188,7 @@ namespace QuanLySanBongMini
                     }
                     DatSanBUS.Instance.capNhatDatSan_DaThanhToan(maSan, maKhachHang, ngayDat, gioVao, gioRa, true);
                     DatSanBUS.Instance.loadDatSanChuaThanhToan(lookUpEdit1);
+                    KhachHangBUS.Instance.capNhatDienTichLuy_khiDat(maKhachHang);
                     toolStripButtonThanhToan.Enabled = false;
                     if (XtraMessageBox.Show("Thêm thành công! Bạn có muốn in hóa đơn này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {

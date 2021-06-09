@@ -24,7 +24,7 @@ namespace QuanLySanBongMini
             Application.SetCompatibleTextRenderingDefault(false);
             frm = new frmDangNhap();
             Application.Run(frm);
-            //Application.Run(new frmThongKeDoanhThu());
+            //Application.Run(new frmQLSanPhanVaKhoHang());
         }
 
 

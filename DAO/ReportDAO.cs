@@ -60,6 +60,30 @@ namespace DAO
             return table;
         }
 
+        public DataTable phieuThanhToan_KhongCoTU(int maPhieu)
+        {
+            DataTable table = new DataTable();
+            var query = (from hd in db.HoaDons
+                         join kh in db.KhachHangs on hd.maKhachHang equals kh.maKhachHang
+                         join sb in db.sanBongs on hd.maSan equals sb.maSan
+                         where hd.maHoaDon == maPhieu
+                         select new
+                         {
+                             hd.maHoaDon,
+                             hd.ngayLap,
+                             hd.tienNuoc,
+                             hd.tienSan,
+                             hd.giamGia,
+                             hd.tongTien,
+                             hd.ngayDat,
+                             hd.gioVao,
+                             hd.gioRa,
+                             kh.tenKhachHang,
+                             sb.tenSan
+                         }).ToList();
+            table = ToDataTable(query);
+            return table;
+        }
         // tạo phiếu nhập hàng
         public DataTable phieuNhapHang(int maPhieu)
         {

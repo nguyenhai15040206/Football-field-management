@@ -167,5 +167,64 @@ namespace DAO
                 return false;
             }
         }
+
+        public int soLuongKhachHangDatSan(int maKhachHang)
+        {
+            var soLuong = db.HoaDons.Where(m => m.maKhachHang == maKhachHang && m.tinhTrang == true).Count();
+            return soLuong;
+        }
+
+        public bool capNhatDienTichLuy_khiDat(int maKhachHang)
+        {
+            try
+            {
+                var khachhang = db.KhachHangs.SingleOrDefault(m => m.maKhachHang == maKhachHang);
+                int soLuongDat = soLuongKhachHangDatSan(maKhachHang);
+                khachhang.diemTichLuy = soLuongDat + 1;
+                if(khachhang.diemTichLuy>=10)
+                {
+                    khachhang.maLoaiKhachHang = 2;
+                }    
+                if(khachhang.diemTichLuy >=20)
+                {
+                    khachhang.maLoaiKhachHang = 3;
+                }
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool capNhatDienTichLuy_khiHuy(int maKhachHang)
+        {
+            try
+            {
+                var khachhang = db.KhachHangs.SingleOrDefault(m => m.maKhachHang == maKhachHang);
+                int soLuongDat = soLuongKhachHangDatSan(maKhachHang);
+                khachhang.diemTichLuy = (soLuongDat - 1) <=0? 0: (soLuongDat - 1);
+                if (khachhang.diemTichLuy < 10)
+                {
+                    khachhang.maLoaiKhachHang = 1;
+                }
+                else
+                {
+
+                    if (khachhang.diemTichLuy >= 10)
+                        khachhang.maLoaiKhachHang = 2;
+                    else
+                        khachhang.maLoaiKhachHang = 3;
+                }
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("" + ex);
+                return false;
+            }
+        }
     }
 }

@@ -48,6 +48,12 @@ namespace BUS
         public bool xoaCTHoaDon(int maHoaDon, int maThucUong)
         {
             return ChiTietHoaDonDAO.Instance.xoaCTHoaDon(maHoaDon, maThucUong);
-        }    
+        }   
+        
+        // đếm số luownjjg chi tiết hóa đơn
+        public int soLuongCTHD_MaHD(int maHoaDon)
+        {
+            return ChiTietHoaDonDAO.Instance.soLuongCTHD_MaHD(maHoaDon);
+        }
     }
 }

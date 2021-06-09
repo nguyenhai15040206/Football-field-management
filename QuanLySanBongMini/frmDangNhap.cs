@@ -59,8 +59,8 @@ namespace QuanLySanBongMini
 
         public void ProcessConfig()
         {
-            Program.frm = null;
-            if (Program.frm == null || Program.frm.IsDisposed)
+            Program.frmConfigDatabase = null;
+            if (Program.frmConfigDatabase == null || Program.frmConfigDatabase.IsDisposed)
             {
                 Program.frmConfigDatabase = new frmConfigDatabase();
             }
@@ -77,6 +77,7 @@ namespace QuanLySanBongMini
                     {
                         maNguoiDung = NguoiDungBUS.Instance.maNguoiDung(txtTenDN.Text.Trim());
                         thongTinND = NguoiDungBUS.Instance.thongTinNguoiDung(txtTenDN.Text.Trim());
+                        Program.mainForm = null;
                         if (Program.mainForm == null || Program.mainForm.IsDisposed)
                         {
                             Program.mainForm = new frmMain();

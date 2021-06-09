@@ -91,7 +91,8 @@ namespace DAO
                 db.ThucUongs.DeleteOnSubmit(thucUong);
                 db.SubmitChanges();
                 return true;
-            }   
+
+            }
             catch
             {
                 return false;
