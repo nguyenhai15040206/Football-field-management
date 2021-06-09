@@ -37,7 +37,7 @@ namespace DTO.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=QL_SanBongDaMini;User ID=sa;Password" +
-            "=abvdfs")]
+            "=tanhai")]
         public string Conn {
             get {
                 return ((string)(this["Conn"]));

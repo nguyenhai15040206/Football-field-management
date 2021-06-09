@@ -11,7 +11,7 @@
       <Value Profile="(Default)">Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_SanBongDaMini;User ID=sa;Password=tanhai123</Value>
     </Setting>
     <Setting Name="Conn" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_SanBongDaMini;User ID=sa;Password=abvdfs</Value>
+      <Value Profile="(Default)">Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_SanBongDaMini;User ID=sa;Password=tanhai</Value>
     </Setting>
   </Settings>
 </SettingsFile>
