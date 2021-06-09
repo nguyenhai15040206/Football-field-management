@@ -98,6 +98,7 @@ namespace DAO
                 return false;
             }
         }
+        //a
 
         // cập nhật thức uống
         public bool capNhatThucUong(int maTU,string tenThucUong, string DVT, double giaBan, double giaNhap, int soLuong, bool tinhTrang)
