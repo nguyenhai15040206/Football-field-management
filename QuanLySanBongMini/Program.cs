@@ -25,7 +25,6 @@ namespace QuanLySanBongMini
             frm = new frmDangNhap();
             Application.Run(frm);
             //Application.Run(new frmThongKeDoanhThu());
-            
         }
 
 
