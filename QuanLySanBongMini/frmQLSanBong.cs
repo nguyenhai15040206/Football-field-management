@@ -58,7 +58,7 @@ namespace QuanLySanBongMini
             {
                 if (SanBongBUS.Instance.KtraTrungTenSan(txtTenSan.Text))
                 {
-                    if (SanBongBUS.Instance.themSan(txtTenSan.Text, tinhTrang, int.Parse(1.ToString())))
+                    if (SanBongBUS.Instance.themSan(txtTenSan.Text, tinhTrang, int.Parse(lookUpEditLoaiSan.EditValue.ToString())))
                     {
                         XtraMessageBox.Show("Thêm sân bóng mới thành công!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         SanBongBUS.Instance.LoadSanBong_TinhTrang(gridContrrolSanBong, tinhTrang);
