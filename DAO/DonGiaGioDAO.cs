@@ -181,11 +181,15 @@ namespace DAO
                 && m.denKhungGio == denKhungGio && m.ngayCapNhat == ngayCN);
                 if (donGiaGio != null)
                 {
-                    donGiaGio.maloaiSan = maLoai;
-                    donGiaGio.tuKhungGio = tuKhungGio;
-                    donGiaGio.denKhungGio = denKhungGio;
-                    donGiaGio.donGia = (decimal)donGia;
-                    donGiaGio.ngayCapNhat = DateTime.Now.Date;
+                    db.DonGiaGios.DeleteOnSubmit(donGiaGio);
+                    db.SubmitChanges();
+                    DonGiaGio dgg = new DonGiaGio();
+                    dgg.maloaiSan = maLoai;
+                    dgg.tuKhungGio = tuKhungGio;
+                    dgg.denKhungGio = denKhungGio;
+                    dgg.donGia = (decimal)donGia;
+                    dgg.ngayCapNhat = DateTime.Parse(DateTime.Now.Date.ToString("MM/dd/yyy"));
+                    db.DonGiaGios.InsertOnSubmit(dgg);
                     db.SubmitChanges();
                 }
                 return true;

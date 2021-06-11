@@ -303,7 +303,7 @@ namespace QuanLySanBongMini
         private void gridView7_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             maManHinh = int.Parse(gridView7.GetRowCellValue(e.RowHandle, gridColumnMaMnHinh).ToString());
-            coQuyen = (bool.Parse(gridView7.GetRowCellValue(e.RowHandle, gridColumnCoQuyen).ToString()));
+            coQuyen = bool.Parse(gridView7.GetRowCellValue(e.RowHandle, gridColumnCoQuyen).ToString());
         }
 
         private void gridView7_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
