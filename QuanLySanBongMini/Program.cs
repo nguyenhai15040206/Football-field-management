@@ -22,9 +22,9 @@ namespace QuanLySanBongMini
         { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frm = new frmDangNhap();
-            Application.Run(frm);
-            //Application.Run(new frmQLSanPhanVaKhoHang());
+            //frm = new frmDangNhap();
+            //Application.Run(frm);
+            Application.Run(new frmQuanLyCauThu());
         }
 
 

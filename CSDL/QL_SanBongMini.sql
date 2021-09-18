@@ -263,3 +263,195 @@ INSERT [dbo].[ThucUong] ( [tenThucUong], [DVT], [giaBan],[giaNhap] ,[soLuong], [
 INSERT [dbo].[ThucUong] ( [tenThucUong], [DVT], [giaBan],[giaNhap], [soLuong], [tinhTrang]) VALUES ( N'Chanh muối', N'Chai', 12000.0000,10000, 120, 1)
 
 
+Create table SuKien
+(
+	maSuKien int identity(1,1),
+	tenSuKien nvarchar(100),
+	ngayBatDau date,
+	soDoiThamGia int,
+	soBangDau int,
+	soDoiVongKnockout int,
+	soLuongNguoiMoiDoi int,
+	maNguoiDung int,
+	lePhiThamGia money,
+	tinhTrang bit, -- sự kiện đó có bị hủy hay không,
+	primary key (maSuKien),
+	Constraint fk_SuKien_NguoiDung foreign key (maNguoiDung) references NguoiDung(maNguoiDung)
+)
+
+Create table DoiBong
+(
+	maDoiBong int,
+	maSuKien int,
+	tenDoiBong nvarchar(100),
+	SDTDoiDaiDien varchar(11),
+	tenNguoiDaiDien nvarchar(36),
+	emailNguoiDaiDien varchar(36),
+	hinhDoiBong nvarchar(500) ,-- nếu có
+	tinhTrang bit, -- thi thi đấu loại thằng này
+	maNguoiDung int,
+	primary key(maDoiBong),
+	Constraint fk_DoiBong_SuKien foreign key (maSuKien) references SuKien(maSuKien),
+	Constraint fk_DoiBong_NhanVien foreign key (maNguoiDung) references NguoiDung(maNguoiDung)
+)
+
+
+Create table ChiTietDoiBong
+(
+	maCauThu int identity(1,1),
+	hoTen nvarchar(50),
+	soDienThoai varchar(11),
+	ngaySinh date,
+	hinhMinhHoa nvarchar(500),
+	CMND varchar(11),
+	maDoiBong int,
+	primary key(maCauThu),
+	constraint fk_CTDB_DoiBong foreign key(maDoiBong) references DoiBong(maDoiBong)
+)
+
+-- tạo bảng thi đấu vòng loại
+Create table BangThiDau
+(
+	maBangDau int identity(1,1),
+	tenBangDau nvarchar(50),
+	maSuKien int,
+	tinhTrang bit,
+	primary key(maBangDau),
+	constraint fk_BangThiDau_DoiBong foreign key(maSuKien) references SuKien(maSuKien)
+)
+
+Create table ChiTietBangDau
+(
+	maBangDau int,
+	maDoiBong int,
+	ghiChu nvarchar(500)
+	primary key(maBangDau, maDoiBong)
+	constraint fk_CTBD_BD foreign key(maBangDau) references BangThiDau(maBangDau),
+	constraint fk_CTDB_DB foreign key(maDoiBong) references DoiBong(maDoiBong)
+)
+
+Create table TrongTai
+(
+	maTrongTai int identity(1,1),
+	tenTrongTai nvarchar(50),
+	soDienThoai varchar(11),
+	tinhTrang bit,
+	primary key(maTrongTai)
+)
+
+Create table VongDau
+(
+	maVongDau int identity(1,1),
+	tenVongDau nvarchar(50),
+	tinhTrang bit --
+	primary key(maVongDau)
+)
+
+
+Create table TranDau
+(
+	maTranDau int identity(1,1),
+	maSan int,
+	maVongDau int,
+	maTrongTai int,
+	ngayThiDau date,
+	gioThiDau time,
+	maDoiBong1 int,
+	maDoiBong2 int,
+	tinhTrang bit,
+	primary key(maTranDau),
+	constraint fk_TranDau_TrongTai foreign key(maTrongTai) references TrongTai(maTrongTai),
+	constraint fk_TranDau_SanBong foreign key(maSan) references SanBong(maSan),
+	constraint fk_TranDau_DoiBong1 foreign key(maDoiBong1) references DoiBong(maDoiBong),
+	constraint fk_TranDau_DoiBong2 foreign key(maDoiBong2) references DoiBong(maDoiBong),
+	constraint fk_TranDau_VongDau foreign key(maVongDau) references VongDau(maVongDau)
+)
+
+Create table ThePhat
+(
+	maThePhat int identity(1,1),
+	tenThe nvarchar(50),
+	maTranDau int,
+	maCauThu int,
+	maDoiBong int,
+	primary key(maThePhat),
+	constraint fk_ThePhat_TranDau foreign key(maTranDau) references TranDau(maTranDau),
+	constraint fk_ThePhat_CauThu foreign key(maCauThu) references ChiTietDoiBong(maCauThu),
+	constraint fk_ThePhat_DOiBong foreign key(maDoiBong) references DoiBong(maDoiBong),
+)
+
+Create table BanThang
+(
+	maBanThang int identity(1,1),
+	maCauThu int,
+	maDoiBong int,
+	thoiDiemGhiBan int,
+	primary key(maBanThang),
+	constraint fk_BanThang_CTDoiBong foreign key(maCauThu) references ChiTietDoiBong(maCauThu),
+	constraint fk_BanThang_DoiBong foreign key(maDoiBong) references DoiBong(maDoiBong)
+)
+
+Create table ChiTietTranDau
+(
+	maChiTiet int identity(1,1),
+	maBanThang int,
+	maTranDau int,
+	primary key(maChiTiet),
+	constraint fk_CTTD_BanThang foreign key(maBanThang) references BanThang(maBanThang),
+	constraint fk_CTTD_TranDau foreign key(maTranDau) references TranDau(maTranDau)
+)
+
+Create table KetQua
+(
+	maKetQua int identity(1,1),
+	maTranDau int,
+	banThangDoi1 int,
+	banThangDoi2 int,
+	thoiLuong int,
+	primary key(maKetQua),
+	constraint fk_KQ_TranDau foreign key(maTranDau) references TranDau(maTranDau)
+)
+
+Create table BangXepHang
+(
+	maBangXepHang int identity(1,1),
+	maTranDau int,
+	maDoiBong int ,
+	tenDoiBong nvarchar(100),
+	thang int,
+	hoa int,
+	thua int,
+	hieuSo int,
+	hang int,
+	primary key (maBangXepHang),
+	constraint fk_BangXH_TranDau foreign key(maTranDau) references TranDau(maTranDau),
+	constraint fk_BangXH_DoiBong foreign key(maDoiBong) references DoiBong(maDoiBong)
+)
+
+Create table DSCauThuGhiBang
+(
+	maGhiBang int identity(1,1),
+	maCauThu int,
+	tenCauThu nvarchar(150),
+	maDoiBong int,
+	tenDoiBong nvarchar(150),
+	soBangThang int,
+	primary key(maGhiBang),
+	constraint fk_DSCT_CauTThu foreign key(maCauThu) references ChiTietDoiBong(maCauThu)
+)
+
+
+
+
+
+
+
+
+select * from SuKien
+select * from DoiBong
+
+
+
+
+
+

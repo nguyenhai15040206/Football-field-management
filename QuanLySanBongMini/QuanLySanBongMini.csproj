@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\ThuVienHoTro\Bunifu\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
@@ -79,6 +80,8 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -163,6 +166,18 @@
     <Compile Include="frmPhieuNhapHang.Designer.cs">
       <DependentUpon>frmPhieuNhapHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanLyCauThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyCauThu.Designer.cs">
+      <DependentUpon>frmQuanLyCauThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaoLichThiDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoLichThiDau.Designer.cs">
+      <DependentUpon>frmTaoLichThiDau.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThanhToanSan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +189,12 @@
     </Compile>
     <Compile Include="frmThongKeDoanhThu.Designer.cs">
       <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmToChucGiaiDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmToChucGiaiDau.Designer.cs">
+      <DependentUpon>frmToChucGiaiDau.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -249,11 +270,20 @@
     <EmbeddedResource Include="frmPhieuNhapHang.resx">
       <DependentUpon>frmPhieuNhapHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyCauThu.resx">
+      <DependentUpon>frmQuanLyCauThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoLichThiDau.resx">
+      <DependentUpon>frmTaoLichThiDau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThanhToanSan.resx">
       <DependentUpon>frmThanhToanSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeDoanhThu.resx">
       <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmToChucGiaiDau.resx">
+      <DependentUpon>frmToChucGiaiDau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -440,6 +470,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pngtree-vector-edit-profile-icon-png-image_4102538.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

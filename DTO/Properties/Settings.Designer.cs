@@ -46,5 +46,16 @@ namespace DTO.Properties {
                 this["Conn"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4MGR8RB\\SQLEXPRESS;Initial Catalog=QL_SanBongDaMini;User ID=s" +
+            "a;Password=tanhai123")]
+        public string QL_SanBongDaMiniConnectionString1 {
+            get {
+                return ((string)(this["QL_SanBongDaMiniConnectionString1"]));
+            }
+        }
     }
 }
